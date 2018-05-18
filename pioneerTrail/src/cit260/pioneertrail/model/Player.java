@@ -108,6 +108,10 @@ public class Player implements Serializable{
     public String toString() {
         return "Player{" + "name=" + name + ", gender=" + gender + ", health=" + health + ", status=" + status + ", games=" + games + '}';
     }
+
+    public void setGender(String something) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     
     
