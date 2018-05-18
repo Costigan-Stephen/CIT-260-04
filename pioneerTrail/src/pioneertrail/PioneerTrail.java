@@ -60,11 +60,27 @@ public class PioneerTrail {
         /* END STEVE */
         
         
+        /* START MARILEE */
+        Location nauvoo = new Location();
+            nauvoo.setName("Nauvoo");
+            nauvoo.setRow(1);
+            nauvoo.setColumn(1);
+            nauvoo.setAmountRemaining(24);
+            
+        Map testMap = new Map();
+            testMap.setDescription("This is where the location names will be listed");
+            testMap.setRowCount(5);
+            testMap.setColumnCount(5);
+            testMap.setCurrentRow(1);
+            testMap.setCurrentColumn(1);
+         /* END MARILEE*/
+        
         System.out.println(playerOne.toString());
         System.out.println(Actor.Dog.toString());
         System.out.println(randomEncounter.toString());   /* STEVE */
         System.out.println(hammer.toString());            /* STEVE */
-        
+        System.out.println(nauvoo.toString());            /* MARILEE */
+        System.out.println(testMap.toString());           /* MARILEE */
     }
     
 }
