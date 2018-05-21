@@ -1,4 +1,4 @@
- */
+package cit260.pioneertrail.model;
 
 import java.awt.Point;
 import java.io.Serializable;
