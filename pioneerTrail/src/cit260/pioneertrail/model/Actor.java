@@ -6,9 +6,6 @@
 package cit260.pioneertrail.model;
 
 import java.awt.Point;
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.Objects;
 
 /**
  *
@@ -22,10 +19,10 @@ public enum Actor {
     ChildFemale("Sarah","Daughter", new Point(1,2),"Be Daddy's Angel"),
     Dog("Spot","The Doggy", new Point(1,3),"Get Belly Rubs");
     
-    private String name;
-    private String description;
-    private Point coordinates;
-    private String purpose;
+    private final String name;
+    private final String description;
+    private final Point coordinates;
+    private final String purpose;
 
     Actor(String name, String description, Point coordinates, String purpose) {
         this.name = name;
