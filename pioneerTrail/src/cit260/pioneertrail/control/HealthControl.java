@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package cit260.pioneertrail.control;
+import cit260.pioneertrail.model.Status;
 
 /**
  *
@@ -11,7 +12,7 @@ package cit260.pioneertrail.control;
  */
 public class HealthControl {
     
-    public static double calcStatusDuration(int movementSpeed, int hunger, int status) {
+    public static double calcStatusDuration(int movementSpeed, int hunger, Status status) {
         
         //Begin
         //If (movementSpeed < 0) { Return -1 }
@@ -24,7 +25,17 @@ public class HealthControl {
         //addDuration = movementSpeed + hunger
         //return  status.duration + addDuration
         //End
-        return 0;
+        if (movementSpeed < 0){ return -1;}
+        if (movementSpeed > 3){ return -2;}
+        if (hunger < 0){ return -3;}
+        if (hunger > 5){ return -4;}
+        if (status.type < 0){ return -5;}
+        if (status.type == 0){ return -6;} // Healthy, needs no duration
+        else {
+            double addDuration = movementSpeed + hunger;
+            return status.duration + addDuration;
+        }
+        
     }
     
 }
