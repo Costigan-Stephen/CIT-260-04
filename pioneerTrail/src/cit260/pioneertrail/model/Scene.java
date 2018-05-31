@@ -11,9 +11,11 @@ import java.util.Objects;
  */
 
 public class Scene implements Serializable {
+
     private String description;
     private long travelTime;
     private boolean blocked;
+
 
 
     public Scene() {
