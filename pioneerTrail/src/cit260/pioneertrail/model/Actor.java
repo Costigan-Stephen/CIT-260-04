@@ -66,7 +66,7 @@ public enum Actor {
     public String getPurpose() {
         return purpose;
     }
-
+    
     @Override
     public String toString() {
         return "Actor{" + "name=" + name + ", description=" + description + ", coordinates=" + coordinates + ", purpose=" + purpose + '}';
