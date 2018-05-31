@@ -11,7 +11,7 @@ import cit260.pioneertrail.model.InventoryItem;
  */
 public class InventoryControl {
     
-    public double calcWeightRemaining (double weightRemaining, InventoryItem item){
+    public static double calcWeightRemaining (double weightRemaining, InventoryItem item){
 
 //        Begin
 //          If (item.weight < 0) //item.quantity can’t be 0, this tests for invalid inputs
