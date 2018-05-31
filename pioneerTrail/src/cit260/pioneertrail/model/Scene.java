@@ -1,10 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package cit260.pioneertrail.model;
 
+import java.awt.Point;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Objects;
@@ -14,13 +10,15 @@ import java.util.Objects;
  * @author Joseph
  */
 
-public class scene implements Serializable {
+public class Scene implements Serializable {
+
     private String description;
     private long travelTime;
     private boolean blocked;
 
 
-    public scene() {
+
+    public Scene() {
 
     }
 
@@ -40,7 +38,7 @@ public class scene implements Serializable {
         this.travelTime = travelTime;
     }
 
-    public boolean blocked() {
+    public boolean getBlocked() {
         return blocked;
     }
 
