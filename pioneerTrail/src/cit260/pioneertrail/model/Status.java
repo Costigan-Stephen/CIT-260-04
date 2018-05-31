@@ -13,19 +13,15 @@ import java.io.Serializable;
 public enum Status {
     
     Healthy     (0,0,"Healthy"),
-
     Feverish    (1,10,"Feverish"),
     Chills      (2,10,"Chills"),
     Flu         (3,20,"Influenza"),
     SmallPox    (4,25,"Small Pox"),
     YellowFever (5,30,"Yellow Fever"), 
-
     BrokenArm   (6,15,"Broken Arm"),
     BrokenLeg   (7,20,"Broken Leg"),
-
     SpiderBite  (8,10,"Spider Bite"),
     SnakeBite   (9,15,"Snake Bite"),
-
     Appendicitis(10,20,"Appendicitis"),
     PersistentCough  (11,20,"PersistentCough"),
     Bronchitis  (12,25,"Bronchitis"),
