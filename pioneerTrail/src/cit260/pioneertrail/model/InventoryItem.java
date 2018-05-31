@@ -6,7 +6,6 @@
 package cit260.pioneertrail.model;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.Objects;
 /**
  *
@@ -15,8 +14,8 @@ import java.util.Objects;
 public class InventoryItem implements Serializable{
  
     private String inventoryType;
-    private int quantityOfItems;
-    private double itemWeight;
+    public int quantityOfItems;
+    public double itemWeight;
     private double damageValue;
     private double weightRemaining;
     private String itemName;
