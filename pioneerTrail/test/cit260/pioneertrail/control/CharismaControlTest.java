@@ -42,7 +42,6 @@ public class CharismaControlTest {
         boolean result = instance.calculateCharisma(gender, occupation, money);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a failure and so are you.");
          System.out.println("calculateCharisma");
         System.out.println("\tTest case 2");
          gender = false;
@@ -52,7 +51,6 @@ public class CharismaControlTest {
          result = instance.calculateCharisma(gender, occupation, money);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a fail and so are you.");
         System.out.println("calculateCharisma");
         System.out.println("\tTest case 1");
         gender = true;
@@ -62,7 +60,6 @@ public class CharismaControlTest {
         result = instance.calculateCharisma(gender, occupation, money);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
     
 }
