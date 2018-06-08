@@ -14,7 +14,7 @@ import java.util.Objects;
  * @author Stephen
  */
 public class Player implements Serializable{
-    private String name;
+    public String name;
     private Boolean gender;
     private Double health;
     private String status; //Sick, Dead, etc.
