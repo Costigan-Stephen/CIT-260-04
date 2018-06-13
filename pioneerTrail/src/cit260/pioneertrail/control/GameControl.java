@@ -6,6 +6,7 @@
 package cit260.pioneertrail.control;
 
 import cit260.pioneertrail.model.Player;
+import pioneertrail.PioneerTrail;
 
 /**
  *
@@ -21,6 +22,7 @@ public class GameControl {
         Player player = new Player();
         player.setName(name);
         
+        PioneerTrail.setPlayer(player);
         return player;
 //        System.out.println("*** savePlayer() called ***");
 //        System.out.println("Value input: " + name);
