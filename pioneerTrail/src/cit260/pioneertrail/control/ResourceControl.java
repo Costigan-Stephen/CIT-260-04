@@ -13,7 +13,7 @@ public class ResourceControl {
     
     public static double calcHuntingResource(int hunger, InventoryItem item, int randomNumber) {
     
-        //    If (itemQuantity<1)
+        //If (itemQuantity<1)
         //	return -1
         //if (itemQuantity>100)
         //	return -2

@@ -9,10 +9,9 @@ package cit260.pioneertrail.view;
  *
  * @author Stephen
  */
-class StartExistingGameView {
-
-    void displayStartExistingGameView() {
-        System.out.println("Load Game?");        
+public class InventoryView {
+    
+    void displayInventoryView() {
         //STUFF
     }
     
