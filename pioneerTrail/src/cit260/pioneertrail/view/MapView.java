@@ -9,9 +9,9 @@ package cit260.pioneertrail.view;
  *
  * @author Stephen
  */
-public class GameMapView {
+public class MapView {
     
-    void displayGameMapView() {
+    void displayMapView() {
         //STUFF
     }
     
