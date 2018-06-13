@@ -7,10 +7,10 @@ import java.util.Objects;
 public class Location implements Serializable{
     
     private String name;
-    private int row;
-    private int column;
+    public int row;
+    public int column;
     private int amountRemaining;
-
+    
     public Location() {
     }
 
