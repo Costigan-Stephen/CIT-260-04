@@ -21,6 +21,7 @@ public class InventoryView {
         + "\n\t    M - Money " 
         + "\n\t    O - Oxen" 
         + "\n\t    F - Food " 
+        + "\n\t    S - Shop "       
         + "\n\t    Q - Return to the game "
         + "\n====================================================\n\n "
         );
@@ -72,23 +73,28 @@ public class InventoryView {
       
       switch (inputs[0]){
       
-        case "S":
-            break;
         case "M":
             showMoney();
             break;
             //Number of Oxen
         case "O": 
             showOxen();
-            ;
             break;
         case "F":
             showFood();
             break;
+        case "S":
+           displayShopView();
+        break;
         case "Q": inputs[0] = "Q";
             System.out.println("Returning to Game");
             return true;
       }  
       return true;  
+     }
+     private void displayShopView() {
+         System.out.println("Hello");
+        ShopView shop = new ShopView();
+       shop.displayShopView();
      }
 }
