@@ -5,6 +5,7 @@
  */
 package cit260.pioneertrail.control;
 import cit260.pioneertrail.model.InventoryItem;
+import cit260.pioneertrail.model.Player;
 
 /**
  * * @author Marilee
@@ -44,5 +45,9 @@ public class ResourceControl {
         return result;
     }
     
+    public static void createNewHunt(Player player){
+        System.out.println("START NEW HUNT");
+    }
+    
+    
 }
-

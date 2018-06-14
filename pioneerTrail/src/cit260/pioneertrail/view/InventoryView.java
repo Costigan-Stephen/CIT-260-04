@@ -12,7 +12,8 @@ package cit260.pioneertrail.view;
 public class InventoryView {
     
     void displayInventoryView() {
-        //STUFF
+        System.out.println("Inventory Diplayed here");  
     }
     
 }
+

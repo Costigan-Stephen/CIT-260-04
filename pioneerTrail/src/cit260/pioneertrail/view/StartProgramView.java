@@ -23,8 +23,15 @@ public class StartProgramView {
     public void displayStartProgramView() {
         
         System.out.print("\033[H\033[2J"); //Clears Screen
-        System.out.println(
-        "\n==================================================== " 
+        System.out.println("THE PIONEER TRAIL"
+        +"\n"
+        + " _______   _                                        _                   _   __  \n" +
+"|_   __ \\ (_)                                      / |_                (_) [  | \n" +
+"  | |__) |__   .--.   _ .--.  .---.  .---.  _ .--.`| |-'_ .--.  ,--.   __   | | \n" +
+"  |  ___/[  |/ .'`\\ \\[ `.-. |/ /__\\\\/ /__\\\\[ `/'`\\]| | [ `/'`\\]`'_\\ : [  |  | | \n" +
+" _| |_    | || \\__. | | | | || \\__.,| \\__., | |    | |, | |    // | |, | |  | | \n" +
+"|_____|  [___]'.__.' [___||__]'.__.' '.__.'[___]   \\__/[___]   \\'-;__/[___][___]"
+        + "\n==================================================== " 
         + "\n\t    Welcome to our game "
         + "\nThe Pioneer Trail game is a text based role playing game. "
         + "\nIn this game, you will be a pioneer family who leads a "

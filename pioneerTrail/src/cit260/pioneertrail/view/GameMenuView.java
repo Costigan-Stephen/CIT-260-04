@@ -34,6 +34,7 @@ class GameMenuView {
         + "\n\t    L - Load a Saved Game " 
         + "\n\t    I - View Inventory "
         + "\n\t    M - Show the Map "
+        + "\n\t    G - Gather Resources "
         + "\n\t    Q - Quit To Main Menu "
         + "\n\t    R - Return to Game "
         + "\n====================================================\n\n "
@@ -95,6 +96,9 @@ class GameMenuView {
         case "M": inputs[0] = "M";
             displayMapView();
             break;
+        case "G": inputs[0] = "G";
+            displayGatherView();
+            break;
         case "Q": inputs[0] = "Q";
             mainMenu();
             return true;
@@ -132,5 +136,10 @@ class GameMenuView {
     private void displayInventoryView() {
         InventoryView inventory = new InventoryView();
         inventory.displayInventoryView();
+    }
+
+    private void displayGatherView() {
+        GatherView gatherView = new GatherView();
+        gatherView.displayGatherView();
     }
 }
