@@ -5,6 +5,7 @@
  */
 package cit260.pioneertrail.view;
 import cit260.pioneertrail.control.ResourceControl;
+import static cit260.pioneertrail.view.GameMenuView.displayGameMenu;
 import java.util.Scanner;
 import pioneertrail.PioneerTrail;
 
@@ -91,7 +92,8 @@ public class GatherView {
                 getHelp();
                 break;
             case "Q": menuItem = "Q";
-                return true;// “Q”: RETURN true
+                System.out.println("Returning to Menu");
+                displayGameMenuView();
             default: System.out.println("Invalid Menu item.");// DEFAULT: DISPLAY “Invalid menu item.”
             
         }// ENDSWITCH  
@@ -112,6 +114,11 @@ public class GatherView {
     private void getAnimals() {         
         HuntAnimalsView huntAnimalsView = new HuntAnimalsView();
         huntAnimalsView.displayHuntAnimalsView();
+    }
+
+    private void displayGameMenuView() {
+        GameMenuView gameMenuView = new GameMenuView();
+        gameMenuView.displayGameMenuView();
     }
     
 }

@@ -6,7 +6,6 @@
 package cit260.pioneertrail.view;
 
 import cit260.pioneertrail.control.GameControl;
-import static cit260.pioneertrail.view.MainMenuView.displayMainMenu;
 import java.util.Scanner;
 import pioneertrail.PioneerTrail;
 
@@ -142,4 +141,5 @@ class GameMenuView {
         GatherView gatherView = new GatherView();
         gatherView.displayGatherView();
     }
+
 }

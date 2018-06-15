@@ -13,9 +13,6 @@ import java.util.Random;
  */
 public class ResourceControl {
     
-        public static void createNewHunt(Player player){
-        System.out.println("START NEW HUNT");
-    }
     
     public static double calcHuntingResource(int hunger, InventoryItem item, int randomNumber) {
     
@@ -41,7 +38,7 @@ public class ResourceControl {
         
         if (item.quantityOfItems < 1) {return -1;}
         if (item.quantityOfItems > 100) {return -2;}
-        if  (hunger < 0) {return -3;}        
+        if (hunger < 0) {return -3;}        
         if (hunger > 5) {return -4;}
         if (randomNumber < 1) {return -5;}
         if (randomNumber > 20) {return -6;}
@@ -50,7 +47,8 @@ public class ResourceControl {
         return result;
     }
     
-    public static double calcHuntingResource(int hunger, InventoryItem item) {
+    // Wrapper function to include a random calculation
+    public static double calcHuntingResource(int hunger, InventoryItem item) { 
 //        Random rn = new Random();
 //        
 //        int randomNumber = randomrand = newRandom();

@@ -74,7 +74,7 @@ class HelpMenuView {
             displayWarehouse();
             break;
         case "Q": inputs[0] = "Q";
-            MainMenuView.displayMainMenu();
+            displayMainMenuView();
             return true;
         }  
         
@@ -166,5 +166,12 @@ class HelpMenuView {
         + "\n====================================================\n\n "
         ); 
     }
+
+    private void displayMainMenuView() {
+        MainMenuView mainMenuView = new MainMenuView();
+        mainMenuView.displayMainMenuView();
+    }
+
+
     
 }
