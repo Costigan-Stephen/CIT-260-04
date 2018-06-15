@@ -12,6 +12,10 @@ import cit260.pioneertrail.model.Player;
  */
 public class ResourceControl {
     
+        public static void createNewHunt(Player player){
+        System.out.println("START NEW HUNT");
+    }
+    
     public static double calcHuntingResource(int hunger, InventoryItem item, int randomNumber) {
     
         //If (itemQuantity<1)
@@ -45,9 +49,7 @@ public class ResourceControl {
         return result;
     }
     
-    public static void createNewHunt(Player player){
-        System.out.println("START NEW HUNT");
-    }
+
     
     
 }

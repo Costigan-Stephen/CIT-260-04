@@ -90,7 +90,7 @@ public class StartProgramView {
             if(input.length() < 1){
                 System.out.println("Invalid value entered, You must enter a non-blank value");
             } else {
-            return inputs;
+            continue;
         }  
         
         } while (valid == false);

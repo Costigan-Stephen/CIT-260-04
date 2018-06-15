@@ -36,11 +36,11 @@ public class HuntAnimalsView {
     private String[] getInputs() {
         System.out.println(""
                 + "WELCOME TO THE HUNT!:"
-                + "In this location you can fire your weapon and have the "
-                + "opportunity to find food for your family. You'll need to "
-                + "first choose how many bullets you would like to use. Once"
-                + "press enter, your weapon will fire and the result of your"
-                + "hunt will be displayed.");
+                + "\nIn this location you can fire your weapon and have the "
+                + "\nopportunity to find food for your family. You'll need to "
+                + "\nfirst choose how many bullets you would like to use. Once"
+                + "\npress enter, your weapon will fire and the result of your"
+                + "\nhunt will be displayed.");
         
                     String[] inputs = new String[4];// inputs = new String array whose length = no. of inputs
 
