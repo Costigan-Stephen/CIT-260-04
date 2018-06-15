@@ -6,6 +6,7 @@
 package cit260.pioneertrail.control;
 import cit260.pioneertrail.model.InventoryItem;
 import cit260.pioneertrail.model.Player;
+import java.util.Random;
 
 /**
  * * @author Marilee
@@ -49,7 +50,15 @@ public class ResourceControl {
         return result;
     }
     
-
+    public static double calcHuntingResource(int hunger, InventoryItem item) {
+//        Random rn = new Random();
+//        
+//        int randomNumber = randomrand = newRandom();
+//	int n = rand.nestInt(20) + 1;
+        int rnd = (int) Math.random() * 20;
+        rnd++;
+        return calcHuntingResource(hunger, item, rnd);
+}
     
     
 }

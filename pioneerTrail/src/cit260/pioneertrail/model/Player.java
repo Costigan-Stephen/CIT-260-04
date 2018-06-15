@@ -19,6 +19,26 @@ public class Player implements Serializable{
     private Double health;
     private String status; //Sick, Dead, etc.
     private ArrayList<Game> games = new ArrayList<Game>();
+    private int hunger = 5;
+
+    /**
+     * Get the value of hunger
+     *
+     * @return the value of hunger
+     */
+    public int getHunger() {
+        return hunger;
+    }
+
+    /**
+     * Set the value of hunger
+     *
+     * @param hunger new value of hunger
+     */
+    public void setHunger(int hunger) {
+        this.hunger = hunger;
+    }
+
 
     public Player() {
     }

@@ -5,6 +5,7 @@
  */
 package cit260.pioneertrail.view;
 import cit260.pioneertrail.control.ResourceControl;
+import cit260.pioneertrail.model.InventoryItem;
 import java.util.Scanner;
 import pioneertrail.PioneerTrail;
 
@@ -105,7 +106,11 @@ public class HuntAnimalsView {
     }
 
     private void startNewHunt() {
-        ResourceControl.createNewHunt(PioneerTrail.getPlayer());
+        InventoryItem inventoryItem = new InventoryItem();
+        inventoryItem.setItemName("Bullets");
+        inventoryItem.setQuantityOfItems(20);
+        inventoryItem.setInventoryType("Ammo");
+        double hunt = ResourceControl.calcHuntingResource(PioneerTrail.getPlayer().getHunger(), inventoryItem);
     }
 }
 
