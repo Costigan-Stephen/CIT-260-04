@@ -21,25 +21,27 @@ public class InventoryView {
         + "\n\t    M - Money " 
         + "\n\t    O - Oxen" 
         + "\n\t    F - Food " 
-        + "\n\t    S - Shop "       
+        + "\n\t    S - Shop " 
         + "\n\t    Q - Return to the game "
         + "\n====================================================\n\n "
         );
+        String[] input = getInputs();
+        doAction(input);
     }
-   int showMoney(){
+   static int showMoney(){
 
        return 100;
    }
-   int showOxen(){
+  static int showOxen(){
        
        
       return 12;
    }
-   void showFood(){
+  static void showFood(){
    
    
    }
-    private String[] getInputs() {
+    private static String[] getInputs() {
         boolean valid = false;
         String[] inputs = new String[1];
 
@@ -69,8 +71,8 @@ public class InventoryView {
 
         //STUFF
     
-    private boolean doAction(String[] inputs) {
-      
+    private static boolean doAction(String[] inputs) {
+      System.out.println("what's up");
       switch (inputs[0]){
       
         case "M":
@@ -92,7 +94,7 @@ public class InventoryView {
       }  
       return true;  
      }
-     private void displayShopView() {
+     private static void displayShopView() {
          System.out.println("Hello");
         ShopView shop = new ShopView();
        shop.displayShopView();
