@@ -273,7 +273,13 @@ public abstract class View implements ViewInterfaces {
                 GameMenuView gameMenuView = new GameMenuView();
                 gameMenuView.displayGameMenu();
                 break;
+            case "map": type = "map";
+                MapView mapView = new MapView();
+                mapView.displayMap();
+                break;
             case "help": type = "help";
+                HelpMenuView helpView = new HelpMenuView();
+                helpView.displayMenu();
                 break;
         }
     }

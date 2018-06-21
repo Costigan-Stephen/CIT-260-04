@@ -149,7 +149,7 @@ class HelpMenuView {
         displayMenu();
     }
 
-    private void displayMenu() {
+    public void displayMenu() {
        System.out.println(
         "==================================================== "
         + "\n\t\t   HELP MENU "
