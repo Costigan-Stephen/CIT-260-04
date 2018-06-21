@@ -21,7 +21,7 @@ class GameMenuView extends View{
     
     public static void main(String[] args){ //Temporary incorporated to see it working and until it is implemented elsewhere!  Will be connected to inventory.
         GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayGameMenu();
+//        gameMenu.displayGameMenu();
         gameMenu.displayGameMenuView();
         
     }
