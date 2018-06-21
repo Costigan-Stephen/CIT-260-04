@@ -13,7 +13,7 @@ import pioneertrail.PioneerTrail;
  *
  * @author Stephen
  */
-class GameMenuView {
+class GameMenuView extends View{
 
     public GameMenuView(){
         
@@ -24,7 +24,7 @@ class GameMenuView {
         gameMenu.displayGameMenuView();
     }
     
-    public static void displayGameMenu() {
+    public void displayGameMenu() {
         System.out.println(
         "==================================================== "
         + "\n\t\t   Game MENU "
@@ -40,104 +40,108 @@ class GameMenuView {
         );
     }
     
-    void displayGameMenuView() {
-        boolean endOfView = false;
+    void displayGameMenuView(){
         
-        displayGameMenu();
+        display("game");
         
-        do{
-           String[] inputs = this.getInputs();
-           endOfView = doAction(inputs); 
-        }while (endOfView == false);
+        
+//        boolean endOfView = false;
+//        
+//        displayGameMenu();
+//        
+//        do{
+//           String[] inputs = this.getInputs();
+//           endOfView = doAction(inputs); 
+//        }while (endOfView == false);
     }
     
-    private String[] getInputs() {
-        
-        boolean valid = false;
-        String[] inputs = new String[1];
+//    private String[] getInputs() {
+//        
+//        boolean valid = false;
+//        String[] inputs = new String[1];
+//
+//        do {     
+//
+//            Scanner scanner = new Scanner(System.in);
+//            String input = scanner.nextLine();
+//            input = input.trim();
+//            input = input.toUpperCase();
+//
+//            //Put input into String
+//            char y;
+//            y = input.charAt(0);
+//            inputs[0] = Character.toString(y);
+//            
+//            if(input.length() < 1){
+//                System.out.println("Invalid value entered");
+//                System.out.println("You must enter a non-blank value");
+//                continue;
+//            } 
+//
+//             valid = true;
+//        
+//        } while (valid == false);
+//        return inputs;
+//    }
+//    private boolean doAction(String[] inputs) {
+//      
+//      switch (inputs[0]){
+//      
+//        case "S": inputs[0] = "S";
+//            saveGame();
+//            break;
+//        case "L": inputs[0] = "L";
+//            loadGame();
+//            break;
+//        case "I": inputs[0] = "I";
+//            displayInventoryView();
+//            break;
+//        case "M": inputs[0] = "M";
+//            displayMapView();
+//            break;
+//        case "G": inputs[0] = "G";
+//            displayGatherView();
+//            break;
+//        case "Q": inputs[0] = "Q";
+//            mainMenu();
+//            return true;
+//        case "R": inputs[0] = "R";
+//            System.out.println("Returning to Game");
+//            return true;
+//      }  
+//        
+//      return false;
+//
+//    }
 
-        do {     
-
-            Scanner scanner = new Scanner(System.in);
-            String input = scanner.nextLine();
-            input = input.trim();
-            input = input.toUpperCase();
-
-            //Put input into String
-            char y;
-            y = input.charAt(0);
-            inputs[0] = Character.toString(y);
-            
-            if(input.length() < 1){
-                System.out.println("Invalid value entered");
-                System.out.println("You must enter a non-blank value");
-                continue;
-            } 
-
-             valid = true;
-        
-        } while (valid == false);
-        return inputs;
-    }
-    private boolean doAction(String[] inputs) {
-      
-      switch (inputs[0]){
-      
-        case "S": inputs[0] = "S";
-            saveGame();
-            break;
-        case "L": inputs[0] = "L";
-            loadGame();
-            break;
-        case "I": inputs[0] = "I";
-            displayInventoryView();
-            break;
-        case "M": inputs[0] = "M";
-            displayMapView();
-            break;
-        case "G": inputs[0] = "G";
-            displayGatherView();
-            break;
-        case "Q": inputs[0] = "Q";
-            mainMenu();
-            return true;
-        case "R": inputs[0] = "R";
-            System.out.println("Returning to Game");
-            return true;
-      }  
-        
-      return false;
-
-    }
-
-    private void displayMapView() {
+    void displayMapView() {
         MapView mapview = new MapView();
         mapview.displayMapView();
     }
 
-    private void loadGame() {
+    void loadGame() {
         System.out.println("Loading Game...");
         
         displayGameMenu();
     }
 
-    private void saveGame() {
+    void saveGame() {
         System.out.println("Game Saved...");
         
         displayGameMenu();
     }
 
-    private void mainMenu() {
+    void mainMenu() {
         MainMenuView mainMenuView = new MainMenuView();
         mainMenuView.displayMainMenuView();
     }
 
-    private void displayInventoryView() {
+    void displayInventoryView() {
         InventoryView inventory = new InventoryView();
         inventory.displayInventoryView();
     }
 
-    private void displayGatherView() {
+    void displayGatherView() {
         GatherView gatherView = new GatherView();
         gatherView.displayGatherView();
     }

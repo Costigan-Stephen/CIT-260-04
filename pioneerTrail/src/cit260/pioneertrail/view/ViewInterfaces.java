@@ -5,8 +5,6 @@
  */
 package cit260.pioneertrail.view;
 
-import java.util.Scanner;
-
 /**
  *
  * @author stephencostigan

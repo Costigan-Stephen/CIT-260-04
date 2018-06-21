@@ -5,17 +5,14 @@
  */
 package cit260.pioneertrail.view;
 
-import cit260.pioneertrail.control.GameControl;
 import cit260.pioneertrail.model.Location;
-import static cit260.pioneertrail.view.GameMenuView.displayGameMenu;
-import java.util.Scanner;
 import pioneertrail.PioneerTrail;
 
 /**
  *
  * @author Stephen
  */
-public class MapView {
+public class MapView extends View{
     
     
     public MapView() {
@@ -76,62 +73,64 @@ public class MapView {
     }
     
     void displayMapView() {
-        boolean endOfView = false;
         
-        displayMap();
-        
-        do{
-           String[] inputs = this.getInputs();
-           endOfView = doAction(inputs); 
-        }while (endOfView == false);
+        display("map");
+//        boolean endOfView = false;
+//        
+//        displayMap();
+//        
+//        do{
+//           String[] inputs = this.getInputs();
+//           endOfView = doAction(inputs); 
+//        }while (endOfView == false);
     }
     
-    private String[] getInputs() {
-        
-        boolean valid = false;
-        String[] inputs = new String[1];
+//    private String[] getInputs() {
+//        
+//        boolean valid = false;
+//        String[] inputs = new String[1];
+//
+//        do {     
+//
+//            Scanner scanner = new Scanner(System.in);
+//            String input = scanner.nextLine();
+//            input = input.trim();
+//            input = input.toUpperCase();
+//
+//            //Put input into String
+//            char y;
+//            y = input.charAt(0);
+//            inputs[0] = Character.toString(y);
+//            
+//            if(input.length() < 1){
+//                System.out.println("Invalid value entered");
+//                System.out.println("You must enter a non-blank value");
+//                continue;
+//            } 
+//
+//             valid = true;
+//        
+//        } while (valid == false);
+//        return inputs;
+//    }
+//    private boolean doAction(String[] inputs) {
+//      
+//      switch (inputs[0]){
+//      
+//        case "I": inputs[0] = "I";
+//            displayInventoryView();
+//            break;
+//        case "Q": inputs[0] = "Q";
+//            System.out.println("Returning to Menu");
+//            displayGameMenu();
+//            return true;
+//      }  
+//        
+//      return false;
 
-        do {     
+//    }
 
-            Scanner scanner = new Scanner(System.in);
-            String input = scanner.nextLine();
-            input = input.trim();
-            input = input.toUpperCase();
-
-            //Put input into String
-            char y;
-            y = input.charAt(0);
-            inputs[0] = Character.toString(y);
-            
-            if(input.length() < 1){
-                System.out.println("Invalid value entered");
-                System.out.println("You must enter a non-blank value");
-                continue;
-            } 
-
-             valid = true;
-        
-        } while (valid == false);
-        return inputs;
-    }
-    private boolean doAction(String[] inputs) {
-      
-      switch (inputs[0]){
-      
-        case "I": inputs[0] = "I";
-            displayInventoryView();
-            break;
-        case "Q": inputs[0] = "Q";
-            System.out.println("Returning to Menu");
-            displayGameMenu();
-            return true;
-      }  
-        
-      return false;
-
-    }
-
-    private void displayInventoryView() {
+    void displayInventoryView() {
         InventoryView inventoryview = new InventoryView();
         inventoryview.displayInventoryView();
     }

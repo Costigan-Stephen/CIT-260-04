@@ -17,11 +17,11 @@ import pioneertrail.PioneerTrail;
         
 public abstract class View implements ViewInterfaces {
     
-        public View(){  
-        }
+    public View(){  
+    }
         
-        @Override
-        public void display(String type) {  //displayStartProgramView() {
+    @Override
+    public void display(String type) {  //displayStartProgramView() {
                 
         boolean endOfView = false; //    endOfView = false
         
@@ -35,11 +35,11 @@ public abstract class View implements ViewInterfaces {
  
             endOfView = doAction(inputs, type);
             
-            }while (endOfView != true); //WHILE endOfView != true
-        }
+        }while (endOfView != true); //WHILE endOfView != true
+    }
         
-        @Override
-        public void displayStart(String inputs){
+    @Override
+    public void displayStart(String inputs){
             boolean endOfView = false;
             
             do{
@@ -47,11 +47,9 @@ public abstract class View implements ViewInterfaces {
                 endOfView = doActionName(inputs);
             }while (endOfView == false);
         }
-            
-        
-        
-        @Override
-        public String[] getInputs() { //One character menu entries
+                  
+    @Override
+    public String[] getInputs() { //One character menu entries
             boolean valid = false;
             String[] inputs = new String[1];
 
@@ -103,52 +101,47 @@ public abstract class View implements ViewInterfaces {
     @Override
     public boolean doAction(String[] inputs, String type) {
         switch (inputs[0]){
-      
-        case "G": inputs[0] = "G"; //GOAL
-            if(type == "game"){
-//                displayGoal();
+            
+            /*TYPE BREAKDOWN BY CLASS
+                main    =   MainMenuView
+                help    =   HelpMenuView
+                game    =   GameMenuView
+                map     =   MapView
+            */
+        
+        case "D": inputs[0] = "D";
+            if(type == "help"){
+//              displayWarehouse();
                 break;
             }else{
                 System.out.println("Invalid value entered");
                 displayMenu(type);
-            }
-        case "M": inputs[0] = "M"; //DISPLAY MOVE
-            if(type == "main"){
-//              displayMove();
                 break;
-            }else{
-                System.out.println("Invalid value entered");
-                displayMenu(type);
             }
-        case "E": inputs[0] = "E";//ESTIMATE
-            if(type == "game"){
+        case "E": inputs[0] = "E";
+            if(type == "help"){
 //              displayEstimate();
                 break;
             }else{
                 System.out.println("Invalid value entered");
                 displayMenu(type);
-            }
-        case "R": inputs[0] = "R";//ESTIMATE
-            if(type == "main"){
-                StartExistingGameView startExistingGameView = new StartExistingGameView();
-                startExistingGameView.displayStartExistingGameView();
-                GameControl.createNewGame(PioneerTrail.getPlayer());//Create a new game
                 break;
-            }else{
-                System.out.println("Invalid value entered");
-                displayMenu(type);
             }
-        case "N": inputs[0] = "N";//New Game
-            if(type == "main"){
+        case "G": inputs[0] = "G";
+            if(type == "help"){
+//                displayGoal();
+                break;
+            }else if(type=="game"){
                 GameMenuView gameMenuView = new GameMenuView(); // gameMenuView = create a new GameMenuView object
-                gameMenuView.displayGameMenuView();// gameMenuView.displayGameMenuView();   
+                gameMenuView.displayGatherView();
                 break;
             }else{
                 System.out.println("Invalid value entered");
                 displayMenu(type);
+                break;
             }
-        case "H": inputs[0] = "H";//INPUTS
-            if(type == "game"){
+        case "H": inputs[0] = "H";
+            if(type == "help"){
 //              displayHarvest();
                 break;
             }else if(type == "main"){
@@ -158,29 +151,96 @@ public abstract class View implements ViewInterfaces {
             }else{
                 System.out.println("Invalid value entered");
                 displayMenu(type);
+                break;
             }
-        case "D": inputs[0] = "D";//WAREHOUSE
+        case "I": inputs[0] = "I";
             if(type == "game"){
-//              displayWarehouse();
+                GameMenuView gameMenuView = new GameMenuView(); // gameMenuView = create a new GameMenuView object
+                gameMenuView.displayInventoryView();
+                break;
+            }else if(type=="map"){
+                MapView mapView = new MapView(); // gameMenuView = create a new GameMenuView object
+                mapView.displayInventoryView();
                 break;
             }else{
                 System.out.println("Invalid value entered");
                 displayMenu(type);
+                break;
             }
+        case "L": inputs[0] = "L";
+            if(type == "game"){
+                GameMenuView gameMenuView = new GameMenuView(); // gameMenuView = create a new GameMenuView object
+                gameMenuView.loadGame();
+                break;
+            }else{
+                System.out.println("Invalid value entered");
+                displayMenu(type);
+                break;
+            }
+        case "M": inputs[0] = "M";
+            if(type == "help"){
+//                displayMove();
+                break;
+            }else if(type == "game"){
+                GameMenuView gameMenuView = new GameMenuView(); // gameMenuView = create a new GameMenuView object
+                gameMenuView.displayMapView();
+                break;
+            }else{
+                System.out.println("Invalid value entered");
+                displayMenu(type);
+                break;
+            }
+        case "N": inputs[0] = "N";
+            if(type == "main"){
+                GameMenuView gameMenuView = new GameMenuView(); // gameMenuView = create a new GameMenuView object
+                gameMenuView.displayGameMenuView();// gameMenuView.displayGameMenuView();   
+                break;
+            }else{
+                System.out.println("Invalid value entered");
+                displayMenu(type);
+                break;
+            }
+        case "R": inputs[0] = "R";
+            if(type == "main"){
+                StartExistingGameView startExistingGameView = new StartExistingGameView();
+                startExistingGameView.displayStartExistingGameView();
+                GameControl.createNewGame(PioneerTrail.getPlayer());//Create a new game
+                break;
+            }else if(type=="game"){
+                System.out.println("Returning to Game");
+                return true;
+            }else{
+                System.out.println("Invalid value entered");
+                displayMenu(type);
+                break;
+            }
+        case "S": inputs[0] = "S";
+            if(type == "game"){
+                GameMenuView gameMenuView = new GameMenuView(); // gameMenuView = create a new GameMenuView object
+                gameMenuView.saveGame();
+                break;
+            }else{
+                System.out.println("Invalid value entered");
+                displayMenu(type);
+                break;
+            }
+            
+        //////////QUIT/RETURN, CATCH MISSED QUIT STATEMENTS/////////
         case "Q": inputs[0] = "Q";
             return true;
             
         default:
             System.out.println("Invalid value entered");
             displayMenu(type);
+            break;
         }
         
         return false;
     }
-
     
-        @Override
-        public boolean doActionName(String inputs) {
+    
+    @Override
+    public boolean doActionName(String inputs) {
 
             String playerName = null;
             if (playerName == null){
@@ -192,8 +252,8 @@ public abstract class View implements ViewInterfaces {
                 return false;
             }
             System.out.println(
-            "\n============================================== " +
-            "\n\t      Welcome aboard " + playerName + "!"   
+            "\n========================================= " +
+            "\n\tWelcome aboard " + playerName + "!"   
             );
 
             displayMenu("main");
@@ -210,10 +270,10 @@ public abstract class View implements ViewInterfaces {
                 mainMenuView.viewMenu();
                 break;
             case "game": type = "game";
-                
+                GameMenuView gameMenuView = new GameMenuView();
+                gameMenuView.displayGameMenu();
                 break;
             case "help": type = "help";
-                
                 break;
         }
     }
