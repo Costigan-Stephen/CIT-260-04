@@ -159,8 +159,8 @@ public abstract class View implements ViewInterfaces {
                 gameMenuView.displayInventoryView();
                 break;
             }else if(type=="map"){
-                MapView mapView = new MapView(); // gameMenuView = create a new GameMenuView object
-                mapView.displayInventoryView();
+                GameMenuView gameMenuView = new GameMenuView(); // gameMenuView = create a new GameMenuView object
+                gameMenuView.displayInventoryView();
                 break;
             }else{
                 System.out.println("Invalid value entered");

@@ -5,9 +5,9 @@
  */
 package cit260.pioneertrail.view;
 
-import cit260.pioneertrail.control.GameControl;
-import java.util.Scanner;
-import pioneertrail.PioneerTrail;
+//import cit260.pioneertrail.control.GameControl;
+//import java.util.Scanner;
+//import pioneertrail.PioneerTrail;
 
 /**
  *
@@ -21,13 +21,15 @@ class GameMenuView extends View{
     
     public static void main(String[] args){ //Temporary incorporated to see it working and until it is implemented elsewhere!  Will be connected to inventory.
         GameMenuView gameMenu = new GameMenuView();
+        gameMenu.displayGameMenu();
         gameMenu.displayGameMenuView();
+        
     }
     
     public void displayGameMenu() {
         System.out.println(
         "==================================================== "
-        + "\n\t\t   Game MENU "
+        + "\n\t\t   GAME MENU "
         + "\n==================================================== "
         + "\n\t    S - Save your Game " 
         + "\n\t    L - Load a Saved Game " 
@@ -40,7 +42,7 @@ class GameMenuView extends View{
         );
     }
     
-    void displayGameMenuView(){
+    public void displayGameMenuView(){
         
         display("game");
         

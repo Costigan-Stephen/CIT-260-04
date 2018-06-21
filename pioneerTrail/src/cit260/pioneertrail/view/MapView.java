@@ -74,6 +74,7 @@ public class MapView extends View{
     
     void displayMapView() {
         
+        displayMap();
         display("map");
 //        boolean endOfView = false;
 //        
