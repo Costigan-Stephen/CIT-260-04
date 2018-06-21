@@ -236,8 +236,10 @@ public abstract class View implements ViewInterfaces {
         case "Q": inputs[0] = "Q";
             if(type == "main"){
                 System.out.println("Exiting Game...");
+                System.exit(0);
             }else{
                 System.out.println("Returning to Previous Menu...");
+                parentMenu(type); //Display parent menu to show options to player.
             }
             return true;
             
@@ -301,6 +303,32 @@ public abstract class View implements ViewInterfaces {
             case "help": type = "help";
                 HelpMenuView helpView = new HelpMenuView();
                 helpView.displayMenu();
+                break;
+        }
+    }
+    
+    private void parentMenu(String type){  //Displays main menu
+        
+            /*TYPE BREAKDOWN BY CLASS
+                main    =   MainMenuView
+                help    =   HelpMenuView
+                game    =   GameMenuView
+                map     =   MapView
+            */
+        
+        
+        switch (type){
+            case "main": type = "main";
+                //MAIN DOES NOT HAVE A PARENT MENU
+                break;
+            case "game": type = "game";
+                displayMenu("main");
+                break;
+            case "map": type = "map";
+                displayMenu("game");
+                break;
+            case "help": type = "help";
+                displayMenu("main");
                 break;
         }
     }
