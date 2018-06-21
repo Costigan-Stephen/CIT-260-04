@@ -5,8 +5,11 @@
  */
 package cit260.pioneertrail.view;
 
+import cit260.pioneertrail.control.GameControl;
+import cit260.pioneertrail.model.Player;
 import cit260.pioneertrail.view.ViewInterfaces;
 import java.util.Scanner;
+import pioneertrail.PioneerTrail;
 
 /**
  *
@@ -19,7 +22,7 @@ public abstract class View implements ViewInterfaces {
         }
         
         @Override
-        public void display() {  //displayStartProgramView() {
+        public void display(String type) {  //displayStartProgramView() {
                 
         boolean endOfView = false; //    endOfView = false
         
@@ -31,18 +34,28 @@ public abstract class View implements ViewInterfaces {
                 return; //RETURN
             } //ENDIF
  
-            endOfView = ViewInterfaces.doAction(inputs);
+            endOfView = doAction(inputs, type);
             
-        }while (endOfView != true); //WHILE endOfView != true
-    }
+            }while (endOfView != true); //WHILE endOfView != true
+        }
         
         @Override
-        public String[] getInputs(String promptMessage) { //One character menu entries
+        public void displayStart(String inputs){
+            boolean endOfView = false;
+    //        String[] inputs = this.getInputs();
+            do{
+                endOfView = doActionName(inputs);
+            }while (endOfView == false);
+        }
+            
+        
+        
+        @Override
+        public String[] getInputs() { //One character menu entries
             boolean valid = false;
             String[] inputs = new String[1];
 
             do {     
-                System.out.println(promptMessage);
                 Scanner scanner = new Scanner(System.in);
                 String input = scanner.nextLine();
                 input = input.trim();
@@ -66,25 +79,17 @@ public abstract class View implements ViewInterfaces {
         }
         
     @Override 
-    public String[] getInputString(String promptMessage) { //More than one character
+    public String getInputString(String promptMessage) { //More than one character
         
         boolean valid = false;
-        String[] inputs = new String[16];
+        String inputs = "";
 
         do {     
             System.out.println(promptMessage);
             Scanner scanner = new Scanner(System.in);
-            String input = scanner.nextLine();
-            input = input.trim().replace(" ", "_");
+            inputs = scanner.nextLine();
 
-            //TRIM BY FORCED CLIPPING
-            char y;
-            for(int x=0;x<input.length()&&x<16;x++){
-               y = input.charAt(x);
-               inputs[x] = Character.toString(y);
-            }
-
-            if(input.length() < 1){
+            if(inputs.length() < 1){
                 System.out.println("Invalid value entered, You must enter a non-blank value");
             } else {
             return inputs;
@@ -92,9 +97,91 @@ public abstract class View implements ViewInterfaces {
         
         } while (valid == false);
         
-        
         return inputs;
     }
+    
+    @Override
+    public boolean doAction(String[] inputs, String type) {
+        switch (inputs[0]){
+      
+        case "G": inputs[0] = "G"; //GOAL
+            if(type == "game"){
+//                displayGoal();
+                break;
+            }
+        case "M": inputs[0] = "M"; //DISPLAY MOVE
+            if(type == "main"){
+//              displayMove();
+                break;
+            }
+        case "E": inputs[0] = "E";//ESTIMATE
+            if(type == "game"){
+//              displayEstimate();
+                break;
+            }
+        case "R": inputs[0] = "R";//ESTIMATE
+            if(type == "main"){
+                StartExistingGameView startExistingGameView = new StartExistingGameView();
+                startExistingGameView.displayStartExistingGameView();
+                GameControl.createNewGame(PioneerTrail.getPlayer());//Create a new game
+            break;
+            }
+        case "N": inputs[0] = "N";//New Game
+            if(type == "main"){
+                GameMenuView gameMenuView = new GameMenuView(); // gameMenuView = create a new GameMenuView object
+                gameMenuView.displayGameMenuView();// gameMenuView.displayGameMenuView();   
+                break;
+            }
+        case "H": inputs[0] = "H";//INPUTS
+            if(type == "game"){
+//              displayHarvest();
+                System.out.println("SELECTED H");
+                break;
+            }else if(type == "main"){
+                HelpMenuView helpMenuView = new HelpMenuView();// helpMenuView = Create a new HelpMenuView
+                helpMenuView.displayHelpMenuView();
+                break;
+            }
+//            displayHarvest();
+            break;
+        case "D": inputs[0] = "D";//WAREHOUSE
+            if(type == "game"){
+//              displayWarehouse();
+                break;
+            }
+        case "Q": inputs[0] = "Q";
+            return true;
+        }  
+        
+        return false;
+    }
+
+    
+        @Override
+        public boolean doActionName(String inputs) {
+
+            String playerName = null;
+            if (playerName == null){
+                playerName = inputs;
+
+                Player player = GameControl.savePlayer(playerName);
+
+            } else {
+              return false;
+            }
+            System.out.print("\033[H\033[2J"); //Clears Screen
+            System.out.println(
+            "\n==================================================== " +
+            "\n\t      Welcome aboard " + playerName + "!"   
+            );
+
+            MainMenuView mainMenuView = new MainMenuView();
+            mainMenuView.displayMainMenuView();
+
+            return true;
+
+        }
+    
 }
 
     
