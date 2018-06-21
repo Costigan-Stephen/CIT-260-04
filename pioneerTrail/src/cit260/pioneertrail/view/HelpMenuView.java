@@ -78,12 +78,12 @@ class HelpMenuView {
         return false;
     }
 
-    private void displayGoal() {
+    void displayGoal() {
         System.out.println("This is the goal of the game!");
         displayMenu();
     }
 
-    private void displayMove() {
+    void displayMove() {
         System.out.println(
     "\nThe program displays a message prompting the player "
     + "\nto enter the direction and distance to move. If either"
@@ -100,7 +100,7 @@ class HelpMenuView {
         displayMenu();
     }
 
-    private void displayEstimate() {
+    void displayEstimate() {
         System.out.println(
         "The player selects a resource by entering the "
         + "\nrepresentative letter and hitting Enter.  Upon "
@@ -119,7 +119,7 @@ class HelpMenuView {
         displayMenu();
     }
 
-    private void displayHarvest() {
+    void displayHarvest() {
         System.out.println(
         "If the current location has no resources, a message "
         + "\nis displayed indicating that there are no resources "
@@ -144,7 +144,7 @@ class HelpMenuView {
         displayMenu();
     }
 
-    private void displayWarehouse() {
+    void displayWarehouse() {
         System.out.println("Warehouse is full!");
         displayMenu();
     }

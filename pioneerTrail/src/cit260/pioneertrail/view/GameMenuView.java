@@ -5,10 +5,6 @@
  */
 package cit260.pioneertrail.view;
 
-//import cit260.pioneertrail.control.GameControl;
-//import java.util.Scanner;
-//import pioneertrail.PioneerTrail;
-
 /**
  *
  * @author Stephen
@@ -21,7 +17,6 @@ class GameMenuView extends View{
     
     public static void main(String[] args){ //Temporary incorporated to see it working and until it is implemented elsewhere!  Will be connected to inventory.
         GameMenuView gameMenu = new GameMenuView();
-//        gameMenu.displayGameMenu();
         gameMenu.displayGameMenuView();
         
     }
@@ -46,45 +41,8 @@ class GameMenuView extends View{
         
         display("game");
         
-        
-//        boolean endOfView = false;
-//        
-//        displayGameMenu();
-//        
-//        do{
-//           String[] inputs = this.getInputs();
-//           endOfView = doAction(inputs); 
-//        }while (endOfView == false);
     }
     
-//    private String[] getInputs() {
-//        
-//        boolean valid = false;
-//        String[] inputs = new String[1];
-//
-//        do {     
-//
-//            Scanner scanner = new Scanner(System.in);
-//            String input = scanner.nextLine();
-//            input = input.trim();
-//            input = input.toUpperCase();
-//
-//            //Put input into String
-//            char y;
-//            y = input.charAt(0);
-//            inputs[0] = Character.toString(y);
-//            
-//            if(input.length() < 1){
-//                System.out.println("Invalid value entered");
-//                System.out.println("You must enter a non-blank value");
-//                continue;
-//            } 
-//
-//             valid = true;
-//        
-//        } while (valid == false);
-//        return inputs;
-//    }
 //    private boolean doAction(String[] inputs) {
 //      
 //      switch (inputs[0]){

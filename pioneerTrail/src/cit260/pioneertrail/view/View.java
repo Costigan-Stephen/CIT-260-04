@@ -113,7 +113,8 @@ public abstract class View implements ViewInterfaces {
         
         case "D": inputs[0] = "D";
             if(type == "help"){
-//              displayWarehouse();
+                HelpMenuView helpMenuView = new HelpMenuView();// helpMenuView = Create a new HelpMenuView
+                helpMenuView.displayWarehouse();
                 break;
             }else{
                 System.out.println("Invalid value entered");
@@ -122,7 +123,8 @@ public abstract class View implements ViewInterfaces {
             }
         case "E": inputs[0] = "E";
             if(type == "help"){
-//              displayEstimate();
+                HelpMenuView helpMenuView = new HelpMenuView();// helpMenuView = Create a new HelpMenuView
+                helpMenuView.displayEstimate();
                 break;
             }else{
                 System.out.println("Invalid value entered");
@@ -131,7 +133,8 @@ public abstract class View implements ViewInterfaces {
             }
         case "G": inputs[0] = "G";
             if(type == "help"){
-//                displayGoal();
+                HelpMenuView helpMenuView = new HelpMenuView();// helpMenuView = Create a new HelpMenuView
+                helpMenuView.displayGoal();
                 break;
             }else if(type=="game"){
                 GameMenuView gameMenuView = new GameMenuView(); // gameMenuView = create a new GameMenuView object
@@ -144,7 +147,8 @@ public abstract class View implements ViewInterfaces {
             }
         case "H": inputs[0] = "H";
             if(type == "help"){
-//              displayHarvest();
+                HelpMenuView helpMenuView = new HelpMenuView();// helpMenuView = Create a new HelpMenuView
+                helpMenuView.displayHarvest();
                 break;
             }else if(type == "main"){
                 HelpMenuView helpMenuView = new HelpMenuView();// helpMenuView = Create a new HelpMenuView
@@ -181,7 +185,8 @@ public abstract class View implements ViewInterfaces {
             }
         case "M": inputs[0] = "M";
             if(type == "help"){
-//                displayMove();
+                HelpMenuView helpMenuView = new HelpMenuView();// helpMenuView = Create a new HelpMenuView
+                helpMenuView.displayMove();
                 break;
             }else if(type == "game"){
                 GameMenuView gameMenuView = new GameMenuView(); // gameMenuView = create a new GameMenuView object
@@ -229,6 +234,11 @@ public abstract class View implements ViewInterfaces {
             
         //////////QUIT/RETURN, CATCH MISSED QUIT STATEMENTS/////////
         case "Q": inputs[0] = "Q";
+            if(type == "main"){
+                System.out.println("Exiting Game...");
+            }else{
+                System.out.println("Returning to Previous Menu...");
+            }
             return true;
             
         default:
