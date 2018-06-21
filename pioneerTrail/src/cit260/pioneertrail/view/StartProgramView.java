@@ -76,23 +76,25 @@ public class StartProgramView {
         do {     
             
             System.out.println("Please enter your name:");
-            Scanner scanner = new Scanner(System.in);
-            String input = scanner.nextLine();
-            input = input.trim().replace(" ", "_");
-
-            //TRIM BY FORCED CLIPPING
-            char y;
-            for(int x=0;x<input.length()&&x<16;x++){
-               y = input.charAt(x);
-               inputs[x] = Character.toString(y);
-            }
-
-            if(input.length() < 1){
-                System.out.println("Invalid value entered, You must enter a non-blank value");
-            } else {
-            return inputs;
-        }  
-        
+            
+           
+//            Scanner scanner = new Scanner(System.in);
+//            String input = scanner.nextLine();
+//            input = input.trim().replace(" ", "_");
+//
+//            //TRIM BY FORCED CLIPPING
+//            char y;
+//            for(int x=0;x<input.length()&&x<16;x++){
+//               y = input.charAt(x);
+//               inputs[x] = Character.toString(y);
+//            }
+//
+//            if(input.length() < 1){
+//                System.out.println("Invalid value entered, You must enter a non-blank value");
+//            } else {
+//            return inputs;
+//        }  
+//        
         } while (valid == false);
         return inputs;
     }

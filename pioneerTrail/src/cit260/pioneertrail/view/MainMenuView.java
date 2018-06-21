@@ -20,7 +20,7 @@ public class MainMenuView {
         
     public void displayMainMenuView() {  //displayStartProgramView() {
                 
-            boolean endOfView = false; //    endOfView = false
+        boolean endOfView = false; //    endOfView = false
         
         do { //DO
             String[] inputs = this.getInputs(); //inputs = getInputs()
@@ -37,17 +37,9 @@ public class MainMenuView {
         private String[] getInputs() { //    getInputs(): String[] {
        
             String[] inputs = new String[4];// inputs = new String array whose length = no. of inputs
-
-                System.out.println(
-            "========================================= "
-            + "\n\t   MAIN MENU "
-            + "\n========================================="
-            + "\n N - Start new game " 
-            + "\n R - Restart an existing game " 
-            + "\n H - Get help on how to play the game " 
-            + "\n Q - Quit game "
-            + "\n=========================================\n ");// Display the instructions
-
+            
+            viewMenu();
+                
             boolean valid = false; //valid = false
 
             while (valid == false) { //WHILE valid == false (while input value is not valid)
@@ -82,8 +74,8 @@ public class MainMenuView {
             case "H": menuItem = "H";
                 getHelp();// “H”: getHelp()
                 break;
-            case "Q": menuItem = "Q";
-                return true;// "Q" RETURN TRUE
+//            case "Q": menuItem = "Q";
+//                return true;// "Q" RETURN TRUE
             default: System.out.println("Invalid Menu item.");// DEFAULT: DISPLAY “Invalid menu item.”
         }// ENDSWITCH    
         return false;// RETURN false
@@ -107,6 +99,18 @@ public class MainMenuView {
         HelpMenuView helpMenuView = new HelpMenuView();// helpMenuView = Create a new HelpMenuView
         helpMenuView.displayHelpMenuView();
         // helpMenuView.displayHelpMenuView();
+    }
+
+    private void viewMenu() {
+        System.out.println(
+            "========================================= "
+            + "\n\t   MAIN MENU "
+            + "\n========================================="
+            + "\n N - Start new game " 
+            + "\n R - Restart an existing game " 
+            + "\n H - Get help on how to play the game " 
+            + "\n Q - Quit game "
+            + "\n=========================================\n ");// Display the instructions
     }
 
 }

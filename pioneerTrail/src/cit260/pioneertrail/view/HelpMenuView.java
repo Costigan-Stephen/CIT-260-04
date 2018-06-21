@@ -5,9 +5,6 @@
  */
 package cit260.pioneertrail.view;
 
-import cit260.pioneertrail.control.GameControl;
-import cit260.pioneertrail.model.Player;
-import java.util.Arrays;
 import java.util.Scanner;
 
 /**
@@ -73,9 +70,9 @@ class HelpMenuView {
         case "D": inputs[0] = "D";
             displayWarehouse();
             break;
-        case "Q": inputs[0] = "Q";
-            displayMainMenuView();
-            return true;
+//        case "Q": inputs[0] = "Q";
+//            displayMainMenuView();
+//            return true;
         }  
         
         return false;
