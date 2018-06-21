@@ -252,7 +252,6 @@ public abstract class View implements ViewInterfaces {
         return false;
     }
     
-    
     @Override
     public boolean doActionName(String inputs) {
 
@@ -277,6 +276,7 @@ public abstract class View implements ViewInterfaces {
 
         }
     
+    //SHOW MENU OF THE CURRENT LAYOUT
     private void displayMenu(String type){  //Displays main menu
         
             /*TYPE BREAKDOWN BY CLASS
@@ -306,7 +306,8 @@ public abstract class View implements ViewInterfaces {
                 break;
         }
     }
-    
+
+    //SHOW MENU OF THE PREVIOUS LAYOUT    
     private void parentMenu(String type){  //Displays main menu
         
             /*TYPE BREAKDOWN BY CLASS
