@@ -19,7 +19,7 @@ public class MainMenuView extends View{
     }
         
     public void displayMainMenuView() {  //displayStartProgramView() {
-        viewMenu();
+//        viewMenu();
         display("main");
     }
 

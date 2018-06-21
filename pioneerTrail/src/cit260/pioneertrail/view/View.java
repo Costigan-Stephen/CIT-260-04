@@ -22,7 +22,9 @@ public abstract class View implements ViewInterfaces {
         
     @Override
     public void display(String type) {  //displayStartProgramView() {
-                
+        
+        displayMenu(type);
+
         boolean endOfView = false; //    endOfView = false
         
         do { //DO
@@ -256,13 +258,22 @@ public abstract class View implements ViewInterfaces {
             "\n\tWelcome aboard " + playerName + "!"   
             );
 
-            displayMenu("main");
+            MainMenuView mainMenuView = new MainMenuView(); // gameMenuView = create a new GameMenuView object
+            mainMenuView.displayMainMenuView();
 
             return true;
 
         }
     
     private void displayMenu(String type){  //Displays main menu
+        
+            /*TYPE BREAKDOWN BY CLASS
+                main    =   MainMenuView
+                help    =   HelpMenuView
+                game    =   GameMenuView
+                map     =   MapView
+            */
+        
         
         switch (type){
             case "main": type = "main";

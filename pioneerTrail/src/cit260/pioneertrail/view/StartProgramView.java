@@ -63,7 +63,7 @@ public class StartProgramView extends View {
         String inputs = "";
         
         displayStart(inputs);
-        display("main");
+        
         
     }
     
