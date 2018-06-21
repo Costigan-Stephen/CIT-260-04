@@ -7,7 +7,6 @@ package cit260.pioneertrail.view;
 
 import cit260.pioneertrail.control.GameControl;
 import cit260.pioneertrail.model.Player;
-import cit260.pioneertrail.view.ViewInterfaces;
 import java.util.Scanner;
 import pioneertrail.PioneerTrail;
 
@@ -42,8 +41,9 @@ public abstract class View implements ViewInterfaces {
         @Override
         public void displayStart(String inputs){
             boolean endOfView = false;
-    //        String[] inputs = this.getInputs();
+            
             do{
+                inputs = this.getInputString("\nPlease enter your name: ");
                 endOfView = doActionName(inputs);
             }while (endOfView == false);
         }
@@ -108,50 +108,72 @@ public abstract class View implements ViewInterfaces {
             if(type == "game"){
 //                displayGoal();
                 break;
+            }else{
+                System.out.println("Invalid value entered");
+                displayMenu(type);
             }
         case "M": inputs[0] = "M"; //DISPLAY MOVE
             if(type == "main"){
 //              displayMove();
                 break;
+            }else{
+                System.out.println("Invalid value entered");
+                displayMenu(type);
             }
         case "E": inputs[0] = "E";//ESTIMATE
             if(type == "game"){
 //              displayEstimate();
                 break;
+            }else{
+                System.out.println("Invalid value entered");
+                displayMenu(type);
             }
         case "R": inputs[0] = "R";//ESTIMATE
             if(type == "main"){
                 StartExistingGameView startExistingGameView = new StartExistingGameView();
                 startExistingGameView.displayStartExistingGameView();
                 GameControl.createNewGame(PioneerTrail.getPlayer());//Create a new game
-            break;
+                break;
+            }else{
+                System.out.println("Invalid value entered");
+                displayMenu(type);
             }
         case "N": inputs[0] = "N";//New Game
             if(type == "main"){
                 GameMenuView gameMenuView = new GameMenuView(); // gameMenuView = create a new GameMenuView object
                 gameMenuView.displayGameMenuView();// gameMenuView.displayGameMenuView();   
                 break;
+            }else{
+                System.out.println("Invalid value entered");
+                displayMenu(type);
             }
         case "H": inputs[0] = "H";//INPUTS
             if(type == "game"){
 //              displayHarvest();
-                System.out.println("SELECTED H");
                 break;
             }else if(type == "main"){
                 HelpMenuView helpMenuView = new HelpMenuView();// helpMenuView = Create a new HelpMenuView
                 helpMenuView.displayHelpMenuView();
                 break;
+            }else{
+                System.out.println("Invalid value entered");
+                displayMenu(type);
             }
-//            displayHarvest();
-            break;
         case "D": inputs[0] = "D";//WAREHOUSE
             if(type == "game"){
 //              displayWarehouse();
                 break;
+            }else{
+                System.out.println("Invalid value entered");
+                displayMenu(type);
             }
         case "Q": inputs[0] = "Q";
             return true;
-        }  
+            
+        default:
+            System.out.println("Invalid value entered");
+            displayMenu(type);
+        }
         
         return false;
     }
@@ -167,21 +189,34 @@ public abstract class View implements ViewInterfaces {
                 Player player = GameControl.savePlayer(playerName);
 
             } else {
-              return false;
+                return false;
             }
-            System.out.print("\033[H\033[2J"); //Clears Screen
             System.out.println(
-            "\n==================================================== " +
+            "\n============================================== " +
             "\n\t      Welcome aboard " + playerName + "!"   
             );
 
-            MainMenuView mainMenuView = new MainMenuView();
-            mainMenuView.displayMainMenuView();
+            displayMenu("main");
 
             return true;
 
         }
     
+    private void displayMenu(String type){  //Displays main menu
+        
+        switch (type){
+            case "main": type = "main";
+                MainMenuView mainMenuView = new MainMenuView(); // gameMenuView = create a new GameMenuView object
+                mainMenuView.viewMenu();
+                break;
+            case "game": type = "game";
+                
+                break;
+            case "help": type = "help";
+                
+                break;
+        }
+    }
 }
 
     

@@ -60,11 +60,10 @@ public class StartProgramView extends View {
         );
         
         
-        
-        String message = "\nPlease enter your name";
-        String inputs = this.getInputString(message);
+        String inputs = "";
         
         displayStart(inputs);
+        display("main");
         
     }
     

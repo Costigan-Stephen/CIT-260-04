@@ -23,7 +23,7 @@ public class MainMenuView extends View{
         display("main");
     }
 
-    private void viewMenu() {
+    public void viewMenu() {
         System.out.println(
             "========================================= "
             + "\n\t   MAIN MENU "
