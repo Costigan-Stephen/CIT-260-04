@@ -27,7 +27,7 @@ public class RepairWagon extends View{
               
     }
 
-    public void displayMenu() {
+    public void displayRepairMenu() {
        String[] sel = { "A", "B", "C", "D", "E", "F", "G", "H" };
        System.out.println(
             "==================================================== "
@@ -68,14 +68,14 @@ public class RepairWagon extends View{
 
     }
     
-    public void repairYes() {
+    public boolean repairYes(String type) {
         System.out.println("\nRepair Successful!  Press Enter to continue...");
         
-        Scanner scanner = new Scanner(System.in);
-        scanner.nextLine();
+//        Scanner scanner = new Scanner(System.in);
+//        scanner.nextLine();
         
-        display("repair");
-        
+//        displayMenu(type);
+        return true;
     }
     
     public String[] showSelection(String[] input, String type, int x){

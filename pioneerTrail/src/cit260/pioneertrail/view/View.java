@@ -58,7 +58,7 @@ public abstract class View implements ViewInterfaces {
                 input = input.toUpperCase();
 
                 if(input.length() < 1){
-                    System.out.println("Invalid value entered, you must enter a non-blank value");
+                    System.out.print("");//simply reprint menu
                     displayMenu(type);
                 } else {
                     char y;
@@ -103,7 +103,8 @@ public abstract class View implements ViewInterfaces {
                 help    =   HelpMenuView
                 game    =   GameMenuView
                 map     =   MapView
-                repair  =   RepairView
+                repair  =   RepairWagon
+                part    =   RepairWagon -> Part
             */
             
         case "A": inputs[0] = "A";
@@ -304,15 +305,16 @@ public abstract class View implements ViewInterfaces {
         case "Y": inputs[0] = "Y";
             if("part".equals(type)){
                 RepairWagon repair = new RepairWagon(); 
-                repair.repairYes();
-                break;
+                repair.repairYes(type);
+                displayMenu(type);
+                return true;
             }else{
                 System.out.println("Invalid value entered");
                 displayMenu(type);
                 break;
             }
 
-        //////////QUIT/RETURN, CATCH MISSED QUIT STATEMENTS/////////
+        //////////--------------QUIT/RETURN------------/////////
         case "Q": inputs[0] = "Q";
             if("main".equals(type)){
                 System.out.println("Exiting Game...");
@@ -383,7 +385,7 @@ public abstract class View implements ViewInterfaces {
                 break;
             case "repair": type = "repair";
                 RepairWagon repair = new RepairWagon();
-                repair.displayMenu();
+                repair.displayRepairMenu();
                 break;
             case "help": type = "help";
                 HelpMenuView helpView = new HelpMenuView();
@@ -416,6 +418,9 @@ public abstract class View implements ViewInterfaces {
                 break;
             case "repair": type = "repair";
                 displayMenu("game");
+                break;
+            case "part": type = "part";
+                displayMenu("repair");
                 break;
             case "help": type = "help";
                 displayMenu("main");
