@@ -5,7 +5,6 @@
  */
 package cit260.pioneertrail.view;
 import cit260.pioneertrail.control.ResourceControl;
-import static cit260.pioneertrail.view.GameMenuView.displayGameMenu;
 import java.util.Scanner;
 import pioneertrail.PioneerTrail;
 
@@ -76,24 +75,21 @@ public class GatherView {
         // convert menuItem to upper case
 
         switch(menuItem) {// SWITCH menuItem
-            case "A": menuItem = "A";
+            case "A": 
                 getAnimals();
                 break;
-            case "G": menuItem = "G";
+            case "G": 
                 System.out.println("**** Possilbe Scene/Control for Gathering ***");
                 break;
-            case "T": menuItem = "T";
+            case "T": 
                 System.out.println("**** Possible Scene/Control for Trading ***");
                 break;
-            case "I": menuItem = "I";
+            case "I": 
                 getInventory();
                 break;
-            case "H": menuItem = "H";
+            case "H": 
                 getHelp();
                 break;
-            case "Q": menuItem = "Q";
-                System.out.println("Returning to Menu");
-                displayGameMenuView();
             default: System.out.println("Invalid Menu item.");// DEFAULT: DISPLAY “Invalid menu item.”
             
         }// ENDSWITCH  
