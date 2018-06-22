@@ -23,8 +23,10 @@ public abstract class View implements ViewInterfaces {
     @Override
     public void display(String type) {  //displayStartProgramView() {
         
-        displayMenu(type);
-
+        if(type != "part") { //Repair part
+           displayMenu(type); 
+        }
+        
         boolean endOfView = false; //    endOfView = false
         
         do { //DO
@@ -109,12 +111,47 @@ public abstract class View implements ViewInterfaces {
                 help    =   HelpMenuView
                 game    =   GameMenuView
                 map     =   MapView
+                repair  =   RepairView
             */
-        
+            
+        case "A": inputs[0] = "A";
+            if(type == "repair"){
+                RepairWagon repairPart = new RepairWagon();
+                repairPart.repairPart(inputs);
+                break;
+            }else{
+                System.out.println("Invalid value entered");
+                displayMenu(type);
+                break;
+            }
+        case "B": inputs[0] = "B";
+            if(type == "repair"){
+                RepairWagon repairPart = new RepairWagon();
+                repairPart.repairPart(inputs);
+                break;
+            }else{
+                System.out.println("Invalid value entered");
+                displayMenu(type);
+                break;
+            }
+        case "C": inputs[0] = "C";
+            if(type == "repair"){
+                RepairWagon repairPart = new RepairWagon();
+                repairPart.repairPart(inputs);
+                break;
+            }else{
+                System.out.println("Invalid value entered");
+                displayMenu(type);
+                break;
+            }
         case "D": inputs[0] = "D";
             if(type == "help"){
                 HelpMenuView helpMenuView = new HelpMenuView();// helpMenuView = Create a new HelpMenuView
                 helpMenuView.displayWarehouse();
+                break;
+            }else if(type=="repair"){
+                RepairWagon repairPart = new RepairWagon();
+                repairPart.repairPart(inputs);
                 break;
             }else{
                 System.out.println("Invalid value entered");
@@ -125,6 +162,24 @@ public abstract class View implements ViewInterfaces {
             if(type == "help"){
                 HelpMenuView helpMenuView = new HelpMenuView();// helpMenuView = Create a new HelpMenuView
                 helpMenuView.displayEstimate();
+                break;
+            }else if(type=="game"){
+                GameMenuView gameMenuView = new GameMenuView(); // gameMenuView = create a new GameMenuView object
+                gameMenuView.displayRepairView();
+                return true;
+            }else if(type=="repair"){
+                RepairWagon repairPart = new RepairWagon();
+                repairPart.repairPart(inputs);
+                break;
+            }else{
+                System.out.println("Invalid value entered");
+                displayMenu(type);
+                break;
+            }
+        case "F": inputs[0] = "F";
+            if(type == "repair"){
+                RepairWagon repairPart = new RepairWagon();
+                repairPart.repairPart(inputs);
                 break;
             }else{
                 System.out.println("Invalid value entered");
@@ -140,6 +195,10 @@ public abstract class View implements ViewInterfaces {
                 GameMenuView gameMenuView = new GameMenuView(); // gameMenuView = create a new GameMenuView object
                 gameMenuView.displayGatherView();
                 break;
+            }else if(type=="repair"){
+                RepairWagon repairPart = new RepairWagon();
+                repairPart.repairPart(inputs);
+                break;
             }else{
                 System.out.println("Invalid value entered");
                 displayMenu(type);
@@ -153,6 +212,10 @@ public abstract class View implements ViewInterfaces {
             }else if(type == "main"){
                 HelpMenuView helpMenuView = new HelpMenuView();// helpMenuView = Create a new HelpMenuView
                 helpMenuView.displayHelpMenuView();
+                break;
+            }else if(type=="repair"){
+                RepairWagon repairPart = new RepairWagon();
+                repairPart.repairPart(inputs);
                 break;
             }else{
                 System.out.println("Invalid value entered");
@@ -202,6 +265,19 @@ public abstract class View implements ViewInterfaces {
                 GameMenuView gameMenuView = new GameMenuView(); // gameMenuView = create a new GameMenuView object
                 gameMenuView.displayGameMenuView();// gameMenuView.displayGameMenuView();   
                 break;
+            }else if(type=="part"){
+                System.out.println("Returning to repair menu...");
+                parentMenu(type);
+                return true;
+            }else{
+                System.out.println("Invalid value entered");
+                displayMenu(type);
+                break;
+            }
+        case "P": inputs[0] = "P";
+            if(type == "repair"){
+                
+                break;
             }else{
                 System.out.println("Invalid value entered");
                 displayMenu(type);
@@ -214,8 +290,9 @@ public abstract class View implements ViewInterfaces {
                 GameControl.createNewGame(PioneerTrail.getPlayer());//Create a new game
                 break;
             }else if(type=="game"){
-                System.out.println("Returning to Game");
-                return true;
+                GameMenuView gameMenuView = new GameMenuView(); // gameMenuView = create a new GameMenuView object
+                gameMenuView.displayRepairView();
+                break;
             }else{
                 System.out.println("Invalid value entered");
                 displayMenu(type);
@@ -225,6 +302,16 @@ public abstract class View implements ViewInterfaces {
             if(type == "game"){
                 GameMenuView gameMenuView = new GameMenuView(); // gameMenuView = create a new GameMenuView object
                 gameMenuView.saveGame();
+                break;
+            }else{
+                System.out.println("Invalid value entered");
+                displayMenu(type);
+                break;
+            }
+        case "Y": inputs[0] = "Y";
+            if(type == "part"){
+                RepairWagon repair = new RepairWagon(); // gameMenuView = create a new GameMenuView object
+                repair.repairYes();
                 break;
             }else{
                 System.out.println("Invalid value entered");
@@ -284,6 +371,7 @@ public abstract class View implements ViewInterfaces {
                 help    =   HelpMenuView
                 game    =   GameMenuView
                 map     =   MapView
+                repair  =   RepairMenu
             */
         
         
@@ -300,6 +388,10 @@ public abstract class View implements ViewInterfaces {
                 MapView mapView = new MapView();
                 mapView.displayMap();
                 break;
+            case "repair": type = "repair";
+                RepairWagon repair = new RepairWagon();
+                repair.displayMenu();
+                break;
             case "help": type = "help";
                 HelpMenuView helpView = new HelpMenuView();
                 helpView.displayMenu();
@@ -315,6 +407,7 @@ public abstract class View implements ViewInterfaces {
                 help    =   HelpMenuView
                 game    =   GameMenuView
                 map     =   MapView
+                repair  =   RepairMenu
             */
         
         
@@ -326,6 +419,9 @@ public abstract class View implements ViewInterfaces {
                 displayMenu("main");
                 break;
             case "map": type = "map";
+                displayMenu("game");
+                break;
+            case "repair": type = "repair";
                 displayMenu("game");
                 break;
             case "help": type = "help";

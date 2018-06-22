@@ -23,7 +23,7 @@ public void displayHelpMenuView() {
 
     void displayGoal() {
         System.out.println("This is the goal of the game!"
-                + "\n\nPress Enter to return to menu...");
+    + "\n\nPress Enter to return to menu...");
     
         Scanner scanner = new Scanner(System.in);
         scanner.nextLine();

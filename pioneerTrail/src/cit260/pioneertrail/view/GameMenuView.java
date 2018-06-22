@@ -31,8 +31,9 @@ class GameMenuView extends View{
         + "\n\t    I - View Inventory "
         + "\n\t    M - Show the Map "
         + "\n\t    G - Gather Resources "
+        + "\n\t    R - Repair Wagon "
+        + "\n\t    E - Exit and Return to Game "
         + "\n\t    Q - Quit To Main Menu "
-        + "\n\t    R - Return to Game "
         + "\n====================================================\n\n "
         );
     }
@@ -73,6 +74,11 @@ class GameMenuView extends View{
     void displayGatherView() {
         GatherView gatherView = new GatherView();
         gatherView.displayGatherView();
+    }
+    
+    void displayRepairView() {
+        RepairWagon repairView = new RepairWagon();
+        repairView.displayRepairView();
     }
 
 }
