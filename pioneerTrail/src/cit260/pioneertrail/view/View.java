@@ -59,7 +59,7 @@ public abstract class View implements ViewInterfaces {
 
                 if(input.length() < 1){
                     displayMenu(type);
-                    System.out.println("Invalid value entered.  You must enter a non-blank value");
+                    System.out.println("Invalid value entered, you must enter a non-blank value");
                 } else {
                     char y;
                     y = input.charAt(0);
