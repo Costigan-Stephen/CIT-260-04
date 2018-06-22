@@ -29,9 +29,9 @@ public class StartProgramView extends View {
 "  |  ___/[  |/ .'`\\ \\[ `.-. |/ /__\\\\/ /__\\\\[ `/'`\\]| | [ `/'`\\]`'_\\ : [  |  | | \n" +
 " _| |_    | || \\__. | | | | || \\__.,| \\__., | |    | |, | |    // | |, | |  | | \n" +
 "|_____|  [___]'.__.' [___||__]'.__.' '.__.'[___]   \\__/[___]   \\'-;__/[___][___]"
-        + "\n==================================================== " 
-        + "\n BY Marilee Austin, Joseph Hughes, and Stephen Costigan"
-        + "\n\nPress Enter to continue...");
+        + "\n================================================================================ " 
+        + "\n\t   BY Marilee Austin, Joseph Hughes, and Stephen Costigan"
+        + "\n\n\t\t\t  Press Enter to continue...");
     
         Scanner scanner = new Scanner(System.in);
         scanner.nextLine();
