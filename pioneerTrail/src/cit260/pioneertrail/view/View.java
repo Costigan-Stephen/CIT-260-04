@@ -112,12 +112,17 @@ public abstract class View implements ViewInterfaces {
                 game    =   GameMenuView
                 map     =   MapView
                 repair  =   RepairView
+                gather  =   GatherView
             */
             
         case "A": inputs[0] = "A";
             if(type == "repair"){
                 RepairWagon repairPart = new RepairWagon();
                 repairPart.repairPart(inputs);
+                break;
+            }else if(type=="gather"){
+                HuntAnimalsView huntAnimalsView = new HuntAnimalsView();
+                huntAnimalsView.displayHuntAnimalsView();
                 break;
             }else{
                 System.out.println("Invalid value entered");
@@ -195,6 +200,10 @@ public abstract class View implements ViewInterfaces {
                 GameMenuView gameMenuView = new GameMenuView(); // gameMenuView = create a new GameMenuView object
                 gameMenuView.displayGatherView();
                 break;
+            }else if(type=="gather"){
+                GatherView gatherView = new GatherView();
+                gatherView.displayGatherView();
+                break;
             }else if(type=="repair"){
                 RepairWagon repairPart = new RepairWagon();
                 repairPart.repairPart(inputs);
@@ -214,8 +223,12 @@ public abstract class View implements ViewInterfaces {
                 helpMenuView.displayHelpMenuView();
                 break;
             }else if(type=="repair"){
-                RepairWagon repairPart = new RepairWagon();
-                repairPart.repairPart(inputs);
+                HelpMenuView helpMenuView = new HelpMenuView();// helpMenuView = Create a new HelpMenuView
+                helpMenuView.displayHelpMenuView();
+                break; 
+            }else if(type=="gather"){
+                HelpMenuView helpMenuView = new HelpMenuView();// helpMenuView = Create a new HelpMenuView
+                helpMenuView.displayHelpMenuView();
                 break;
             }else{
                 System.out.println("Invalid value entered");
@@ -230,6 +243,10 @@ public abstract class View implements ViewInterfaces {
             }else if(type=="map"){
                 GameMenuView gameMenuView = new GameMenuView(); // gameMenuView = create a new GameMenuView object
                 gameMenuView.displayInventoryView();
+                break;
+           }else if(type=="gather"){
+                GatherView gatherView = new GatherView();
+                gatherView.displayInventoryView();
                 break;
             }else{
                 System.out.println("Invalid value entered");
@@ -307,6 +324,16 @@ public abstract class View implements ViewInterfaces {
                 System.out.println("Invalid value entered");
                 displayMenu(type);
                 break;
+            }         
+        case "T": inputs[0] = "T";
+            if(type == "gather"){
+                TradeView tradeView = new TradeView();
+                tradeView.displayTradeView();
+                break;
+            }else{
+                System.out.println("Invalid value entered");
+                displayMenu(type);
+                break;
             }
         case "Y": inputs[0] = "Y";
             if(type == "part"){
@@ -372,6 +399,7 @@ public abstract class View implements ViewInterfaces {
                 game    =   GameMenuView
                 map     =   MapView
                 repair  =   RepairMenu
+                gather  =   GatherView
             */
         
         
@@ -396,6 +424,10 @@ public abstract class View implements ViewInterfaces {
                 HelpMenuView helpView = new HelpMenuView();
                 helpView.displayMenu();
                 break;
+            case "gather": type = "gather";
+                GatherView gatherView = new GatherView();
+                gatherView.displayGatherView();
+                break;
         }
     }
 
@@ -408,6 +440,7 @@ public abstract class View implements ViewInterfaces {
                 game    =   GameMenuView
                 map     =   MapView
                 repair  =   RepairMenu
+                gather  =   GatherView
             */
         
         
@@ -426,6 +459,9 @@ public abstract class View implements ViewInterfaces {
                 break;
             case "help": type = "help";
                 displayMenu("main");
+                break;
+            case "gather": type = "gather";
+                displayMenu("gather");
                 break;
         }
     }
