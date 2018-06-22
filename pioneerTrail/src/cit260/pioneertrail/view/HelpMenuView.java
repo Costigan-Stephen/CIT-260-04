@@ -7,6 +7,7 @@ package cit260.pioneertrail.view;
 
 import java.util.Scanner;
 
+
 /**
  *
  * @author Stephen
@@ -16,39 +17,16 @@ class HelpMenuView extends View {
  
 public void displayHelpMenuView() {
          
-    String inputs = ""; 
     display("help");
               
 }
 
-    private boolean doAction(String[] inputs) {
-        switch (inputs[0]){
-      
-        case "G": inputs[0] = "G";
-            displayGoal();
-            break;
-        case "M": inputs[0] = "M";
-            displayMove();
-            break;
-        case "E": inputs[0] = "E";
-            displayEstimate();
-            break;
-        case "H": inputs[0] = "H";
-            displayHarvest();
-            break;
-        case "D": inputs[0] = "D";
-            displayWarehouse();
-            break;
-//        case "Q": inputs[0] = "Q";
-//            displayMainMenuView();
-//            return true;
-        }  
-        
-        return false;
-    }
-
     void displayGoal() {
-        System.out.println("This is the goal of the game!");
+        System.out.println("This is the goal of the game!"
+                + "\n\nPress Enter to return to menu...");
+    
+        Scanner scanner = new Scanner(System.in);
+        scanner.nextLine();
         displayMenu();
     }
 
@@ -65,8 +43,14 @@ public void displayHelpMenuView() {
     + "\nobstacle is and the location of the obstacle on the map. "
     + "\nThe amount of the time taken to travel to the new location "
     + "\nis calculated and added to the total time taken. The map "
-    + "\nand game menu are then redisplayed.");
+    + "\nand game menu are then redisplayed.\n\nPress Enter to return to menu...");
+    
+        Scanner scanner = new Scanner(System.in);
+        scanner.nextLine();
+        
         displayMenu();
+    
+//        displayMenu();
     }
 
     void displayEstimate() {
@@ -83,8 +67,10 @@ public void displayHelpMenuView() {
         + "\ncalculate the amount of each item that is added "
         + "\nto the inventory. If the player is above the weight "
         + "\nlimit, the computer will display an error message"
-        + "\nprompting the user to enter an amount. "
-        );
+        + "\nprompting the user to enter an amount. \n\nPress Enter to return to menu...");
+    
+        Scanner scanner = new Scanner(System.in);
+        scanner.nextLine();
         displayMenu();
     }
 
@@ -108,13 +94,20 @@ public void displayHelpMenuView() {
         + "\nof the harvested resource plus the existing stock of"
         + "\nthat item, surpass the item maximum load capacity,"
         + "\na message will be displayed to the user stating that"
-        + "\nthe item stock is full."
-        );
+        + "\nthe item stock is full.\n\nPress Enter to return to menu...");
+    
+        Scanner scanner = new Scanner(System.in);
+        scanner.nextLine();
+        
         displayMenu();
     }
 
     void displayWarehouse() {
-        System.out.println("Warehouse is full!");
+        System.out.println("Warehouse is full!"
+                + "\n\nPress Enter to return to menu...");
+    
+        Scanner scanner = new Scanner(System.in);
+        scanner.nextLine();
         displayMenu();
     }
 

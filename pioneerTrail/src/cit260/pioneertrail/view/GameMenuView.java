@@ -42,37 +42,6 @@ class GameMenuView extends View{
         display("game");
         
     }
-    
-//    private boolean doAction(String[] inputs) {
-//      
-//      switch (inputs[0]){
-//      
-//        case "S": inputs[0] = "S";
-//            saveGame();
-//            break;
-//        case "L": inputs[0] = "L";
-//            loadGame();
-//            break;
-//        case "I": inputs[0] = "I";
-//            displayInventoryView();
-//            break;
-//        case "M": inputs[0] = "M";
-//            displayMapView();
-//            break;
-//        case "G": inputs[0] = "G";
-//            displayGatherView();
-//            break;
-//        case "Q": inputs[0] = "Q";
-//            mainMenu();
-//            return true;
-//        case "R": inputs[0] = "R";
-//            System.out.println("Returning to Game");
-//            return true;
-//      }  
-//        
-//      return false;
-//
-//    }
 
     void displayMapView() {
         MapView mapview = new MapView();
