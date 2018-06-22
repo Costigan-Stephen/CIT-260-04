@@ -11,46 +11,15 @@ import java.util.Scanner;
  *
  * @author Stephen
  */
-class HelpMenuView {
+class HelpMenuView extends View {
 
-    void displayHelpMenuView() {
-        boolean endOfView = false;
-        
-        displayMenu();
-        
-        do{
-           String[] inputs = this.getInputs();
-           endOfView = doAction(inputs); 
-        }while (endOfView == false);
-    }
-
-    private String[] getInputs() {
-        boolean valid = false;
-        String[] inputs = new String[1];
-
-        do {     
-
-            Scanner scanner = new Scanner(System.in);
-            String input = scanner.nextLine();
-            input = input.trim();
-            input = input.toUpperCase();
-
-            //Put input into String
-            char y;
-            y = input.charAt(0);
-            inputs[0] = Character.toString(y);
-            
-            if(input.length() < 1){
-                System.out.println("Invalid value entered");
-                System.out.println("You must enter a non-blank value");
-                continue;
-            } 
-
-             valid = true;
-        
-        } while (valid == false);
-        return inputs;
-    }
+ 
+public void displayHelpMenuView() {
+         
+    String inputs = ""; 
+    display("help");
+              
+}
 
     private boolean doAction(String[] inputs) {
         switch (inputs[0]){
@@ -70,9 +39,9 @@ class HelpMenuView {
         case "D": inputs[0] = "D";
             displayWarehouse();
             break;
-        case "Q": inputs[0] = "Q";
-            displayMainMenuView();
-            return true;
+//        case "Q": inputs[0] = "Q";
+//            displayMainMenuView();
+//            return true;
         }  
         
         return false;
