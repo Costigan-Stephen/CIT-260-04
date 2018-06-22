@@ -15,7 +15,12 @@ import pioneertrail.PioneerTrail;
 public class GatherView extends View{
     
     public GatherView() {
-    }     
+    }
+    
+            public void displayGatherView(){
+        display("gather");
+        
+    }
        
     public void displayMenu() {        
             System.out.println(
@@ -32,10 +37,7 @@ public class GatherView extends View{
             + "\n====================================================\n ");// Display the instructions     
     }
     
-        public void displayGatherView(){
-        display("gather");
-        
-    }
+
 
 //    private boolean doAction(String[] inputs) {
 //        

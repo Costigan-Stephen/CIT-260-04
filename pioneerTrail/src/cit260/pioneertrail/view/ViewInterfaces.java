@@ -13,7 +13,7 @@ public interface ViewInterfaces {
     
     public void display(String type);
     public void displayStart(String inputs);
-    public String [] getInputs();
+    public String [] getInputs(String type);
     public String getInputString(String promptMessage);
     public boolean doAction(String[] inputs, String type);
     public boolean doActionName(String inputs);
