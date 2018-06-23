@@ -16,11 +16,15 @@ public class MapView extends View{
     
     
     public MapView() {
+        promptMessage = GridDraw();
         
     }
     
-    private static void GridDraw() {
+    private static String GridDraw() {
         Location location = new Location();
+        
+        String mapGrid = "####################################################"
+        + "\n\t\t PIONEER TRAIL MAP ";
         
         location.row = 45;
         location.column = 8;
@@ -36,7 +40,7 @@ public class MapView extends View{
         int x;
         int y = 1;
         
-        System.out.println("       [" + b + "] - Border  [" + c + "] - Player  [" + z + "] - Zion       ");
+        mapGrid = "       [" + b + "] - Border  [" + c + "] - Player  [" + z + "] - Zion       \n";
         
         for (int i = 0; i < h; i++){
             
@@ -54,39 +58,20 @@ public class MapView extends View{
                 } else {
                     m = t; 
                 }
-                System.out.print(m);
+//                System.out.print(m);
+                mapGrid += m;
             }
-            System.out.println();
+//            System.out.println();
+                mapGrid += "\n";
             y++;
         }
+        mapGrid += "\t    Q - Return to Menu  I - Inventory "
+        + "\n####################################################\n ";
+        return mapGrid;
     }
     
-    public static void displayMap() {
-        System.out.println("####################################################"
-        + "\n\t\t PIONEER TRAIL MAP " );
-        
-        GridDraw();
-                
-        System.out.println("\t    Q - Return to Menu  I - Inventory "
-        + "\n####################################################\n "
-        );
-    }
-    
-    void displayMapView() {
-        
-//        displayMap();
-        display("map");
-//        boolean endOfView = false;
-//        
-//        displayMap();
-//        
-//        do{
-//           String[] inputs = this.getInputs();
-//           endOfView = doAction(inputs); 
-//        }while (endOfView == false);
-    }
-    
-//    private String[] getInputs() {
+  
+   //    private String[] getInputs() {
 //        
 //        boolean valid = false;
 //        String[] inputs = new String[1];
@@ -114,26 +99,23 @@ public class MapView extends View{
 //        } while (valid == false);
 //        return inputs;
 //    }
-//    private boolean doAction(String[] inputs) {
-//      
-//      switch (inputs[0]){
-//      
-//        case "I": inputs[0] = "I";
-//            displayInventoryView();
-//            break;
-//        case "Q": inputs[0] = "Q";
-//            System.out.println("Returning to Menu");
-//            displayGameMenu();
-//            return true;
-//      }  
-//        
-//      return false;
+    @Override
+    public boolean doAction(String input) {
+      
+      switch (input){
+      
+        case "I":
+            displayInventoryView();
+            break;
+      }  
+        
+      return false;
 
-//    }
+    }
 
     void displayInventoryView() {
         InventoryView inventoryview = new InventoryView();
-        inventoryview.displayInventoryView();
+        inventoryview.display();
     }
 
 }

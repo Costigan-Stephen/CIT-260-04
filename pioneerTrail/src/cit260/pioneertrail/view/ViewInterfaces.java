@@ -11,11 +11,11 @@ package cit260.pioneertrail.view;
  */
 public interface ViewInterfaces {
     
-    public void display(String type);
-    public void displayStart(String inputs);
-    public String [] getInputs(String type);
-    public String getInputString(String promptMessage);
-    public boolean doAction(String[] inputs, String type);
-    public boolean doActionName(String inputs);
+    public void display();
+//    public void displayStart(String inputs);
+    public String getInputs();
+    public String getInput(String menuStr);
+    public boolean doAction(String inputs);
+//    public boolean doActionName(String inputs);
     
 }
