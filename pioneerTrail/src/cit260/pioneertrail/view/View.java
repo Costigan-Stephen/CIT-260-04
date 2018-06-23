@@ -27,28 +27,14 @@ public abstract class View implements ViewInterfaces {
 
     @Override
     public void display() {
-
         boolean endOfView = false;
-
-        do {
-            String input = this.getInputs();
+        do {String input = this.getInputs();
             if (input.toUpperCase().equals("Q")) {
                 return;
-            }
-            endOfView = doAction(input);
-
-        } while (endOfView != true);
-    }
-//        
-//    @Override
-//    public void displayStart(String inputs){
-//            boolean endOfView = false;
-//            
-//            do{
-//                inputs = this.getInputString("\nPlease enter your name: ");
-//                endOfView = doActionName(inputs);
-//            }while (endOfView == false);
-//        }
+            } endOfView = doAction(input);   
+  
+        }  while (endOfView != true);
+    }  
 
     @Override
     public String getInputs() {
@@ -75,7 +61,284 @@ public abstract class View implements ViewInterfaces {
         } while (valid == false);
         return inputs;
     }
+}
 
+//        
+//    @Override
+//    public void displayStart(String inputs) {
+//        boolean endOfView = false;
+//
+//        do {
+//            inputs = this.getInputString("\nPlease enter your name: ");
+//            endOfView = doActionName(inputs);
+//        } while (endOfView == false);
+//    }
+
+////=======
+////    public boolean doAction(String[] inputs, String type) {
+////        OUTER:
+////        switch (inputs[0]) {
+////            case "A": inputs[0] = "A";
+////            if("repair".equals(type)){
+////                RepairWagon repairPart = new RepairWagon();
+////                repairPart.repairPart(inputs);
+////                break;
+////            }else if(type=="gather"){
+////                HuntAnimalsView huntAnimalsView = new HuntAnimalsView();
+////                huntAnimalsView.displayHuntAnimalsView();
+////                break;
+////            }else{
+////                System.out.println("Invalid value entered");
+////                displayMenu(type);
+////                break;
+////            }
+////            case "B": inputs[0] = "B";
+////            if("repair".equals(type)){
+////                RepairWagon repairPart = new RepairWagon();
+////                repairPart.repairPart(inputs);
+////                break;
+////            }else{
+////                System.out.println("Invalid value entered");
+////                displayMenu(type);
+////                break;
+////            }
+////            case "C": inputs[0] = "C";
+////            if("repair".equals(type)){
+////                RepairWagon repairPart = new RepairWagon();
+////                repairPart.repairPart(inputs);
+////                break;
+////            }else{
+////                System.out.println("Invalid value entered");
+////                displayMenu(type);
+////                break;
+////            }
+////            case "D": inputs[0] = "D";
+////            if("help".equals(type)){
+////                HelpMenuView helpMenuView = new HelpMenuView();
+////                helpMenuView.displayWarehouse();
+////                break;
+////            }else if("repair".equals(type)){
+////                RepairWagon repairPart = new RepairWagon();
+////                repairPart.repairPart(inputs);
+////                break;
+////            }else{
+////                System.out.println("Invalid value entered");
+////                displayMenu(type);
+////                break;
+////            }
+////            case "E": inputs[0] = "E";
+////            if("help".equals(type)){
+////                HelpMenuView helpMenuView = new HelpMenuView();
+////                helpMenuView.displayEstimate();
+////                break;
+////            }else if("game".equals(type)){
+////                GameMenuView gameMenuView = new GameMenuView();
+////                gameMenuView.displayRepairView();
+////                return true;
+////            }else if("repair".equals(type)){
+////                RepairWagon repairPart = new RepairWagon();
+////                repairPart.repairPart(inputs);
+////                break;
+////            }else{
+////                System.out.println("Invalid value entered");
+////                displayMenu(type);
+////                break;
+////            }
+////            case "F": inputs[0] = "F";
+////            if("repair".equals(type)){
+////                RepairWagon repairPart = new RepairWagon();
+////                repairPart.repairPart(inputs);
+////                break;
+////            }else{
+////                System.out.println("Invalid value entered");
+////                displayMenu(type);
+////                break;
+////            }
+////            case "G":
+////                inputs[0] = "G";
+////                if (null == type) {
+////                    System.out.println("Invalid value entered");
+////                    displayMenu(type);
+////                    break OUTER;
+////                } else {
+////                    switch (type) {
+////                        case "help":
+////                            HelpMenuView helpMenuView = new HelpMenuView();
+////                            helpMenuView.displayGoal();
+////                            break OUTER;
+////                        case "game":
+////                            GameMenuView gameMenuView = new GameMenuView();
+////                            gameMenuView.displayGatherView();
+////                            break OUTER;
+////                        case "gather":
+////                            GatherView gatherView = new GatherView();
+////                            gatherView.displayGatherView();
+////                            break OUTER;
+////                        case "repair":
+////                            RepairWagon repairPart = new RepairWagon();
+////                            repairPart.repairPart(inputs);
+////                            break OUTER;
+////                        default:
+////                            System.out.println("Invalid value entered");
+////                            displayMenu(type);
+////                            break;
+////                    }
+////                }
+////            case "H": inputs[0] = "H";
+////            if("help".equals(type)){
+////                HelpMenuView helpMenuView = new HelpMenuView();
+////                helpMenuView.displayHarvest();
+////                break;
+////            }else if("main".equals(type)){
+////                HelpMenuView helpMenuView = new HelpMenuView();
+////                helpMenuView.displayHelpMenuView();
+////                break;
+////            }else if("repair".equals(type)){
+////                HelpMenuView helpMenuView = new HelpMenuView();// helpMenuView = Create a new HelpMenuView
+////                helpMenuView.displayHelpMenuView();
+////                break; 
+////            }else if("gather".equals(type)){
+////                HelpMenuView helpMenuView = new HelpMenuView();// helpMenuView = Create a new HelpMenuView
+////                helpMenuView.displayHelpMenuView();
+////
+////            }else if("repair".equals(type)){
+////                RepairWagon repairPart = new RepairWagon();
+////                repairPart.repairPart(inputs);
+////                break;
+////            }else{
+////                System.out.println("Invalid value entered");
+////                displayMenu(type);
+////                break;
+////            }
+////            case "I": inputs[0] = "I";
+////            if("game".equals(type)){
+////                GameMenuView gameMenuView = new GameMenuView(); 
+////                gameMenuView.displayInventoryView();
+////                break;
+////            }else if("map".equals(type)){
+////                GameMenuView gameMenuView = new GameMenuView(); 
+////                gameMenuView.displayInventoryView();
+////                break;
+////            }else if("gather".equals(type)){
+////                GatherView gatherView = new GatherView();
+////                gatherView.displayInventoryView();
+////                break;
+////            }else{
+////                System.out.println("Invalid value entered");
+////                displayMenu(type);
+////                break;
+////            }
+////            case "L": inputs[0] = "L";
+////            if("game".equals(type)){
+////                GameMenuView gameMenuView = new GameMenuView(); 
+////                gameMenuView.loadGame();
+////                break;
+////            }else{
+////                System.out.println("Invalid value entered");
+////                displayMenu(type);
+////                break;
+////            }
+////            case "M": inputs[0] = "M";
+////            if("help".equals(type)){
+////                HelpMenuView helpMenuView = new HelpMenuView();
+////                helpMenuView.displayMove();
+////                break;
+////            }else if("game".equals(type)){
+////                GameMenuView gameMenuView = new GameMenuView();
+////                gameMenuView.displayMapView();
+////                break;
+////            }else{
+////                System.out.println("Invalid value entered");
+////                displayMenu(type);
+////                break;
+////            }
+////            case "N": inputs[0] = "N";
+////            if("main".equals(type)){
+////                GameMenuView gameMenuView = new GameMenuView(); 
+////                gameMenuView.displayGameMenuView();
+////                break;
+////            }else if("part".equals(type)){
+////                System.out.println("Returning to repair menu...");
+////                parentMenu(type);
+////                return true;
+////            }else{
+////                System.out.println("Invalid value entered");
+////                displayMenu(type);
+////                break;
+////            }
+////            case "P": inputs[0] = "P";
+////            if("repair".equals(type)){
+////                RepairWagon repairPart = new RepairWagon();
+////                repairPart.availableParts();
+////                break;
+////            }else{
+////                System.out.println("Invalid value entered");
+////                displayMenu(type);
+////                break;
+////            }
+////            case "R": inputs[0] = "R";
+////            if("main".equals(type)){
+////                StartExistingGameView startExistingGameView = new StartExistingGameView();
+////                startExistingGameView.displayStartExistingGameView();
+////                GameControl.createNewGame(PioneerTrail.getPlayer());//Create a new game
+////                break;
+////            }else if("game".equals(type)){
+////                GameMenuView gameMenuView = new GameMenuView(); 
+////                gameMenuView.displayRepairView();
+////                break;
+////            }else{
+////                System.out.println("Invalid value entered");
+////                displayMenu(type);
+////                break;
+////            }
+////            case "S": inputs[0] = "S";
+////            if("game".equals(type)){
+////                GameMenuView gameMenuView = new GameMenuView(); 
+////                gameMenuView.saveGame();
+////                break;
+////            }else{
+////                System.out.println("Invalid value entered");
+////                displayMenu(type);
+////                break;
+////            }
+////            case "T": inputs[0] = "T";
+////            if("gather".equals(type)){
+////                TradeView tradeView = new TradeView();
+////                tradeView.displayTradeView();
+////                break;
+////            }else{
+////                System.out.println("Invalid value entered");
+////                displayMenu(type);
+////                break;
+////            }
+////            case "Y": inputs[0] = "Y";
+////            if("part".equals(type)){
+////                RepairWagon repair = new RepairWagon(); 
+////                repair.repairYes(type);
+////                displayMenu(type);
+////                return true;
+////            }else{
+////                System.out.println("Invalid value entered");
+////                displayMenu(type);
+////                break;
+////            }
+////            case "Q": inputs[0] = "Q";
+////            if("main".equals(type)){
+////                System.out.println("Exiting Game...");
+////                System.exit(0);
+////            }else{
+////                System.out.println("Returning to Previous Menu...");
+////                parentMenu(type); //Display parent menu to show options to player.
+////            }
+////            return true;
+////            default:
+////                System.out.println("Invalid value entered");
+////                displayMenu(type);
+////                break;
+////        }
+////        
+////        return false;
+////    }
 //    @Override 
 //    public String getInputString(String promptMessage) { //More than one character
 //        
@@ -475,4 +738,4 @@ public abstract class View implements ViewInterfaces {
 ////                break;
 ////        }
 //    }
-}
+

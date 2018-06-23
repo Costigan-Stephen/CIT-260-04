@@ -37,15 +37,12 @@ public class MainMenuView extends View {
 
         switch (menuItem) {// SWITCH menuItem
             case "N":
-                menuItem = "N";
                 startNewGame(); // “N”: startNewGame()
                 break;
             case "R":
-                menuItem = "R";
                 restartGame();// “R”: restartGame()
                 break;
-            case "H":
-                menuItem = "H";
+            case "H":  
                 getHelp();// “H”: getHelp()
                 break;
             default:

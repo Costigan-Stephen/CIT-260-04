@@ -22,11 +22,10 @@ public class InventoryView extends View {
                 + "\n\t    O - Oxen"
                 + "\n\t    F - Food "
                 + "\n\t    S - Shop "
+                + "\n\t    G - Game Over "    
                 + "\n\t    Q - Return to the game "
-                + "\n====================================================\n\n "
-        );
-    }
-
+                + "\n====================================================\n\n ");
+                }
     @Override
     public boolean doAction(String input) {
         switch (input) {
@@ -41,6 +40,8 @@ public class InventoryView extends View {
             case "F":
                 showFood();
                 break;
+            case "G":
+            displayEndGameView();
             case "S":
                 displayShopView();
                 break;
@@ -62,9 +63,16 @@ public class InventoryView extends View {
 
     }
 
-    private static void displayShopView() {
-        System.out.println("Hello");
-        ShopView shop = new ShopView();
-        shop.display();
+    private void displayEndGameView() {
+        EndGameView endGameView = new EndGameView();
+        endGameView.display();
     }
-}
+
+    private void displayShopView() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+     }
+     
+
+
