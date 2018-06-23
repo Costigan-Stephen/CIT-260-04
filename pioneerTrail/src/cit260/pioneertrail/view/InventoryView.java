@@ -11,7 +11,8 @@ import java.util.Scanner;
  *
  * @author Joseph hughes
  */
-public class InventoryView {
+public class InventoryView 
+{
     
    public static void displayInventoryView() {
         System.out.println(
@@ -22,6 +23,7 @@ public class InventoryView {
         + "\n\t    O - Oxen" 
         + "\n\t    F - Food " 
         + "\n\t    S - Shop " 
+        + "\n\t    G - Game Over "        
         + "\n\t    Q - Return to the game "
         + "\n====================================================\n\n "
         );
@@ -88,15 +90,24 @@ public class InventoryView {
         case "S":
            displayShopView();
         break;
+        case "G":
+            displayEndGameView();
         case "Q": inputs[0] = "Q";
             System.out.println("Returning to Game");
             return true;
+        
       }  
       return true;  
      }
      private static void displayShopView() {
-         System.out.println("Hello");
+ 
         ShopView shop = new ShopView();
        shop.displayShopView();
      }
-}
+     private static void displayEndGameView(){
+      EndGameView game = new EndGameView();
+              game.displayEndGameView();
+     }
+     }
+     
+
