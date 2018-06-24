@@ -50,7 +50,7 @@ public abstract class View implements ViewInterfaces {
 
         do {
             System.out.println(menuStr);
-            String input = scanner.nextLine();
+            input = scanner.nextLine();
             input = input.trim();
             input = input.toUpperCase();
 
