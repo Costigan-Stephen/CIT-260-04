@@ -44,7 +44,7 @@ public abstract class View implements ViewInterfaces {
     @Override
     public String getInput(String menuStr) { //One character menu entries
         boolean valid = false;
-        String inputs = "";
+        String input = "";
 
         Scanner scanner = new Scanner(System.in);
 
@@ -58,8 +58,10 @@ public abstract class View implements ViewInterfaces {
                 System.out.print("You must enter a value");
                 continue;
             }
-        } while (valid == false);
-        return inputs;
+            valid = true;
+        } 
+        while (valid == false);
+        return input;
     }
 }
 
