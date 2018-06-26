@@ -18,14 +18,14 @@ public class MainMenuView extends View {
 
     public MainMenuView() {
         super(
-                "========================================= "
-                + "\n\t   MAIN MENU "
-                + "\n========================================="
-                + "\n N - Start new game "
-                + "\n R - Restart an existing game "
-                + "\n H - Get help on how to play the game "
-                + "\n Q - Quit game "
-                + "\n=========================================\n ");// Display the instructions
+                "==================================================== "
+                + "\n\t\t   MAIN MENU "
+                + "\n===================================================="
+                + "\n\t N - Start new game "
+                + "\n\t R - Restart an existing game "
+                + "\n\t H - Get help on how to play the game "
+                + "\n\t Q - Quit game "
+                + "\n====================================================\n ");// Display the instructions
     }
 
     @Override
