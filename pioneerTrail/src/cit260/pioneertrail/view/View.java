@@ -28,13 +28,15 @@ public abstract class View implements ViewInterfaces {
     @Override
     public void display() {
         boolean endOfView = false;
-        do {String input = this.getInputs();
+        do {
+            String input = this.getInputs();
             if (input.toUpperCase().equals("Q")) {
                 return;
-            } endOfView = doAction(input);   
-  
-        }  while (endOfView != true);
-    }  
+            }
+            endOfView = doAction(input);
+
+        } while (endOfView != true);
+    }
 
     @Override
     public String getInputs() {
@@ -59,8 +61,7 @@ public abstract class View implements ViewInterfaces {
                 continue;
             }
             valid = true;
-        } 
-        while (valid == false);
+        } while (valid == false);
         return input;
     }
 }
@@ -75,7 +76,6 @@ public abstract class View implements ViewInterfaces {
 //            endOfView = doActionName(inputs);
 //        } while (endOfView == false);
 //    }
-
 ////=======
 ////    public boolean doAction(String[] inputs, String type) {
 ////        OUTER:

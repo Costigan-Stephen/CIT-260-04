@@ -12,7 +12,7 @@ import java.util.Scanner;
  * @author Hughes
  */
 public class ShopView extends View {
-    
+
     public ShopView() {
         super(
                 "==================================================== "
@@ -24,11 +24,11 @@ public class ShopView extends View {
                 + "\n\t    I - Inventory "
                 + "\n====================================================\n\n ");
     }
-    
+
     @Override
     public boolean doAction(String input) {
         String menuItem = input.toUpperCase(); // menuItem = first element in inputs array & convert menuItem to upper case   
-        
+
         if (menuItem.equals("A")) {
             System.out.println("valid value entered");
             return true;

@@ -62,4 +62,3 @@ public class StartProgramView extends View {
         return true;
     }
 }
-

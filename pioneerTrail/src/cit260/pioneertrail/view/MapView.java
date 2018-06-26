@@ -12,20 +12,19 @@ import pioneertrail.PioneerTrail;
  *
  * @author Stephen
  */
-public class MapView extends View{
-    
-    
+public class MapView extends View {
+
     public MapView() {
         promptMessage = GridDraw();
-        
+
     }
-    
+
     private static String GridDraw() {
         Location location = new Location();
-        
+
         String mapGrid = "####################################################"
-        + "\n\t\t PIONEER TRAIL MAP ";
-        
+                + "\n\t\t PIONEER TRAIL MAP ";
+
         location.row = 45;
         location.column = 8;
         int zionX = 4;
@@ -39,39 +38,38 @@ public class MapView extends View{
         char m;
         int x;
         int y = 1;
-        
+
         mapGrid = "       [" + b + "] - Border  [" + c + "] - Player  [" + z + "] - Zion       \n";
-        
-        for (int i = 0; i < h; i++){
-            
+
+        for (int i = 0; i < h; i++) {
+
             x = 0;
-            for (int k = 0; k < l; k++){
+            for (int k = 0; k < l; k++) {
                 x++;
-                if (x == location.getRow() && y == location.getColumn()){
+                if (x == location.getRow() && y == location.getColumn()) {
                     m = c;
-                } else if (x == zionX && y == zionY){
+                } else if (x == zionX && y == zionY) {
                     m = z;
-                } else if (k == (l - 1) || x == 1){
+                } else if (k == (l - 1) || x == 1) {
                     m = b;
                 } else if (y == 1 || y == h) {
                     m = b;
                 } else {
-                    m = t; 
+                    m = t;
                 }
 //                System.out.print(m);
                 mapGrid += m;
             }
 //            System.out.println();
-                mapGrid += "\n";
+            mapGrid += "\n";
             y++;
         }
         mapGrid += "\t    Q - Return to Menu  I - Inventory "
-        + "\n####################################################\n ";
+                + "\n####################################################\n ";
         return mapGrid;
     }
-    
-  
-   //    private String[] getInputs() {
+
+    //    private String[] getInputs() {
 //        
 //        boolean valid = false;
 //        String[] inputs = new String[1];
@@ -101,15 +99,15 @@ public class MapView extends View{
 //    }
     @Override
     public boolean doAction(String input) {
-      
-      switch (input){
-      
-        case "I":
-            displayInventoryView();
-            break;
-      }  
-        
-      return false;
+
+        switch (input) {
+
+            case "I":
+                displayInventoryView();
+                break;
+        }
+
+        return false;
 
     }
 

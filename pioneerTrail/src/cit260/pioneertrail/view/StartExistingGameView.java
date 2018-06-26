@@ -12,12 +12,13 @@ import cit260.pioneertrail.model.Game;
  *
  * @author Stephen
  */
-class StartExistingGameView extends View{
+class StartExistingGameView extends View {
 
     public StartExistingGameView() {
-        super("Load Game?");        
+        super("Load Game?");
         //STUFF
     }
+
     @Override
     public boolean doAction(String input) {
 
@@ -38,5 +39,4 @@ class StartExistingGameView extends View{
 
         return true;
     }
-    }
-
+}

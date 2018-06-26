@@ -42,7 +42,7 @@ public class MainMenuView extends View {
             case "R":
                 restartGame();// “R”: restartGame()
                 break;
-            case "H":  
+            case "H":
                 getHelp();// “H”: getHelp()
                 break;
             default:
