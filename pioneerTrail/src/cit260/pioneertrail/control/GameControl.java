@@ -56,12 +56,15 @@ public class GameControl {
 //RETURN 1 // indicates success
 
         System.out.println("START NEW GAME");
+        return 0;
     }
     public static InventoryItem[] createItems(){
+        return null;
 
         
     }
     public static Map createMap(int noOfRows, int noOfColumns){
+        return null;
         
     }
     public static Game saveGame(String createNewGame) {
