@@ -8,6 +8,7 @@ package cit260.pioneertrail.control;
 import cit260.pioneertrail.model.Actor;
 import cit260.pioneertrail.model.Game;
 import cit260.pioneertrail.model.InventoryItem;
+import cit260.pioneertrail.model.ItemReference;
 import cit260.pioneertrail.model.Map;
 import cit260.pioneertrail.model.Player;
 import pioneertrail.PioneerTrail;
@@ -58,9 +59,31 @@ public class GameControl {
         System.out.println("START NEW GAME");
         return 0;
     }
-    public static InventoryItem[] createItems(){
-        return null;
+    public static InventoryItem[] createItems() {
+//items = create an array InventoryItem objects
+        InventoryItem[] items = new InventoryItem[200];
+        items[ItemReference.ax.ordinal()] = new InventoryItem();
+        items[ItemReference.ax.ordinal()].setDamageValue(2);
+        items[ItemReference.ax.ordinal()].setItemName("ax");
+        items[ItemReference.ax.ordinal()].setInventoryType(")inventory");
+        items[ItemReference.ax.ordinal()].setItemWeight(4);
+        
+        items[ItemReference.wheels.ordinal()] = new InventoryItem();
+        items[ItemReference.wheels.ordinal()].setDamageValue(0);
+//Assign values to each attribute in the InventoryItem object
+//Assign items1 to a position in the items array
+//item2 = new InventoryItem object
+//Assign values to each attribute in the InventoryItem object
+//Assign items2 to a position in the items array
+//… ax,
+//    wheels,
+//    oxen,
+//    coin,
+//    bullets;
+////…
+//RETURN items 
 
+  return  items;      
         
     }
     public static Map createMap(int noOfRows, int noOfColumns){
