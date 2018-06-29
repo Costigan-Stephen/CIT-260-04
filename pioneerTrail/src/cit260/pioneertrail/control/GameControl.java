@@ -9,6 +9,7 @@ import cit260.pioneertrail.model.Actor;
 import cit260.pioneertrail.model.Game;
 import cit260.pioneertrail.model.InventoryItem;
 import cit260.pioneertrail.model.ItemReference;
+import cit260.pioneertrail.model.Location;
 import cit260.pioneertrail.model.Map;
 import cit260.pioneertrail.model.Player;
 import cit260.pioneertrail.view.MapView;
@@ -113,7 +114,7 @@ public class GameControl {
         actors.add(new Actor("Samuel","Father",100.0,"Lead the Family"));
         actors.add(new Actor("Ralph","Son",80.0,"Cause a Ruckus"));
         actors.add(new Actor("Sarah","Daughter",80.0,"Be Daddy's Angel"));
-        actors.add(new Actor("Spot","The Doggy",50.0,"Get Belly Rubs"));
+        actors.add(new Actor("Spot","The Dog",50.0,"Get Belly Rubs"));
 
         return actors;
     }
@@ -122,5 +123,4 @@ public class GameControl {
         System.out.println("SAVE STUBB");
         return null;
     }
-
 }
