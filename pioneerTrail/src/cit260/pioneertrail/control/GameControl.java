@@ -6,7 +6,6 @@
 package cit260.pioneertrail.control;
 
 import cit260.pioneertrail.model.Actor;
-import cit260.pioneertrail.model.Actor.ActorNames;
 import cit260.pioneertrail.model.Game;
 import cit260.pioneertrail.model.InventoryItem;
 import cit260.pioneertrail.model.ItemReference;
