@@ -71,23 +71,32 @@ public class GameControl {
         items[ItemReference.axe.ordinal()] = new InventoryItem();
         items[ItemReference.axe.ordinal()].setDamageValue(2);
         items[ItemReference.axe.ordinal()].setItemName("axe");
-        items[ItemReference.axe.ordinal()].setInventoryType(")inventory");
+        items[ItemReference.axe.ordinal()].setInventoryType("inventory");
         items[ItemReference.axe.ordinal()].setItemWeight(4);
         
         items[ItemReference.wheels.ordinal()] = new InventoryItem();
         items[ItemReference.wheels.ordinal()].setDamageValue(0);
-//Assign values to each attribute in the InventoryItem object
-//Assign items1 to a position in the items array
-//item2 = new InventoryItem object
-//Assign values to each attribute in the InventoryItem object
-//Assign items2 to a position in the items array
-//… axe,
-//    wheels,
-//    oxen,
-//    coin,
-//    bullets;
-////…
-//RETURN items 
+        items[ItemReference.wheels.ordinal()].setInventoryType("Inventory");
+        items[ItemReference.wheels.ordinal()].setItemWeight(10);
+        items[ItemReference.wheels.ordinal()].setItemName("Wheel");
+        
+        items[ItemReference.oxen.ordinal()] = new InventoryItem();
+        items[ItemReference.oxen.ordinal()].setDamageValue(0);
+        items[ItemReference.oxen.ordinal()].setInventoryType("Inventory");
+        items[ItemReference.oxen.ordinal()].setItemWeight(20);
+        items[ItemReference.oxen.ordinal()].setItemName("Oxen");
+        
+        items[ItemReference.coin.ordinal()] = new InventoryItem();
+        items[ItemReference.coin.ordinal()].setDamageValue(0);
+        items[ItemReference.coin.ordinal()].setInventoryType("Inventory");
+        items[ItemReference.coin.ordinal()].setItemWeight(0);
+        items[ItemReference.coin.ordinal()].setItemName("coin");
+        
+        items[ItemReference.bullets.ordinal()] = new InventoryItem();
+        items[ItemReference.bullets.ordinal()].setDamageValue(0);
+        items[ItemReference.bullets.ordinal()].setInventoryType("Inventory");
+        items[ItemReference.bullets.ordinal()].setItemWeight(10);
+        items[ItemReference.bullets.ordinal()].setItemName("bullets");
 
   return  items;      
         
