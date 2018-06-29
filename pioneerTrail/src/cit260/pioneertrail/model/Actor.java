@@ -21,14 +21,15 @@ public class Actor {
 //    Dog("Spot","The Doggy", new Point(1,3),"Get Belly Rubs"), ActorNames;
     
     private String name;
+    private double health;
     private String description;
 //    private Point coordinates;
     private String purpose;
 
-    public Actor(String name, String description, String purpose) {
+    public Actor(String name, String description, double health, String purpose) {
         this.name = name;
         this.description = description;
-//        this.coordinates = coordinates;
+        this.health = health;
         this.purpose = purpose;
     }
     
@@ -36,6 +37,14 @@ public class Actor {
     
     }
 
+    public double getHealth() {
+        return health;
+    }
+
+    public void setHealth(double health) {
+        this.health = health;
+    }
+    
     public String getName() {
         return name;
     }
@@ -67,10 +76,10 @@ public class Actor {
     public void setPurpose(String purpose) {
         this.purpose = purpose;
     }
-    
+
     @Override
     public String toString() {
-        return "Actor{" + "name=" + name + ", description=" + description + ", purpose=" + purpose + '}';
+        return "Actor{" + "name=" + name + ", health=" + health + ", description=" + description + ", purpose=" + purpose + '}';
     }
-    
+
 }

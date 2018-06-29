@@ -69,11 +69,11 @@ public class GameControl {
     public static InventoryItem[] createItems() {
 //items = create an array InventoryItem objects
         InventoryItem[] items = new InventoryItem[200];
-        items[ItemReference.ax.ordinal()] = new InventoryItem();
-        items[ItemReference.ax.ordinal()].setDamageValue(2);
-        items[ItemReference.ax.ordinal()].setItemName("ax");
-        items[ItemReference.ax.ordinal()].setInventoryType(")inventory");
-        items[ItemReference.ax.ordinal()].setItemWeight(4);
+        items[ItemReference.axe.ordinal()] = new InventoryItem();
+        items[ItemReference.axe.ordinal()].setDamageValue(2);
+        items[ItemReference.axe.ordinal()].setItemName("axe");
+        items[ItemReference.axe.ordinal()].setInventoryType(")inventory");
+        items[ItemReference.axe.ordinal()].setItemWeight(4);
         
         items[ItemReference.wheels.ordinal()] = new InventoryItem();
         items[ItemReference.wheels.ordinal()].setDamageValue(0);
@@ -109,11 +109,11 @@ public class GameControl {
     public static ArrayList<Actor> createActors(){
 
         ArrayList<Actor> actors = new ArrayList<Actor>();
-        actors.add(new Actor("Samantha", "The Mother", "Lead the Family"));
-        actors.add(new Actor("Samuel","The Father", "Lead the Family"));
-        actors.add(new Actor("Ralph","Son", "Cause a Ruckus"));
-        actors.add(new Actor("Sarah","Daughter", "Be Daddy's Angel"));
-        actors.add(new Actor("Spot","The Doggy", "Get Belly Rubs"));
+        actors.add(new Actor("Samantha","Mother", 100.0, "Lead the Family"));
+        actors.add(new Actor("Samuel","Father",100.0,"Lead the Family"));
+        actors.add(new Actor("Ralph","Son",80.0,"Cause a Ruckus"));
+        actors.add(new Actor("Sarah","Daughter",80.0,"Be Daddy's Angel"));
+        actors.add(new Actor("Spot","The Doggy",50.0,"Get Belly Rubs"));
 
         return actors;
     }

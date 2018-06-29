@@ -10,7 +10,7 @@ package cit260.pioneertrail.model;
  * @author hughes
  */
 public enum ItemReference {
-    ax,
+    axe,
     wheels,
     oxen,
     coin,
