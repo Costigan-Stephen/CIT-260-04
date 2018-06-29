@@ -6,10 +6,15 @@
 package cit260.pioneertrail.control;
 
 import cit260.pioneertrail.model.Actor;
+import cit260.pioneertrail.model.Actor.ActorNames;
 import cit260.pioneertrail.model.Game;
 import cit260.pioneertrail.model.InventoryItem;
 import cit260.pioneertrail.model.Map;
 import cit260.pioneertrail.model.Player;
+import cit260.pioneertrail.view.MapView;
+import java.awt.Point;
+import java.sql.Array;
+import java.util.ArrayList;
 import pioneertrail.PioneerTrail;
 
 /**
@@ -35,11 +40,14 @@ public class GameControl {
 
    
     public static int createNewGame(Player player) {
-        if(player == null)
+        if(player == null){
             return -1;
-       Game game = new Game();
+        }
+        Game game = new Game();
         game.setPlayer(player);
+        game.setActors(createActors());
         PioneerTrail.setCurrentGame(game);
+        
        // Actor actor = Actor();
        // actor.set
         
@@ -59,14 +67,36 @@ public class GameControl {
         return 0;
     }
     public static InventoryItem[] createItems(){
+        InventoryItem items = new InventoryItem();
+        items.getInventory();
+        System.out.println("\nInventory called");
         return null;
-
-        
     }
+    
+//    public static InventoryItem[] setInventory(){
+//        return null;
+//    }
+    
     public static Map createMap(int noOfRows, int noOfColumns){
+        MapView map = new MapView();
+        map.setMap();
+        map.createMap();
+        System.out.println("\nmap called");
         return null;
-        
     }
+    
+    public static ArrayList<Actor> createActors(){
+
+        ArrayList<Actor> actors = new ArrayList<Actor>();
+        actors.add(new Actor("Samantha", "The Mother", "Lead the Family"));
+        actors.add(new Actor("Samuel","The Father", "Lead the Family"));
+        actors.add(new Actor("Ralph","Son", "Cause a Ruckus"));
+        actors.add(new Actor("Sarah","Daughter", "Be Daddy's Angel"));
+        actors.add(new Actor("Spot","The Doggy", "Get Belly Rubs"));
+
+        return actors;
+    }
+    
     public static Game saveGame(String createNewGame) {
         System.out.println("SAVE STUBB");
         return null;
