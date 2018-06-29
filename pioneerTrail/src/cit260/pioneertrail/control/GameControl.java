@@ -116,7 +116,17 @@ public class GameControl {
 
         return actors;
     }
+    public static Actor maxHealth(ArrayList<Actor> actor){
+//    BEGIN
     
+    double maxValue = 0;
+    for(Actor person: actor){
+      if (person.getHealth()> maxValue)
+      maxValue = person.getHealth();
+    }
+    return ;
+
+    }
     public static Game saveGame(String createNewGame) {
         System.out.println("SAVE STUBB");
         return null;
