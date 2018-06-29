@@ -6,7 +6,7 @@ import java.util.Objects;
 
 public class Location implements Serializable{
     
-    private String name;
+    private Scene scene;
     public int row;
     public int column;
     private int amountRemaining;
@@ -14,12 +14,12 @@ public class Location implements Serializable{
     public Location() {
     }
 
-    public String getName() {
-        return name;
+    public Scene getScene() {
+        return scene;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setScene(Scene scene) {
+        this.scene = scene;
     }
 
     public int getRow() {
@@ -49,7 +49,7 @@ public class Location implements Serializable{
     @Override
     public int hashCode() {
         int hash = 5;
-        hash = 41 * hash + Objects.hashCode(this.name);
+        hash = 41 * hash + Objects.hashCode(this.scene);
         hash = 41 * hash + this.row;
         hash = 41 * hash + this.column;
         hash = 41 * hash + this.amountRemaining;
@@ -77,7 +77,7 @@ public class Location implements Serializable{
         if (this.amountRemaining != other.amountRemaining) {
             return false;
         }
-        if (!Objects.equals(this.name, other.name)) {
+        if (!Objects.equals(this.scene, other.scene)) {
             return false;
         }
         return true;
@@ -85,7 +85,7 @@ public class Location implements Serializable{
 
     @Override
     public String toString() {
-        return "Location{" + "name=" + name + ", row=" + row + ", column=" + column + ", amountRemaining=" + amountRemaining + '}';
+        return "Location{" + "scene=" + scene + ", row=" + row + ", column=" + column + ", amountRemaining=" + amountRemaining + '}';
     }
 
 

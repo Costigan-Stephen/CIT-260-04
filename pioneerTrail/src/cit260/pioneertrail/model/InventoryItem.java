@@ -66,6 +66,10 @@ public class InventoryItem implements Serializable{
     public String getItemName() {
         return itemName;
     }
+    
+    public String getInventory() {
+        return inventoryType;
+    }
 
     public void setItemName(String itemName) {
         this.itemName = itemName;

@@ -15,13 +15,38 @@ public class Scene implements Serializable {
     private String description;
     private long travelTime;
     private boolean blocked;
-
-
+    private String symbol;
+    private Actor actor;
+    private InventoryItem resource;
 
     public Scene() {
 
     }
 
+    public InventoryItem getResource() {
+        return resource;
+    }
+
+    public void setResource(InventoryItem resource) {
+        this.resource = resource;
+    }
+
+    public Actor getActor() {
+        return actor;
+    }
+
+    public void setActor(Actor actor) {
+        this.actor = actor;
+    }
+ 
+    public String getSymbol() {
+        return symbol;
+    }
+
+    public void setSymbol(String symbol) {
+        this.symbol = symbol;
+    }
+    
     public String getDescription() {
         return description;
     }

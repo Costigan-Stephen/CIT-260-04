@@ -57,6 +57,7 @@ public class MapView extends View {
                 } else {
                     m = t;
                 }
+//                checklocation(x,y);
 //                System.out.print(m);
                 mapGrid += m;
             }
@@ -114,6 +115,14 @@ public class MapView extends View {
     void displayInventoryView() {
         InventoryView inventoryview = new InventoryView();
         inventoryview.display();
+    }
+
+    public void setMap() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void createMap() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

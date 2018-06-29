@@ -6,6 +6,7 @@
 package cit260.pioneertrail.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Objects;
 
 /**
@@ -17,10 +18,19 @@ public class Game implements Serializable{
     private long totalTime;
     private int noPeople;
     private Player player;
-
+    private ArrayList<Actor> actors;
+    
     public Game() {
     }
 
+    public ArrayList<Actor> getActors() {
+        return actors;
+    }
+
+    public void setActors(ArrayList<Actor> actors) {
+        this.actors = actors;
+    }
+    
     public long getTotalTime() {
         return totalTime;
     }

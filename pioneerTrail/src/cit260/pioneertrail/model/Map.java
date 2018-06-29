@@ -21,7 +21,6 @@ public class Map implements Serializable{
     private int columnCount;
     private int currentRow;
     private int currentColumn;
-    private Game game;
 
     public Map() {
     }
@@ -66,14 +65,6 @@ public class Map implements Serializable{
         this.currentColumn = currentColumn;
     }
 
-    public Game getGame() {
-        return game;
-    }
-
-    public void setGame(Game game) {
-        this.game = game;
-    }
-
     @Override
     public int hashCode() {
         int hash = 3;
@@ -82,7 +73,6 @@ public class Map implements Serializable{
         hash = 59 * hash + this.columnCount;
         hash = 59 * hash + this.currentRow;
         hash = 59 * hash + this.currentColumn;
-        hash = 59 * hash + Objects.hashCode(this.game);
         return hash;
     }
 
@@ -113,15 +103,12 @@ public class Map implements Serializable{
         if (!Objects.equals(this.description, other.description)) {
             return false;
         }
-        if (!Objects.equals(this.game, other.game)) {
-            return false;
-        }
         return true;
     }
 
     @Override
     public String toString() {
-        return "Map{" + "description=" + description + ", rowCount=" + rowCount + ", columnCount=" + columnCount + ", currentRow=" + currentRow + ", currentColumn=" + currentColumn + ", game=" + game + '}';
+        return "Map{" + "description=" + description + ", rowCount=" + rowCount + ", columnCount=" + columnCount + ", currentRow=" + currentRow + ", currentColumn=" + currentColumn + '}';
     }
 
  
