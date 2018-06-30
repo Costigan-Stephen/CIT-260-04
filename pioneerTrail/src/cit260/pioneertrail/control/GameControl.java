@@ -125,17 +125,17 @@ public class GameControl {
 
         return actors;
     }
-    public static Actor maxHealth(ArrayList<Actor> actor){
+  //  public static ArrayList<Double> maxHealth(ArrayList<Actor> actor){
 //    BEGIN
     
-    double maxValue = 0;
-    for(Actor person: actor){
-      if (person.getHealth()> maxValue)
-      maxValue = person.getHealth();
-    }
-    return ;
+//     ArrayList<Double> maxValue = new ArrayList<>();
+//    for(Actor person: actor){
+//      if (person.getHealth()> maxValue)
+//      maxValue = person.getHealth();
+//    }
+//    return maxValue;
 
-    }
+    //}
     public static Game saveGame(String createNewGame) {
         System.out.println("SAVE STUBB");
         return null;
