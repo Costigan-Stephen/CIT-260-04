@@ -187,7 +187,7 @@ public class MapControl { // MARILEE
         o = SceneType.Canyon.ordinal();
         scenes[o].setQuestion(getQuestion(o));
         scenes[o].setDescription("Canyon");
-        scenes[o].setBlocked(false);
+        scenes[o].setBlocked(true);
         scenes[o].setSymbol("_");
         scenes[o].setActor(getActor(o));
         scenes[o].setActor(getItem(o));
@@ -203,7 +203,7 @@ public class MapControl { // MARILEE
         o = SceneType.River.ordinal();
         scenes[o].setQuestion(getQuestion(o));
         scenes[o].setDescription("River");
-        scenes[o].setBlocked(false);
+        scenes[o].setBlocked(true);
         scenes[o].setSymbol("~");
         scenes[o].setActor(getActor(o));
         scenes[o].setActor(getItem(o));
@@ -211,7 +211,7 @@ public class MapControl { // MARILEE
         o = SceneType.Lake.ordinal();
         scenes[o].setQuestion(getQuestion(o));
         scenes[o].setDescription("Lake");
-        scenes[o].setBlocked(false);
+        scenes[o].setBlocked(true);
         scenes[o].setSymbol("≈");
         scenes[o].setActor(getActor(o));
         scenes[o].setActor(getItem(o));
