@@ -20,13 +20,14 @@ public class Actor {
 //    ChildFemale("Sarah","Daughter", new Point(1,2),"Be Daddy's Angel"),
 //    Dog("Spot","The Doggy", new Point(1,3),"Get Belly Rubs"), ActorNames;
     
+    private int index;
     private String name;
     private double health;
     private String description;
 //    private Point coordinates;
     private String purpose;
 
-    public Actor(String name, String description, double health, String purpose) {
+    public Actor(int index, String name, String description, double health, String purpose) {
         this.name = name;
         this.description = description;
         this.health = health;
@@ -35,6 +36,14 @@ public class Actor {
     
     public Actor(){
     
+    }
+
+    public int getIndex() {
+        return index;
+    }
+
+    public void setIndex(int index) {
+        this.index = index;
     }
 
     public double getHealth() {
