@@ -33,16 +33,6 @@ public class Location implements Serializable{
         }
         Location[][] locations = null;
         
-        /*
-          0 - 27 based on scene
-        |  |  |  |  |  |  |  |  |
-        
-        |  |  |  |  |  |  |  |  |
-        
-        |  |  |  |  |  |  |  |  |
-        
-        */
-        
 //        for (int r = 0; r < h; r++) {
 //            for (int c = 0; c < w; c++) {
 //                locations[rows][columns] = (new Location(r, c));

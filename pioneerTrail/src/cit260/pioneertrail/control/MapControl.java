@@ -134,8 +134,163 @@ public class MapControl { // MARILEE
     }
 
 //SCENES TO LOCATIONS 
-    private static void assignScenesToLocations(Scene[] scenes, Location[][] location) {
+    private static void assignScenesToLocations(Scene[] scenes, Map map) {
         System.out.println("assignScenesToLocation called");
+        
+        /*
+                        SCENES BY LOCATION
+           | 00 | 01 | 02 | 03 | 04 | 05 | 06 | 07 | 08 | 
+           |--------------------------------------------|
+        00 |  |  |  |  |  |  |  |  | 18 |
+           |--------------------------------------------|
+        01 |  |  |  |  |  |  |  |  |  |
+           |--------------------------------------------|
+        02 | 27 | 16 | 22 |  |  |  |  |  |  |
+           |--------------------------------------------|
+        */
+        
+        int r, c, s;
+        Location[][] locations = map.getLocations();
+        
+        r = 0; 
+        c = 0; 
+        s = SceneType.Town.ordinal();
+        locations[r][c].setScene(scenes[s]);
+        
+        r = 1; 
+        c = 0;  
+        s = SceneType.Town.ordinal();
+        locations[r][c].setScene(scenes[s]);
+        
+        r = 2; 
+        c = 0;  
+        s = SceneType.Town.ordinal();
+        locations[r][c].setScene(scenes[s]);
+        
+        r = 3; 
+        c = 0;  
+        s = SceneType.Town.ordinal();
+        locations[r][c].setScene(scenes[s]);
+        
+        r = 4; 
+        c = 0;  
+        s = SceneType.Town.ordinal();
+        locations[r][c].setScene(scenes[s]);
+        
+        r = 5; 
+        c = 0; 
+        s = SceneType.Town.ordinal();
+        locations[r][c].setScene(scenes[s]);
+        
+        r = 6; 
+        c = 0; 
+        s = SceneType.Town.ordinal();
+        locations[r][c].setScene(scenes[s]);
+        
+        r = 7; 
+        c = 0; 
+        s = SceneType.Town.ordinal();
+        locations[r][c].setScene(scenes[s]);
+        
+        r = 8; 
+        c = 0; 
+        s = SceneType.Town.ordinal();
+        locations[r][c].setScene(scenes[s]);
+        
+        // ----------------------------------------------
+        
+        r = 0; 
+        c = 1; 
+        s = SceneType.Town.ordinal();
+        locations[r][c].setScene(scenes[s]);
+        
+        r = 1; 
+        c = 1;  
+        s = SceneType.Town.ordinal();
+        locations[r][c].setScene(scenes[s]);
+        
+        r = 2; 
+        c = 1;  
+        s = SceneType.Town.ordinal();
+        locations[r][c].setScene(scenes[s]);
+        
+        r = 3; 
+        c = 1;  
+        s = SceneType.Town.ordinal();
+        locations[r][c].setScene(scenes[s]);
+        
+        r = 4; 
+        c = 1;  
+        s = SceneType.Town.ordinal();
+        locations[r][c].setScene(scenes[s]);
+        
+        r = 5; 
+        c = 1; 
+        s = SceneType.Town.ordinal();
+        locations[r][c].setScene(scenes[s]);
+        
+        r = 6; 
+        c = 1; 
+        s = SceneType.Town.ordinal();
+        locations[r][c].setScene(scenes[s]);
+        
+        r = 7; 
+        c = 1; 
+        s = SceneType.Town.ordinal();
+        locations[r][c].setScene(scenes[s]);
+        
+        r = 8; 
+        c = 1; 
+        s = SceneType.Town.ordinal();
+        locations[r][c].setScene(scenes[s]);
+        
+        // ----------------------------------------------
+        
+        r = 0; 
+        c = 2; 
+        s = SceneType.Town.ordinal();
+        locations[r][c].setScene(scenes[s]);
+        
+        r = 1; 
+        c = 2;  
+        s = SceneType.Town.ordinal();
+        locations[r][c].setScene(scenes[s]);
+        
+        r = 2; 
+        c = 2;  
+        s = SceneType.Town.ordinal();
+        locations[r][c].setScene(scenes[s]);
+        
+        r = 3; 
+        c = 2;  
+        s = SceneType.Town.ordinal();
+        locations[r][c].setScene(scenes[s]);
+        
+        r = 4; 
+        c = 2;  
+        s = SceneType.Town.ordinal();
+        locations[r][c].setScene(scenes[s]);
+        
+        r = 5; 
+        c = 2; 
+        s = SceneType.Town.ordinal();
+        locations[r][c].setScene(scenes[s]);
+        
+        r = 6; 
+        c = 2; 
+        s = SceneType.Town.ordinal();
+        locations[r][c].setScene(scenes[s]);
+        
+        r = 7; 
+        c = 2; 
+        s = SceneType.Town.ordinal();
+        locations[r][c].setScene(scenes[s]);
+        
+        r = 8; 
+        c = 2; 
+        s = SceneType.Town.ordinal();
+        locations[r][c].setScene(scenes[s]);
+        
     }
 
 // MOVE PLAYER
