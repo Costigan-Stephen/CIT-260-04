@@ -108,6 +108,92 @@ public class GameControl {
         items[i].setInventoryType("Inventory");
         items[i].setItemWeight(10);
         items[i].setItemName("bullets");
+        
+        i = ItemReference.fish.ordinal();
+        items[i] = new InventoryItem();
+        items[i].setDamageValue(0);
+        items[i].setInventoryType("Inventory");
+        items[i].setItemWeight(5);
+        items[i].setItemName("fish");
+
+        
+        i = ItemReference.freshWater.ordinal();
+        items[i] = new InventoryItem();
+        items[i].setDamageValue(0);
+        items[i].setInventoryType("Inventory");
+        items[i].setItemWeight(0);
+        items[i].setItemName("freshWater");
+
+        
+        i = ItemReference.flour.ordinal();
+        items[i] = new InventoryItem();
+        items[i].setDamageValue(0);
+        items[i].setInventoryType("Inventory");
+        items[i].setItemWeight(30);
+        items[i].setItemName("flour");
+
+        
+        i = ItemReference.squirrel.ordinal();
+        items[i] = new InventoryItem();
+        items[i].setDamageValue(0);
+        items[i].setInventoryType("Inventory");
+        items[i].setItemWeight(2);
+        items[i].setItemName("squirrel");
+
+        
+        i = ItemReference.rabbit.ordinal();
+        items[i] = new InventoryItem();
+        items[i].setDamageValue(0);
+        items[i].setInventoryType("Inventory");
+        items[i].setItemWeight(5);
+        items[i].setItemName("rabbit");
+
+        
+        i = ItemReference.deer.ordinal();
+        items[i] = new InventoryItem();
+        items[i].setDamageValue(0);
+        items[i].setInventoryType("Inventory");
+        items[i].setItemWeight(100);
+        items[i].setItemName("deer");
+
+        
+        i = ItemReference.cougar.ordinal();
+        items[i] = new InventoryItem();
+        items[i].setDamageValue(0);
+        items[i].setInventoryType("Inventory");
+        items[i].setItemWeight(150);
+        items[i].setItemName("cougar");
+
+        
+        i = ItemReference.bear.ordinal();
+        items[i] = new InventoryItem();
+        items[i].setDamageValue(0);
+        items[i].setInventoryType("Inventory");
+        items[i].setItemWeight(200);
+        items[i].setItemName("bear");
+
+        
+                i = ItemReference.bison.ordinal();
+        items[i] = new InventoryItem();
+        items[i].setDamageValue(0);
+        items[i].setInventoryType("Inventory");
+        items[i].setItemWeight(300);
+        items[i].setItemName("bison");
+
+        i = ItemReference.driedMeat.ordinal();
+        items[i] = new InventoryItem();
+        items[i].setDamageValue(0);
+        items[i].setInventoryType("Inventory");
+        items[i].setItemWeight(5);
+        items[i].setItemName("driedMeat");
+
+        i = ItemReference.clothing.ordinal();
+        items[i] = new InventoryItem();
+        items[i].setDamageValue(0);
+        items[i].setInventoryType("Inventory");
+        items[i].setItemWeight(5);
+        items[i].setItemName("clothing");
+
 
         return items;
 

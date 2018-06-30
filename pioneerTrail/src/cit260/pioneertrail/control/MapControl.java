@@ -125,7 +125,7 @@ public class MapControl { // MARILEE
         //}
     }
 
-//ITEMS TO SCENES
+//ITEMS TO SCENES MARILEE
     private static void assignItemsToScenes(InventoryItem[] items, Scene[] scenes) {
 
         // Assign items to the first resource scene
@@ -149,7 +149,7 @@ public class MapControl { // MARILEE
         //…
     }
 
-//SCENES TO LOCATIONS 
+//SCENES TO LOCATIONS STEPHEN
     private static void assignScenesToLocations(Scene[] scenes, Map map) {
         System.out.println("assignScenesToLocation called");
 
@@ -317,7 +317,7 @@ public class MapControl { // MARILEE
         map.setCurrentColumn(column);
     }
 
-//CREATE SCENES
+//CREATE SCENES STEPHEN
     public static Scene[] createScenes() {//scenes = createScenes()
 
         int s = 27;

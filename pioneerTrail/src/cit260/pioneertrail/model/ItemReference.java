@@ -15,4 +15,16 @@ public enum ItemReference {
     oxen,
     coin,
     bullets;
+    fish;
+    freshWater;
+    flour;
+    squirrel;
+    rabbit;
+    deer;
+    cougar;
+    bear;
+    bison;
+    driedMeat;
+    clothing;  
+    
 }
