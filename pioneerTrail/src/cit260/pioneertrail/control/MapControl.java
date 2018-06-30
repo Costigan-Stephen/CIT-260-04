@@ -6,10 +6,12 @@
 package cit260.pioneertrail.control;
 
 import cit260.pioneertrail.model.Actor;
+import cit260.pioneertrail.model.Answers;
 import cit260.pioneertrail.model.InventoryItem;
 import cit260.pioneertrail.model.Location;
 import cit260.pioneertrail.model.Map;
 import cit260.pioneertrail.model.Player;
+import cit260.pioneertrail.model.Question;
 import cit260.pioneertrail.model.QuestionType;
 import cit260.pioneertrail.model.Scene;
 import cit260.pioneertrail.model.SceneType;
@@ -60,7 +62,7 @@ public class MapControl { // MARILEE
         return locations; // RETURN locations 
     }
     
-        public static InventoryItem[] createItems() {
+//        public static InventoryItem[] createItems() {
 
 //        InventoryItem[] items = new InventoryItem[200];
 //        items[ItemReference.axe.ordinal()] = new InventoryItem();
@@ -72,26 +74,35 @@ public class MapControl { // MARILEE
     
 
 //CREATE QUESTIONS MARILEE
-    private static QuestionType[] createQuestions() {
+    private static Question[] createQuestions() {
 
-        QuestionType[] questions = new QuestionType[6];//questions = Create an array Question objects
-        questions[QuestionType.buying.ordinal()] = new ; //question1 = Create a new Question object
-                //Assign values to each attribute in the Question object
-                //Assign question2 to its position in the questions array
-                "Would you like to buy some food?",
-                "Visit the Nauvoo Store Location.");
-        questions[QuestionType.findFood.ordinal()] = findFood; //question2 = Create a new Question object
-                "Are you hungry? Would you like to go hunt for animals?",
-                "Check your inventory for bullets to choose how many to use.");
-        questions[QuestionType.injury.ordinal()] = injury;
-                "You are injured! Would you like to rest in this location?",
-                "Trade with local natives for help.");
-        questions[QuestionType.weather.ordinal()] = weather;
-                "Storm Cloud approach. Do you want to stop and rest?",
-                "Find shelter soon.");
-        questions[QuestionType.actor.ordinal()] = actor;
-                "The dog is barking. Do you want to find out why?",
-                "There may be trouble.");
+        Question[] questions = new Question[6];//questions = Create an array Question objects
+       
+        questions[QuestionType.buying.ordinal()] = new Question(); //question1 = Create a new Question object
+        questions[QuestionType.buying.ordinal()].setQuestionText("Would you "
+                + "like to buy some food? \nVisit the Nauvoo Store Location."); 
+ 
+        questions[QuestionType.findFood.ordinal()] = new Question(); //question2 = Create a new Question object
+        questions[QuestionType.findFood.ordinal()].setQuestionText("Are you "
+                + "hungry? Would you like to go hunt for animals? "
+                + "\nCheck your inventory for bullets to choose how many to use.");
+        
+        questions[QuestionType.injury.ordinal()] = new Question();
+        questions[QuestionType.injury.ordinal()].setQuestionText("You are injured! "
+                + "Would you like to rest in this location? \nTrade with local natives for help.");
+        
+        questions[QuestionType.weather.ordinal()] = new Question();
+        questions[QuestionType.weather.ordinal()].setQuestionText("Storm clouds "
+                + "approach. Do you want to stop and rest? \nFind shelter soon.");
+        
+        questions[QuestionType.actor.ordinal()] = new Question();
+        questions[QuestionType.actor.ordinal()].setQuestionText("The dog is barking. "
+                + "Do you want to find out why? \nThere may be trouble.");
+        
+        questions[QuestionType.geography.ordinal()] = new Question();
+        questions[QuestionType.geography.ordinal()].setQuestionText("Rough Terrain"
+                + "lies ahead. Do you want to purchase supplies? \nVisit the store"
+                + "or trade with natives to perpare");
 
         return questions;
     }
