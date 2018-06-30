@@ -63,17 +63,24 @@ public class MapControl { // MARILEE
 //CREATE QUESTIONS MARILEE
     private static QuestionType[] createQuestions() {
 
-        QuestionType[] questions = new QuestionType[2];//questions = Create an array Question objects
-        questions[0] = new QuestionType( //question1 = Create a new Question object
-                //Assign values to each attribute in the Question object
-                //Assign question1 to its position in the questions array
-                "Are you hungry? Would you like to go hunt for animals?",
-                "Check your inventory for bullets to choose how many to use.");
-        questions[1] = new QuestionType( //question2 = Create a new Question object
+        QuestionType[] questions = new QuestionType[6];//questions = Create an array Question objects
+        questions[QuestionType.buying.ordinal()] = buyingQuestion; //question1 = Create a new Question object
                 //Assign values to each attribute in the Question object
                 //Assign question2 to its position in the questions array
+                "Would you like to buy some food?",
+                "Visit the Nauvoo Store Location.");
+        questions[QuestionType.findFood.ordinal()] = findFood; //question2 = Create a new Question object
+                "Are you hungry? Would you like to go hunt for animals?",
+                "Check your inventory for bullets to choose how many to use.");
+        questions[QuestionType.injury.ordinal()] = injury;
                 "You are injured! Would you like to rest in this location?",
                 "Trade with local natives for help.");
+        questions[QuestionType.weather.ordinal()] = weather;
+                "Storm Cloud approach. Do you want to stop and rest?",
+                "Find shelter soon.");
+        questions[QuestionType.actor.ordinal()] = actor;
+                "The dog is barking. Do you want to find out why?",
+                ""
 
         return questions;
     }

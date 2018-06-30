@@ -5,12 +5,13 @@
  * and open the template in the editor.
  */
 package cit260.pioneertrail.model;
+import java.io.Serializable;
 
 /**
  *
  * @author hughes
  */
-public enum QuestionType {
+public enum QuestionType implements Serializable{
     buying,
     findFood,
     injury,
