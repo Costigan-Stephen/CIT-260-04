@@ -489,7 +489,7 @@ public class MapControl { // MARILEE
         scenes[o].setDescription("DryRiver");
         scenes[o].setBlocked(false);
         scenes[o].setSymbol("͜");
-//        scenes[o].setActor(getActor(o));
+        scenes[o].setActor(getActor(o));
 
         o = SceneType.Flooded.ordinal();
         scenes[o].setQuestion(getQuestion(o));
