@@ -167,15 +167,18 @@ public class MapControl { // MARILEE
         System.out.println("assignScenesToLocation called");
         
         /*
+        START       18
+        END         27
+        BLOCKED:    5, 7, 8, 16, 23, 25,
                         SCENES BY LOCATION
-           | 00 | 01 | 02 | 03 | 04 | 05 | 06 | 07 | 08 | 
-           |--------------------------------------------|
-        00 |  |  |  |  |  |  |  |  | 18 |
-           |--------------------------------------------|
-        01 |  |  |  |  |  |  |  |  |  |
-           |--------------------------------------------|
-        02 | 27 | 16 | 22 |  |  |  |  |  |  |
-           |--------------------------------------------|
+             | 00 | 01 | 02 | 03 | 04 | 05 | 06 | 07 | 08 | 
+        |----|--------------------------------------------|
+          00 | 10 | 21 | 04 | 17 | 12 | 05 | 14 | 01 | 18 |
+        |----|----|----|----|----|----|----|----|----|----|
+          01 | 15 | 26 | 25 | 07 | 19 | 24 | 13 | 03 | 02 |
+        |----|----|----|----|----|----|----|----|----|----|
+          02 | 27 | 16 | 22 | 09 | 08 | 11 | 20 | 06 | 23 |
+        |----|--------------------------------------------|
         */
         
         int r, c, s;
@@ -183,42 +186,42 @@ public class MapControl { // MARILEE
         
         r = 0; 
         c = 0; 
-        s = SceneType.Town.ordinal();
+        s = SceneType.Tundra.ordinal();
         locations[r][c].setScene(scenes[s]);
         
         r = 1; 
         c = 0;  
-        s = SceneType.Town.ordinal();
+        s = SceneType.IndianCamp.ordinal();
         locations[r][c].setScene(scenes[s]);
         
         r = 2; 
         c = 0;  
-        s = SceneType.Town.ordinal();
+        s = SceneType.Jungle.ordinal();
         locations[r][c].setScene(scenes[s]);
         
         r = 3; 
         c = 0;  
-        s = SceneType.Town.ordinal();
+        s = SceneType.Stream.ordinal();
         locations[r][c].setScene(scenes[s]);
         
         r = 4; 
         c = 0;  
-        s = SceneType.Town.ordinal();
+        s = SceneType.CrackedEarth.ordinal();
         locations[r][c].setScene(scenes[s]);
         
         r = 5; 
         c = 0; 
-        s = SceneType.Town.ordinal();
+        s = SceneType.Canyon.ordinal();
         locations[r][c].setScene(scenes[s]);
         
         r = 6; 
         c = 0; 
-        s = SceneType.Town.ordinal();
+        s = SceneType.Desert.ordinal();
         locations[r][c].setScene(scenes[s]);
         
         r = 7; 
         c = 0; 
-        s = SceneType.Town.ordinal();
+        s = SceneType.BushLand.ordinal();
         locations[r][c].setScene(scenes[s]);
         
         r = 8; 
@@ -230,94 +233,94 @@ public class MapControl { // MARILEE
         
         r = 0; 
         c = 1; 
-        s = SceneType.Town.ordinal();
+        s = SceneType.Hills.ordinal();
         locations[r][c].setScene(scenes[s]);
         
         r = 1; 
         c = 1;  
-        s = SceneType.Town.ordinal();
+        s = SceneType.MuddyPath.ordinal();
         locations[r][c].setScene(scenes[s]);
         
         r = 2; 
         c = 1;  
-        s = SceneType.Town.ordinal();
+        s = SceneType.Flooded.ordinal();
         locations[r][c].setScene(scenes[s]);
         
         r = 3; 
         c = 1;  
-        s = SceneType.Town.ordinal();
+        s = SceneType.River.ordinal();
         locations[r][c].setScene(scenes[s]);
         
         r = 4; 
         c = 1;  
-        s = SceneType.Town.ordinal();
+        s = SceneType.Village.ordinal();
         locations[r][c].setScene(scenes[s]);
         
         r = 5; 
         c = 1; 
-        s = SceneType.Town.ordinal();
+        s = SceneType.DryRiver.ordinal();
         locations[r][c].setScene(scenes[s]);
         
         r = 6; 
         c = 1; 
-        s = SceneType.Town.ordinal();
+        s = SceneType.Arid.ordinal();
         locations[r][c].setScene(scenes[s]);
         
         r = 7; 
         c = 1; 
-        s = SceneType.Town.ordinal();
+        s = SceneType.Forest.ordinal();
         locations[r][c].setScene(scenes[s]);
         
         r = 8; 
         c = 1; 
-        s = SceneType.Town.ordinal();
+        s = SceneType.Plains.ordinal();
         locations[r][c].setScene(scenes[s]);
         
         // ----------------------------------------------
         
         r = 0; 
         c = 2; 
-        s = SceneType.Town.ordinal();
-        locations[r][c].setScene(scenes[s]);
+        s = SceneType.Zion.ordinal(); //END
+        locations[r][c].setScene(scenes[s]); 
         
         r = 1; 
         c = 2;  
-        s = SceneType.Town.ordinal();
+        s = SceneType.Mountain.ordinal();
         locations[r][c].setScene(scenes[s]);
         
         r = 2; 
         c = 2;  
-        s = SceneType.Town.ordinal();
+        s = SceneType.Caves.ordinal();
         locations[r][c].setScene(scenes[s]);
         
         r = 3; 
         c = 2;  
-        s = SceneType.Town.ordinal();
+        s = SceneType.Waterfall.ordinal();
         locations[r][c].setScene(scenes[s]);
         
         r = 4; 
         c = 2;  
-        s = SceneType.Town.ordinal();
+        s = SceneType.Lake.ordinal();
         locations[r][c].setScene(scenes[s]);
         
         r = 5; 
         c = 2; 
-        s = SceneType.Town.ordinal();
+        s = SceneType.Sparse.ordinal();
         locations[r][c].setScene(scenes[s]);
         
         r = 6; 
         c = 2; 
-        s = SceneType.Town.ordinal();
+        s = SceneType.Encampment.ordinal();
         locations[r][c].setScene(scenes[s]);
         
         r = 7; 
         c = 2; 
-        s = SceneType.Town.ordinal();
+        s = SceneType.RedForest.ordinal();
         locations[r][c].setScene(scenes[s]);
         
         r = 8; 
         c = 2; 
-        s = SceneType.Town.ordinal();
+        s = SceneType.Swamp.ordinal();
         locations[r][c].setScene(scenes[s]);
         
     }
