@@ -9,9 +9,11 @@ import cit260.pioneertrail.model.Actor;
 import cit260.pioneertrail.model.InventoryItem;
 import cit260.pioneertrail.model.Location;
 import cit260.pioneertrail.model.Map;
+import cit260.pioneertrail.model.Player;
 import cit260.pioneertrail.model.QuestionType;
 import cit260.pioneertrail.model.Scene;
 import cit260.pioneertrail.model.SceneType;
+import pioneertrail.PioneerTrail;
 
 /**
  *
@@ -19,18 +21,21 @@ import cit260.pioneertrail.model.SceneType;
  */
 public class MapControl {
 
-    public static Map createMap(int noOfRows, int noOfColumns, InventoryItem[] items) {
-        if (noOfRows < 0 || noOfColumns < 0) { //if noOfRows < 0 OR numOfColumns < 0
+    public static Map createMap(int rowCount, int columnCount, InventoryItem[] items) {
+
+        if (rowCount < 0 || columnCount < 0) { //if noOfRows < 0 OR numOfColumns < 0
             return null;// return null
         }// endif
         if (items == null || items.length < 1) { // if items is null OR its length is < 1
             return null; // RETURN null
         }// endif
 
-        Map map = new Map(); //Map map = new Map object
-        noOfRows = 0;//save the noOfRows in the map
-        noOfColumns = 0;//save the noOfColumns in the map
-
+        Map map = PioneerTrail.getCurrentGame().getMap(); //Map map = new Map object
+        map.setColumnCount(columnCount);//save the noOfRows in the map
+        map.setRowCount(rowCount);//save the noOfColumns in the map
+        return map;
+    }
+    
 //CREATE LOCATIONS        
         
     private static Location[][] createLocations(int rows, int columns) {
@@ -47,8 +52,9 @@ public class MapControl {
             //set visited attribute to false
             //Assign location to the row, and column in array
         }// ENDFOR
-        return locations; // RETURN locations 
+
     }
+                return locations; // RETURN locations 
     }
     
 //CREATE QUESTIONS
@@ -71,7 +77,7 @@ public class MapControl {
     }
     
     
-//QUESTIONS TO SCENES
+//QUESTIONS TO SCENES JOSEPH
     
     
     private static void assignQuestionsToScenes(QuestionType[] questions, Scene[] scenes) {
@@ -388,8 +394,7 @@ public class MapControl {
     private static QuestionType getQuestion(int i) {   //Random question found on the way
         return null;
     }
-    
+
 }
 
-        return map; //???
-    }
+
