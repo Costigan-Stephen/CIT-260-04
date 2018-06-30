@@ -66,14 +66,14 @@ public class MapControl {
         o = SceneType.River.ordinal();
         scenes[o].setDescription("River");
         scenes[o].setBlocked(false);
-        scenes[o].setSymbol("-");
+        scenes[o].setSymbol("~");
         scenes[o].setActor(getActor(o));
         scenes[o].setActor(getItem(o));
         
         o = SceneType.Lake.ordinal();
         scenes[o].setDescription("Lake");
         scenes[o].setBlocked(false);
-        scenes[o].setSymbol("~");
+        scenes[o].setSymbol("≈");
         scenes[o].setActor(getActor(o));
         scenes[o].setActor(getItem(o));
         
@@ -87,7 +87,7 @@ public class MapControl {
         o = SceneType.Tundra.ordinal();
         scenes[o].setDescription("Tundra");
         scenes[o].setBlocked(false);
-        scenes[o].setSymbol("*");
+        scenes[o].setSymbol("ﭛ");
         scenes[o].setActor(getActor(o));
         scenes[o].setActor(getItem(o));
          
@@ -122,21 +122,21 @@ public class MapControl {
         o = SceneType.Hills.ordinal();
         scenes[o].setDescription("Hills");
         scenes[o].setBlocked(false);
-        scenes[o].setSymbol("˄");
+        scenes[o].setSymbol("∩");
         scenes[o].setActor(getActor(o));
         scenes[o].setActor(getItem(o));
         
         o = SceneType.Mountain.ordinal();
         scenes[o].setDescription("Mountain");
         scenes[o].setBlocked(true);
-        scenes[o].setSymbol("۸");
+        scenes[o].setSymbol("˄");
         scenes[o].setActor(getActor(o));
         scenes[o].setActor(getItem(o));
         
         o = SceneType.Stream.ordinal();
         scenes[o].setDescription("Stream");
         scenes[o].setBlocked(false);
-        scenes[o].setSymbol("¬");
+        scenes[o].setSymbol("-");
         scenes[o].setActor(getActor(o));
         scenes[o].setActor(getItem(o));
         
@@ -171,7 +171,7 @@ public class MapControl {
         o = SceneType.Caves.ordinal();
         scenes[o].setDescription("Caves");
         scenes[o].setBlocked(false);
-        scenes[o].setSymbol("Ὧ");
+        scenes[o].setSymbol("₾");
         scenes[o].setActor(getActor(o));
         scenes[o].setActor(getItem(o));
         
@@ -199,7 +199,7 @@ public class MapControl {
         o = SceneType.MuddyPath.ordinal();
         scenes[o].setDescription("MuddyPath");
         scenes[o].setBlocked(false);
-        scenes[o].setSymbol("B");
+        scenes[o].setSymbol("؁");
         scenes[o].setActor(getActor(o));
         scenes[o].setActor(getItem(o));
         
