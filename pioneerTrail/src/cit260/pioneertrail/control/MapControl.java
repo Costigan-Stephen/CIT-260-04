@@ -158,19 +158,22 @@ public class MapControl { // MARILEE
         START       18
         END         27
         BLOCKED:    5, 7, 8, 16, 23, 25,
+        
                         SCENES BY LOCATION
              | 00 | 01 | 02 | 03 | 04 | 05 | 06 | 07 | 08 | 
         |----|--------------------------------------------|
-          00 | 10 | 21 | 04 | 17 | 12 | 05 | 14 | 01 | 18 |
+          00 | 10 | 21 | 04 | 24 | 12 | 05 | 14 | 01 | 18 |
         |----|----|----|----|----|----|----|----|----|----|
-          01 | 15 | 26 | 25 | 07 | 19 | 24 | 13 | 03 | 02 |
+          01 | 15 | 26 | 25 | 07 | 19 | 17 | 13 | 03 | 02 |
         |----|----|----|----|----|----|----|----|----|----|
-          02 | 27 | 16 | 22 | 09 | 08 | 11 | 20 | 06 | 23 |
+          02 | 27 | 16 | 22 | 09 | 08 | 23 | 20 | 06 | 11 |
         |----|--------------------------------------------|
          */
         int r, c, s;
         Location[][] locations = map.getLocations();
-
+        
+        // -------------------|ROW 1|---------------------------
+        
         r = 0;
         c = 0;
         s = SceneType.Tundra.ordinal();
@@ -188,7 +191,7 @@ public class MapControl { // MARILEE
 
         r = 3;
         c = 0;
-        s = SceneType.Stream.ordinal();
+        s = SceneType.DryRiver.ordinal();
         locations[r][c].setScene(scenes[s]);
 
         r = 4;
@@ -216,7 +219,8 @@ public class MapControl { // MARILEE
         s = SceneType.Town.ordinal();
         locations[r][c].setScene(scenes[s]);
 
-        // ----------------------------------------------
+        // -------------------|ROW 2|---------------------------
+        
         r = 0;
         c = 1;
         s = SceneType.Hills.ordinal();
@@ -244,7 +248,7 @@ public class MapControl { // MARILEE
 
         r = 5;
         c = 1;
-        s = SceneType.DryRiver.ordinal();
+        s = SceneType.Stream.ordinal();
         locations[r][c].setScene(scenes[s]);
 
         r = 6;
@@ -262,7 +266,8 @@ public class MapControl { // MARILEE
         s = SceneType.Plains.ordinal();
         locations[r][c].setScene(scenes[s]);
 
-        // ----------------------------------------------
+        // -------------------|ROW 3|---------------------------
+        
         r = 0;
         c = 2;
         s = SceneType.Zion.ordinal(); //END
@@ -290,7 +295,7 @@ public class MapControl { // MARILEE
 
         r = 5;
         c = 2;
-        s = SceneType.Sparse.ordinal();
+        s = SceneType.Swamp.ordinal();
         locations[r][c].setScene(scenes[s]);
 
         r = 6;
@@ -305,9 +310,11 @@ public class MapControl { // MARILEE
 
         r = 8;
         c = 2;
-        s = SceneType.Swamp.ordinal();
+        s = SceneType.Sparse.ordinal();
         locations[r][c].setScene(scenes[s]);
 
+        // -------------------| END |---------------------------
+        
     }
 
 // MOVE PLAYER
