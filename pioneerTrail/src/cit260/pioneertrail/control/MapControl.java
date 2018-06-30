@@ -59,12 +59,23 @@ public class MapControl { // MARILEE
         }
         return locations; // RETURN locations 
     }
+    
+        public static InventoryItem[] createItems() {
+
+//        InventoryItem[] items = new InventoryItem[200];
+//        items[ItemReference.axe.ordinal()] = new InventoryItem();
+//        items[ItemReference.axe.ordinal()].setDamageValue(2);
+//        items[ItemReference.axe.ordinal()].setItemName("axe");
+//        items[ItemReference.axe.ordinal()].setInventoryType("inventory");
+//        items[ItemReference.axe.ordinal()].setItemWeight(4);
+    
+    
 
 //CREATE QUESTIONS MARILEE
     private static QuestionType[] createQuestions() {
 
         QuestionType[] questions = new QuestionType[6];//questions = Create an array Question objects
-        questions[QuestionType.buying.ordinal()] = buyingQuestion; //question1 = Create a new Question object
+        questions[QuestionType.buying.ordinal()] = new ; //question1 = Create a new Question object
                 //Assign values to each attribute in the Question object
                 //Assign question2 to its position in the questions array
                 "Would you like to buy some food?",
@@ -80,7 +91,7 @@ public class MapControl { // MARILEE
                 "Find shelter soon.");
         questions[QuestionType.actor.ordinal()] = actor;
                 "The dog is barking. Do you want to find out why?",
-                ""
+                "There may be trouble.");
 
         return questions;
     }
