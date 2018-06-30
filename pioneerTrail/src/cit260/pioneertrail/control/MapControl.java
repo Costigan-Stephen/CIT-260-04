@@ -128,7 +128,7 @@ public class MapControl { // MARILEE
 //ITEMS TO SCENES
     private static void assignItemsToScenes(InventoryItem[] items, Scene[] scenes) {
 
-        scenes[ItemReference.axe.ordinal()] = //// Assign items to the first resource scene
+        // Assign items to the first resource scene
         //resourceScene1 = scenes(indexOfScene)
         //resourcesInScene = Create a new InventoryItem ArrayList
         //resourcesInScene.add(items[indexOfItem])
