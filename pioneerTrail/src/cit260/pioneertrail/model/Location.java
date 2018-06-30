@@ -32,12 +32,12 @@ public class Location implements Serializable{
             return null;
         }
         Location[][] locations = null;
-        for (int i = 0; i < h; i++) {
-            for (int k = 0; k < w; k++) {
-                //location[i][k] = "String[row:"+i+",column:"+k+",visited:false]";
-//                location[i][k] = i;
-            }
-        }
+        
+//        for (int r = 0; r < h; r++) {
+//            for (int c = 0; c < w; c++) {
+//                locations[rows][columns] = (new Location(r, c));
+//            }
+//        }
         return locations;
     }
 
