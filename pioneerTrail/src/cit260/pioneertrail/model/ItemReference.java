@@ -15,6 +15,4 @@ public enum ItemReference {
     oxen,
     coin,
     bullets;
-    
-    
 }

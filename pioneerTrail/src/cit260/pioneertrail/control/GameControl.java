@@ -163,6 +163,7 @@ public class GameControl {
         }
         return locations;
     }
+    
   //  public static ArrayList<Double> maxHealth(ArrayList<Actor> actor){
 //    BEGIN
     

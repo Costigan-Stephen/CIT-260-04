@@ -16,6 +16,5 @@ public enum QuestionType {
     injury,
     weather,
     actor,
-    geography;
-    
+    geography; 
 }
