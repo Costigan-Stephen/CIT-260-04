@@ -72,35 +72,42 @@ public class GameControl {
     public static InventoryItem[] createItems() {
 
         InventoryItem[] items = new InventoryItem[200];
-        items[ItemReference.axe.ordinal()] = new InventoryItem();
-        items[ItemReference.axe.ordinal()].setDamageValue(2);
-        items[ItemReference.axe.ordinal()].setItemName("axe");
-        items[ItemReference.axe.ordinal()].setInventoryType("inventory");
-        items[ItemReference.axe.ordinal()].setItemWeight(4);
-
-        items[ItemReference.wheels.ordinal()] = new InventoryItem();
-        items[ItemReference.wheels.ordinal()].setDamageValue(0);
-        items[ItemReference.wheels.ordinal()].setInventoryType("Inventory");
-        items[ItemReference.wheels.ordinal()].setItemWeight(10);
-        items[ItemReference.wheels.ordinal()].setItemName("Wheel");
-
-        items[ItemReference.oxen.ordinal()] = new InventoryItem();
-        items[ItemReference.oxen.ordinal()].setDamageValue(0);
-        items[ItemReference.oxen.ordinal()].setInventoryType("Inventory");
-        items[ItemReference.oxen.ordinal()].setItemWeight(20);
-        items[ItemReference.oxen.ordinal()].setItemName("Oxen");
-
-        items[ItemReference.coin.ordinal()] = new InventoryItem();
-        items[ItemReference.coin.ordinal()].setDamageValue(0);
-        items[ItemReference.coin.ordinal()].setInventoryType("Inventory");
-        items[ItemReference.coin.ordinal()].setItemWeight(0);
-        items[ItemReference.coin.ordinal()].setItemName("coin");
-
-        items[ItemReference.bullets.ordinal()] = new InventoryItem();
-        items[ItemReference.bullets.ordinal()].setDamageValue(0);
-        items[ItemReference.bullets.ordinal()].setInventoryType("Inventory");
-        items[ItemReference.bullets.ordinal()].setItemWeight(10);
-        items[ItemReference.bullets.ordinal()].setItemName("bullets");
+        int i = 0;
+        
+        i = ItemReference.axe.ordinal();
+        items[i] = new InventoryItem();
+        items[i].setDamageValue(2);
+        items[i].setInventoryType("inventory");
+        items[i].setItemWeight(4);
+        items[i].setItemName("axe");
+        
+        i = ItemReference.wheels.ordinal();
+        items[i] = new InventoryItem();
+        items[i].setDamageValue(0);
+        items[i].setInventoryType("Inventory");
+        items[i].setItemWeight(10);
+        items[i].setItemName("Wheel");
+        
+        i = ItemReference.oxen.ordinal();
+        items[i] = new InventoryItem();
+        items[i].setDamageValue(0);
+        items[i].setInventoryType("Inventory");
+        items[i].setItemWeight(20);
+        items[i].setItemName("Oxen");
+        
+        i = ItemReference.coin.ordinal();
+        items[i] = new InventoryItem();
+        items[i].setDamageValue(0);
+        items[i].setInventoryType("Inventory");
+        items[i].setItemWeight(0);
+        items[i].setItemName("coin");
+        
+        i = ItemReference.bullets.ordinal();
+        items[i] = new InventoryItem();
+        items[i].setDamageValue(0);
+        items[i].setInventoryType("Inventory");
+        items[i].setItemWeight(10);
+        items[i].setItemName("bullets");
 
         return items;
 
