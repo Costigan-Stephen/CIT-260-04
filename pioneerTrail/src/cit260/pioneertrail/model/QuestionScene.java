@@ -16,6 +16,11 @@ public class QuestionScene extends Scene {
         
     }
 
+    @Override
+    public Scene getScene(int r, int c) {
+        System.out.println("");
+        return null;
+    }
     
     public Answers[] getQuestion() {
         return question;

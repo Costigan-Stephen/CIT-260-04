@@ -25,8 +25,6 @@ public class Scene implements Serializable {
 
     }
 
-  
-
     public Scene getScene(int r, int c) {
         System.out.println("location at [" + r + "," + c + "]");
         return null;
