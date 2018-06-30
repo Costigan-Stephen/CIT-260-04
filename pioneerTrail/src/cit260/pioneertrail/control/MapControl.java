@@ -19,7 +19,7 @@ import pioneertrail.PioneerTrail;
  *
  * @author Stephen
  */
-public class MapControl {
+public class MapControl { // MARILEE
 
     public static Map createMap(int rowCount, int columnCount, InventoryItem[] items) {
 
@@ -30,56 +30,55 @@ public class MapControl {
             return null; // RETURN null
         }// endif
 
+        rowCount = 3; // I added this here, but I'm not sure it's right. 
+        columnCount = 9; // Where do I say how many columns and rows?
+
         Map map = PioneerTrail.getCurrentGame().getMap(); //Map map = new Map object
         map.setColumnCount(columnCount);//save the noOfRows in the map
         map.setRowCount(rowCount);//save the noOfColumns in the map
         return map;
     }
-    
-//CREATE LOCATIONS        
-        
-    private static Location[][] createLocations(int rows, int columns) {
-        if (rows < 1 || columns < 1) { //IF rows < 1 OR columns < 1 THEN
+
+//CREATE LOCATIONS MARILEE  
+    private static Location[][] createLocations(int row, int column) {
+        if (row < 1 || column < 1) { //IF rows < 1 OR columns < 1 THEN
             return null;// RETURN null
         }//ENDIF
 
-        Location[][] locations = new Location[9][3]; // locations = new two-dimensional Location array
+        Location[][] locations = new Location[3][9]; // locations = new two-dimensional Location array
 
         for (int i = 0; i < locations.length; i++) { //FOR every row in the locations array
             for (int j = 0; j < locations[i].length; j++) { //FOR every column in the locations array
-            Location location = new Location();//location = create a new Location object
-            //set the row, and column attributes in the location
-            //set visited attribute to false
-            //Assign location to the row, and column in array
-        }// ENDFOR
+                Location location = new Location();//location = create a new Location object
+                location.setColumn(column); //set the row, and column attributes in the location
+                location.setRow(row);
+                location.setVisited(false);//set visited attribute to false
+                locations[row][column] = location;//Assign location to the row, and column in array
+            }// ENDFOR
 
+        }
+        return locations; // RETURN locations 
     }
-                return locations; // RETURN locations 
-    }
-    
-//CREATE QUESTIONS
-    
-    
+
+//CREATE QUESTIONS MARILEE
     private static QuestionType[] createQuestions() {
-        System.out.println("createQuestions called");
-        return null;
 
-        //questions = Create an array Question objects
-        //question1 = Create a new Question object
-        //Assign values to each attribute in the Question object
-        //Assign question1 to its position in the questions array
-        //question2 = Create a new Question object
-        //Assign values to each attribute in the Question object
-        //Assign question2 to its position in the questions array
-        //…
-        //…
-        //RETURN questions 
+        QuestionType[] questions = new QuestionType[2];//questions = Create an array Question objects
+        questions[0] = new QuestionType( //question1 = Create a new Question object
+                //Assign values to each attribute in the Question object
+                //Assign question1 to its position in the questions array
+                "Are you hungry? Would you like to go hunt for animals?",
+                "Check your inventory for bullets to choose how many to use.");
+        questions[1] = new QuestionType( //question2 = Create a new Question object
+                //Assign values to each attribute in the Question object
+                //Assign question2 to its position in the questions array
+                "You are injured! Would you like to rest in this location?",
+                "Trade with local natives for help.");
+
+        return questions;
     }
-    
-    
+
 //QUESTIONS TO SCENES JOSEPH
-    
-    
     private static void assignQuestionsToScenes(QuestionType[] questions, Scene[] scenes) {
         System.out.println("assignQuestionsToScenes called");
 
@@ -106,10 +105,8 @@ public class MapControl {
         //…
         //}
     }
-    
-//ITEMS TO SCENES
 
-    
+//ITEMS TO SCENES
     private static void assignItemsToScenes(InventoryItem[] items, Scene[] scenes) {
         System.out.println("assignItemsToScenes called");
 
@@ -136,18 +133,12 @@ public class MapControl {
         //…
     }
 
-    
 //SCENES TO LOCATIONS 
-
-    
     private static void assignScenesToLocations(Scene[] scenes, Location[][] location) {
         System.out.println("assignScenesToLocation called");
     }
 
-    
 // MOVE PLAYER
-
-    
     public static void movePlayer(Map map, int row, int column) {
         map.setCurrentLocation(map.getLocations()[row][column]);
         map.getCurrentLocation().setVisited(true);
@@ -155,10 +146,7 @@ public class MapControl {
         map.setCurrentColumn(column);
     }
 
-    
 //CREATE SCENES
-
-    
     public static Scene[] createScenes() {//scenes = createScenes()
 
         int s = 27;
@@ -396,5 +384,3 @@ public class MapControl {
     }
 
 }
-
-
