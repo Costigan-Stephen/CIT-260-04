@@ -11,7 +11,8 @@ import java.util.Objects;
  */
 
 public class Scene implements Serializable {
-
+    
+    private SceneType scene;
     private String description;
     private long travelTime;
     private boolean blocked;
@@ -23,6 +24,19 @@ public class Scene implements Serializable {
 
     }
 
+    public Scene getScene(int r, int c) {
+        System.out.println("location at [" + r + "," + c + "]");
+        return null;
+    }
+    
+    public SceneType getScene() {
+        return scene;
+    }
+
+    public void setScene(SceneType scene) {
+        this.scene = scene;
+    }
+    
     public InventoryItem getResource() {
         return resource;
     }
@@ -84,9 +98,5 @@ public class Scene implements Serializable {
     @Override
     public String toString() {
         return super.toString();
-    }
-
-    public Scene getScene(int r, int c) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

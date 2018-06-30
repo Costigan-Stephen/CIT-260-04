@@ -24,9 +24,6 @@ import pioneertrail.PioneerTrail;
 public class GameControl {
 
     public static Player savePlayer(String playerName) {
-//        if (name == null) {
-//            return null;
-//        }
 
         Player player = new Player();
         player.setName(playerName);
@@ -67,7 +64,7 @@ public class GameControl {
         return 0;
     }
     public static InventoryItem[] createItems() {
-//items = create an array InventoryItem objects
+
         InventoryItem[] items = new InventoryItem[200];
         items[ItemReference.axe.ordinal()] = new InventoryItem();
         items[ItemReference.axe.ordinal()].setDamageValue(2);
@@ -103,10 +100,6 @@ public class GameControl {
         
     }
     
-//    public static InventoryItem[] setInventory(){
-//        return null;
-//    }
-    
     public static Map createMap(int noOfRows, int noOfColumns){
         MapView map = new MapView();
         map.setMap();
@@ -127,18 +120,15 @@ public class GameControl {
         return actors;
     }
     
-    public static ArrayList<Location> createLocation(Scene scene, int rows, int columns, boolean visited){
+    public static Location[][] createLocation(int rows, int columns){
         
-        
-        ArrayList<Location> locations = new ArrayList<Location>();
-        locations.add(new Location(scene,rows,columns,false));
+        Location[][] locations = new Location[rows][columns];
         
         for (int r = 0; r < rows; r++) {
             for (int c = 0; c < columns; c++) {
-                locations.add(new Location(scene.getScene(r,c),r,c,false));
+                locations[r][c] = (new Location(r,c));
             }
         }
-        
         return locations;
     }
   //  public static ArrayList<Double> maxHealth(ArrayList<Actor> actor){

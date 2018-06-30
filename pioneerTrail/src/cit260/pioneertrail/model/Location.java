@@ -10,14 +10,17 @@ public class Location implements Serializable{
     private Scene scene;
     public int row;
     public int column;
-//    private int amountRemaining;
     private boolean visited;
     
     public Location() {
+        visited = false;
+        scene = null;
     }
 
-    public Location(Scene scene, int rows, int columns, boolean b) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Location(int rows, int columns) {
+        this.row = rows;
+        this.column = columns;
+        this.visited = false;
     }
     
 //    public Location [][] createLocation(Scene scene, int rows, int columns, boolean visited){
