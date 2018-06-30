@@ -8,6 +8,7 @@ package cit260.pioneertrail.control;
 import cit260.pioneertrail.model.Actor;
 import cit260.pioneertrail.model.Answers;
 import cit260.pioneertrail.model.InventoryItem;
+import cit260.pioneertrail.model.ItemReference;
 import cit260.pioneertrail.model.Location;
 import cit260.pioneertrail.model.Map;
 import cit260.pioneertrail.model.Player;
@@ -47,7 +48,7 @@ public class MapControl { // MARILEE
             return null;// RETURN null
         }//ENDIF
 
-        Location[][] locations = new Location[3][9]; // locations = new two-dimensional Location array
+        Location[][] locations = new Location[0][0]; // locations = new two-dimensional Location array
 
         for (int i = 0; i < locations.length; i++) { //FOR every row in the locations array
             for (int j = 0; j < locations[i].length; j++) { //FOR every column in the locations array
@@ -61,44 +62,33 @@ public class MapControl { // MARILEE
         }
         return locations; // RETURN locations 
     }
-    
-//        public static InventoryItem[] createItems() {
-
-//        InventoryItem[] items = new InventoryItem[200];
-//        items[ItemReference.axe.ordinal()] = new InventoryItem();
-//        items[ItemReference.axe.ordinal()].setDamageValue(2);
-//        items[ItemReference.axe.ordinal()].setItemName("axe");
-//        items[ItemReference.axe.ordinal()].setInventoryType("inventory");
-//        items[ItemReference.axe.ordinal()].setItemWeight(4);
-    
-    
 
 //CREATE QUESTIONS MARILEE
     private static Question[] createQuestions() {
 
         Question[] questions = new Question[6];//questions = Create an array Question objects
-       
+
         questions[QuestionType.buying.ordinal()] = new Question(); //question1 = Create a new Question object
         questions[QuestionType.buying.ordinal()].setQuestionText("Would you "
-                + "like to buy some food? \nVisit the Nauvoo Store Location."); 
- 
+                + "like to buy some food? \nVisit the Nauvoo Store Location.");
+
         questions[QuestionType.findFood.ordinal()] = new Question(); //question2 = Create a new Question object
         questions[QuestionType.findFood.ordinal()].setQuestionText("Are you "
                 + "hungry? Would you like to go hunt for animals? "
                 + "\nCheck your inventory for bullets to choose how many to use.");
-        
+
         questions[QuestionType.injury.ordinal()] = new Question();
         questions[QuestionType.injury.ordinal()].setQuestionText("You are injured! "
                 + "Would you like to rest in this location? \nTrade with local natives for help.");
-        
+
         questions[QuestionType.weather.ordinal()] = new Question();
         questions[QuestionType.weather.ordinal()].setQuestionText("Storm clouds "
                 + "approach. Do you want to stop and rest? \nFind shelter soon.");
-        
+
         questions[QuestionType.actor.ordinal()] = new Question();
         questions[QuestionType.actor.ordinal()].setQuestionText("The dog is barking. "
                 + "Do you want to find out why? \nThere may be trouble.");
-        
+
         questions[QuestionType.geography.ordinal()] = new Question();
         questions[QuestionType.geography.ordinal()].setQuestionText("Rough Terrain"
                 + "lies ahead. Do you want to purchase supplies? \nVisit the store"
@@ -137,11 +127,8 @@ public class MapControl { // MARILEE
 
 //ITEMS TO SCENES
     private static void assignItemsToScenes(InventoryItem[] items, Scene[] scenes) {
-        System.out.println("assignItemsToScenes called");
 
-        // InventoryItem[] items,
-        // Scene[] scenes) {
-        //// Assign items to the first resource scene
+        scenes[ItemReference.axe.ordinal()] = //// Assign items to the first resource scene
         //resourceScene1 = scenes(indexOfScene)
         //resourcesInScene = Create a new InventoryItem ArrayList
         //resourcesInScene.add(items[indexOfItem])
@@ -165,7 +152,7 @@ public class MapControl { // MARILEE
 //SCENES TO LOCATIONS 
     private static void assignScenesToLocations(Scene[] scenes, Map map) {
         System.out.println("assignScenesToLocation called");
-        
+
         /*
         START       18
         END         27
@@ -179,150 +166,147 @@ public class MapControl { // MARILEE
         |----|----|----|----|----|----|----|----|----|----|
           02 | 27 | 16 | 22 | 09 | 08 | 11 | 20 | 06 | 23 |
         |----|--------------------------------------------|
-        */
-        
+         */
         int r, c, s;
         Location[][] locations = map.getLocations();
-        
-        r = 0; 
-        c = 0; 
+
+        r = 0;
+        c = 0;
         s = SceneType.Tundra.ordinal();
         locations[r][c].setScene(scenes[s]);
-        
-        r = 1; 
-        c = 0;  
+
+        r = 1;
+        c = 0;
         s = SceneType.IndianCamp.ordinal();
         locations[r][c].setScene(scenes[s]);
-        
-        r = 2; 
-        c = 0;  
+
+        r = 2;
+        c = 0;
         s = SceneType.Jungle.ordinal();
         locations[r][c].setScene(scenes[s]);
-        
-        r = 3; 
-        c = 0;  
+
+        r = 3;
+        c = 0;
         s = SceneType.Stream.ordinal();
         locations[r][c].setScene(scenes[s]);
-        
-        r = 4; 
-        c = 0;  
+
+        r = 4;
+        c = 0;
         s = SceneType.CrackedEarth.ordinal();
         locations[r][c].setScene(scenes[s]);
-        
-        r = 5; 
-        c = 0; 
+
+        r = 5;
+        c = 0;
         s = SceneType.Canyon.ordinal();
         locations[r][c].setScene(scenes[s]);
-        
-        r = 6; 
-        c = 0; 
+
+        r = 6;
+        c = 0;
         s = SceneType.Desert.ordinal();
         locations[r][c].setScene(scenes[s]);
-        
-        r = 7; 
-        c = 0; 
+
+        r = 7;
+        c = 0;
         s = SceneType.BushLand.ordinal();
         locations[r][c].setScene(scenes[s]);
-        
-        r = 8; 
-        c = 0; 
+
+        r = 8;
+        c = 0;
         s = SceneType.Town.ordinal();
         locations[r][c].setScene(scenes[s]);
-        
+
         // ----------------------------------------------
-        
-        r = 0; 
-        c = 1; 
+        r = 0;
+        c = 1;
         s = SceneType.Hills.ordinal();
         locations[r][c].setScene(scenes[s]);
-        
-        r = 1; 
-        c = 1;  
+
+        r = 1;
+        c = 1;
         s = SceneType.MuddyPath.ordinal();
         locations[r][c].setScene(scenes[s]);
-        
-        r = 2; 
-        c = 1;  
+
+        r = 2;
+        c = 1;
         s = SceneType.Flooded.ordinal();
         locations[r][c].setScene(scenes[s]);
-        
-        r = 3; 
-        c = 1;  
+
+        r = 3;
+        c = 1;
         s = SceneType.River.ordinal();
         locations[r][c].setScene(scenes[s]);
-        
-        r = 4; 
-        c = 1;  
+
+        r = 4;
+        c = 1;
         s = SceneType.Village.ordinal();
         locations[r][c].setScene(scenes[s]);
-        
-        r = 5; 
-        c = 1; 
+
+        r = 5;
+        c = 1;
         s = SceneType.DryRiver.ordinal();
         locations[r][c].setScene(scenes[s]);
-        
-        r = 6; 
-        c = 1; 
+
+        r = 6;
+        c = 1;
         s = SceneType.Arid.ordinal();
         locations[r][c].setScene(scenes[s]);
-        
-        r = 7; 
-        c = 1; 
+
+        r = 7;
+        c = 1;
         s = SceneType.Forest.ordinal();
         locations[r][c].setScene(scenes[s]);
-        
-        r = 8; 
-        c = 1; 
+
+        r = 8;
+        c = 1;
         s = SceneType.Plains.ordinal();
         locations[r][c].setScene(scenes[s]);
-        
+
         // ----------------------------------------------
-        
-        r = 0; 
-        c = 2; 
+        r = 0;
+        c = 2;
         s = SceneType.Zion.ordinal(); //END
-        locations[r][c].setScene(scenes[s]); 
-        
-        r = 1; 
-        c = 2;  
+        locations[r][c].setScene(scenes[s]);
+
+        r = 1;
+        c = 2;
         s = SceneType.Mountain.ordinal();
         locations[r][c].setScene(scenes[s]);
-        
-        r = 2; 
-        c = 2;  
+
+        r = 2;
+        c = 2;
         s = SceneType.Caves.ordinal();
         locations[r][c].setScene(scenes[s]);
-        
-        r = 3; 
-        c = 2;  
+
+        r = 3;
+        c = 2;
         s = SceneType.Waterfall.ordinal();
         locations[r][c].setScene(scenes[s]);
-        
-        r = 4; 
-        c = 2;  
+
+        r = 4;
+        c = 2;
         s = SceneType.Lake.ordinal();
         locations[r][c].setScene(scenes[s]);
-        
-        r = 5; 
-        c = 2; 
+
+        r = 5;
+        c = 2;
         s = SceneType.Sparse.ordinal();
         locations[r][c].setScene(scenes[s]);
-        
-        r = 6; 
-        c = 2; 
+
+        r = 6;
+        c = 2;
         s = SceneType.Encampment.ordinal();
         locations[r][c].setScene(scenes[s]);
-        
-        r = 7; 
-        c = 2; 
+
+        r = 7;
+        c = 2;
         s = SceneType.RedForest.ordinal();
         locations[r][c].setScene(scenes[s]);
-        
-        r = 8; 
-        c = 2; 
+
+        r = 8;
+        c = 2;
         s = SceneType.Swamp.ordinal();
         locations[r][c].setScene(scenes[s]);
-        
+
     }
 
 // MOVE PLAYER
