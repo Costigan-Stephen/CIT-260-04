@@ -25,13 +25,7 @@ public class Scene implements Serializable {
 
     }
 
-    public QuestionType getQuestion() {
-        return question;
-    }
-
-    public void setQuestion(QuestionType question) {
-        this.question = question;
-    }
+  
 
     public Scene getScene(int r, int c) {
         System.out.println("location at [" + r + "," + c + "]");
