@@ -13,16 +13,46 @@ import java.util.Objects;
  *
  * @author Stephen
  */
-public class Map implements Serializable{
-    
+public class Map implements Serializable {
+
     // class instance variables
     private String description;
     private int rowCount;
     private int columnCount;
-    private int currentRow;
-    private int currentColumn;
+//    private int currentRow;
+//    private int currentColumn;
+    private Location[][] locations;
+
+    private int currentRow = 0;
+    private int currentColumn = 0;
+    private Location currentLocation;
+    private Boolean visited;
 
     public Map() {
+    }
+
+    public Location getCurrentLocation() {
+        return currentLocation;
+    }
+
+    public void setCurrentLocation(Location currentLocation) {
+        this.currentLocation = currentLocation;
+    }
+
+    public Boolean getVisited() {
+        return visited;
+    }
+
+    public void setVisited(Boolean visited) {
+        this.visited = visited;
+    }
+
+    public Location[][] getLocations() {
+        return locations;
+    }
+
+    public void setLocations(Location[][] locations) {
+        this.locations = locations;
     }
 
     public String getDescription() {
@@ -111,5 +141,4 @@ public class Map implements Serializable{
         return "Map{" + "description=" + description + ", rowCount=" + rowCount + ", columnCount=" + columnCount + ", currentRow=" + currentRow + ", currentColumn=" + currentColumn + '}';
     }
 
- 
 }

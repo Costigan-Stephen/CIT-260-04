@@ -23,23 +23,23 @@ public class Location implements Serializable{
         this.visited = false;
     }
     
-//    public Location [][] createLocation(Scene scene, int rows, int columns, boolean visited){
-//        
-//        int w = 15;
-//        int h = 15;
-//        
-//        if (rows < 1 || columns < 1) {
-//            return null;
-//        }
-//        Location[][] location = null;
-//        for (int i = 0; i < h; i++) {
-//            for (int k = 0; k < w; k++) {
-//                //location[i][k] = "String[row:"+i+",column:"+k+",visited:false]";
-////                location[i][k] = i;
-//            }
-//        }
-//        return null;
-//    }
+    public Location [][] locations(Scene scene, int rows, int columns, boolean visited){
+        
+        int w = 9;
+        int h = 3;
+        
+        if (rows < 1 || columns < 1) {
+            return null;
+        }
+        Location[][] locations = null;
+        for (int i = 0; i < h; i++) {
+            for (int k = 0; k < w; k++) {
+                //location[i][k] = "String[row:"+i+",column:"+k+",visited:false]";
+//                location[i][k] = i;
+            }
+        }
+        return locations;
+    }
 
     public boolean isVisited() {
         return visited;

@@ -5,6 +5,8 @@
  */
 package cit260.pioneertrail.view;
 
+;
+
 /**
  *
  * @author Stephen
@@ -56,9 +58,9 @@ class GameMenuView extends View {
         return false;
     }
 
-    private void displayMapView() {
-        MapView mapView = new MapView();
-        mapView.display();
+    private void displayMapView() { //public void displayMap(){
+         MapView mapView = new MapView();
+         mapView.display();
     }
 
     private void loadGame() {

@@ -19,8 +19,17 @@ public class Game implements Serializable{
     private int noPeople;
     private Player player;
     private ArrayList<Actor> actors;
+    private static Map map;
     
     public Game() {
+    }
+
+    public static Map getMap() {
+        return map;
+    }
+
+    public static void setMap(Map map) {
+        Game.map = map;
     }
 
     public ArrayList<Actor> getActors() {
@@ -55,12 +64,48 @@ public class Game implements Serializable{
         this.player = player;
     }
 
+//    @Override
+//    public int hashCode() {
+//        int hash = 3;
+//        hash = 89 * hash + (int) (this.totalTime ^ (this.totalTime >>> 32));
+//        hash = 89 * hash + this.noPeople;
+//        hash = 89 * hash + Objects.hashCode(this.player);
+//        return hash;
+//    }
+//
+//    @Override
+//    public boolean equals(Object obj) {
+//        if (this == obj) {
+//            return true;
+//        }
+//        if (obj == null) {
+//            return false;
+//        }
+//        if (getClass() != obj.getClass()) {
+//            return false;
+//        }
+//        final Game other = (Game) obj;
+//        if (this.totalTime != other.totalTime) {
+//            return false;
+//        }
+//        if (this.noPeople != other.noPeople) {
+//            return false;
+//        }
+//        if (!Objects.equals(this.player, other.player)) {
+//            return false;
+//        }
+//        return true;
+//    }
+//
+//    @Override
+//    public String toString() {
+//        return "Game{" + "totalTime=" + totalTime + ", noPeople=" + noPeople + ", player=" + player + '}';
+//    }
+
     @Override
     public int hashCode() {
-        int hash = 3;
-        hash = 89 * hash + (int) (this.totalTime ^ (this.totalTime >>> 32));
-        hash = 89 * hash + this.noPeople;
-        hash = 89 * hash + Objects.hashCode(this.player);
+        int hash = 5;
+        hash = 19 * hash + (int) (this.totalTime ^ (this.totalTime >>> 32));
         return hash;
     }
 
@@ -79,18 +124,7 @@ public class Game implements Serializable{
         if (this.totalTime != other.totalTime) {
             return false;
         }
-        if (this.noPeople != other.noPeople) {
-            return false;
-        }
-        if (!Objects.equals(this.player, other.player)) {
-            return false;
-        }
         return true;
-    }
-
-    @Override
-    public String toString() {
-        return "Game{" + "totalTime=" + totalTime + ", noPeople=" + noPeople + ", player=" + player + '}';
     }
     
 }
