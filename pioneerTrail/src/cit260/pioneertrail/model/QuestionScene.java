@@ -10,15 +10,17 @@ package cit260.pioneertrail.model;
  * @author hughe
  */
 public class QuestionScene extends Scene {
-    private Answers[] answer;
+    private Answers[] question;
     public QuestionScene(){
         
         
     }
-    public Answers[] getAnswer() {
-        return answer;
+
+    
+    public Answers[] getQuestion() {
+        return question;
     }
-    public void setAnswer(Answers[] answer){
-        this.answer = answer;
+    public void setAnswer(Answers[] question){
+        this.question = question;
     }
 }
