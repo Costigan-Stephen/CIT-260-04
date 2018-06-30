@@ -138,8 +138,9 @@ public class MapControl { // MARILEE
         System.out.println("assignScenesToLocation called");
         
         /*
-        [0,8] START
-        [2,8] END
+        START       18
+        END         27
+        BLOCKED:    5, 7, 8, 16, 23, 25,
                         SCENES BY LOCATION
              | 00 | 01 | 02 | 03 | 04 | 05 | 06 | 07 | 08 | 
         |----|--------------------------------------------|
