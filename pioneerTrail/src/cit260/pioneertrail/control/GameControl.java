@@ -139,20 +139,6 @@ public class GameControl {
             }
         }
         
-//        public static Location[][] createLocations(int rows, int columns) {
-//        IF rows < 1 OR columns < 1 THEN
-//          RETURN null
-//        ENDIF
-//        locations = new two-dimensional Location array
-//        FOR every row in the locations array
-//          FOR every column in the locations array
-//              location = create a new Location object
-//              set the row, and column attributes in the location
-//              set visited attribute to false
-//              Assign location to the row, and column in array
-//          ENDFOR
-//        RETURN locations
-//        }
         return locations;
     }
   //  public static ArrayList<Double> maxHealth(ArrayList<Actor> actor){
