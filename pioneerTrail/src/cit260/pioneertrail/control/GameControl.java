@@ -209,14 +209,19 @@ public class GameControl {
 
     public static ArrayList<Actor> createActors() {
 
-        ArrayList<Actor> actors = new ArrayList<Actor>();
-        actors.add(new Actor("Samantha", "Mother", 100.0, "Lead the Family"));
-        actors.add(new Actor("Samuel", "Father", 100.0, "Lead the Family"));
-        actors.add(new Actor("Ralph", "Son", 80.0, "Cause a Ruckus"));
-        actors.add(new Actor("Sarah", "Daughter", 80.0, "Be Daddy's Angel"));
-        actors.add(new Actor("Spot", "The Dog", 50.0, "Get Belly Rubs"));
-
-        createNPCActors(actors);
+        ArrayList<Actor> actors = new ArrayList<>();
+        actors.add(new Actor(0,"Samantha", "Mother", 100.0, "Lead the Family"));
+        actors.add(new Actor(1,"Samuel", "Father", 100.0, "Lead the Family"));
+        actors.add(new Actor(2, "Ralph", "Son", 80.0, "Cause a Ruckus"));
+        actors.add(new Actor(3, "Sarah", "Daughter", 80.0, "Be Daddy's Angel"));
+        actors.add(new Actor(4, "Spot", "The Dog", 50.0, "Get Belly Rubs"));
+        
+        //NPC ACTORS.  Add 100 to the scene so there are no conflicts with player actors.
+        actors.add(new Actor(121, "Hoskininni", "Indian Chief", 100.0, "Leader of the Navajo indian tribe"));    // SCENE 21 (technically resided further south, but whatever.  Has a cool story)
+        actors.add(new Actor(120, "Jacob J. Brown", "Major", 100.0, "Major general of NY Militia"));             // SCENE 20 (US Major General at the time in NY)
+        actors.add(new Actor(127, "Brigham Young", "Prophet", 100.0, "Leader of the Church"));                   // SCENE 27 END
+        actors.add(new Actor(118, "George Brown", "Shop Keeper", 100.0, "Owner of the general store"));          // SCENE 18 START
+        actors.add(new Actor(119, "Henry Lewis", "Local Trader", 100.0, "Acquirer of goods and services"));      // SCENE 19
         return actors;
     }
 
@@ -261,25 +266,19 @@ public class GameControl {
         return locations;
     }
 
-    //  public static ArrayList<Double> maxHealth(ArrayList<Actor> actor){
-//    BEGIN
-//     ArrayList<Double> maxValue = new ArrayList<>();
-//    for(Actor person: actor){
-//      if (person.getHealth()> maxValue)
-//      maxValue = person.getHealth();
+//    public static ArrayList<Double> maxHealth(ArrayList<Actor> actor){
+//
+//        ArrayList<Double> maxValue = new ArrayList<>();
+//        for(Actor person: actor){
+//            if (actor.getHealth() > maxValue){
+//                maxValue = actor.getHealth();
+//            } 
+//        }
+//        return maxValue;
 //    }
-//    return maxValue;
-    //}
+    
     public static Game saveGame(String createNewGame) {
         System.out.println("SAVE STUBB");
         return null;
-    }
-
-    private static void createNPCActors(ArrayList<Actor> actors) {
-        actors.add(new Actor("Hoskininni", "Indian Chief", 100.0, "Leader of the Navajo indian tribe"));    // SCENE 21 (technically resided further south, but whatever.  Has a cool story)
-        actors.add(new Actor("Jacob J. Brown", "Major", 100.0, "Major general of NY Militia"));             // SCENE 20 (US Major General at the time in NY)
-        actors.add(new Actor("Brigham Young", "Prophet", 100.0, "Leader of the Church"));                   // SCENE 27 END
-        actors.add(new Actor("George Brown", "Shop Keeper", 100.0, "Owner of the general store"));          // SCENE 18 START
-        actors.add(new Actor("Henry Lewis", "Local Trader", 100.0, "Acquirer of goods and services"));      // SCENE 19
     }
 }
