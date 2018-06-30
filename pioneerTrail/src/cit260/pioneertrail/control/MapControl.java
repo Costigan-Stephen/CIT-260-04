@@ -30,48 +30,53 @@ public class MapControl {
         Map map = new Map(); //Map map = new Map object
         noOfRows = 0;//save the noOfRows in the map
         noOfColumns = 0;//save the noOfColumns in the map
-        return map; //???
-    }
 
+//CREATE LOCATIONS        
+        
     private static Location[][] createLocations(int rows, int columns) {
-        if(rows < 1 || columns < 1) { //IF rows < 1 OR columns < 1 THEN
+        if (rows < 1 || columns < 1) { //IF rows < 1 OR columns < 1 THEN
             return null;// RETURN null
         }//ENDIF
-        
-        Location[][] locations = new Location[9][3]; // locations = new two-dimensional Location array
-            
-        
-        for (int i = 0; i < rows.length; i++) { //FOR every row in the locations array
-                    for (int j = 0 < columns[i].length; j++) { //FOR every column in the locations array
-                        Location location = new Location();//location = create a new Location object
-        
-        
-        //set the row, and column attributes in the location
-        //set visited attribute to false
-        //Assign location to the row, and column in array
-        // ENDFOR
-        // RETURN locations 
 
-        
+        Location[][] locations = new Location[9][3]; // locations = new two-dimensional Location array
+
+        for (int i = 0; i < locations.length; i++) { //FOR every row in the locations array
+            for (int j = 0; j < locations[i].length; j++) { //FOR every column in the locations array
+            Location location = new Location();//location = create a new Location object
+            //set the row, and column attributes in the location
+            //set visited attribute to false
+            //Assign location to the row, and column in array
+        }// ENDFOR
+        return locations; // RETURN locations 
+    }
+    }
+    
+//CREATE QUESTIONS
+    
+    
     private static QuestionType[] createQuestions() {
         System.out.println("createQuestions called");
-        return null;  
-       
-            //questions = Create an array Question objects
-            //question1 = Create a new Question object
-            //Assign values to each attribute in the Question object
-            //Assign question1 to its position in the questions array
-            //question2 = Create a new Question object
-            //Assign values to each attribute in the Question object
-            //Assign question2 to its position in the questions array
-            //…
-            //…
-            //RETURN questions 
-    }
+        return null;
 
+        //questions = Create an array Question objects
+        //question1 = Create a new Question object
+        //Assign values to each attribute in the Question object
+        //Assign question1 to its position in the questions array
+        //question2 = Create a new Question object
+        //Assign values to each attribute in the Question object
+        //Assign question2 to its position in the questions array
+        //…
+        //…
+        //RETURN questions 
+    }
+    
+    
+//QUESTIONS TO SCENES
+    
+    
     private static void assignQuestionsToScenes(QuestionType[] questions, Scene[] scenes) {
         System.out.println("assignQuestionsToScenes called");
-        
+
         // Question[] questions,
         // Scene[] scenes) {
         //// Assign questions to the first question scene
@@ -95,10 +100,13 @@ public class MapControl {
         //…
         //}
     }
+    
+//ITEMS TO SCENES
 
+    
     private static void assignItemsToScenes(InventoryItem[] items, Scene[] scenes) {
         System.out.println("assignItemsToScenes called");
-        
+
         // InventoryItem[] items,
         // Scene[] scenes) {
         //// Assign items to the first resource scene
@@ -120,12 +128,20 @@ public class MapControl {
         //// REPEAT FOR ALL OTHER QUESTION SCENES
         //…
         //…
-}
-        
+    }
+
+    
+//SCENES TO LOCATIONS 
+
+    
     private static void assignScenesToLocations(Scene[] scenes, Location[][] location) {
         System.out.println("assignScenesToLocation called");
     }
 
+    
+// MOVE PLAYER
+
+    
     public static void movePlayer(Map map, int row, int column) {
         map.setCurrentLocation(map.getLocations()[row][column]);
         map.getCurrentLocation().setVisited(true);
@@ -133,6 +149,10 @@ public class MapControl {
         map.setCurrentColumn(column);
     }
 
+    
+//CREATE SCENES
+
+    
     public static Scene[] createScenes() {//scenes = createScenes()
 
         int s = 27;
@@ -364,10 +384,12 @@ public class MapControl {
     private static Actor getItem(int i) {   //Random items found on the way
         return null;
     }
-    
+
     private static QuestionType getQuestion(int i) {   //Random question found on the way
         return null;
     }
     
-
 }
+
+        return map; //???
+    }
