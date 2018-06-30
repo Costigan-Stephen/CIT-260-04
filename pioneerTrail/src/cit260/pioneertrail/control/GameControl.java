@@ -123,6 +123,7 @@ public class GameControl {
         actors.add(new Actor("Sarah", "Daughter", 80.0, "Be Daddy's Angel"));
         actors.add(new Actor("Spot", "The Dog", 50.0, "Get Belly Rubs"));
 
+        createNPCActors(actors);
         return actors;
     }
 
@@ -179,5 +180,13 @@ public class GameControl {
     public static Game saveGame(String createNewGame) {
         System.out.println("SAVE STUBB");
         return null;
+    }
+
+    private static void createNPCActors(ArrayList<Actor> actors) {
+        actors.add(new Actor("Hoskininni", "Indian Chief", 100.0, "Leader of the Navajo indian tribe"));    // SCENE 21 (technically resided further south, but whatever.  Has a cool story)
+        actors.add(new Actor("Jacob J. Brown", "Major", 100.0, "Major general of NY Militia"));             // SCENE 20 (US Major General at the time in NY)
+        actors.add(new Actor("Brigham Young", "Prophet", 100.0, "Leader of the Church"));                   // SCENE 27 END
+        actors.add(new Actor("George Brown", "Shop Keeper", 100.0, "Owner of the general store"));          // SCENE 18 START
+        actors.add(new Actor("Henry Lewis", "Local Trader", 100.0, "Acquirer of goods and services"));      // SCENE 19
     }
 }

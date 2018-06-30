@@ -344,216 +344,189 @@ public class MapControl { // MARILEE
         scenes[o].setDescription("BushLand");
         scenes[o].setBlocked(false);
         scenes[o].setSymbol("ᴥ");
-        scenes[o].setActor(getActor(o));
-        scenes[o].setActor(getItem(o));
+//        scenes[o].setActor(getActor(o));
 
         o = SceneType.Plains.ordinal();
         scenes[o].setQuestion(getQuestion(o));
         scenes[o].setDescription("Plains");
         scenes[o].setBlocked(false);
         scenes[o].setSymbol("؀");
-        scenes[o].setActor(getActor(o));
-        scenes[o].setActor(getItem(o));
+//        scenes[o].setActor(getActor(o));
 
         o = SceneType.Forest.ordinal();
         scenes[o].setQuestion(getQuestion(o));
         scenes[o].setDescription("Forest");
         scenes[o].setBlocked(false);
         scenes[o].setSymbol("ѱ");
-        scenes[o].setActor(getActor(o));
-        scenes[o].setActor(getItem(o));
+//        scenes[o].setActor(getActor(o));
 
         o = SceneType.Jungle.ordinal();
         scenes[o].setQuestion(getQuestion(o));
         scenes[o].setDescription("Jungle");
         scenes[o].setBlocked(false);
         scenes[o].setSymbol("∆");
-        scenes[o].setActor(getActor(o));
-        scenes[o].setActor(getItem(o));
+//        scenes[o].setActor(getActor(o));
 
         o = SceneType.Canyon.ordinal();
         scenes[o].setQuestion(getQuestion(o));
         scenes[o].setDescription("Canyon");
         scenes[o].setBlocked(true);
         scenes[o].setSymbol("_");
-        scenes[o].setActor(getActor(o));
-        scenes[o].setActor(getItem(o));
+//        scenes[o].setActor(getActor(o));
 
         o = SceneType.RedForest.ordinal();
         scenes[o].setQuestion(getQuestion(o));
         scenes[o].setDescription("RedForest");
         scenes[o].setBlocked(false);
         scenes[o].setSymbol("▲");
-        scenes[o].setActor(getActor(o));
-        scenes[o].setActor(getItem(o));
+//        scenes[o].setActor(getActor(o));
 
         o = SceneType.River.ordinal();
         scenes[o].setQuestion(getQuestion(o));
         scenes[o].setDescription("River");
         scenes[o].setBlocked(true);
         scenes[o].setSymbol("~");
-        scenes[o].setActor(getActor(o));
-        scenes[o].setActor(getItem(o));
+//        scenes[o].setActor(getActor(o));
 
         o = SceneType.Lake.ordinal();
         scenes[o].setQuestion(getQuestion(o));
         scenes[o].setDescription("Lake");
         scenes[o].setBlocked(true);
         scenes[o].setSymbol("≈");
-        scenes[o].setActor(getActor(o));
-        scenes[o].setActor(getItem(o));
+//        scenes[o].setActor(getActor(o));
 
         o = SceneType.Waterfall.ordinal();
         scenes[o].setQuestion(getQuestion(o));
         scenes[o].setDescription("Waterfall");
         scenes[o].setBlocked(false);
         scenes[o].setSymbol("ת");
-        scenes[o].setActor(getActor(o));
-        scenes[o].setActor(getItem(o));
+//        scenes[o].setActor(getActor(o));
 
         o = SceneType.Tundra.ordinal();
         scenes[o].setQuestion(getQuestion(o));
         scenes[o].setDescription("Tundra");
         scenes[o].setBlocked(false);
         scenes[o].setSymbol("ﭛ");
-        scenes[o].setActor(getActor(o));
-        scenes[o].setActor(getItem(o));
+//        scenes[o].setActor(getActor(o));
 
         o = SceneType.Sparse.ordinal();
         scenes[o].setQuestion(getQuestion(o));
         scenes[o].setDescription("Sparse");
         scenes[o].setBlocked(false);
         scenes[o].setSymbol(",");
-        scenes[o].setActor(getActor(o));
-        scenes[o].setActor(getItem(o));
+//        scenes[o].setActor(getActor(o));
 
         o = SceneType.CrackedEarth.ordinal();
         scenes[o].setQuestion(getQuestion(o));
         scenes[o].setDescription("CrackedEarth");
         scenes[o].setBlocked(false);
         scenes[o].setSymbol("ﷴ");
-        scenes[o].setActor(getActor(o));
-        scenes[o].setActor(getItem(o));
+//        scenes[o].setActor(getActor(o));
 
         o = SceneType.Arid.ordinal();
         scenes[o].setQuestion(getQuestion(o));
         scenes[o].setDescription("Arid");
         scenes[o].setBlocked(false);
         scenes[o].setSymbol(".");
-        scenes[o].setActor(getActor(o));
-        scenes[o].setActor(getItem(o));
+//        scenes[o].setActor(getActor(o));
 
         o = SceneType.Desert.ordinal();
         scenes[o].setQuestion(getQuestion(o));
         scenes[o].setDescription("Desert");
         scenes[o].setBlocked(false);
         scenes[o].setSymbol("ꞈ");
-        scenes[o].setActor(getActor(o));
-        scenes[o].setActor(getItem(o));
+//        scenes[o].setActor(getActor(o));
 
         o = SceneType.Hills.ordinal();
         scenes[o].setQuestion(getQuestion(o));
         scenes[o].setDescription("Hills");
         scenes[o].setBlocked(false);
         scenes[o].setSymbol("∩");
-        scenes[o].setActor(getActor(o));
-        scenes[o].setActor(getItem(o));
+//        scenes[o].setActor(getActor(o));
 
         o = SceneType.Mountain.ordinal();
         scenes[o].setQuestion(getQuestion(o));
         scenes[o].setDescription("Mountain");
         scenes[o].setBlocked(true);
         scenes[o].setSymbol("˄");
-        scenes[o].setActor(getActor(o));
-        scenes[o].setActor(getItem(o));
+//        scenes[o].setActor(getActor(o));
 
         o = SceneType.Stream.ordinal();
         scenes[o].setQuestion(getQuestion(o));
         scenes[o].setDescription("Stream");
         scenes[o].setBlocked(false);
         scenes[o].setSymbol("-");
-        scenes[o].setActor(getActor(o));
-        scenes[o].setActor(getItem(o));
+//        scenes[o].setActor(getActor(o));
 
         o = SceneType.Town.ordinal();
         scenes[o].setQuestion(getQuestion(o));
         scenes[o].setDescription("Town");
         scenes[o].setBlocked(false);
         scenes[o].setSymbol("◊");
-        scenes[o].setActor(getActor(o));
-        scenes[o].setActor(getItem(o));
+//        scenes[o].setActor(getActor(o));
 
         o = SceneType.Village.ordinal();
         scenes[o].setQuestion(getQuestion(o));
         scenes[o].setDescription("Village");
         scenes[o].setBlocked(false);
         scenes[o].setSymbol("◊");
-        scenes[o].setActor(getActor(o));
-        scenes[o].setActor(getItem(o));
+//        scenes[o].setActor(getActor(o));
 
         o = SceneType.Encampment.ordinal();
         scenes[o].setQuestion(getQuestion(o));
         scenes[o].setDescription("Encampment");
         scenes[o].setBlocked(false);
         scenes[o].setSymbol("◊");
-        scenes[o].setActor(getActor(o));
-        scenes[o].setActor(getItem(o));
+//        scenes[o].setActor(getActor(o));
 
         o = SceneType.IndianCamp.ordinal();
         scenes[o].setQuestion(getQuestion(o));
         scenes[o].setDescription("IndianCamp");
         scenes[o].setBlocked(false);
         scenes[o].setSymbol("◊");
-        scenes[o].setActor(getActor(o));
-        scenes[o].setActor(getItem(o));
+//        scenes[o].setActor(getActor(o));
 
         o = SceneType.Caves.ordinal();
         scenes[o].setQuestion(getQuestion(o));
         scenes[o].setDescription("Caves");
         scenes[o].setBlocked(false);
         scenes[o].setSymbol("₾");
-        scenes[o].setActor(getActor(o));
-        scenes[o].setActor(getItem(o));
+//        scenes[o].setActor(getActor(o));
 
         o = SceneType.Swamp.ordinal();
         scenes[o].setQuestion(getQuestion(o));
         scenes[o].setDescription("Swamp");
         scenes[o].setBlocked(true);
         scenes[o].setSymbol("ʬ");
-        scenes[o].setActor(getActor(o));
-        scenes[o].setActor(getItem(o));
+//        scenes[o].setActor(getActor(o));
 
         o = SceneType.DryRiver.ordinal();
         scenes[o].setQuestion(getQuestion(o));
         scenes[o].setDescription("DryRiver");
         scenes[o].setBlocked(false);
         scenes[o].setSymbol("͜");
-        scenes[o].setActor(getActor(o));
-        scenes[o].setActor(getItem(o));
+//        scenes[o].setActor(getActor(o));
 
         o = SceneType.Flooded.ordinal();
         scenes[o].setQuestion(getQuestion(o));
         scenes[o].setDescription("Flooded");
         scenes[o].setBlocked(true);
         scenes[o].setSymbol("؅");
-        scenes[o].setActor(getActor(o));
-        scenes[o].setActor(getItem(o));
+//        scenes[o].setActor(getActor(o));
 
         o = SceneType.MuddyPath.ordinal();
         scenes[o].setQuestion(getQuestion(o));
         scenes[o].setDescription("MuddyPath");
         scenes[o].setBlocked(false);
         scenes[o].setSymbol("؁");
-        scenes[o].setActor(getActor(o));
-        scenes[o].setActor(getItem(o));
+//        scenes[o].setActor(getActor(o));
 
         o = SceneType.Zion.ordinal();
         scenes[o].setQuestion(getQuestion(o));
         scenes[o].setDescription("Zion");
         scenes[o].setBlocked(false);
         scenes[o].setSymbol("♦");
-        scenes[o].setActor(getActor(o));
-        scenes[o].setActor(getItem(o));
+//        scenes[o].setActor(getActor(o));
 
         return scenes;
     }

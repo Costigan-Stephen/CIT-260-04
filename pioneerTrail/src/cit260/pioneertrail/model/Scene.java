@@ -25,6 +25,11 @@ public class Scene implements Serializable {
 
     }
 
+    public void setQuestion(QuestionType question) {
+
+        
+    }
+    
     public Scene getScene(int r, int c) {
         System.out.println("location at [" + r + "," + c + "]");
         return null;
@@ -104,4 +109,5 @@ public class Scene implements Serializable {
     public String getMapSymbol() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
 }
