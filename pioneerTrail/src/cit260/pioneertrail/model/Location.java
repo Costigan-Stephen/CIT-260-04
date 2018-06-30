@@ -10,13 +10,17 @@ public class Location implements Serializable{
     private Scene scene;
     public int row;
     public int column;
-    private int amountRemaining;
+//    private int amountRemaining;
     private boolean visited;
     
     public Location() {
     }
+
+    public Location(Scene scene, int rows, int columns, boolean b) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
-    public Location [][] createLocation(int rows, int columns){
+    public Location [][] createLocation(Scene scene, int rows, int columns, boolean visited){
         
 //        public static Location[][] createLocations(int rows, int columns) {
 //        IF rows < 1 OR columns < 1 THEN
@@ -39,10 +43,11 @@ public class Location implements Serializable{
         if (rows < 1 || columns < 1) {
             return null;
         }
-        String[][] location = null;
+        Location[][] location = null;
         for (int i = 0; i < h; i++) {
             for (int k = 0; k < w; k++) {
-                location[i][k] = "String[row:"+i+",column:"+k+",column:false]";
+                //location[i][k] = "String[row:"+i+",column:"+k+",visited:false]";
+//                location[i][k] = i;
             }
         }
         return null;
@@ -79,14 +84,6 @@ public class Location implements Serializable{
     public void setColumn(int column) {
         this.column = column;
     }
-
-    public int getAmountRemaining() {
-        return amountRemaining;
-    }
-
-    public void setAmountRemaining(int amountRemaining) {
-        this.amountRemaining = amountRemaining;
-    }
     
     @Override
     public int hashCode() {
@@ -94,7 +91,6 @@ public class Location implements Serializable{
         hash = 41 * hash + Objects.hashCode(this.scene);
         hash = 41 * hash + this.row;
         hash = 41 * hash + this.column;
-        hash = 41 * hash + this.amountRemaining;
         return hash;
     }
 
@@ -116,9 +112,7 @@ public class Location implements Serializable{
         if (this.column != other.column) {
             return false;
         }
-        if (this.amountRemaining != other.amountRemaining) {
-            return false;
-        }
+
         if (!Objects.equals(this.scene, other.scene)) {
             return false;
         }
@@ -127,7 +121,7 @@ public class Location implements Serializable{
 
     @Override
     public String toString() {
-        return "Location{" + "scene=" + scene + ", row=" + row + ", column=" + column + ", amountRemaining=" + amountRemaining + '}';
+        return "Location{" + "scene=" + scene + ", row=" + row + ", column=" + column + '}';
     }
 
 

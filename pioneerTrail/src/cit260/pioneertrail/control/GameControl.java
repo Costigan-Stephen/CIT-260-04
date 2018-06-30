@@ -12,6 +12,7 @@ import cit260.pioneertrail.model.ItemReference;
 import cit260.pioneertrail.model.Location;
 import cit260.pioneertrail.model.Map;
 import cit260.pioneertrail.model.Player;
+import cit260.pioneertrail.model.Scene;
 import cit260.pioneertrail.view.MapView;
 import java.util.ArrayList;
 import pioneertrail.PioneerTrail;
@@ -124,6 +125,35 @@ public class GameControl {
         actors.add(new Actor("Spot","The Dog",50.0,"Get Belly Rubs"));
 
         return actors;
+    }
+    
+    public static ArrayList<Location> createLocation(Scene scene, int rows, int columns, boolean visited){
+        
+        
+        ArrayList<Location> locations = new ArrayList<Location>();
+        locations.add(new Location(scene,rows,columns,false));
+        
+        for (int r = 0; r < rows; r++) {
+            for (int c = 0; c < columns; c++) {
+                locations.add(new Location(scene.getScene(r,c),r,c,false));
+            }
+        }
+        
+//        public static Location[][] createLocations(int rows, int columns) {
+//        IF rows < 1 OR columns < 1 THEN
+//          RETURN null
+//        ENDIF
+//        locations = new two-dimensional Location array
+//        FOR every row in the locations array
+//          FOR every column in the locations array
+//              location = create a new Location object
+//              set the row, and column attributes in the location
+//              set visited attribute to false
+//              Assign location to the row, and column in array
+//          ENDFOR
+//        RETURN locations
+//        }
+        return locations;
     }
   //  public static ArrayList<Double> maxHealth(ArrayList<Actor> actor){
 //    BEGIN
