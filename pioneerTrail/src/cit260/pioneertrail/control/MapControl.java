@@ -14,6 +14,7 @@ import cit260.pioneertrail.model.Map;
 import cit260.pioneertrail.model.Player;
 import cit260.pioneertrail.model.Question;
 import cit260.pioneertrail.model.QuestionType;
+import cit260.pioneertrail.model.ResourceScene;
 import cit260.pioneertrail.model.Scene;
 import cit260.pioneertrail.model.SceneType;
 import java.util.ArrayList;
@@ -127,23 +128,84 @@ public class MapControl { // MARILEE
     }
 
 //ITEMS TO SCENES MARILEE
-    private static void assignItemsToScenes(InventoryItem[] items, Scene[] scenes) {
+    private static void assignItemsToScenes(ItemReference[] items, Scene[] scenes) {
 
         // Assign items to the first resource scene
-        //resourceScene1 = scenes(indexOfScene)
-        //resourcesInScene = Create a new InventoryItem ArrayList
-        //resourcesInScene.add(items[indexOfItem])
-        //resourcesInScene.add(items[indexOfItem])
-        //…
-        //…
-        //assign resourcesInScene array to resourceScene1
-        //// Assign items to the second resource scene
-        //resourceScene2 = scenes(indexOfScene)
-        //resourcesInScene = Create a new InventoryItem ArrayList
-        //resourcesInScene.add(items[indexOfItem])
-        //resourcesInScene.add(items[indexOfItem])
-        //…
-        //…
+        ResourceScene river = (ResourceScene) scenes[SceneType.River.ordinal()];//resourceScene1 = scenes(indexOfScene)
+        ArrayList<ItemReference> resourcesInScene = new ArrayList<>(); //resourcesInScene = Create a new InventoryItem ArrayList
+        resourcesInScene.add(items[ItemReference.fish.ordinal()]); //resourcesInScene.add(items[indexOfItem])
+        resourcesInScene.add(items[ItemReference.freshWater.ordinal()]);
+        river.setResource(items);
+                
+                
+                
+        ResourceScene lake = (ResourceScene) scenes[SceneType.Lake.ordinal()];
+        resourcesInScene.add(items[ItemReference.fish.ordinal()]);
+        resourcesInScene.add(items[ItemReference.freshWater.ordinal()]);
+
+        ResourceScene village = (ResourceScene) scenes[SceneType.Village.ordinal()];
+        resourcesInScene.add(items[ItemReference.freshWater.ordinal()]);
+        resourcesInScene.add(items[ItemReference.bullets.ordinal()]);
+        resourcesInScene.add(items[ItemReference.flour.ordinal()]);
+        resourcesInScene.add(items[ItemReference.oxen.ordinal()]);
+        resourcesInScene.add(items[ItemReference.coin.ordinal()]);
+        
+        ResourceScene town = (ResourceScene) scenes[SceneType.Town.ordinal()];
+        resourcesInScene.add(items[ItemReference.freshWater.ordinal()]);
+        resourcesInScene.add(items[ItemReference.bullets.ordinal()]);
+        resourcesInScene.add(items[ItemReference.flour.ordinal()]);
+        resourcesInScene.add(items[ItemReference.oxen.ordinal()]);
+        resourcesInScene.add(items[ItemReference.coin.ordinal()]);
+        resourcesInScene.add(items[ItemReference.clothing.ordinal()]);
+        resourcesInScene.add(items[ItemReference.wheels.ordinal()]);
+        resourcesInScene.add(items[ItemReference.axe.ordinal()]);
+        
+        ResourceScene encampment = (ResourceScene) scenes[SceneType.Encampment.ordinal()];
+        resourcesInScene.add(items[ItemReference.freshWater.ordinal()]);
+        resourcesInScene.add(items[ItemReference.bullets.ordinal()]);
+        resourcesInScene.add(items[ItemReference.driedMeat.ordinal()]);
+
+        ResourceScene indianCamp = (ResourceScene) scenes[SceneType.IndianCamp.ordinal()];
+        resourcesInScene.add(items[ItemReference.freshWater.ordinal()]);
+        resourcesInScene.add(items[ItemReference.bullets.ordinal()]);
+        resourcesInScene.add(items[ItemReference.driedMeat.ordinal()]);
+        resourcesInScene.add(items[ItemReference.bison.ordinal()]);
+        resourcesInScene.add(items[ItemReference.fish.ordinal()]);
+        
+        ResourceScene plains = (ResourceScene) scenes[SceneType.Plains.ordinal()];
+        resourcesInScene.add(items[ItemReference.bison.ordinal()]);
+        resourcesInScene.add(items[ItemReference.deer.ordinal()]);
+        resourcesInScene.add(items[ItemReference.squirrel.ordinal()]);
+        resourcesInScene.add(items[ItemReference.rabbit.ordinal()]);
+        
+        ResourceScene mountains = (ResourceScene) scenes[SceneType.Mountain.ordinal()];
+        resourcesInScene.add(items[ItemReference.cougar.ordinal()]);
+        resourcesInScene.add(items[ItemReference.deer.ordinal()]);
+        resourcesInScene.add(items[ItemReference.squirrel.ordinal()]);
+        resourcesInScene.add(items[ItemReference.bear.ordinal()]);
+        resourcesInScene.add(items[ItemReference.rabbit.ordinal()]);
+        
+        ResourceScene desert = (ResourceScene) scenes[SceneType.Desert.ordinal()];
+        resourcesInScene.add(items[ItemReference.squirrel.ordinal()]);
+        resourcesInScene.add(items[ItemReference.rabbit.ordinal()]);
+        
+        ResourceScene stream = (ResourceScene) scenes[SceneType.Stream.ordinal()];
+        resourcesInScene.add(items[ItemReference.fish.ordinal()]);
+        resourcesInScene.add(items[ItemReference.freshWater.ordinal()]);
+        
+        ResourceScene forest = (ResourceScene) scenes[SceneType.RedForest.ordinal()];
+        resourcesInScene.add(items[ItemReference.bear.ordinal()]);
+        resourcesInScene.add(items[ItemReference.deer.ordinal()]);
+        resourcesInScene.add(items[ItemReference.squirrel.ordinal()]);
+        resourcesInScene.add(items[ItemReference.cougar.ordinal()]);
+        
+        ResourceScene waterfall = (ResourceScene) scenes[SceneType.Waterfall.ordinal()];
+        resourcesInScene.add(items[ItemReference.freshWater.ordinal()]);
+        
+        
+
+
+
         //assign resourcesInScene array to resourceScene2
         //// REPEAT FOR ALL OTHER QUESTION SCENES
         //…

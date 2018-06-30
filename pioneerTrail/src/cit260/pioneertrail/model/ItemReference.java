@@ -14,7 +14,7 @@ public enum ItemReference {
     wheels,
     oxen,
     coin,
-    bullets,
+    bullets, 
     fish,
     freshWater,
     flour,
@@ -25,6 +25,6 @@ public enum ItemReference {
     bear,
     bison,
     driedMeat,
-    clothing;  
+    clothing; 
     
 }
