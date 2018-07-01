@@ -173,7 +173,7 @@ public class GameControl {
         items[i].setItemName("bear");
 
         
-                i = ItemReference.bison.ordinal();
+        i = ItemReference.bison.ordinal();
         items[i] = new InventoryItem();
         items[i].setDamageValue(0);
         items[i].setInventoryType("Inventory");

@@ -20,7 +20,7 @@ public class Actor {
 //    ChildFemale("Sarah","Daughter", new Point(1,2),"Be Daddy's Angel"),
 //    Dog("Spot","The Doggy", new Point(1,3),"Get Belly Rubs"), ActorNames;
     
-    private int index;
+    public int index;
     private String name;
     private double health;
     private String description;

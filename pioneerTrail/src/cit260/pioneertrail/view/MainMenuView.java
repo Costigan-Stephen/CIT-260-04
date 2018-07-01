@@ -24,6 +24,7 @@ public class MainMenuView extends View {
                 + "\n\t N - Start new game "
                 + "\n\t R - Restart an existing game "
                 + "\n\t H - Get help on how to play the game "
+                + "\n\t I - Week 10 Individual Assignments "
                 + "\n\t Q - Quit game "
                 + "\n====================================================\n ");// Display the instructions
     }
@@ -44,6 +45,9 @@ public class MainMenuView extends View {
                 break;
             case "H":
                 getHelp();// “H”: getHelp()
+                break;
+            case "I":
+                individual();// “H”: getHelp()
                 break;
             default:
                 System.out.println("Invalid Menu item.");// DEFAULT: DISPLAY “Invalid menu item.”
@@ -69,5 +73,10 @@ public class MainMenuView extends View {
         HelpMenuView helpMenuView = new HelpMenuView();// helpMenuView = Create a new HelpMenuView
         helpMenuView.display();
         // helpMenuView.displayHelpMenuView();
+    }
+
+    private void individual() {
+        IndividualAssignments view = new IndividualAssignments();// helpMenuView = Create a new HelpMenuView
+        view.display();
     }
 }

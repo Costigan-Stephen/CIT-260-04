@@ -4,7 +4,10 @@
  * and open the template in the editor.
  */
 package cit260.pioneertrail.control;
+import cit260.pioneertrail.model.Actor;
+import cit260.pioneertrail.model.Game;
 import cit260.pioneertrail.model.Status;
+import java.util.ArrayList;
 
 /**
  *
@@ -36,6 +39,36 @@ public class HealthControl {
             return status.duration + addDuration;
         }
         
+    }
+    
+    public static double calcHealthRemaining(int index){
+        
+        Game game = new Game();
+        ArrayList <Actor> actors = new ArrayList<>();
+        
+        actors = game.getActors();
+        Actor value = null;
+        
+        double health = 0;
+        
+        for (int i = 0; i < actors.size(); i++) {
+            if (i == index){
+                value = actors.get(i);
+                System.out.println("\n"+ value.getName() + " has " + value.getHealth() + " health remaining.");
+                health = value.getHealth();
+            }
+        }
+        return health; //use elsewhere.
+    }
+    
+    //This would likely never be used, but who knows
+    public static Actor showAllHealth(){
+        ArrayList <Actor> actors = new ArrayList<>();
+        
+        for (Actor i: actors){
+            System.out.println(i);
+        }
+        return null;
     }
     
 }

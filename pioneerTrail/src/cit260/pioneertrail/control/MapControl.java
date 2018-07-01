@@ -135,7 +135,7 @@ public class MapControl { // MARILEE
         ArrayList<ItemReference> resourcesInScene = new ArrayList<>(); //resourcesInScene = Create a new InventoryItem ArrayList
         resourcesInScene.add(items[ItemReference.fish.ordinal()]); //resourcesInScene.add(items[indexOfItem])
         resourcesInScene.add(items[ItemReference.freshWater.ordinal()]);
-        river.setResource(items);
+//        river.setResource(items);
                 
                 
                 
