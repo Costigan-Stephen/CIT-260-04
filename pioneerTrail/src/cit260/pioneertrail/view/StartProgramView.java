@@ -7,7 +7,6 @@ package cit260.pioneertrail.view;
 
 import cit260.pioneertrail.control.GameControl;
 import cit260.pioneertrail.model.Player;
-import java.util.Scanner;
 
 /**
  *

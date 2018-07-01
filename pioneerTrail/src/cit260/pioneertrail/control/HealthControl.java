@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package cit260.pioneertrail.control;
+import static cit260.pioneertrail.control.GameControl.createActors;
 import cit260.pioneertrail.model.Actor;
 import cit260.pioneertrail.model.Game;
 import cit260.pioneertrail.model.Status;
@@ -44,6 +45,7 @@ public class HealthControl {
     public static double calcHealthRemaining(int index){
         
         Game game = new Game();
+        game.setActors(createActors()); // <---- TEMPORARY.  If this wasn't included it wouldn't work as this assignment menu appears before a game is made.
         ArrayList <Actor> actors = new ArrayList<>();
         
         actors = game.getActors();
@@ -54,7 +56,7 @@ public class HealthControl {
         for (int i = 0; i < actors.size(); i++) {
             if (i == index){
                 value = actors.get(i);
-                System.out.println("\n"+ value.getName() + " has " + value.getHealth() + " health remaining.");
+                System.out.println("\n"+ value.getName() + " has " + value.getHealth() + " health remaining.\n");
                 health = value.getHealth();
             }
         }

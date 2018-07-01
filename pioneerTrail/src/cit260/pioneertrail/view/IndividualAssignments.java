@@ -48,7 +48,7 @@ public class IndividualAssignments extends View {
     }
 
     private void calcHealthRemaining() {
-        System.out.println("\nDisplaying Health remaining for Actor: Spot (the dog)...");
+        System.out.println("\nDisplaying Health remaining for Actor: Spot (the dog): ...");
         HealthControl.calcHealthRemaining(4); 
     }
 
