@@ -51,6 +51,11 @@ public class HealthControl {
         actors = game.getActors();
         Actor value = null;
         
+        if (index < 0){
+            return 0;
+        } else if (index > 127) {  //Highest actor possibility based on current setup is 127.
+            return -1;
+        }
         double health = 0;
         
         for (int i = 0; i < actors.size(); i++) {
