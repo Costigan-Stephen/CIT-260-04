@@ -46,9 +46,9 @@ public class HealthControl {
         
         Game game = new Game();
         game.setActors(createActors()); // <---- TEMPORARY.  If this wasn't included it wouldn't work as this assignment menu appears before a game is made.
-        ArrayList <Actor> actors = new ArrayList<>();
+        ArrayList <Actor> actors = game.getActors();
         
-        actors = game.getActors();
+//        actors = game.getActors();
         Actor value = null;
         
         if (index < 0){

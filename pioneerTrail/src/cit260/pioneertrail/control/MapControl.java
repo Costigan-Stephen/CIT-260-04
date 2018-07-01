@@ -6,12 +6,11 @@
 package cit260.pioneertrail.control;
 
 import cit260.pioneertrail.model.Actor;
-import cit260.pioneertrail.model.Answers;
+import cit260.pioneertrail.model.Game;
 import cit260.pioneertrail.model.InventoryItem;
 import cit260.pioneertrail.model.ItemReference;
 import cit260.pioneertrail.model.Location;
 import cit260.pioneertrail.model.Map;
-import cit260.pioneertrail.model.Player;
 import cit260.pioneertrail.model.Question;
 import cit260.pioneertrail.model.QuestionType;
 import cit260.pioneertrail.model.ResourceScene;
@@ -43,7 +42,19 @@ public class MapControl { // MARILEE
         map.setRowCount(rowCount);//save the noOfColumns in the map
         return map;
     }
-
+    
+    //IMPLEMENT CODE STEPHEN
+    public static Game compileSceneComponents(Game game) {
+         
+        Scene[] scene = game.getScene();
+        
+        game.setLocations(createLocations(3,9));        
+        assignScenesToLocations(scene, game.getMap());
+        assignItemsToScenes(scene);
+        
+        return game;
+    }
+    
 //CREATE LOCATIONS MARILEE  
     private static Location[][] createLocations(int row, int column) {
         if (row < 1 || column < 1) { //IF rows < 1 OR columns < 1 THEN
@@ -100,7 +111,7 @@ public class MapControl { // MARILEE
     }
 
 //QUESTIONS TO SCENES JOSEPH
-    private static void assignQuestionsToScenes(QuestionType[] questions, Scene[] scenes) {
+    private static void assignQuestionsToScenes(Question[] questions, Scene scenes) {
         System.out.println("assignQuestionsToScenes called");
 
         // Question[] questions,
@@ -128,11 +139,12 @@ public class MapControl { // MARILEE
     }
 
 //ITEMS TO SCENES MARILEE
-    private static void assignItemsToScenes(ItemReference[] items, Scene[] scenes) {
+    private static void assignItemsToScenes(Scene[] scenes) {
 
         // Assign items to the first resource scene
         ResourceScene river = (ResourceScene) scenes[SceneType.River.ordinal()];//resourceScene1 = scenes(indexOfScene)
         ArrayList<ItemReference> resourcesInScene = new ArrayList<>(); //resourcesInScene = Create a new InventoryItem ArrayList
+        ItemReference[] items = null;
         resourcesInScene.add(items[ItemReference.fish.ordinal()]); //resourcesInScene.add(items[indexOfItem])
         resourcesInScene.add(items[ItemReference.freshWater.ordinal()]);
 //        river.setResource(items);
@@ -393,190 +405,191 @@ public class MapControl { // MARILEE
         int s = 27;
         Scene[] scenes = new Scene[s];
 
+        //Scene [01/27]
         int o = SceneType.BushLand.ordinal();
         scenes[o] = new Scene();
         scenes[o].setDescription("BushLand");
         scenes[o].setBlocked(false);
         scenes[o].setSymbol("ᴥ");
         scenes[o].setActor(getActor(o));
-
+        
+        //Scene [02/27]
         o = SceneType.Plains.ordinal();
-        scenes[o].setQuestion(getQuestion(o));
         scenes[o].setDescription("Plains");
         scenes[o].setBlocked(false);
         scenes[o].setSymbol("؀");
         scenes[o].setActor(getActor(o));
-
+        
+        //Scene [03/27]
         o = SceneType.Forest.ordinal();
-        scenes[o].setQuestion(getQuestion(o));
         scenes[o].setDescription("Forest");
         scenes[o].setBlocked(false);
         scenes[o].setSymbol("ѱ");
         scenes[o].setActor(getActor(o));
-
+        
+        //Scene [04/27]
         o = SceneType.Jungle.ordinal();
-        scenes[o].setQuestion(getQuestion(o));
         scenes[o].setDescription("Jungle");
         scenes[o].setBlocked(false);
         scenes[o].setSymbol("∆");
         scenes[o].setActor(getActor(o));
 
+        //Scene [05/27]
         o = SceneType.Canyon.ordinal();
-        scenes[o].setQuestion(getQuestion(o));
         scenes[o].setDescription("Canyon");
         scenes[o].setBlocked(true);
         scenes[o].setSymbol("_");
         scenes[o].setActor(getActor(o));
 
+        //Scene [06/27]
         o = SceneType.RedForest.ordinal();
-        scenes[o].setQuestion(getQuestion(o));
         scenes[o].setDescription("RedForest");
         scenes[o].setBlocked(false);
         scenes[o].setSymbol("▲");
         scenes[o].setActor(getActor(o));
 
+        //Scene [07/27]
         o = SceneType.River.ordinal();
-        scenes[o].setQuestion(getQuestion(o));
         scenes[o].setDescription("River");
         scenes[o].setBlocked(true);
         scenes[o].setSymbol("~");
         scenes[o].setActor(getActor(o));
 
+        //Scene [08/27]
         o = SceneType.Lake.ordinal();
-        scenes[o].setQuestion(getQuestion(o));
         scenes[o].setDescription("Lake");
         scenes[o].setBlocked(true);
         scenes[o].setSymbol("≈");
         scenes[o].setActor(getActor(o));
 
+        //Scene [09/27]
         o = SceneType.Waterfall.ordinal();
-        scenes[o].setQuestion(getQuestion(o));
         scenes[o].setDescription("Waterfall");
         scenes[o].setBlocked(false);
         scenes[o].setSymbol("ת");
         scenes[o].setActor(getActor(o));
 
+        //Scene [10/27]
         o = SceneType.Tundra.ordinal();
-        scenes[o].setQuestion(getQuestion(o));
         scenes[o].setDescription("Tundra");
         scenes[o].setBlocked(false);
         scenes[o].setSymbol("ﭛ");
         scenes[o].setActor(getActor(o));
 
+        //Scene [11/27]
         o = SceneType.Sparse.ordinal();
-        scenes[o].setQuestion(getQuestion(o));
         scenes[o].setDescription("Sparse");
         scenes[o].setBlocked(false);
         scenes[o].setSymbol(",");
         scenes[o].setActor(getActor(o));
 
+        //Scene [12/27]
         o = SceneType.CrackedEarth.ordinal();
-        scenes[o].setQuestion(getQuestion(o));
         scenes[o].setDescription("CrackedEarth");
         scenes[o].setBlocked(false);
         scenes[o].setSymbol("ﷴ");
         scenes[o].setActor(getActor(o));
 
+        //Scene [13/27]
         o = SceneType.Arid.ordinal();
-        scenes[o].setQuestion(getQuestion(o));
         scenes[o].setDescription("Arid");
         scenes[o].setBlocked(false);
         scenes[o].setSymbol(".");
         scenes[o].setActor(getActor(o));
 
+        //Scene [14/27]
         o = SceneType.Desert.ordinal();
-        scenes[o].setQuestion(getQuestion(o));
         scenes[o].setDescription("Desert");
         scenes[o].setBlocked(false);
         scenes[o].setSymbol("ꞈ");
         scenes[o].setActor(getActor(o));
 
+        //Scene [15/27]
         o = SceneType.Hills.ordinal();
-        scenes[o].setQuestion(getQuestion(o));
         scenes[o].setDescription("Hills");
         scenes[o].setBlocked(false);
         scenes[o].setSymbol("∩");
         scenes[o].setActor(getActor(o));
 
+        //Scene [16/27]
         o = SceneType.Mountain.ordinal();
-        scenes[o].setQuestion(getQuestion(o));
         scenes[o].setDescription("Mountain");
         scenes[o].setBlocked(true);
         scenes[o].setSymbol("˄");
         scenes[o].setActor(getActor(o));
 
+        //Scene [17/27]
         o = SceneType.Stream.ordinal();
-        scenes[o].setQuestion(getQuestion(o));
         scenes[o].setDescription("Stream");
         scenes[o].setBlocked(false);
         scenes[o].setSymbol("-");
         scenes[o].setActor(getActor(o));
 
+        //Scene [18/27]
         o = SceneType.Town.ordinal();
-        scenes[o].setQuestion(getQuestion(o));
         scenes[o].setDescription("Town");
         scenes[o].setBlocked(false);
         scenes[o].setSymbol("◊");
         scenes[o].setActor(getActor(o));
 
+        //Scene [19/27]
         o = SceneType.Village.ordinal();
-        scenes[o].setQuestion(getQuestion(o));
         scenes[o].setDescription("Village");
         scenes[o].setBlocked(false);
         scenes[o].setSymbol("◊");
         scenes[o].setActor(getActor(o));
 
+        //Scene [20/27]
         o = SceneType.Encampment.ordinal();
-        scenes[o].setQuestion(getQuestion(o));
         scenes[o].setDescription("Encampment");
         scenes[o].setBlocked(false);
         scenes[o].setSymbol("◊");
         scenes[o].setActor(getActor(o));
 
+        //Scene [21/27]
         o = SceneType.IndianCamp.ordinal();
-        scenes[o].setQuestion(getQuestion(o));
         scenes[o].setDescription("IndianCamp");
         scenes[o].setBlocked(false);
         scenes[o].setSymbol("◊");
         scenes[o].setActor(getActor(o));
 
+        //Scene [22/27]
         o = SceneType.Caves.ordinal();
-        scenes[o].setQuestion(getQuestion(o));
         scenes[o].setDescription("Caves");
         scenes[o].setBlocked(false);
         scenes[o].setSymbol("₾");
         scenes[o].setActor(getActor(o));
 
+        //Scene [23/27]
         o = SceneType.Swamp.ordinal();
-        scenes[o].setQuestion(getQuestion(o));
         scenes[o].setDescription("Swamp");
         scenes[o].setBlocked(true);
         scenes[o].setSymbol("ʬ");
         scenes[o].setActor(getActor(o));
 
+        //Scene [24/27]
         o = SceneType.DryRiver.ordinal();
-        scenes[o].setQuestion(getQuestion(o));
         scenes[o].setDescription("DryRiver");
         scenes[o].setBlocked(false);
         scenes[o].setSymbol("͜");
         scenes[o].setActor(getActor(o));
 
+        //Scene [25/27]
         o = SceneType.Flooded.ordinal();
-        scenes[o].setQuestion(getQuestion(o));
         scenes[o].setDescription("Flooded");
         scenes[o].setBlocked(true);
         scenes[o].setSymbol("؅");
         scenes[o].setActor(getActor(o));
 
+        //Scene [26/27]
         o = SceneType.MuddyPath.ordinal();
-        scenes[o].setQuestion(getQuestion(o));
         scenes[o].setDescription("MuddyPath");
         scenes[o].setBlocked(false);
         scenes[o].setSymbol("؁");
         scenes[o].setActor(getActor(o));
 
+        //Scene [27/27]
         o = SceneType.Zion.ordinal();
-        scenes[o].setQuestion(getQuestion(o));
         scenes[o].setDescription("Zion");
         scenes[o].setBlocked(false);
         scenes[o].setSymbol("♦");
@@ -591,12 +604,3 @@ public class MapControl { // MARILEE
         return actors.get(i);
     }
 
-    private static Actor getItem(int i) {   //Random items found on the way
-        return null;
-    }
-
-    private static QuestionType getQuestion(int i) {   //Random question found on the way
-        return null;
-    }
-
-}

@@ -16,14 +16,50 @@ import java.util.Objects;
 public class Game implements Serializable{
     
     private long totalTime;
-    private int noPeople;
+//    private int noPeople;
     private Player player;
     private ArrayList<Actor> actors;
-    private static Map map;
+    public static Map map;
+    public Scene[] scene;
+    private InventoryItem[] items;
+    private Location[][] locations;
+    private Question[] question;
     
     public Game() {
     }
 
+    public Location[][] getLocations() {
+        return locations;
+    }
+
+    public void setLocations(Location[][] locations) {
+        this.locations = locations;
+    }
+
+    public Question[] getQuestion() {
+        return question;
+    }
+
+    public void setQuestion(Question[] question) {
+        this.question = question;
+    }
+
+    public Scene[] getScene() {
+        return scene;
+    }
+
+    public void setScene(Scene[] scene) {
+        this.scene = scene;
+    }
+
+    public InventoryItem[] getItems() {
+        return items;
+    }
+
+    public void setItems(InventoryItem[] items) {
+        this.items = items;
+    }
+    
     public static Map getMap() {
         return map;
     }
@@ -48,13 +84,13 @@ public class Game implements Serializable{
         this.totalTime = totalTime;
     }
 
-    public int getNoPeople() {
-        return noPeople;
-    }
-
-    public void setNoPeople(int noPeople) {
-        this.noPeople = noPeople;
-    }
+//    public int getNoPeople() {
+//        return noPeople;
+//    }
+//
+//    public void setNoPeople(int noPeople) {
+//        this.noPeople = noPeople;
+//    }
 
     public Player getPlayer() {
         return player;

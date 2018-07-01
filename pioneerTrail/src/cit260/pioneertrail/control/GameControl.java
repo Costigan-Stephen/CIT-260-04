@@ -5,6 +5,7 @@
  */
 package cit260.pioneertrail.control;
 
+import static cit260.pioneertrail.control.MapControl.compileSceneComponents;
 import static cit260.pioneertrail.control.MapControl.movePlayer;
 import cit260.pioneertrail.model.Actor;
 import cit260.pioneertrail.model.Answers;
@@ -45,7 +46,13 @@ public class GameControl {
         Game game = new Game();
         game.setPlayer(player);
         game.setActors(createActors());
+        game.setItems(createItems());
+        game.setMap(createMap(3,9)); //3 Rows, 9 columns
+        compileSceneComponents(game);
+        
         PioneerTrail.setCurrentGame(game);
+        
+        
 
         // Actor actor = Actor();
         // actor.set

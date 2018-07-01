@@ -19,15 +19,36 @@ public class Scene implements Serializable {
     private String symbol;
     private Actor actor;
     private InventoryItem resource;
-    private QuestionType question;
+    private QuestionType questionType;
+    private Location[][] locations;
+    private Question[] question;
 
     public Scene() {
 
     }
 
-    public void setQuestion(QuestionType question) {
+    public QuestionType getQuestionType() {
+        return questionType;
+    }
 
-        
+    public void setQuestionType(QuestionType questionType) {
+        this.questionType = questionType;
+    }
+
+    public Location[][] getLocations() {
+        return locations;
+    }
+
+    public void setLocations(Location[][] locations) {
+        this.locations = locations;
+    }
+
+    public Question[] getQuestion() {
+        return question;
+    }
+
+    public void setQuestion(Question[] question) {
+        this.question = question;
     }
     
     public Scene getScene(int r, int c) {
