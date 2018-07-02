@@ -12,6 +12,7 @@ import cit260.pioneertrail.model.ItemReference;
 import cit260.pioneertrail.model.Location;
 import cit260.pioneertrail.model.Map;
 import cit260.pioneertrail.model.Question;
+import cit260.pioneertrail.model.QuestionScene;
 import cit260.pioneertrail.model.QuestionType;
 import cit260.pioneertrail.model.ResourceScene;
 import cit260.pioneertrail.model.Scene;
@@ -111,11 +112,19 @@ public class MapControl { // MARILEE
     }
 
 //QUESTIONS TO SCENES JOSEPH
-    private static void assignQuestionsToScenes(Question[] questions, Scene scenes) {
+    private static void assignQuestionsToScenes(Question[] questions, Scene[] scenes) {
         System.out.println("assignQuestionsToScenes called");
 
-        // Question[] questions,
-        // Scene[] scenes) {
+       QuestionScene questionScene1 = (QuestionScene) scenes[SceneType.Arid.ordinal()];
+       Question[] fun = new Question[30];
+        fun[0] = questions[QuestionType.actor.ordinal()];
+        fun[1] = questions[QuestionType.findFood.ordinal()]; 
+        questionScene1.setQuestion(fun);
+         QuestionScene questionScene2 = (QuestionScene) scenes[SceneType.BushLand.ordinal()];
+         fun = new Question[30];
+         fun[0] = questions[QuestionType.actor.ordinal()];
+         fun[1] = questions[QuestionType.findFood.ordinal()];
+         questionScene2.setQuestion(fun);
         //// Assign questions to the first question scene
         //questionScene1 = scenes(indexOfScene)
         //questionsInScene = Create a new Questions array
