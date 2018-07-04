@@ -8,6 +8,8 @@ package cit260.pioneertrail.model;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Objects;
+import pioneertrail.PioneerTrail;
+import static pioneertrail.PioneerTrail.getCurrentGame;
 
 /**
  *
@@ -84,14 +86,6 @@ public class Game implements Serializable{
         this.totalTime = totalTime;
     }
 
-//    public int getNoPeople() {
-//        return noPeople;
-//    }
-//
-//    public void setNoPeople(int noPeople) {
-//        this.noPeople = noPeople;
-//    }
-
     public Player getPlayer() {
         return player;
     }
@@ -99,44 +93,6 @@ public class Game implements Serializable{
     public void setPlayer(Player player) {
         this.player = player;
     }
-
-//    @Override
-//    public int hashCode() {
-//        int hash = 3;
-//        hash = 89 * hash + (int) (this.totalTime ^ (this.totalTime >>> 32));
-//        hash = 89 * hash + this.noPeople;
-//        hash = 89 * hash + Objects.hashCode(this.player);
-//        return hash;
-//    }
-//
-//    @Override
-//    public boolean equals(Object obj) {
-//        if (this == obj) {
-//            return true;
-//        }
-//        if (obj == null) {
-//            return false;
-//        }
-//        if (getClass() != obj.getClass()) {
-//            return false;
-//        }
-//        final Game other = (Game) obj;
-//        if (this.totalTime != other.totalTime) {
-//            return false;
-//        }
-//        if (this.noPeople != other.noPeople) {
-//            return false;
-//        }
-//        if (!Objects.equals(this.player, other.player)) {
-//            return false;
-//        }
-//        return true;
-//    }
-//
-//    @Override
-//    public String toString() {
-//        return "Game{" + "totalTime=" + totalTime + ", noPeople=" + noPeople + ", player=" + player + '}';
-//    }
 
     @Override
     public int hashCode() {
@@ -164,7 +120,12 @@ public class Game implements Serializable{
     }
 
     public Game GetCurrentGame() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Game current = PioneerTrail.getCurrentGame();
+        return current;
+    }
+    
+    public Location getLocation(int row, int column) {
+        return locations[row][column];
     }
     
 }

@@ -767,28 +767,6 @@ public class MapControl { // MARILEE
         return actors.get(i);
     }
     
-    // public static Location moveActor(actor, newRow, newColumn) {
-    // if actor is null then
-    // throw MapControlException
-    // endIf
-    // game = get the currentGame in the main class
-    // map = get the map in the game object
-    // locations = get the locations in the map
-    // if (newRow < 1 OR newRow > noOfRows in map OR
-    // newColumn < 1 OR newColumn > noOfColumns in map) then
-    // throw MapControlException
-    // endIf
-    // currentRow = get the row from the actor
-    // currentColumn = get the column from the actor
-    // oldLocation = get the location from the locations
-    // array at the current row and column
-    // newLocation = get the location at the new row and column
-    // set actor in the oldLocation to null
-    // set actor in the newLocation to the actor
-    // set row in actor to newRow
-    // set column in actor to newColumn
-    // return newLocation
-    
     public static Location moveActor(Actor actor, int newRow, int newColumn) throws MapControlException {
 
         if (actor == null){
@@ -803,18 +781,29 @@ public class MapControl { // MARILEE
             throw new MapControlException("Request is outside the borders of the map");
         }
         
-        isLocationBlocked(newRow, newColumn);
+        boolean blocked = isLocationBlocked(newRow, newColumn, game);
+        if (blocked == true){
+            throw new MapControlException("Error, location is blocked!");
+        }
+        //This doesn't seem like it will do anything since the current setup isn't made that way.
+//        int currentRow = game.getPlayer().getCurrentRow();
+//        int currentColumn = game.getPlayer().getCurrentColumn();
+//        Location oldLocation = game.getLocation(currentRow, currentColumn);
+        Location newLocation = game.getLocation(newRow, newColumn);
         
-        Location currentRow = game.getPlayer().getCurrentRow();
-        Location currentColumn = game.getPlayer().getCurrentColumn();
+        game.getPlayer().setCurrentColumn(newColumn);
+        game.getPlayer().setCurrentRow(newRow);
         
-        
-        
-        return null;
+        return newLocation;
     }
 
-    private static void isLocationBlocked(int newRow, int newColumn) throws MapControlException {
-        throw new MapControlException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    private static boolean isLocationBlocked(int row, int column, Game game) throws MapControlException {
+        if(game.getLocation(row, column).getScene().getBlocked() == true){
+            return true;
+        }else{
+            return false;
+        }
+        
     }
 
 
