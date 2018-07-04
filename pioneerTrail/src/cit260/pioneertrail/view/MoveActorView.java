@@ -12,6 +12,11 @@ package cit260.pioneertrail.view;
  */
 public class MoveActorView extends View{
 
+    @Override  //Added so it wouldn't cause an error.  Remove it when you're done!
+    public boolean doAction(String inputs) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     
 
     

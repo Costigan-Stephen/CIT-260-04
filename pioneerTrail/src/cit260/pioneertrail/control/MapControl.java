@@ -806,6 +806,8 @@ public class MapControl { // MARILEE
         isLocationBlocked(newRow, newColumn);
         
         Location currentRow = game.getPlayer().getCurrentRow();
+        Location currentColumn = game.getPlayer().getCurrentColumn();
+        
         
         
         return null;

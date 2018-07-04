@@ -7,7 +7,10 @@ package cit260.pioneertrail.view;
 
 import cit260.pioneertrail.control.GameControl;
 import cit260.pioneertrail.model.Player;
+import cit260.pioneettrail.exceptions.MapControlException;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import pioneertrail.PioneerTrail;
 
 /**
@@ -38,7 +41,13 @@ public class MainMenuView extends View {
 
         switch (menuItem) {// SWITCH menuItem
             case "N":
+        {
+            try {
                 startNewGame(); // “N”: startNewGame()
+            } catch (MapControlException ex) {
+                System.out.println(ex.getMessage());
+            }
+        }
                 break;
             case "R":
                 restartGame();// “R”: restartGame()
@@ -55,7 +64,7 @@ public class MainMenuView extends View {
         return false;// RETURN false
     }
 
-    private void startNewGame() {// startNewGame(): void {
+    private void startNewGame() throws MapControlException {// startNewGame(): void {
         GameControl.createNewGame(PioneerTrail.getPlayer());//Create a new game
 
         GameMenuView gameMenuView = new GameMenuView(); // gameMenuView = create a new GameMenuView object
