@@ -17,6 +17,7 @@ import cit260.pioneertrail.model.QuestionType;
 import cit260.pioneertrail.model.ResourceScene;
 import cit260.pioneertrail.model.Scene;
 import cit260.pioneertrail.model.SceneType;
+import cit260.pioneettrail.exceptions.MapControlException;
 import java.util.ArrayList;
 import pioneertrail.PioneerTrail;
 
@@ -45,7 +46,7 @@ public class MapControl { // MARILEE
     }
     
     //IMPLEMENT CODE STEPHEN
-    public static Game compileSceneComponents(Game game) {
+    public static Game compileSceneComponents(Game game) throws MapControlException  {
          
         Scene[] scene = game.getScene();
         
@@ -57,9 +58,9 @@ public class MapControl { // MARILEE
     }
     
 //CREATE LOCATIONS MARILEE  
-    private static Location[][] createLocations(int row, int column) {
+    private static Location[][] createLocations(int row, int column) throws MapControlException{
         if (row < 1 || column < 1) { //IF rows < 1 OR columns < 1 THEN
-            return null;// RETURN null
+            throw new MapControlException("Rows and Columns must be > 1");
         }//ENDIF
 
         Location[][] locations = new Location[0][0]; // locations = new two-dimensional Location array

@@ -8,16 +8,14 @@ package cit260.pioneertrail.control;
 import static cit260.pioneertrail.control.MapControl.compileSceneComponents;
 import static cit260.pioneertrail.control.MapControl.movePlayer;
 import cit260.pioneertrail.model.Actor;
-import cit260.pioneertrail.model.Answers;
 import cit260.pioneertrail.model.Game;
 import cit260.pioneertrail.model.InventoryItem;
 import cit260.pioneertrail.model.ItemReference;
 import cit260.pioneertrail.model.Location;
 import cit260.pioneertrail.model.Map;
 import cit260.pioneertrail.model.Player;
-import cit260.pioneertrail.model.QuestionType;
-import cit260.pioneertrail.model.Scene;
 import cit260.pioneertrail.view.MapView;
+import cit260.pioneettrail.exceptions.MapControlException;
 import java.util.ArrayList;
 import pioneertrail.PioneerTrail;
 
@@ -39,7 +37,7 @@ public class GameControl {
 //        return new Player();
     }
 
-    public static int createNewGame(Player player) {
+    public static int createNewGame(Player player) throws MapControlException {
         if (player == null) {
             return -1;
         }

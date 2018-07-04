@@ -6,6 +6,9 @@
 package cit260.pioneertrail.view;
 
 import cit260.pioneertrail.control.HealthControl;
+import cit260.pioneettrail.exceptions.HealthControlException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -29,7 +32,13 @@ public class IndividualAssignments extends View {
 
         switch (inputs) {
             case "S":
-                calcHealthRemaining();
+                {
+                    try {
+                        calcHealthRemaining();
+                    } catch (HealthControlException ex) {
+                        System.out.println(ex.getMessage());
+                    }
+                }
                 break;
             case "M":
 //                MainMenuView chuck = new MainMenuView();
@@ -47,7 +56,7 @@ public class IndividualAssignments extends View {
         return true;
     }
 
-    private void calcHealthRemaining() {
+    private void calcHealthRemaining() throws HealthControlException {
         System.out.println("\nDisplaying Health remaining for Actor: Spot (the dog): ...");
         int actorNumber = 4;
         HealthControl.calcHealthRemaining(actorNumber); 

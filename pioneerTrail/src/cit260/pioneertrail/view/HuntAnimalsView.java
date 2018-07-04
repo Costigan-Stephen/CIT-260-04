@@ -7,7 +7,10 @@ package cit260.pioneertrail.view;
 
 import cit260.pioneertrail.control.ResourceControl;
 import cit260.pioneertrail.model.InventoryItem;
+import cit260.pioneettrail.exceptions.ResourceControlException;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import pioneertrail.PioneerTrail;
 
 /**
@@ -34,7 +37,7 @@ public class HuntAnimalsView extends View {
     }
 
     @Override
-    public boolean doAction(String input) { //doAction(inputs): boolean {
+    public boolean doAction(String input)  { //doAction(inputs): boolean {
         String menuItem = input.toUpperCase(); // menuItem = first element in inputs array & convert menuItem to upper case   
 
         if (menuItem.equals("B")) {
@@ -56,7 +59,12 @@ public class HuntAnimalsView extends View {
         inventoryItem.setItemName("Bullets"); //needs to get the name from inventory. This is a placeholder
         inventoryItem.setQuantityOfItems(2); //needs to check the inventory of the player This is a placeholder
         inventoryItem.setInventoryType("Ammo"); //needs to get type from inventory this is a placeholder
-        double result = ResourceControl.calcHuntingResource(PioneerTrail.getPlayer().getHunger(), inventoryItem); //calls the control layer and should output the result to the screen
+        double result = 0;
+        try {
+            result = ResourceControl.calcHuntingResource(PioneerTrail.getPlayer().getHunger(), inventoryItem); //calls the control layer and should output the result to the screen
+        } catch (ResourceControlException ex) {
+            System.out.println(ex.getMessage());;
+        }
         System.out.println(result);
     }
 
