@@ -11,6 +11,7 @@ import cit260.pioneertrail.model.InventoryItem;
 import cit260.pioneertrail.model.ItemReference;
 import cit260.pioneertrail.model.Location;
 import cit260.pioneertrail.model.Map;
+import cit260.pioneertrail.model.Player;
 import cit260.pioneertrail.model.Question;
 import cit260.pioneertrail.model.QuestionScene;
 import cit260.pioneertrail.model.QuestionType;
@@ -20,6 +21,7 @@ import cit260.pioneertrail.model.SceneType;
 import cit260.pioneettrail.exceptions.MapControlException;
 import java.util.ArrayList;
 import pioneertrail.PioneerTrail;
+import static pioneertrail.PioneerTrail.getCurrentGame;
 
 /**
  *
@@ -764,5 +766,54 @@ public class MapControl { // MARILEE
         i += 100; //add 100 so there are no conflicts with player actors and actors not assigned to scenes.
         return actors.get(i);
     }
+    
+    // public static Location moveActor(actor, newRow, newColumn) {
+    // if actor is null then
+    // throw MapControlException
+    // endIf
+    // game = get the currentGame in the main class
+    // map = get the map in the game object
+    // locations = get the locations in the map
+    // if (newRow < 1 OR newRow > noOfRows in map OR
+    // newColumn < 1 OR newColumn > noOfColumns in map) then
+    // throw MapControlException
+    // endIf
+    // currentRow = get the row from the actor
+    // currentColumn = get the column from the actor
+    // oldLocation = get the location from the locations
+    // array at the current row and column
+    // newLocation = get the location at the new row and column
+    // set actor in the oldLocation to null
+    // set actor in the newLocation to the actor
+    // set row in actor to newRow
+    // set column in actor to newColumn
+    // return newLocation
+    
+    public static Location moveActor(Actor actor, int newRow, int newColumn) throws MapControlException {
+
+        if (actor == null){
+            throw new MapControlException("Error, actor is empty");
+        }
+        
+        Game game = PioneerTrail.getCurrentGame();
+        Map map = game.getMap();
+        Location location = map.getCurrentLocation();
+        
+        if (newRow < 1 || newRow > map.getNoOfRows() || newColumn < 1 || newColumn > map.getNoOfColumns()){
+            throw new MapControlException("Request is outside the borders of the map");
+        }
+        
+        isLocationBlocked(newRow, newColumn);
+        
+        Location currentRow = game.getPlayer().getCurrentRow();
+        
+        
+        return null;
+    }
+
+    private static void isLocationBlocked(int newRow, int newColumn) throws MapControlException {
+        throw new MapControlException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 
 }

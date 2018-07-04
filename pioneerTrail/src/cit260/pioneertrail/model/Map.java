@@ -22,13 +22,30 @@ public class Map implements Serializable {
 //    private int currentRow;
 //    private int currentColumn;
     private Location[][] locations;
-
+    private int noOfRows;
+    private int noOfColumns;
     private int currentRow = 0;
     private int currentColumn = 0;
     private Location currentLocation;
     private Boolean visited;
 
     public Map() {
+    }
+
+    public int getNoOfRows() {
+        return noOfRows;
+    }
+
+    public void setNoOfRows(int noOfRows) {
+        this.noOfRows = noOfRows;
+    }
+
+    public int getNoOfColumns() {
+        return noOfColumns;
+    }
+
+    public void setNoOfColumns(int noOfColumns) {
+        this.noOfColumns = noOfColumns;
     }
 
     public Location getCurrentLocation() {

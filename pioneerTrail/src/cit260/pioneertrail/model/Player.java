@@ -20,6 +20,8 @@ public class Player implements Serializable{
     private String status; //Sick, Dead, etc.
     private ArrayList<Game> games = new ArrayList<Game>();
     private int hunger = 5;
+    private Location currentRow;
+    private Location currentColumn;
 
     /**
      * Get the value of hunger
@@ -39,8 +41,23 @@ public class Player implements Serializable{
         this.hunger = hunger;
     }
 
-
     public Player() {
+    }
+
+    public Location getCurrentRow() {
+        return currentRow;
+    }
+
+    public void setCurrentRow(Location currentRow) {
+        this.currentRow = currentRow;
+    }
+
+    public Location getCurrentColumn() {
+        return currentColumn;
+    }
+
+    public void setCurrentColumn(Location currentColumn) {
+        this.currentColumn = currentColumn;
     }
 
     public String getName() {
