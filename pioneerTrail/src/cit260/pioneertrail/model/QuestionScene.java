@@ -22,9 +22,6 @@ public class QuestionScene extends Scene {
         return null;
     }
     
-    public Answers[] getQuestion() {
-        return question;
-    }
     public void setAnswer(Answers[] question){
         this.question = question;
     }
