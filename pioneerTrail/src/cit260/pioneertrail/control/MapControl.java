@@ -38,42 +38,38 @@ public class MapControl { // MARILEE
             return null; // RETURN null
         }// endif
 
-        rowCount = 3; // I added this here, but I'm not sure it's right. 
-        columnCount = 9; // Where do I say how many columns and rows?
-
         Map map = PioneerTrail.getCurrentGame().getMap(); //Map map = new Map object
         map.setColumnCount(columnCount);//save the noOfRows in the map
         map.setRowCount(rowCount);//save the noOfColumns in the map
         return map;
     }
-    
+
     //IMPLEMENT CODE STEPHEN
-    public static Game compileSceneComponents(Game game) throws MapControlException  {
-         
+    public static Game compileSceneComponents(Game game) throws MapControlException {
+        game.setScene(createScenes());
         Scene[] scene = game.getScene();
-        
-        game.setLocations(createLocations(3,9));        
+
+        game.setLocations(createLocations());
         assignScenesToLocations(scene, game.getMap());
         assignItemsToScenes(scene);
-        
+
         return game;
     }
-    
+
 //CREATE LOCATIONS MARILEE  
-    private static Location[][] createLocations(int row, int column) throws MapControlException{
-        if (row < 1 || column < 1) { //IF rows < 1 OR columns < 1 THEN
+    private static Location[][] createLocations() throws MapControlException {
+        Map map = PioneerTrail.getCurrentGame().getMap();
+        if (map.getRowCount() < 1 || map.getColumnCount() < 1) { //IF rows < 1 OR columns < 1 THEN
             throw new MapControlException("Rows and Columns must be > 1");
         }//ENDIF
 
-        Location[][] locations = new Location[0][0]; // locations = new two-dimensional Location array
+        Location[][] locations = new Location[map.getRowCount()][map.getColumnCount()]; // locations = new two-dimensional Location array
 
-        for (int i = 0; i < locations.length; i++) { //FOR every row in the locations array
-            for (int j = 0; j < locations[i].length; j++) { //FOR every column in the locations array
+        for (int i = 0; i < map.getRowCount() - 1; i++) { //FOR every row in the locations array
+            for (int j = 0; j < map.getColumnCount() - 1; j++) { //FOR every column in the locations array
                 Location location = new Location();//location = create a new Location object
-                location.setColumn(column); //set the row, and column attributes in the location
-                location.setRow(row);
                 location.setVisited(false);//set visited attribute to false
-                locations[row][column] = location;//Assign location to the row, and column in array
+                locations[i][j] = location;//Assign location to the row, and column in array
             }// ENDFOR
 
         }
@@ -118,167 +114,167 @@ public class MapControl { // MARILEE
     private static void assignQuestionsToScenes(Question[] questions, Scene[] scenes) {
         System.out.println("assignQuestionsToScenes called");
 
-       QuestionScene questionScene1 = (QuestionScene) scenes[SceneType.Arid.ordinal()];
-       Question[] fun = new Question[30];
+        QuestionScene questionScene1 = (QuestionScene) scenes[SceneType.Arid.ordinal()];
+        Question[] fun = new Question[30];
         fun[0] = questions[QuestionType.actor.ordinal()];
-        fun[1] = questions[QuestionType.findFood.ordinal()]; 
+        fun[1] = questions[QuestionType.findFood.ordinal()];
         questionScene1.setQuestion(fun);
-     
+
         QuestionScene questionScene2 = (QuestionScene) scenes[SceneType.BushLand.ordinal()];
-         fun = new Question[30];
-         fun[0] = questions[QuestionType.actor.ordinal()];
-         fun[1] = questions[QuestionType.findFood.ordinal()];
-         questionScene2.setQuestion(fun);
-       
-         QuestionScene questionScene3 = (QuestionScene) scenes[SceneType.Canyon.ordinal()];
-         fun = new Question[30];
-         fun[0] = questions[QuestionType.actor.ordinal()];
-         fun[1] = questions[QuestionType.findFood.ordinal()];
-         questionScene3.setQuestion(fun);
-         
-          QuestionScene questionScene4 = (QuestionScene) scenes[SceneType.Caves.ordinal()];
-         fun = new Question[30];
-         fun[0] = questions[QuestionType.actor.ordinal()];
-         fun[1] = questions[QuestionType.findFood.ordinal()];
-         questionScene4.setQuestion(fun);
-         
-          QuestionScene questionScene5 = (QuestionScene) scenes[SceneType.CrackedEarth.ordinal()];
-         fun = new Question[30];
-         fun[0] = questions[QuestionType.actor.ordinal()];
-         fun[1] = questions[QuestionType.findFood.ordinal()];
-         questionScene5.setQuestion(fun);
-         
-          QuestionScene questionScene6 = (QuestionScene) scenes[SceneType.Desert.ordinal()];
-         fun = new Question[30];
-         fun[0] = questions[QuestionType.actor.ordinal()];
-         fun[1] = questions[QuestionType.findFood.ordinal()];
-         questionScene6.setQuestion(fun);
-         
-          QuestionScene questionScene7 = (QuestionScene) scenes[SceneType.DryRiver.ordinal()];
-         fun = new Question[30];
-         fun[0] = questions[QuestionType.actor.ordinal()];
-         fun[1] = questions[QuestionType.findFood.ordinal()];
-         questionScene7.setQuestion(fun);
-          
-         QuestionScene questionScene8 = (QuestionScene) scenes[SceneType.Encampment.ordinal()];
-         fun = new Question[30];
-         fun[0] = questions[QuestionType.actor.ordinal()];
-         fun[1] = questions[QuestionType.findFood.ordinal()];
-         questionScene8.setQuestion(fun);
-         
-          QuestionScene questionScene9 = (QuestionScene) scenes[SceneType.Flooded.ordinal()];
-         fun = new Question[30];
-         fun[0] = questions[QuestionType.actor.ordinal()];
-         fun[1] = questions[QuestionType.findFood.ordinal()];
-         questionScene9.setQuestion(fun);
-         
-          QuestionScene questionScene10 = (QuestionScene) scenes[SceneType.Forest.ordinal()];
-         fun = new Question[30];
-         fun[0] = questions[QuestionType.actor.ordinal()];
-         fun[1] = questions[QuestionType.findFood.ordinal()];
-         questionScene10.setQuestion(fun);
-         
-           QuestionScene questionScene11 = (QuestionScene) scenes[SceneType.Hills.ordinal()];
-         fun = new Question[30];
-         fun[0] = questions[QuestionType.actor.ordinal()];
-         fun[1] = questions[QuestionType.findFood.ordinal()];
-         questionScene11.setQuestion(fun);
-         
-           QuestionScene questionScene12 = (QuestionScene) scenes[SceneType.IndianCamp.ordinal()];
-         fun = new Question[30];
-         fun[0] = questions[QuestionType.actor.ordinal()];
-         fun[1] = questions[QuestionType.findFood.ordinal()];
-         questionScene12.setQuestion(fun);
-         
-           QuestionScene questionScene13 = (QuestionScene) scenes[SceneType.Jungle.ordinal()];
-         fun = new Question[30];
-         fun[0] = questions[QuestionType.actor.ordinal()];
-         fun[1] = questions[QuestionType.findFood.ordinal()];
-         questionScene13.setQuestion(fun);
-         
-           QuestionScene questionScene14 = (QuestionScene) scenes[SceneType.Lake.ordinal()];
-         fun = new Question[30];
-         fun[0] = questions[QuestionType.actor.ordinal()];
-         fun[1] = questions[QuestionType.findFood.ordinal()];
-         questionScene14.setQuestion(fun);
-         
-           QuestionScene questionScene15 = (QuestionScene) scenes[SceneType.Mountain.ordinal()];
-         fun = new Question[30];
-         fun[0] = questions[QuestionType.actor.ordinal()];
-         fun[1] = questions[QuestionType.findFood.ordinal()];
-         questionScene15.setQuestion(fun);
-         
-           QuestionScene questionScene16 = (QuestionScene) scenes[SceneType.MuddyPath.ordinal()];
-         fun = new Question[30];
-         fun[0] = questions[QuestionType.actor.ordinal()];
-         fun[1] = questions[QuestionType.findFood.ordinal()];
-         questionScene16.setQuestion(fun);
-         
-           QuestionScene questionScene17 = (QuestionScene) scenes[SceneType.Plains.ordinal()];
-         fun = new Question[30];
-         fun[0] = questions[QuestionType.actor.ordinal()];
-         fun[1] = questions[QuestionType.findFood.ordinal()];
-         questionScene17.setQuestion(fun);
-         
-           QuestionScene questionScene18 = (QuestionScene) scenes[SceneType.RedForest.ordinal()];
-         fun = new Question[30];
-         fun[0] = questions[QuestionType.actor.ordinal()];
-         fun[1] = questions[QuestionType.findFood.ordinal()];
-         questionScene18.setQuestion(fun);
-         
-           QuestionScene questionScene19 = (QuestionScene) scenes[SceneType.River.ordinal()];
-         fun = new Question[30];
-         fun[0] = questions[QuestionType.actor.ordinal()];
-         fun[1] = questions[QuestionType.findFood.ordinal()];
-         questionScene19.setQuestion(fun);
-         
-           QuestionScene questionScene20 = (QuestionScene) scenes[SceneType.Sparse.ordinal()];
-         fun = new Question[30];
-         fun[0] = questions[QuestionType.actor.ordinal()];
-         fun[1] = questions[QuestionType.findFood.ordinal()];
-         questionScene20.setQuestion(fun);
-         
-          QuestionScene questionScene21 = (QuestionScene) scenes[SceneType.Stream.ordinal()];
-         fun = new Question[30];
-         fun[0] = questions[QuestionType.actor.ordinal()];
-         fun[1] = questions[QuestionType.findFood.ordinal()];
-         questionScene21.setQuestion(fun);
-         
-          QuestionScene questionScene22 = (QuestionScene) scenes[SceneType.Swamp.ordinal()];
-         fun = new Question[30];
-         fun[0] = questions[QuestionType.actor.ordinal()];
-         fun[1] = questions[QuestionType.findFood.ordinal()];
-         questionScene22.setQuestion(fun);
-         
-          QuestionScene questionScene23 = (QuestionScene) scenes[SceneType.Town.ordinal()];
-         fun = new Question[30];
-         fun[0] = questions[QuestionType.actor.ordinal()];
-         fun[1] = questions[QuestionType.findFood.ordinal()];
-         questionScene23.setQuestion(fun);
-         
-          QuestionScene questionScene24 = (QuestionScene) scenes[SceneType.Tundra.ordinal()];
-         fun = new Question[30];
-         fun[0] = questions[QuestionType.actor.ordinal()];
-         fun[1] = questions[QuestionType.findFood.ordinal()];
-         questionScene24.setQuestion(fun);
-         
-          QuestionScene questionScene25 = (QuestionScene) scenes[SceneType.Village.ordinal()];
-         fun = new Question[30];
-         fun[0] = questions[QuestionType.actor.ordinal()];
-         fun[1] = questions[QuestionType.findFood.ordinal()];
-         questionScene25.setQuestion(fun);
-         
-          QuestionScene questionScene26 = (QuestionScene) scenes[SceneType.Waterfall.ordinal()];
-         fun = new Question[30];
-         fun[0] = questions[QuestionType.actor.ordinal()];
-         fun[1] = questions[QuestionType.findFood.ordinal()];
-         questionScene26.setQuestion(fun);
-         
-          QuestionScene questionScene27 = (QuestionScene) scenes[SceneType.Zion.ordinal()];
-         fun = new Question[30];
-         fun[0] = questions[QuestionType.actor.ordinal()];
-         fun[1] = questions[QuestionType.findFood.ordinal()];
-         questionScene27.setQuestion(fun);
+        fun = new Question[30];
+        fun[0] = questions[QuestionType.actor.ordinal()];
+        fun[1] = questions[QuestionType.findFood.ordinal()];
+        questionScene2.setQuestion(fun);
+
+        QuestionScene questionScene3 = (QuestionScene) scenes[SceneType.Canyon.ordinal()];
+        fun = new Question[30];
+        fun[0] = questions[QuestionType.actor.ordinal()];
+        fun[1] = questions[QuestionType.findFood.ordinal()];
+        questionScene3.setQuestion(fun);
+
+        QuestionScene questionScene4 = (QuestionScene) scenes[SceneType.Caves.ordinal()];
+        fun = new Question[30];
+        fun[0] = questions[QuestionType.actor.ordinal()];
+        fun[1] = questions[QuestionType.findFood.ordinal()];
+        questionScene4.setQuestion(fun);
+
+        QuestionScene questionScene5 = (QuestionScene) scenes[SceneType.CrackedEarth.ordinal()];
+        fun = new Question[30];
+        fun[0] = questions[QuestionType.actor.ordinal()];
+        fun[1] = questions[QuestionType.findFood.ordinal()];
+        questionScene5.setQuestion(fun);
+
+        QuestionScene questionScene6 = (QuestionScene) scenes[SceneType.Desert.ordinal()];
+        fun = new Question[30];
+        fun[0] = questions[QuestionType.actor.ordinal()];
+        fun[1] = questions[QuestionType.findFood.ordinal()];
+        questionScene6.setQuestion(fun);
+
+        QuestionScene questionScene7 = (QuestionScene) scenes[SceneType.DryRiver.ordinal()];
+        fun = new Question[30];
+        fun[0] = questions[QuestionType.actor.ordinal()];
+        fun[1] = questions[QuestionType.findFood.ordinal()];
+        questionScene7.setQuestion(fun);
+
+        QuestionScene questionScene8 = (QuestionScene) scenes[SceneType.Encampment.ordinal()];
+        fun = new Question[30];
+        fun[0] = questions[QuestionType.actor.ordinal()];
+        fun[1] = questions[QuestionType.findFood.ordinal()];
+        questionScene8.setQuestion(fun);
+
+        QuestionScene questionScene9 = (QuestionScene) scenes[SceneType.Flooded.ordinal()];
+        fun = new Question[30];
+        fun[0] = questions[QuestionType.actor.ordinal()];
+        fun[1] = questions[QuestionType.findFood.ordinal()];
+        questionScene9.setQuestion(fun);
+
+        QuestionScene questionScene10 = (QuestionScene) scenes[SceneType.Forest.ordinal()];
+        fun = new Question[30];
+        fun[0] = questions[QuestionType.actor.ordinal()];
+        fun[1] = questions[QuestionType.findFood.ordinal()];
+        questionScene10.setQuestion(fun);
+
+        QuestionScene questionScene11 = (QuestionScene) scenes[SceneType.Hills.ordinal()];
+        fun = new Question[30];
+        fun[0] = questions[QuestionType.actor.ordinal()];
+        fun[1] = questions[QuestionType.findFood.ordinal()];
+        questionScene11.setQuestion(fun);
+
+        QuestionScene questionScene12 = (QuestionScene) scenes[SceneType.IndianCamp.ordinal()];
+        fun = new Question[30];
+        fun[0] = questions[QuestionType.actor.ordinal()];
+        fun[1] = questions[QuestionType.findFood.ordinal()];
+        questionScene12.setQuestion(fun);
+
+        QuestionScene questionScene13 = (QuestionScene) scenes[SceneType.Jungle.ordinal()];
+        fun = new Question[30];
+        fun[0] = questions[QuestionType.actor.ordinal()];
+        fun[1] = questions[QuestionType.findFood.ordinal()];
+        questionScene13.setQuestion(fun);
+
+        QuestionScene questionScene14 = (QuestionScene) scenes[SceneType.Lake.ordinal()];
+        fun = new Question[30];
+        fun[0] = questions[QuestionType.actor.ordinal()];
+        fun[1] = questions[QuestionType.findFood.ordinal()];
+        questionScene14.setQuestion(fun);
+
+        QuestionScene questionScene15 = (QuestionScene) scenes[SceneType.Mountain.ordinal()];
+        fun = new Question[30];
+        fun[0] = questions[QuestionType.actor.ordinal()];
+        fun[1] = questions[QuestionType.findFood.ordinal()];
+        questionScene15.setQuestion(fun);
+
+        QuestionScene questionScene16 = (QuestionScene) scenes[SceneType.MuddyPath.ordinal()];
+        fun = new Question[30];
+        fun[0] = questions[QuestionType.actor.ordinal()];
+        fun[1] = questions[QuestionType.findFood.ordinal()];
+        questionScene16.setQuestion(fun);
+
+        QuestionScene questionScene17 = (QuestionScene) scenes[SceneType.Plains.ordinal()];
+        fun = new Question[30];
+        fun[0] = questions[QuestionType.actor.ordinal()];
+        fun[1] = questions[QuestionType.findFood.ordinal()];
+        questionScene17.setQuestion(fun);
+
+        QuestionScene questionScene18 = (QuestionScene) scenes[SceneType.RedForest.ordinal()];
+        fun = new Question[30];
+        fun[0] = questions[QuestionType.actor.ordinal()];
+        fun[1] = questions[QuestionType.findFood.ordinal()];
+        questionScene18.setQuestion(fun);
+
+        QuestionScene questionScene19 = (QuestionScene) scenes[SceneType.River.ordinal()];
+        fun = new Question[30];
+        fun[0] = questions[QuestionType.actor.ordinal()];
+        fun[1] = questions[QuestionType.findFood.ordinal()];
+        questionScene19.setQuestion(fun);
+
+        QuestionScene questionScene20 = (QuestionScene) scenes[SceneType.Sparse.ordinal()];
+        fun = new Question[30];
+        fun[0] = questions[QuestionType.actor.ordinal()];
+        fun[1] = questions[QuestionType.findFood.ordinal()];
+        questionScene20.setQuestion(fun);
+
+        QuestionScene questionScene21 = (QuestionScene) scenes[SceneType.Stream.ordinal()];
+        fun = new Question[30];
+        fun[0] = questions[QuestionType.actor.ordinal()];
+        fun[1] = questions[QuestionType.findFood.ordinal()];
+        questionScene21.setQuestion(fun);
+
+        QuestionScene questionScene22 = (QuestionScene) scenes[SceneType.Swamp.ordinal()];
+        fun = new Question[30];
+        fun[0] = questions[QuestionType.actor.ordinal()];
+        fun[1] = questions[QuestionType.findFood.ordinal()];
+        questionScene22.setQuestion(fun);
+
+        QuestionScene questionScene23 = (QuestionScene) scenes[SceneType.Town.ordinal()];
+        fun = new Question[30];
+        fun[0] = questions[QuestionType.actor.ordinal()];
+        fun[1] = questions[QuestionType.findFood.ordinal()];
+        questionScene23.setQuestion(fun);
+
+        QuestionScene questionScene24 = (QuestionScene) scenes[SceneType.Tundra.ordinal()];
+        fun = new Question[30];
+        fun[0] = questions[QuestionType.actor.ordinal()];
+        fun[1] = questions[QuestionType.findFood.ordinal()];
+        questionScene24.setQuestion(fun);
+
+        QuestionScene questionScene25 = (QuestionScene) scenes[SceneType.Village.ordinal()];
+        fun = new Question[30];
+        fun[0] = questions[QuestionType.actor.ordinal()];
+        fun[1] = questions[QuestionType.findFood.ordinal()];
+        questionScene25.setQuestion(fun);
+
+        QuestionScene questionScene26 = (QuestionScene) scenes[SceneType.Waterfall.ordinal()];
+        fun = new Question[30];
+        fun[0] = questions[QuestionType.actor.ordinal()];
+        fun[1] = questions[QuestionType.findFood.ordinal()];
+        questionScene26.setQuestion(fun);
+
+        QuestionScene questionScene27 = (QuestionScene) scenes[SceneType.Zion.ordinal()];
+        fun = new Question[30];
+        fun[0] = questions[QuestionType.actor.ordinal()];
+        fun[1] = questions[QuestionType.findFood.ordinal()];
+        questionScene27.setQuestion(fun);
         //// Assign questions to the first question scene
         //questionScene1 = scenes(indexOfScene)
         //questionsInScene = Create a new Questions array
@@ -311,9 +307,7 @@ public class MapControl { // MARILEE
         resourcesInScene.add(items[ItemReference.fish.ordinal()]); //resourcesInScene.add(items[indexOfItem])
         resourcesInScene.add(items[ItemReference.freshWater.ordinal()]);
 //        river.setResource(items);
-                
-                
-                
+
         ResourceScene lake = (ResourceScene) scenes[SceneType.Lake.ordinal()];
         resourcesInScene.add(items[ItemReference.fish.ordinal()]);
         resourcesInScene.add(items[ItemReference.freshWater.ordinal()]);
@@ -324,7 +318,7 @@ public class MapControl { // MARILEE
         resourcesInScene.add(items[ItemReference.flour.ordinal()]);
         resourcesInScene.add(items[ItemReference.oxen.ordinal()]);
         resourcesInScene.add(items[ItemReference.coin.ordinal()]);
-        
+
         ResourceScene town = (ResourceScene) scenes[SceneType.Town.ordinal()];
         resourcesInScene.add(items[ItemReference.freshWater.ordinal()]);
         resourcesInScene.add(items[ItemReference.bullets.ordinal()]);
@@ -334,7 +328,7 @@ public class MapControl { // MARILEE
         resourcesInScene.add(items[ItemReference.clothing.ordinal()]);
         resourcesInScene.add(items[ItemReference.wheels.ordinal()]);
         resourcesInScene.add(items[ItemReference.axe.ordinal()]);
-        
+
         ResourceScene encampment = (ResourceScene) scenes[SceneType.Encampment.ordinal()];
         resourcesInScene.add(items[ItemReference.freshWater.ordinal()]);
         resourcesInScene.add(items[ItemReference.bullets.ordinal()]);
@@ -346,40 +340,36 @@ public class MapControl { // MARILEE
         resourcesInScene.add(items[ItemReference.driedMeat.ordinal()]);
         resourcesInScene.add(items[ItemReference.bison.ordinal()]);
         resourcesInScene.add(items[ItemReference.fish.ordinal()]);
-        
+
         ResourceScene plains = (ResourceScene) scenes[SceneType.Plains.ordinal()];
         resourcesInScene.add(items[ItemReference.bison.ordinal()]);
         resourcesInScene.add(items[ItemReference.deer.ordinal()]);
         resourcesInScene.add(items[ItemReference.squirrel.ordinal()]);
         resourcesInScene.add(items[ItemReference.rabbit.ordinal()]);
-        
+
         ResourceScene mountains = (ResourceScene) scenes[SceneType.Mountain.ordinal()];
         resourcesInScene.add(items[ItemReference.cougar.ordinal()]);
         resourcesInScene.add(items[ItemReference.deer.ordinal()]);
         resourcesInScene.add(items[ItemReference.squirrel.ordinal()]);
         resourcesInScene.add(items[ItemReference.bear.ordinal()]);
         resourcesInScene.add(items[ItemReference.rabbit.ordinal()]);
-        
+
         ResourceScene desert = (ResourceScene) scenes[SceneType.Desert.ordinal()];
         resourcesInScene.add(items[ItemReference.squirrel.ordinal()]);
         resourcesInScene.add(items[ItemReference.rabbit.ordinal()]);
-        
+
         ResourceScene stream = (ResourceScene) scenes[SceneType.Stream.ordinal()];
         resourcesInScene.add(items[ItemReference.fish.ordinal()]);
         resourcesInScene.add(items[ItemReference.freshWater.ordinal()]);
-        
+
         ResourceScene forest = (ResourceScene) scenes[SceneType.RedForest.ordinal()];
         resourcesInScene.add(items[ItemReference.bear.ordinal()]);
         resourcesInScene.add(items[ItemReference.deer.ordinal()]);
         resourcesInScene.add(items[ItemReference.squirrel.ordinal()]);
         resourcesInScene.add(items[ItemReference.cougar.ordinal()]);
-        
+
         ResourceScene waterfall = (ResourceScene) scenes[SceneType.Waterfall.ordinal()];
         resourcesInScene.add(items[ItemReference.freshWater.ordinal()]);
-        
-        
-
-
 
         //assign resourcesInScene array to resourceScene2
         //// REPEAT FOR ALL OTHER QUESTION SCENES
@@ -408,9 +398,8 @@ public class MapControl { // MARILEE
          */
         int r, c, s;
         Location[][] locations = map.getLocations();
-        
+
         // -------------------|ROW 1|---------------------------
-        
         r = 0;
         c = 0;
         s = SceneType.Tundra.ordinal();
@@ -457,7 +446,6 @@ public class MapControl { // MARILEE
         locations[r][c].setScene(scenes[s]);
 
         // -------------------|ROW 2|---------------------------
-        
         r = 0;
         c = 1;
         s = SceneType.Hills.ordinal();
@@ -504,7 +492,6 @@ public class MapControl { // MARILEE
         locations[r][c].setScene(scenes[s]);
 
         // -------------------|ROW 3|---------------------------
-        
         r = 0;
         c = 2;
         s = SceneType.Zion.ordinal(); //END
@@ -551,7 +538,6 @@ public class MapControl { // MARILEE
         locations[r][c].setScene(scenes[s]);
 
         // -------------------| END |---------------------------
-        
     }
 
 // MOVE PLAYER
@@ -575,21 +561,21 @@ public class MapControl { // MARILEE
         scenes[o].setBlocked(false);
         scenes[o].setSymbol("ᴥ");
         scenes[o].setActor(getActor(o));
-        
+
         //Scene [02/27]
         o = SceneType.Plains.ordinal();
         scenes[o].setDescription("Plains");
         scenes[o].setBlocked(false);
         scenes[o].setSymbol("؀");
         scenes[o].setActor(getActor(o));
-        
+
         //Scene [03/27]
         o = SceneType.Forest.ordinal();
         scenes[o].setDescription("Forest");
         scenes[o].setBlocked(false);
         scenes[o].setSymbol("ѱ");
         scenes[o].setActor(getActor(o));
-        
+
         //Scene [04/27]
         o = SceneType.Jungle.ordinal();
         scenes[o].setDescription("Jungle");
@@ -762,27 +748,30 @@ public class MapControl { // MARILEE
     }
 
     private static Actor getActor(int i) {  //Random actors met on the way
-        ArrayList<Actor> actors = new ArrayList<>();
-        i += 100; //add 100 so there are no conflicts with player actors and actors not assigned to scenes.
+        ArrayList<Actor> actors = PioneerTrail.getCurrentGame().getActors();
+//        i += 100; //add 100 so there are no conflicts with player actors and actors not assigned to scenes.
+// Commented this out because the Actor array list only has 9 elements.
+            if (i >= actors.size())
+                return null;
         return actors.get(i);
     }
-    
+
     public static Location moveActor(Actor actor, int newRow, int newColumn) throws MapControlException {
 
-        if (actor == null){
+        if (actor == null) {
             throw new MapControlException("Error, actor is empty");
         }
-        
+
         Game game = PioneerTrail.getCurrentGame();
         Map map = game.getMap();
         Location location = map.getCurrentLocation();
-        
-        if (newRow < 1 || newRow > map.getNoOfRows() || newColumn < 1 || newColumn > map.getNoOfColumns()){
+
+        if (newRow < 1 || newRow > map.getRowCount() || newColumn < 1 || newColumn > map.getColumnCount()) {
             throw new MapControlException("Request is outside the borders of the map");
         }
-        
+
         boolean blocked = isLocationBlocked(newRow, newColumn, game);
-        if (blocked == true){
+        if (blocked == true) {
             throw new MapControlException("Error, location is blocked!");
         }
         //This doesn't seem like it will do anything since the current setup isn't made that way.
@@ -790,21 +779,20 @@ public class MapControl { // MARILEE
 //        int currentColumn = game.getPlayer().getCurrentColumn();
 //        Location oldLocation = game.getLocation(currentRow, currentColumn);
         Location newLocation = game.getLocation(newRow, newColumn);
-        
+
         game.getPlayer().setCurrentColumn(newColumn);
         game.getPlayer().setCurrentRow(newRow);
-        
+
         return newLocation;
     }
 
     private static boolean isLocationBlocked(int row, int column, Game game) throws MapControlException {
-        if(game.getLocation(row, column).getScene().getBlocked() == true){
+        if (game.getLocation(row, column).getScene().getBlocked() == true) {
             return true;
-        }else{
+        } else {
             return false;
         }
-        
-    }
 
+    }
 
 }

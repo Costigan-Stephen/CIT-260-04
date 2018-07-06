@@ -8,21 +8,13 @@ import java.util.Objects;
 public class Location implements Serializable{
     
     private Scene scene;
-    public int row;
-    public int column;
     private boolean visited;
     
     public Location() {
         visited = false;
         scene = null;
     }
-
-    public Location(int rows, int columns) {
-        this.row = rows;
-        this.column = columns;
-        this.visited = false;
-    }
-    
+ 
     public Location [][] locations(Scene scene, int rows, int columns, boolean visited){
         
         int w = 9;
@@ -57,28 +49,11 @@ public class Location implements Serializable{
         this.scene = scene;
     }
 
-    public int getRow() {
-        return row;
-    }
-
-    public void setRow(int row) {
-        this.row = row;
-    }
-
-    public int getColumn() {
-        return column;
-    }
-
-    public void setColumn(int column) {
-        this.column = column;
-    }
     
     @Override
     public int hashCode() {
         int hash = 5;
         hash = 41 * hash + Objects.hashCode(this.scene);
-        hash = 41 * hash + this.row;
-        hash = 41 * hash + this.column;
         return hash;
     }
 
@@ -94,12 +69,6 @@ public class Location implements Serializable{
             return false;
         }
         final Location other = (Location) obj;
-        if (this.row != other.row) {
-            return false;
-        }
-        if (this.column != other.column) {
-            return false;
-        }
 
         if (!Objects.equals(this.scene, other.scene)) {
             return false;
@@ -109,7 +78,7 @@ public class Location implements Serializable{
 
     @Override
     public String toString() {
-        return "Location{" + "scene=" + scene + ", row=" + row + ", column=" + column + '}';
+        return "Location{" + "scene=" + scene + "}";
     }
 
 
