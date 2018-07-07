@@ -41,16 +41,14 @@ public class GameControl {
         if (player == null) {
             return -1;
         }
+
         Game game = new Game();
+        PioneerTrail.setCurrentGame(game);
         game.setPlayer(player);
         game.setActors(createActors());
         game.setItems(createItems());
-        game.setMap(createMap(3,9)); //3 Rows, 9 columns
+        game.setMap(createMap(9, 3)); 
         compileSceneComponents(game);
-        
-        PioneerTrail.setCurrentGame(game);
-        
-        
 
         // Actor actor = Actor();
         // actor.set
@@ -78,42 +76,42 @@ public class GameControl {
 
         InventoryItem[] items = new InventoryItem[200];
         int i = 0;
-        
+
         i = ItemReference.axe.ordinal();
         items[i] = new InventoryItem();
         items[i].setDamageValue(2);
         items[i].setInventoryType("inventory");
         items[i].setItemWeight(4);
         items[i].setItemName("axe");
-        
+
         i = ItemReference.wheels.ordinal();
         items[i] = new InventoryItem();
         items[i].setDamageValue(0);
         items[i].setInventoryType("Inventory");
         items[i].setItemWeight(10);
         items[i].setItemName("Wheel");
-        
+
         i = ItemReference.oxen.ordinal();
         items[i] = new InventoryItem();
         items[i].setDamageValue(0);
         items[i].setInventoryType("Inventory");
         items[i].setItemWeight(20);
         items[i].setItemName("Oxen");
-        
+
         i = ItemReference.coin.ordinal();
         items[i] = new InventoryItem();
         items[i].setDamageValue(0);
         items[i].setInventoryType("Inventory");
         items[i].setItemWeight(0);
         items[i].setItemName("coin");
-        
+
         i = ItemReference.bullets.ordinal();
         items[i] = new InventoryItem();
         items[i].setDamageValue(0);
         items[i].setInventoryType("Inventory");
         items[i].setItemWeight(10);
         items[i].setItemName("bullets");
-        
+
         i = ItemReference.fish.ordinal();
         items[i] = new InventoryItem();
         items[i].setDamageValue(0);
@@ -121,7 +119,6 @@ public class GameControl {
         items[i].setItemWeight(5);
         items[i].setItemName("fish");
 
-        
         i = ItemReference.freshWater.ordinal();
         items[i] = new InventoryItem();
         items[i].setDamageValue(0);
@@ -129,7 +126,6 @@ public class GameControl {
         items[i].setItemWeight(0);
         items[i].setItemName("freshWater");
 
-        
         i = ItemReference.flour.ordinal();
         items[i] = new InventoryItem();
         items[i].setDamageValue(0);
@@ -137,7 +133,6 @@ public class GameControl {
         items[i].setItemWeight(30);
         items[i].setItemName("flour");
 
-        
         i = ItemReference.squirrel.ordinal();
         items[i] = new InventoryItem();
         items[i].setDamageValue(0);
@@ -145,7 +140,6 @@ public class GameControl {
         items[i].setItemWeight(2);
         items[i].setItemName("squirrel");
 
-        
         i = ItemReference.rabbit.ordinal();
         items[i] = new InventoryItem();
         items[i].setDamageValue(0);
@@ -153,7 +147,6 @@ public class GameControl {
         items[i].setItemWeight(5);
         items[i].setItemName("rabbit");
 
-        
         i = ItemReference.deer.ordinal();
         items[i] = new InventoryItem();
         items[i].setDamageValue(0);
@@ -161,7 +154,6 @@ public class GameControl {
         items[i].setItemWeight(100);
         items[i].setItemName("deer");
 
-        
         i = ItemReference.cougar.ordinal();
         items[i] = new InventoryItem();
         items[i].setDamageValue(0);
@@ -169,7 +161,6 @@ public class GameControl {
         items[i].setItemWeight(150);
         items[i].setItemName("cougar");
 
-        
         i = ItemReference.bear.ordinal();
         items[i] = new InventoryItem();
         items[i].setDamageValue(0);
@@ -177,7 +168,6 @@ public class GameControl {
         items[i].setItemWeight(200);
         items[i].setItemName("bear");
 
-        
         i = ItemReference.bison.ordinal();
         items[i] = new InventoryItem();
         items[i].setDamageValue(0);
@@ -199,28 +189,31 @@ public class GameControl {
         items[i].setItemWeight(5);
         items[i].setItemName("clothing");
 
-
         return items;
 
     }
 
     public static Map createMap(int noOfRows, int noOfColumns) {
-        MapView map = new MapView();
-        map.setMap();
-        map.createMap();
-        System.out.println("\nmap called");
-        return null;
+        Map map = new Map();
+        map.setRowCount(noOfRows);
+        map.setColumnCount(noOfColumns);
+        return map;
+//        MapView map = new MapView();
+//        map.setMap();
+//        map.createMap();
+//        System.out.println("\nmap called");
+//        return null;
     }
 
     public static ArrayList<Actor> createActors() {
 
         ArrayList<Actor> actors = new ArrayList<>();
-        actors.add(new Actor(0,"Samantha", "Mother", 100.0, "Lead the Family"));
-        actors.add(new Actor(1,"Samuel", "Father", 100.0, "Lead the Family"));
+        actors.add(new Actor(0, "Samantha", "Mother", 100.0, "Lead the Family"));
+        actors.add(new Actor(1, "Samuel", "Father", 100.0, "Lead the Family"));
         actors.add(new Actor(2, "Ralph", "Son", 80.0, "Cause a Ruckus"));
         actors.add(new Actor(3, "Sarah", "Daughter", 80.0, "Be Daddy's Angel"));
         actors.add(new Actor(4, "Spot", "The Dog", 50.0, "Get Belly Rubs"));
-        
+
         //NPC ACTORS.  Add 100 to the scene so there are no conflicts with player actors.
         actors.add(new Actor(121, "Hoskininni", "Indian Chief", 100.0, "Leader of the Navajo indian tribe"));    // SCENE 21 (technically resided further south, but whatever.  Has a cool story)
         actors.add(new Actor(120, "Jacob J. Brown", "Major", 100.0, "Major general of NY Militia"));             // SCENE 20 (US Major General at the time in NY)
@@ -258,14 +251,13 @@ public class GameControl {
 //        question[QuestionType.weather.ordinal()].setResultOfAnswer("Her it is");
 //        return question;
 //    }
-
     public static Location[][] createLocation(int rows, int columns) {
 
         Location[][] locations = new Location[rows][columns];
 
         for (int r = 0; r < rows; r++) {
             for (int c = 0; c < columns; c++) {
-                locations[r][c] = (new Location(r, c));
+                locations[r][c] = (new Location());
             }
         }
         return locations;
@@ -281,7 +273,6 @@ public class GameControl {
 //        }
 //        return maxValue;
 //    }
-    
     public static Game saveGame(String createNewGame) {
         System.out.println("SAVE STUBB");
         return null;
