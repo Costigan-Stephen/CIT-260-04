@@ -13,4 +13,25 @@ import cit260.pioneertrail.control.InterviewControl;
  */
 public class InterviewControlException extends Exception{
     
+    public InterviewControlException() {
+    }
+    
+    public InterviewControlException(String message) {
+        super(message);
+    }
+    
+    public InterviewControlException(String message, Throwable cause) {
+        super(message, cause);
+    }
+    
+    public InterviewControlException(Throwable cause) {
+        super(cause);
+    }
+    
+    public InterviewControlException(String message, 
+                                     Throwable cause, 
+                                     boolean enableSuppression, 
+                                     boolean writableStackTrace) {
+        super(message, cause, enableSuppression, writableStackTrace);
+    }
 }
