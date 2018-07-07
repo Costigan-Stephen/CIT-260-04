@@ -65,8 +65,8 @@ public class MapControl { // MARILEE
 
         Location[][] locations = new Location[map.getRowCount()][map.getColumnCount()]; // locations = new two-dimensional Location array
 
-        for (int i = 0; i < map.getRowCount() - 1; i++) { //FOR every row in the locations array
-            for (int j = 0; j < map.getColumnCount() - 1; j++) { //FOR every column in the locations array
+        for (int i = 0; i < map.getRowCount(); i++) { //FOR every row in the locations array
+            for (int j = 0; j < map.getColumnCount(); j++) { //FOR every column in the locations array
                 Location location = new Location();//location = create a new Location object
                 location.setVisited(false);//set visited attribute to false
                 locations[i][j] = location;//Assign location to the row, and column in array
