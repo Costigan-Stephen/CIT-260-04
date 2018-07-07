@@ -127,8 +127,4 @@ public class Scene implements Serializable {
         return super.toString();
     }
 
-    public String getMapSymbol() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
 }

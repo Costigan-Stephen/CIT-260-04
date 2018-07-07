@@ -29,6 +29,7 @@ public class PioneerTrail {
             startProgramView.display();
         } catch (Exception e) {
             System.out.println(e.getMessage());
+            e.printStackTrace();
         }
         
     }
