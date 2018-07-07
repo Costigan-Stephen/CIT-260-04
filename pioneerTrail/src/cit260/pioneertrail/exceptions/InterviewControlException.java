@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package cit260.pioneettrail.exceptions;
+package cit260.pioneertrail.exceptions;
 
 import cit260.pioneertrail.control.InterviewControl;
 

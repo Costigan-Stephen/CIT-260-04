@@ -6,7 +6,7 @@
 package cit260.pioneertrail.view;
 
 import cit260.pioneertrail.control.HealthControl;
-import cit260.pioneettrail.exceptions.HealthControlException;
+import cit260.pioneertrail.exceptions.HealthControlException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 

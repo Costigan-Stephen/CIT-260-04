@@ -3,32 +3,32 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package cit260.pioneettrail.exceptions;
+package cit260.pioneertrail.exceptions;
 
-import cit260.pioneertrail.control.InventoryControl;
+import cit260.pioneertrail.control.GameControl;
 
 /**
  *
  * @author Stephen
  */
-public class InventoryControlException extends Exception{
+public class GameControlException extends Exception{
 
-    public InventoryControlException() {
+    public GameControlException() {
     }
     
-    public InventoryControlException(String message) {
+    public GameControlException(String message) {
         super(message);
     }
     
-    public InventoryControlException(String message, Throwable cause) {
+    public GameControlException(String message, Throwable cause) {
         super(message, cause);
     }
     
-    public InventoryControlException(Throwable cause) {
+    public GameControlException(Throwable cause) {
         super(cause);
     }
     
-    public InventoryControlException(String message, 
+    public GameControlException(String message, 
                                      Throwable cause, 
                                      boolean enableSuppression, 
                                      boolean writableStackTrace) {

@@ -8,7 +8,7 @@ import static cit260.pioneertrail.control.GameControl.createActors;
 import cit260.pioneertrail.model.Actor;
 import cit260.pioneertrail.model.Game;
 import cit260.pioneertrail.model.Status;
-import cit260.pioneettrail.exceptions.HealthControlException;
+import cit260.pioneertrail.exceptions.HealthControlException;
 import java.util.ArrayList;
 
 /**

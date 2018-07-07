@@ -3,32 +3,32 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package cit260.pioneettrail.exceptions;
+package cit260.pioneertrail.exceptions;
 
-import cit260.pioneertrail.control.MapControl;
+import cit260.pioneertrail.control.InventoryControl;
 
 /**
  *
  * @author Stephen
  */
-public class MapControlException extends Exception{
+public class InventoryControlException extends Exception{
 
-    public MapControlException() {
+    public InventoryControlException() {
     }
     
-    public MapControlException(String message) {
+    public InventoryControlException(String message) {
         super(message);
     }
     
-    public MapControlException(String message, Throwable cause) {
+    public InventoryControlException(String message, Throwable cause) {
         super(message, cause);
     }
     
-    public MapControlException(Throwable cause) {
+    public InventoryControlException(Throwable cause) {
         super(cause);
     }
     
-    public MapControlException(String message, 
+    public InventoryControlException(String message, 
                                      Throwable cause, 
                                      boolean enableSuppression, 
                                      boolean writableStackTrace) {

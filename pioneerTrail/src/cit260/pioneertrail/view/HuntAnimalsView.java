@@ -7,7 +7,7 @@ package cit260.pioneertrail.view;
 
 import cit260.pioneertrail.control.ResourceControl;
 import cit260.pioneertrail.model.InventoryItem;
-import cit260.pioneettrail.exceptions.ResourceControlException;
+import cit260.pioneertrail.exceptions.ResourceControlException;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;

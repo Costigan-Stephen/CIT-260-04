@@ -15,7 +15,7 @@ import cit260.pioneertrail.model.Location;
 import cit260.pioneertrail.model.Map;
 import cit260.pioneertrail.model.Player;
 import cit260.pioneertrail.view.MapView;
-import cit260.pioneettrail.exceptions.MapControlException;
+import cit260.pioneertrail.exceptions.MapControlException;
 import java.util.ArrayList;
 import pioneertrail.PioneerTrail;
 

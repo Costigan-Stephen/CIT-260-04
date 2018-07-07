@@ -7,7 +7,7 @@ package cit260.pioneertrail.view;
 
 import cit260.pioneertrail.control.GameControl;
 import cit260.pioneertrail.model.Player;
-import cit260.pioneettrail.exceptions.MapControlException;
+import cit260.pioneertrail.exceptions.MapControlException;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;

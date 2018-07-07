@@ -3,32 +3,32 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package cit260.pioneettrail.exceptions;
+package cit260.pioneertrail.exceptions;
 
-import cit260.pioneertrail.control.HealthControl;
+import cit260.pioneertrail.control.ResourceControl;
 
 /**
  *
  * @author Stephen
  */
-public class HealthControlException extends Exception{
+public class ResourceControlException extends Exception{
 
-    public HealthControlException() {
+    public ResourceControlException() {
     }
     
-    public HealthControlException(String message) {
+    public ResourceControlException(String message) {
         super(message);
     }
     
-    public HealthControlException(String message, Throwable cause) {
+    public ResourceControlException(String message, Throwable cause) {
         super(message, cause);
     }
     
-    public HealthControlException(Throwable cause) {
+    public ResourceControlException(Throwable cause) {
         super(cause);
     }
     
-    public HealthControlException(String message, 
+    public ResourceControlException(String message, 
                                      Throwable cause, 
                                      boolean enableSuppression, 
                                      boolean writableStackTrace) {

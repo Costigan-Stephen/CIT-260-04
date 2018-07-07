@@ -3,32 +3,32 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package cit260.pioneettrail.exceptions;
+package cit260.pioneertrail.exceptions;
 
-import cit260.pioneertrail.control.GameControl;
+import cit260.pioneertrail.control.HealthControl;
 
 /**
  *
  * @author Stephen
  */
-public class GameControlException extends Exception{
+public class HealthControlException extends Exception{
 
-    public GameControlException() {
+    public HealthControlException() {
     }
     
-    public GameControlException(String message) {
+    public HealthControlException(String message) {
         super(message);
     }
     
-    public GameControlException(String message, Throwable cause) {
+    public HealthControlException(String message, Throwable cause) {
         super(message, cause);
     }
     
-    public GameControlException(Throwable cause) {
+    public HealthControlException(Throwable cause) {
         super(cause);
     }
     
-    public GameControlException(String message, 
+    public HealthControlException(String message, 
                                      Throwable cause, 
                                      boolean enableSuppression, 
                                      boolean writableStackTrace) {
