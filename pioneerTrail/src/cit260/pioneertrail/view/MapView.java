@@ -23,65 +23,55 @@ public class MapView extends View {
                 + "\n------------------------------------------"
                 + "\n Enter your desired location "
                 + "\n------------------------------------------");
-
+    }
+    
+    public void displayMap() {
+        
+        String rightIndicator = "";
+        String leftIndicator = "";
         Game game = PioneerTrail.getCurrentGame(); // retreive the game
         Map map = game.getMap(); // retreive the map from game
         Location[][] locations = map.getLocations(); // retreive the locations from map
-        String rightIndicator = "";
-        String leftIndicator = "";
 
-        System.out.print(
-                "  |"); 
-        // Build the heading of the map
-        for (int column = 0;
-                column < locations[0].length;
-                column++) {
+        // Build the heading of the map     
+        System.out.print("  |");
+        for (int column = 0; column < locations[0].length; column++) {
             System.out.print("  " + column + " |");
-        } 
-        //Print out map
-        for (int row = 0;
-                row < locations.length;
-                row++) { // print col numbers to side of map
-//            System.out.print("  " + column + " |");
-
-            // Now build the map.  For each row, show the column information
-            System.out.println();
-
-            for (int column = 0; column < locations[0].length; row++) {
-
-                System.out.print(row + " "); // print row numbers to side of map
-                Location item = locations[row][column];
-//                for (Location item : locations[row]) {
-                    // set default indicators as blanks
-                    rightIndicator = " ";
-                    leftIndicator = " ";
-                    if (item == map.getCurrentLocation()) {
-                        // Set star indicators to show this is the current location.
-                        leftIndicator = "*";
-                        rightIndicator = "*";
-                    } else if (item.isVisited()) {
-                        // Set < > indicators to show this location has been visited.
-                        leftIndicator = ">"; // can be stars or whatever these are indicators showing visited
-                        rightIndicator = "<"; // same as above
-                    }
-                    System.out.print("|"); // start map with a |
-                    if (item.getScene() == null) {
-//                        leftIndicator = null;
-                        // No scene assigned here so use ?? for the symbol
-                        System.out.print(leftIndicator + "??" + rightIndicator);
-                    } else {
-//                        leftIndicator = null;
-                        System.out.print(leftIndicator + item.getScene().getSymbol() + rightIndicator);
-                    }
-//                }
-                System.out.println("|");
-            }
         }
-
+        // Now build the map.  For each row, show the column information
+        System.out.println();
+        for (int row = 0; row < locations.length; row++) {
+            System.out.print(row + " "); // print row numbers to side of map
+            for (int column = 0; column < locations[row].length; column++) {
+                // set default indicators as blanks
+                rightIndicator = " ";
+                leftIndicator = " ";
+                if (locations[row][column] == map.getCurrentLocation()) {
+                    // Set star indicators to show this is the current location.
+                    leftIndicator = "*";
+                    rightIndicator = "*";
+                }
+                else if(locations[row][column].isVisited()){
+                    // Set < > indicators to show this location has been visited.
+                    leftIndicator = ">"; // can be stars or whatever these are indicators showing visited
+                    rightIndicator = "<"; // same as above
+                }
+            System.out.print("|"); // start map with a |
+            if (locations[row][column].getScene() == null) {
+                System.out.print(leftIndicator + "??" + rightIndicator);
+            }
+            else
+                System.out.print(leftIndicator
+                                 + locations[row][column].getScene().getSymbol()
+                                 + rightIndicator);
+        }
+        System.out.println("|");
     }
 
-    @Override
-    public boolean doAction(String mapOption) {
+}
+
+@Override
+        public boolean doAction(String mapOption) {
         mapOption = mapOption.toUpperCase();
         Game game = PioneerTrail.getCurrentGame(); // retreive the game
         Map map = game.getMap(); // retreive the map from game

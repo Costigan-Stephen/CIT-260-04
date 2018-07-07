@@ -19,10 +19,7 @@ public class Map implements Serializable {
     private String description;
     private int rowCount;
     private int columnCount;
-//    private int currentRow;
-//    private int currentColumn;
     private Location[][] locations;
-
     private int currentRow = 0;
     private int currentColumn = 0;
     private Location currentLocation;
