@@ -18,7 +18,7 @@ import cit260.pioneertrail.model.QuestionType;
 import cit260.pioneertrail.model.ResourceScene;
 import cit260.pioneertrail.model.Scene;
 import cit260.pioneertrail.model.SceneType;
-import cit260.pioneettrail.exceptions.MapControlException;
+import cit260.pioneertrail.exceptions.MapControlException;
 import java.util.ArrayList;
 import pioneertrail.PioneerTrail;
 import static pioneertrail.PioneerTrail.getCurrentGame;

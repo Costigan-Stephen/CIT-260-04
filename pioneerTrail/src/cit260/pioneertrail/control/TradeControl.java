@@ -7,7 +7,6 @@ package cit260.pioneertrail.control;
 
 import cit260.pioneertrail.model.ItemReference;
 import cit260.pioneertrail.model.SceneType;
-import cit260.pioneettrail.exceptions.TradeControlException;
 
 /**
  *

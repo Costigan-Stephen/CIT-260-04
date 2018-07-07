@@ -5,7 +5,7 @@
  */
 package cit260.pioneertrail.control;
 import cit260.pioneertrail.model.InventoryItem;
-import cit260.pioneettrail.exceptions.GameControlException;
+import cit260.pioneertrail.exceptions.GameControlException;
 
 /**
  * @author Stephen
