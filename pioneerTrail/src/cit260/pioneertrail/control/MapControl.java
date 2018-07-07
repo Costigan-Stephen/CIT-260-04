@@ -775,7 +775,7 @@ public class MapControl { // MARILEE
         
         Game game = PioneerTrail.getCurrentGame();
         Map map = game.getMap();
-        Location location = map.getCurrentLocation();
+        Location location = map.getCurrentLocation(); 
         
         if (newRow < 1 || newRow > map.getNoOfRows() || newColumn < 1 || newColumn > map.getNoOfColumns()){
             throw new MapControlException("Request is outside the borders of the map");
