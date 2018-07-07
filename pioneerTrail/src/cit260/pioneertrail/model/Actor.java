@@ -28,6 +28,7 @@ public class Actor {
     private String purpose;
 
     public Actor(int index, String name, String description, double health, String purpose) {
+        this.index = index;
         this.name = name;
         this.description = description;
         this.health = health;

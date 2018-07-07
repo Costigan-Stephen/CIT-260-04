@@ -13,8 +13,26 @@ import cit260.pioneertrail.control.ResourceControl;
  */
 public class ResourceControlException extends Exception{
 
-    public ResourceControlException(String rows_and_Columns_must_be__1) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+     public ResourceControlException() {
+    }
+    
+    public ResourceControlException(String message) {
+        super(message);
+    }
+    
+    public ResourceControlException(String message, Throwable cause) {
+        super(message, cause);
+    }
+    
+    public ResourceControlException(Throwable cause) {
+        super(cause);
+    }
+    
+    public ResourceControlException(String message, 
+                                     Throwable cause, 
+                                     boolean enableSuppression, 
+                                     boolean writableStackTrace) {
+        super(message, cause, enableSuppression, writableStackTrace);
     }
     
 }

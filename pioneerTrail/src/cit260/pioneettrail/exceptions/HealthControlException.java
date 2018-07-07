@@ -13,8 +13,26 @@ import cit260.pioneertrail.control.HealthControl;
  */
 public class HealthControlException extends Exception{
 
-    public HealthControlException(String item_Quantity_cannot_be_less_than_1) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
+    public HealthControlException() {
     }
     
+    public HealthControlException(String message) {
+        super(message);
+    }
+    
+    public HealthControlException(String message, Throwable cause) {
+        super(message, cause);
+    }
+    
+    public HealthControlException(Throwable cause) {
+        super(cause);
+    }
+    
+    public HealthControlException(String message, 
+                                     Throwable cause, 
+                                     boolean enableSuppression, 
+                                     boolean writableStackTrace) {
+        super(message, cause, enableSuppression, writableStackTrace);
+    }
 }

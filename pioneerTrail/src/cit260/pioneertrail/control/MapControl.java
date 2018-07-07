@@ -46,12 +46,12 @@ public class MapControl { // MARILEE
 
     //IMPLEMENT CODE STEPHEN
     public static Game compileSceneComponents(Game game) throws MapControlException {
-        game.setScene(createScenes());
-        Scene[] scene = game.getScene();
+        game.setScenes(createScenes());
+        Scene[] scenes = game.getScenes();
 
         game.setLocations(createLocations());
-        assignScenesToLocations(scene, game.getMap());
-        assignItemsToScenes(scene);
+        assignScenesToLocations(scenes, game.getMap());
+        assignItemsToScenes(scenes);
 
         return game;
     }
@@ -537,6 +537,7 @@ public class MapControl { // MARILEE
         s = SceneType.Sparse.ordinal();
         locations[r][c].setScene(scenes[s]);
 
+        System.out.println("assignScenesToLocation done");
         // -------------------| END |---------------------------
     }
 
@@ -551,8 +552,7 @@ public class MapControl { // MARILEE
 //CREATE SCENES STEPHEN
     public static Scene[] createScenes() {//scenes = createScenes()
 
-        int s = 27;
-        Scene[] scenes = new Scene[s];
+        Scene[] scenes = new Scene[27];
 
         //Scene [01/27]
         int o = SceneType.BushLand.ordinal();
@@ -564,6 +564,7 @@ public class MapControl { // MARILEE
 
         //Scene [02/27]
         o = SceneType.Plains.ordinal();
+        scenes[o] = new Scene();
         scenes[o].setDescription("Plains");
         scenes[o].setBlocked(false);
         scenes[o].setSymbol("؀");
@@ -571,6 +572,7 @@ public class MapControl { // MARILEE
 
         //Scene [03/27]
         o = SceneType.Forest.ordinal();
+        scenes[o] = new Scene();
         scenes[o].setDescription("Forest");
         scenes[o].setBlocked(false);
         scenes[o].setSymbol("ѱ");
@@ -578,6 +580,7 @@ public class MapControl { // MARILEE
 
         //Scene [04/27]
         o = SceneType.Jungle.ordinal();
+        scenes[o] = new Scene();
         scenes[o].setDescription("Jungle");
         scenes[o].setBlocked(false);
         scenes[o].setSymbol("∆");
@@ -585,6 +588,7 @@ public class MapControl { // MARILEE
 
         //Scene [05/27]
         o = SceneType.Canyon.ordinal();
+        scenes[o] = new Scene();
         scenes[o].setDescription("Canyon");
         scenes[o].setBlocked(true);
         scenes[o].setSymbol("_");
@@ -592,6 +596,7 @@ public class MapControl { // MARILEE
 
         //Scene [06/27]
         o = SceneType.RedForest.ordinal();
+        scenes[o] = new Scene();
         scenes[o].setDescription("RedForest");
         scenes[o].setBlocked(false);
         scenes[o].setSymbol("▲");
@@ -599,6 +604,7 @@ public class MapControl { // MARILEE
 
         //Scene [07/27]
         o = SceneType.River.ordinal();
+        scenes[o] = new Scene();
         scenes[o].setDescription("River");
         scenes[o].setBlocked(true);
         scenes[o].setSymbol("~");
@@ -606,6 +612,7 @@ public class MapControl { // MARILEE
 
         //Scene [08/27]
         o = SceneType.Lake.ordinal();
+        scenes[o] = new Scene();
         scenes[o].setDescription("Lake");
         scenes[o].setBlocked(true);
         scenes[o].setSymbol("≈");
@@ -613,6 +620,7 @@ public class MapControl { // MARILEE
 
         //Scene [09/27]
         o = SceneType.Waterfall.ordinal();
+        scenes[o] = new Scene();
         scenes[o].setDescription("Waterfall");
         scenes[o].setBlocked(false);
         scenes[o].setSymbol("ת");
@@ -620,6 +628,7 @@ public class MapControl { // MARILEE
 
         //Scene [10/27]
         o = SceneType.Tundra.ordinal();
+        scenes[o] = new Scene();
         scenes[o].setDescription("Tundra");
         scenes[o].setBlocked(false);
         scenes[o].setSymbol("ﭛ");
@@ -627,6 +636,7 @@ public class MapControl { // MARILEE
 
         //Scene [11/27]
         o = SceneType.Sparse.ordinal();
+        scenes[o] = new Scene();
         scenes[o].setDescription("Sparse");
         scenes[o].setBlocked(false);
         scenes[o].setSymbol(",");
@@ -634,6 +644,7 @@ public class MapControl { // MARILEE
 
         //Scene [12/27]
         o = SceneType.CrackedEarth.ordinal();
+        scenes[o] = new Scene();
         scenes[o].setDescription("CrackedEarth");
         scenes[o].setBlocked(false);
         scenes[o].setSymbol("ﷴ");
@@ -641,6 +652,7 @@ public class MapControl { // MARILEE
 
         //Scene [13/27]
         o = SceneType.Arid.ordinal();
+        scenes[o] = new Scene();
         scenes[o].setDescription("Arid");
         scenes[o].setBlocked(false);
         scenes[o].setSymbol(".");
@@ -648,6 +660,7 @@ public class MapControl { // MARILEE
 
         //Scene [14/27]
         o = SceneType.Desert.ordinal();
+        scenes[o] = new Scene();
         scenes[o].setDescription("Desert");
         scenes[o].setBlocked(false);
         scenes[o].setSymbol("ꞈ");
@@ -655,6 +668,7 @@ public class MapControl { // MARILEE
 
         //Scene [15/27]
         o = SceneType.Hills.ordinal();
+        scenes[o] = new Scene();
         scenes[o].setDescription("Hills");
         scenes[o].setBlocked(false);
         scenes[o].setSymbol("∩");
@@ -662,6 +676,7 @@ public class MapControl { // MARILEE
 
         //Scene [16/27]
         o = SceneType.Mountain.ordinal();
+        scenes[o] = new Scene();
         scenes[o].setDescription("Mountain");
         scenes[o].setBlocked(true);
         scenes[o].setSymbol("˄");
@@ -669,6 +684,7 @@ public class MapControl { // MARILEE
 
         //Scene [17/27]
         o = SceneType.Stream.ordinal();
+        scenes[o] = new Scene();
         scenes[o].setDescription("Stream");
         scenes[o].setBlocked(false);
         scenes[o].setSymbol("-");
@@ -676,6 +692,7 @@ public class MapControl { // MARILEE
 
         //Scene [18/27]
         o = SceneType.Town.ordinal();
+        scenes[o] = new Scene();
         scenes[o].setDescription("Town");
         scenes[o].setBlocked(false);
         scenes[o].setSymbol("◊");
@@ -683,6 +700,7 @@ public class MapControl { // MARILEE
 
         //Scene [19/27]
         o = SceneType.Village.ordinal();
+        scenes[o] = new Scene();
         scenes[o].setDescription("Village");
         scenes[o].setBlocked(false);
         scenes[o].setSymbol("◊");
@@ -690,6 +708,7 @@ public class MapControl { // MARILEE
 
         //Scene [20/27]
         o = SceneType.Encampment.ordinal();
+        scenes[o] = new Scene();
         scenes[o].setDescription("Encampment");
         scenes[o].setBlocked(false);
         scenes[o].setSymbol("◊");
@@ -697,6 +716,7 @@ public class MapControl { // MARILEE
 
         //Scene [21/27]
         o = SceneType.IndianCamp.ordinal();
+        scenes[o] = new Scene();
         scenes[o].setDescription("IndianCamp");
         scenes[o].setBlocked(false);
         scenes[o].setSymbol("◊");
@@ -704,6 +724,7 @@ public class MapControl { // MARILEE
 
         //Scene [22/27]
         o = SceneType.Caves.ordinal();
+        scenes[o] = new Scene();
         scenes[o].setDescription("Caves");
         scenes[o].setBlocked(false);
         scenes[o].setSymbol("₾");
@@ -711,6 +732,7 @@ public class MapControl { // MARILEE
 
         //Scene [23/27]
         o = SceneType.Swamp.ordinal();
+        scenes[o] = new Scene();
         scenes[o].setDescription("Swamp");
         scenes[o].setBlocked(true);
         scenes[o].setSymbol("ʬ");
@@ -718,6 +740,7 @@ public class MapControl { // MARILEE
 
         //Scene [24/27]
         o = SceneType.DryRiver.ordinal();
+        scenes[o] = new Scene();
         scenes[o].setDescription("DryRiver");
         scenes[o].setBlocked(false);
         scenes[o].setSymbol("͜");
@@ -725,6 +748,7 @@ public class MapControl { // MARILEE
 
         //Scene [25/27]
         o = SceneType.Flooded.ordinal();
+        scenes[o] = new Scene();
         scenes[o].setDescription("Flooded");
         scenes[o].setBlocked(true);
         scenes[o].setSymbol("؅");
@@ -732,6 +756,7 @@ public class MapControl { // MARILEE
 
         //Scene [26/27]
         o = SceneType.MuddyPath.ordinal();
+        scenes[o] = new Scene();
         scenes[o].setDescription("MuddyPath");
         scenes[o].setBlocked(false);
         scenes[o].setSymbol("؁");
@@ -739,6 +764,7 @@ public class MapControl { // MARILEE
 
         //Scene [27/27]
         o = SceneType.Zion.ordinal();
+        scenes[o] = new Scene();
         scenes[o].setDescription("Zion");
         scenes[o].setBlocked(false);
         scenes[o].setSymbol("♦");
@@ -751,8 +777,9 @@ public class MapControl { // MARILEE
         ArrayList<Actor> actors = PioneerTrail.getCurrentGame().getActors();
 //        i += 100; //add 100 so there are no conflicts with player actors and actors not assigned to scenes.
 // Commented this out because the Actor array list only has 9 elements.
-            if (i >= actors.size())
-                return null;
+        if (i >= actors.size()) {
+            return new Actor(i, "nobody", "", 0, "no purpose");
+        }
         return actors.get(i);
     }
 

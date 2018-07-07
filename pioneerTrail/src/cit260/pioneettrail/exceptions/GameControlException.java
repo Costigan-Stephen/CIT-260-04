@@ -13,8 +13,26 @@ import cit260.pioneertrail.control.GameControl;
  */
 public class GameControlException extends Exception{
 
-    public GameControlException(String exception) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public GameControlException() {
+    }
+    
+    public GameControlException(String message) {
+        super(message);
+    }
+    
+    public GameControlException(String message, Throwable cause) {
+        super(message, cause);
+    }
+    
+    public GameControlException(Throwable cause) {
+        super(cause);
+    }
+    
+    public GameControlException(String message, 
+                                     Throwable cause, 
+                                     boolean enableSuppression, 
+                                     boolean writableStackTrace) {
+        super(message, cause, enableSuppression, writableStackTrace);
     }
     
 }
