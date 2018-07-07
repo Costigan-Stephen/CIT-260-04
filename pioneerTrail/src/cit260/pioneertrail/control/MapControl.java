@@ -49,7 +49,7 @@ public class MapControl { // MARILEE
         game.setScenes(createScenes());
         Scene[] scenes = game.getScenes();
 
-        game.setLocations(createLocations());
+        game.getMap().setLocations(createLocations());
         assignScenesToLocations(scenes, game.getMap());
         assignItemsToScenes(scenes);
 
@@ -805,7 +805,7 @@ public class MapControl { // MARILEE
 //        int currentRow = game.getPlayer().getCurrentRow();
 //        int currentColumn = game.getPlayer().getCurrentColumn();
 //        Location oldLocation = game.getLocation(currentRow, currentColumn);
-        Location newLocation = game.getLocation(newRow, newColumn);
+        Location newLocation = game.getMap().getLocations()[newRow][newColumn];
 
         game.getPlayer().setCurrentColumn(newColumn);
         game.getPlayer().setCurrentRow(newRow);
@@ -814,7 +814,7 @@ public class MapControl { // MARILEE
     }
 
     private static boolean isLocationBlocked(int row, int column, Game game) throws MapControlException {
-        if (game.getLocation(row, column).getScene().getBlocked() == true) {
+        if (game.getMap().getLocations()[row][column].getScene().getBlocked() == true) {
             return true;
         } else {
             return false;

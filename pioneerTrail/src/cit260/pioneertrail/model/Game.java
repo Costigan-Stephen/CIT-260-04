@@ -24,19 +24,19 @@ public class Game implements Serializable{
     public static Map map;
     public Scene[] scenes;
     private InventoryItem[] items;
-    private Location[][] locations;
+//    private Location[][] locations;
     private Question[] question;
     
     public Game() {
     }
 
-    public Location[][] getLocations() {
-        return locations;
-    }
-
-    public void setLocations(Location[][] locations) {
-        this.locations = locations;
-    }
+//    public Location[][] getLocations() {
+//        return locations;
+//    }
+//
+//    public void setLocations(Location[][] locations) {
+//        this.locations = locations;
+//    }
 
     public Question[] getQuestion() {
         return question;
@@ -124,8 +124,8 @@ public class Game implements Serializable{
         return current;
     }
     
-    public Location getLocation(int row, int column) {
-        return locations[row][column];
-    }
-    
+//    public Location getLocation(int row, int column) {
+//        return locations[row][column];
+//    }
+//    
 }
