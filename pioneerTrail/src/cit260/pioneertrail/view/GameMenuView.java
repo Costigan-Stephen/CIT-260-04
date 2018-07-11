@@ -60,6 +60,7 @@ class GameMenuView extends View {
 
     private void displayMapView() { //public void displayMap(){
          MapView mapView = new MapView();
+         mapView.displayMap();
          mapView.display();
     }
 

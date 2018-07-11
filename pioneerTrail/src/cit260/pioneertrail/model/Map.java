@@ -20,8 +20,8 @@ public class Map implements Serializable {
     private int rowCount;
     private int columnCount;
     private Location[][] locations;
-    private int currentRow = 0;
-    private int currentColumn = 0;
+    private int currentRow;
+    private int currentColumn;
     private Location currentLocation;
     private Boolean visited;
 

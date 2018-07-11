@@ -39,11 +39,17 @@ public class MapControl { // MARILEE
         }// endif
 
         Map map = PioneerTrail.getCurrentGame().getMap(); //Map map = new Map object
-        map.setColumnCount(columnCount);//save the noOfRows in the map
-        map.setRowCount(rowCount);//save the noOfColumns in the map
         return map;
     }
 
+    // MOVE PLAYER
+    public static void movePlayer(Map map, int row, int column) {
+        map.setCurrentLocation(map.getLocations()[row][column]);
+        map.getCurrentLocation().setVisited(true);
+        map.setCurrentRow(row);
+        map.setCurrentColumn(column);
+    }
+    
     //IMPLEMENT CODE STEPHEN
     public static Game compileSceneComponents(Game game) throws MapControlException {
         game.setScenes(createScenes());
@@ -52,6 +58,7 @@ public class MapControl { // MARILEE
         game.getMap().setLocations(createLocations());
         assignScenesToLocations(scenes, game.getMap());
         assignItemsToScenes(scenes);
+        movePlayer(game.getMap(), 0, 8);
 
         return game;
     }
@@ -386,49 +393,49 @@ public class MapControl { // MARILEE
         s = SceneType.Tundra.ordinal();
         locations[r][c].setScene(scenes[s]);
 
-        r = 1;
-        c = 0;
+        r = 0;
+        c = 1;
         s = SceneType.IndianCamp.ordinal();
         locations[r][c].setScene(scenes[s]);
 
-        r = 2;
-        c = 0;
+        r = 0;
+        c = 2;
         s = SceneType.Jungle.ordinal();
         locations[r][c].setScene(scenes[s]);
 
-        r = 3;
-        c = 0;
+        r = 0;
+        c = 3;
         s = SceneType.DryRiver.ordinal();
         locations[r][c].setScene(scenes[s]);
 
-        r = 4;
-        c = 0;
+        r = 0;
+        c = 4;
         s = SceneType.CrackedEarth.ordinal();
         locations[r][c].setScene(scenes[s]);
 
-        r = 5;
-        c = 0;
+        r = 0;
+        c = 5;
         s = SceneType.Canyon.ordinal();
         locations[r][c].setScene(scenes[s]);
 
-        r = 6;
-        c = 0;
+        r = 0;
+        c = 6;
         s = SceneType.Desert.ordinal();
         locations[r][c].setScene(scenes[s]);
 
-        r = 7;
-        c = 0;
+        r = 0;
+        c = 7;
         s = SceneType.BushLand.ordinal();
         locations[r][c].setScene(scenes[s]);
 
-        r = 8;
-        c = 0;
+        r = 0;
+        c = 8;
         s = SceneType.Town.ordinal();
         locations[r][c].setScene(scenes[s]);
 
         // -------------------|ROW 2|---------------------------
-        r = 0;
-        c = 1;
+        r = 1;
+        c = 0;
         s = SceneType.Hills.ordinal();
         locations[r][c].setScene(scenes[s]);
 
@@ -437,49 +444,49 @@ public class MapControl { // MARILEE
         s = SceneType.MuddyPath.ordinal();
         locations[r][c].setScene(scenes[s]);
 
-        r = 2;
-        c = 1;
+        r = 1;
+        c = 2;
         s = SceneType.Flooded.ordinal();
         locations[r][c].setScene(scenes[s]);
 
-        r = 3;
-        c = 1;
+        r = 1;
+        c = 3;
         s = SceneType.River.ordinal();
         locations[r][c].setScene(scenes[s]);
 
-        r = 4;
-        c = 1;
+        r = 1;
+        c = 4;
         s = SceneType.Village.ordinal();
         locations[r][c].setScene(scenes[s]);
 
-        r = 5;
-        c = 1;
+        r = 1;
+        c = 5;
         s = SceneType.Stream.ordinal();
         locations[r][c].setScene(scenes[s]);
 
-        r = 6;
-        c = 1;
+        r = 1;
+        c = 6;
         s = SceneType.Arid.ordinal();
         locations[r][c].setScene(scenes[s]);
 
-        r = 7;
-        c = 1;
+        r = 1;
+        c = 7;
         s = SceneType.Forest.ordinal();
         locations[r][c].setScene(scenes[s]);
 
-        r = 8;
-        c = 1;
+        r = 1;
+        c = 8;
         s = SceneType.Plains.ordinal();
         locations[r][c].setScene(scenes[s]);
 
         // -------------------|ROW 3|---------------------------
-        r = 0;
-        c = 2;
+        r = 2;
+        c = 0;
         s = SceneType.Zion.ordinal(); //END
         locations[r][c].setScene(scenes[s]);
 
-        r = 1;
-        c = 2;
+        r = 2;
+        c = 1;
         s = SceneType.Mountain.ordinal();
         locations[r][c].setScene(scenes[s]);
 
@@ -488,46 +495,38 @@ public class MapControl { // MARILEE
         s = SceneType.Caves.ordinal();
         locations[r][c].setScene(scenes[s]);
 
-        r = 3;
-        c = 2;
+        r = 2;
+        c = 3;
         s = SceneType.Waterfall.ordinal();
         locations[r][c].setScene(scenes[s]);
 
-        r = 4;
-        c = 2;
+        r = 2;
+        c = 4;
         s = SceneType.Lake.ordinal();
         locations[r][c].setScene(scenes[s]);
 
-        r = 5;
-        c = 2;
-        s = SceneType.Swamp.ordinal();
+        r = 2;
+        c = 5;
+        s = SceneType.Sparse.ordinal();
         locations[r][c].setScene(scenes[s]);
 
-        r = 6;
-        c = 2;
+        r = 2;
+        c = 6;
         s = SceneType.Encampment.ordinal();
         locations[r][c].setScene(scenes[s]);
 
-        r = 7;
-        c = 2;
+        r = 2;
+        c = 7;
         s = SceneType.RedForest.ordinal();
         locations[r][c].setScene(scenes[s]);
 
-        r = 8;
-        c = 2;
-        s = SceneType.Sparse.ordinal();
+        r = 2;
+        c = 8;
+        s = SceneType.Swamp.ordinal();
         locations[r][c].setScene(scenes[s]);
 
         System.out.println("assignScenesToLocation done");
         // -------------------| END |---------------------------
-    }
-
-// MOVE PLAYER
-    public static void movePlayer(Map map, int row, int column) {
-        map.setCurrentLocation(map.getLocations()[row][column]);
-        map.getCurrentLocation().setVisited(true);
-        map.setCurrentRow(row);
-        map.setCurrentColumn(column);
     }
 
 //CREATE SCENES STEPHEN
@@ -587,7 +586,7 @@ public class MapControl { // MARILEE
         o = SceneType.River.ordinal();
         scenes[o] = new Scene();
         scenes[o].setDescription("River");
-        scenes[o].setBlocked(true);
+        scenes[o].setBlocked(false);
         scenes[o].setSymbol("RV");
         scenes[o].setActor(getActor(o));
 
@@ -603,7 +602,7 @@ public class MapControl { // MARILEE
         o = SceneType.Waterfall.ordinal();
         scenes[o] = new Scene();
         scenes[o].setDescription("Waterfall");
-        scenes[o].setBlocked(false);
+        scenes[o].setBlocked(true);
         scenes[o].setSymbol("WF");
         scenes[o].setActor(getActor(o));
 
@@ -612,7 +611,7 @@ public class MapControl { // MARILEE
         scenes[o] = new Scene();
         scenes[o].setDescription("Tundra");
         scenes[o].setBlocked(false);
-        scenes[o].setSymbol("TN");
+        scenes[o].setSymbol("TU");
         scenes[o].setActor(getActor(o));
 
         //Scene [11/27]
@@ -644,7 +643,7 @@ public class MapControl { // MARILEE
         scenes[o] = new Scene();
         scenes[o].setDescription("Desert");
         scenes[o].setBlocked(false);
-        scenes[o].setSymbol("DR");
+        scenes[o].setSymbol("DE");
         scenes[o].setActor(getActor(o));
 
         //Scene [15/27]
@@ -707,7 +706,7 @@ public class MapControl { // MARILEE
         o = SceneType.Caves.ordinal();
         scenes[o] = new Scene();
         scenes[o].setDescription("Caves");
-        scenes[o].setBlocked(false);
+        scenes[o].setBlocked(true);
         scenes[o].setSymbol("CA");
         scenes[o].setActor(getActor(o));
 

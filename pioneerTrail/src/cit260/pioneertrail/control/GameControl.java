@@ -47,7 +47,7 @@ public class GameControl {
         game.setPlayer(player);
         game.setActors(createActors());
         game.setItems(createItems());
-        game.setMap(createMap(9, 3)); 
+        game.setMap(createMap(3, 9)); 
         compileSceneComponents(game);
 
         // Actor actor = Actor();

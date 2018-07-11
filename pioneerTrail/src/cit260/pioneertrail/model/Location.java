@@ -15,23 +15,23 @@ public class Location implements Serializable{
         scene = null;
     }
  
-    public Location [][] locations(Scene scene, int rows, int columns, boolean visited){
-        
-        int w = 9;
-        int h = 3;
-        
-        if (rows < 1 || columns < 1) {
-            return null;
-        }
-        Location[][] locations = null;
-        
-//        for (int r = 0; r < h; r++) {
-//            for (int c = 0; c < w; c++) {
-//                locations[rows][columns] = (new Location(r, c));
-//            }
+//    public Location [][] locations(Scene scene, int rows, int columns, boolean visited){
+//        
+//        int w = 9;
+//        int h = 3;
+//        
+//        if (rows < 1 || columns < 1) {
+//            return null;
 //        }
-        return locations;
-    }
+//        Location[][] locations = null;
+//        
+////        for (int r = 0; r < h; r++) {
+////            for (int c = 0; c < w; c++) {
+////                locations[rows][columns] = (new Location(r, c));
+////            }
+////        }
+//        return locations;
+//    }
 
     public boolean isVisited() {
         return visited;
