@@ -2,57 +2,58 @@
 package cit260.pioneertrail.model;
 
 import java.io.Serializable;
+import java.sql.Array;
 import java.util.Objects;
 
 public class Location implements Serializable{
     
-    private String name;
-    public int row;
-    public int column;
-    private int amountRemaining;
+    private Scene scene;
+    private boolean visited;
     
     public Location() {
+        visited = false;
+        scene = null;
+    }
+ 
+//    public Location [][] locations(Scene scene, int rows, int columns, boolean visited){
+//        
+//        int w = 9;
+//        int h = 3;
+//        
+//        if (rows < 1 || columns < 1) {
+//            return null;
+//        }
+//        Location[][] locations = null;
+//        
+////        for (int r = 0; r < h; r++) {
+////            for (int c = 0; c < w; c++) {
+////                locations[rows][columns] = (new Location(r, c));
+////            }
+////        }
+//        return locations;
+//    }
+
+    public boolean isVisited() {
+        return visited;
     }
 
-    public String getName() {
-        return name;
+    public void setVisited(boolean visited) {
+        this.visited = visited;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public Scene getScene() {
+        return scene;
     }
 
-    public int getRow() {
-        return row;
+    public void setScene(Scene scene) {
+        this.scene = scene;
     }
 
-    public void setRow(int row) {
-        this.row = row;
-    }
-
-    public int getColumn() {
-        return column;
-    }
-
-    public void setColumn(int column) {
-        this.column = column;
-    }
-
-    public int getAmountRemaining() {
-        return amountRemaining;
-    }
-
-    public void setAmountRemaining(int amountRemaining) {
-        this.amountRemaining = amountRemaining;
-    }
-
+    
     @Override
     public int hashCode() {
         int hash = 5;
-        hash = 41 * hash + Objects.hashCode(this.name);
-        hash = 41 * hash + this.row;
-        hash = 41 * hash + this.column;
-        hash = 41 * hash + this.amountRemaining;
+        hash = 41 * hash + Objects.hashCode(this.scene);
         return hash;
     }
 
@@ -68,16 +69,8 @@ public class Location implements Serializable{
             return false;
         }
         final Location other = (Location) obj;
-        if (this.row != other.row) {
-            return false;
-        }
-        if (this.column != other.column) {
-            return false;
-        }
-        if (this.amountRemaining != other.amountRemaining) {
-            return false;
-        }
-        if (!Objects.equals(this.name, other.name)) {
+
+        if (!Objects.equals(this.scene, other.scene)) {
             return false;
         }
         return true;
@@ -85,7 +78,7 @@ public class Location implements Serializable{
 
     @Override
     public String toString() {
-        return "Location{" + "name=" + name + ", row=" + row + ", column=" + column + ", amountRemaining=" + amountRemaining + '}';
+        return "Location{" + "scene=" + scene + "}";
     }
 
 

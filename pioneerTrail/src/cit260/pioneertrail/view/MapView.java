@@ -5,135 +5,132 @@
  */
 package cit260.pioneertrail.view;
 
-import cit260.pioneertrail.control.GameControl;
+import cit260.pioneertrail.control.MapControl;
+import cit260.pioneertrail.model.Game;
 import cit260.pioneertrail.model.Location;
-import static cit260.pioneertrail.view.GameMenuView.displayGameMenu;
-import java.util.Scanner;
+import cit260.pioneertrail.model.Map;
 import pioneertrail.PioneerTrail;
 
 /**
  *
  * @author Stephen
  */
-public class MapView {
-    
-    
+public class MapView extends View {
+
     public MapView() {
-        
+
+        super("\t\tPlease enter your desired direction of travel: ");
     }
-    
-    private static void GridDraw() {
-        Location location = new Location();
-        
-        location.row = 45;
-        location.column = 8;
-        int zionX = 4;
-        int zionY = 8;
-        int l = 52;
-        int h = 12;
-        char b = '#'; // Border
-        char t = '.';
-        char c = 'O'; // PLAYER
-        char z = 'Z'; // END POINT, ZION
-        char m;
-        int x;
-        int y = 1;
-        
-        System.out.println("       [" + b + "] - Border  [" + c + "] - Player  [" + z + "] - Zion       ");
-        
-        for (int i = 0; i < h; i++){
-            
-            x = 0;
-            for (int k = 0; k < l; k++){
-                x++;
-                if (x == location.getRow() && y == location.getColumn()){
-                    m = c;
-                } else if (x == zionX && y == zionY){
-                    m = z;
-                } else if (k == (l - 1) || x == 1){
-                    m = b;
-                } else if (y == 1 || y == h) {
-                    m = b;
-                } else {
-                    m = t; 
-                }
-                System.out.print(m);
+
+    public void displayMap() {
+
+        String rightIndicator = "";
+        String leftIndicator = "";
+        Game game = PioneerTrail.getCurrentGame(); // retreive the game
+        Map map = game.getMap(); // retreive the map from game
+        Location[][] locations = map.getLocations(); // retreive the locations from map
+
+        // Build the heading of the map     
+        System.out.print("\n======================================================================================\n        |");
+        for (int column = 0; column < locations[0].length; column++) {
+            System.out.print("  " + column + " |");
+            if(column == (locations[0].length - 1)){
+                System.out.print("    # # - Blocked Location ");
             }
-            System.out.println();
-            y++;
-        }
-    }
-    
-    public static void displayMap() {
-        System.out.println("####################################################"
-        + "\n\t\t PIONEER TRAIL MAP " );
-        
-        GridDraw();
-                
-        System.out.println("\t    Q - Return to Menu  I - Inventory "
-        + "\n####################################################\n "
-        );
-    }
-    
-    void displayMapView() {
-        boolean endOfView = false;
-        
-        displayMap();
-        
-        do{
-           String[] inputs = this.getInputs();
-           endOfView = doAction(inputs); 
-        }while (endOfView == false);
-    }
-    
-    private String[] getInputs() {
-        
-        boolean valid = false;
-        String[] inputs = new String[1];
-
-        do {     
-
-            Scanner scanner = new Scanner(System.in);
-            String input = scanner.nextLine();
-            input = input.trim();
-            input = input.toUpperCase();
-
-            //Put input into String
-            char y;
-            y = input.charAt(0);
-            inputs[0] = Character.toString(y);
             
-            if(input.length() < 1){
-                System.out.println("Invalid value entered");
-                System.out.println("You must enter a non-blank value");
-                continue;
-            } 
-
-             valid = true;
-        
-        } while (valid == false);
-        return inputs;
+        }
+        // Now build the map.  For each row, show the column information
+        System.out.println();
+        for (int row = 0; row < locations.length; row++) {
+            System.out.print("      " + row + " "); // print row numbers to side of map
+            for (int column = 0; column < locations[row].length; column++) {
+                // set default indicators as blanks
+                rightIndicator = " ";
+                leftIndicator = " ";
+                if (locations[row][column] == map.getCurrentLocation()) {
+                    // Set star indicators to show this is the current location.
+                    leftIndicator = "*";
+                    rightIndicator = "*";
+                } else if (locations[row][column].isVisited()) {
+                    // Set < > indicators to show this location has been visited.
+                    leftIndicator = "+"; // can be stars or whatever these are indicators showing visited
+                    rightIndicator = "+"; // same as above
+                } else if (locations[row][column].getScene().getSymbol() == "ZN") {
+                    // Set < > indicators to show this location has been visited.
+                    leftIndicator = ">"; // can be stars or whatever these are indicators showing visited
+                    rightIndicator = "<"; // same as above
+                } else if (locations[row][column].getScene().getBlocked() == true) {
+                    // Set < > indicators to show this location has been visited.
+                    leftIndicator = "#"; // can be stars or whatever these are indicators showing visited
+                    rightIndicator = "#"; // same as above
+                }
+                System.out.print("|"); // start map with a |
+                if (locations[row][column].getScene() == null) {
+                    System.out.print(leftIndicator + "??" + rightIndicator);
+                } else {
+                    System.out.print(leftIndicator
+                            + locations[row][column].getScene().getSymbol()
+                            + rightIndicator);
+                }
+            }
+//            System.out.println("|");
+            if ( row == 0 ){
+                System.out.println("|    * * - Current Location ");
+            } else if( row == 1 ){
+                System.out.println("|    + + - Visited ");
+            } else if( row == 2 ){
+                System.out.println("|    > < - End Location ");
+            }
+        }
+        System.out.println(showMapLegend());
     }
-    private boolean doAction(String[] inputs) {
-      
-      switch (inputs[0]){
-      
-        case "I": inputs[0] = "I";
-            displayInventoryView();
-            break;
-        case "Q": inputs[0] = "Q";
-            System.out.println("Returning to Menu");
-            displayGameMenu();
-            return true;
-      }  
-        
-      return false;
 
+    @Override
+    public boolean doAction(String mapOption) {
+        mapOption = mapOption.toUpperCase();
+        Game game = PioneerTrail.getCurrentGame(); // retreive the game
+        Map map = game.getMap(); // retreive the map from game
+        Location[][] locations = map.getLocations(); // retreive the locations from map
+        for (int row = 0; row < locations.length; row++) {
+            for (int column = 0; column < locations[row].length; column++) {
+                if (locations[row][column].getScene() != null) {
+                    if (mapOption.equals(locations[row][column].getScene().getSymbol())) {
+                        MapControl.movePlayer(map, row, column);
+                        return true;
+                    }
+                }
+            }
+        }
+        System.out.println("\n*** Invalid selection *** Try Again later");
+        return false;
     }
 
-    private void displayInventoryView() {
+    void displayInventoryView() {
         InventoryView inventoryview = new InventoryView();
-        inventoryview.displayInventoryView();
+        inventoryview.display();
+    }
+
+//    public void setMap() {
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//    }
+//
+//    public void createMap() {
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//    }
+
+    private String showMapLegend() {
+        String out = 
+                "====================================================================================== "
+                + "\n NW  N  NE   AR - Arid         EN - Encampment   MN - Mountain   SW - Swamp"
+                + "\n     |       BL - Bushland     FL - Flooded      MP - MuddyPath  TN - Town"
+                + "\n W - O - E   CN - Canyon       FO - Forest       PL - Plains     TU - Tundra"
+                + "\n     |       CA - Caves        HL - Hills        RF - RedForest  VL - Village"
+                + "\n SW  S  SE   CE - CrackedEarth IC - IndianCamp   RV - River      WF - Waterfall"
+                + "\n             DE - Desert       JG - Jungle       SP - Sparse     ZN - Zion"
+                + "\n Q - Quit    DR - DryRiver     LK - Lake         ST - Stream"
+                + "\n======================================================================================";
+        return out;
+
     }
 
 }

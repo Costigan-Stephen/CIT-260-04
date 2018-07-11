@@ -6,7 +6,10 @@
 package cit260.pioneertrail.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Objects;
+import pioneertrail.PioneerTrail;
+import static pioneertrail.PioneerTrail.getCurrentGame;
 
 /**
  *
@@ -15,26 +18,72 @@ import java.util.Objects;
 public class Game implements Serializable{
     
     private long totalTime;
-    private int noPeople;
+//    private int noPeople;
     private Player player;
-
+    private ArrayList<Actor> actors;
+    public static Map map;
+    public Scene[] scenes;
+    private InventoryItem[] items;
+//    private Location[][] locations;
+    private Question[] question;
+    
     public Game() {
     }
 
+//    public Location[][] getLocations() {
+//        return locations;
+//    }
+//
+//    public void setLocations(Location[][] locations) {
+//        this.locations = locations;
+//    }
+
+    public Question[] getQuestion() {
+        return question;
+    }
+
+    public void setQuestion(Question[] question) {
+        this.question = question;
+    }
+
+    public Scene[] getScenes() {
+        return scenes;
+    }
+
+    public void setScenes(Scene[] scenes) {
+        this.scenes = scenes;
+    }
+
+    public InventoryItem[] getItems() {
+        return items;
+    }
+
+    public void setItems(InventoryItem[] items) {
+        this.items = items;
+    }
+    
+    public static Map getMap() {
+        return map;
+    }
+
+    public static void setMap(Map map) {
+        Game.map = map;
+    }
+
+    public ArrayList<Actor> getActors() {
+        return actors;
+    }
+
+    public void setActors(ArrayList<Actor> actors) {
+        this.actors = actors;
+    }
+    
     public long getTotalTime() {
         return totalTime;
     }
 
     public void setTotalTime(long totalTime) {
         this.totalTime = totalTime;
-    }
-
-    public int getNoPeople() {
-        return noPeople;
-    }
-
-    public void setNoPeople(int noPeople) {
-        this.noPeople = noPeople;
     }
 
     public Player getPlayer() {
@@ -47,10 +96,8 @@ public class Game implements Serializable{
 
     @Override
     public int hashCode() {
-        int hash = 3;
-        hash = 89 * hash + (int) (this.totalTime ^ (this.totalTime >>> 32));
-        hash = 89 * hash + this.noPeople;
-        hash = 89 * hash + Objects.hashCode(this.player);
+        int hash = 5;
+        hash = 19 * hash + (int) (this.totalTime ^ (this.totalTime >>> 32));
         return hash;
     }
 
@@ -69,18 +116,16 @@ public class Game implements Serializable{
         if (this.totalTime != other.totalTime) {
             return false;
         }
-        if (this.noPeople != other.noPeople) {
-            return false;
-        }
-        if (!Objects.equals(this.player, other.player)) {
-            return false;
-        }
         return true;
     }
 
-    @Override
-    public String toString() {
-        return "Game{" + "totalTime=" + totalTime + ", noPeople=" + noPeople + ", player=" + player + '}';
+    public Game GetCurrentGame() {
+        Game current = PioneerTrail.getCurrentGame();
+        return current;
     }
     
+//    public Location getLocation(int row, int column) {
+//        return locations[row][column];
+//    }
+//    
 }

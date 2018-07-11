@@ -5,39 +5,25 @@
  */
 package cit260.pioneertrail.control;
 import cit260.pioneertrail.model.InventoryItem;
+import cit260.pioneertrail.exceptions.GameControlException;
 
 /**
  * @author Stephen
  */
 public class InventoryControl {
     
-    public static double calcWeightRemaining (double weightRemaining, InventoryItem item){
-
-//        Begin
-//          If (item.weight < 0) //item.quantity can’t be 0, this tests for invalid inputs
-//        	Return -1
-//          If (item.quantity < 1)
-//        	Return -2
-//          If (item.weight * item.quantity > weightRemaining) 
-//        	addQuantity = math.trim(weightRemaining/item.weight)// # of Quantity to add to inventory
-//        	If (addQuantity = 0) 
-//        		Return -3	
-//        	Item.quantity = addQuantity
-//        	Return weightRemaining - (item.weight * addQuantity)
-//          Else
-//        	Return weightRemaining - (item.weight * item.quantity)
-//        End
+    public static double calcWeightRemaining (double weightRemaining, InventoryItem item) throws GameControlException{
 
         if (item.itemWeight < 0.0){
-            return -1;
+            throw new GameControlException("Item weight cannot be less than 0");
         }
         if (item.quantityOfItems < 1){
-            return -2;
+            throw new GameControlException("Item Quantity cannot be less than 1");
         }    
         if (item.itemWeight * item.quantityOfItems > weightRemaining){
             double addQuantity = Math.round((weightRemaining/item.itemWeight)*100)/100;
             if(addQuantity == 0){
-                return -3;
+                throw new GameControlException("No items could be added to Inventory");
             }
             item.quantityOfItems = (int) addQuantity;
             return weightRemaining - (item.itemWeight * addQuantity);
