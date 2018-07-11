@@ -35,7 +35,7 @@ public class MapView extends View {
         for (int column = 0; column < locations[0].length; column++) {
             System.out.print("  " + column + " |");
             if(column == (locations[0].length - 1)){
-                System.out.print("    # # - Blocked Location ");
+                System.out.print("    [ ] - Blocked Location ");
             }
             
         }
@@ -61,8 +61,8 @@ public class MapView extends View {
                     rightIndicator = "<"; // same as above
                 } else if (locations[row][column].getScene().getBlocked() == true) {
                     // Set < > indicators to show this location has been visited.
-                    leftIndicator = "#"; // can be stars or whatever these are indicators showing visited
-                    rightIndicator = "#"; // same as above
+                    leftIndicator = "["; // can be stars or whatever these are indicators showing visited
+                    rightIndicator = "]"; // same as above
                 }
                 System.out.print("|"); // start map with a |
                 if (locations[row][column].getScene() == null) {
