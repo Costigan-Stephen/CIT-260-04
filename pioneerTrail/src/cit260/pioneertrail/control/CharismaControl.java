@@ -4,14 +4,14 @@
  * and open the template in the editor.
  */
 package cit260.pioneertrail.control;
-
+import cit260.pioneertrail.exceptions.GameControlException;
 /**
  *
  * @author hughes
  */
 public class CharismaControl {
-    boolean calculateCharisma(boolean gender, char occupation, double money){
-        
+    boolean calculateCharisma(boolean gender, char occupation, double money)throws GameControlException{
+    
 //If (gender = female) { charisma+ 10 }
 //If(gender = male) {charisma + 5}
 //If (occupation = lawyer) { charisma + 15 }
@@ -40,11 +40,16 @@ public class CharismaControl {
           if (occupation == 'f')
                 charisma = charisma + 1.0; 
           if (money > 0){
-           charisma = money * .1 + charisma;   
+           charisma = money * .1 + charisma;  
+          }
+           if (money < 0){
+             throw new GameControlException("Money cannot be less than 0");
           }
           System.out.println("Charisma is at " + charisma);
+          
         return charisma > 20.0;
+        
     }
 
-    
 }
+
