@@ -5,7 +5,7 @@
  */
 package cit260.pioneertrail.control;
 
-import static cit260.pioneertrail.control.MapControl.compileSceneComponents;
+import static cit260.pioneertrail.control.SceneControl.compileSceneComponents;
 import cit260.pioneertrail.exceptions.GameControlException;
 import cit260.pioneertrail.model.Actor;
 import cit260.pioneertrail.model.Game;
@@ -54,27 +54,10 @@ public class GameControl {
         game.setMap(createMap(3,9));
         compileSceneComponents(game);
 
-        // Actor actor = Actor();
-        // actor.set
-//actors = createActors()
-//Save the list of actors in the Game object
-//Assign an actor to the player
-//items = createItems()
-//Save the list of items in the game
-//map = createMap(noOfRows, noOfColumns, items)
-//IF map == null THEN
-// RETURN -1
-//ENDIF
-//Assign the map to the game
-//RETURN 1 // indicates success
         System.out.println("START NEW GAME");
         return 0;
     }
-
-//    public static void movePlayerToStartingLocation(Map map) {
-//        // If starting location is not supposed to be 0,0 then use the correct values here.
-//        movePlayer(map, 0, 8); // or instead of 0,0 you can select a different starting location
-//    }
+    
     public static InventoryItem[] createItems() {
 
         InventoryItem[] items = new InventoryItem[200];

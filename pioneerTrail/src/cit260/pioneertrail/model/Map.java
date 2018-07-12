@@ -6,7 +6,6 @@
 package cit260.pioneertrail.model;
 
 import java.io.Serializable;
-import java.util.Arrays;
 import java.util.Objects;
 
 /**
@@ -32,10 +31,6 @@ public class Map implements Serializable {
 //        return currentLocation;
            return locations[this.currentRow][this.currentColumn];
     }
-
-//    public void setCurrentLocation(Location currentLocation) {
-//        this.currentLocation = currentLocation;
-//    }
 
     public Boolean getVisited() {
         return visited;

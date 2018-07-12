@@ -5,7 +5,6 @@
  */
 package cit260.pioneertrail.model;
 
-import java.io.BufferedReader;
 import java.io.Serializable;
 import java.util.ArrayList;
 import pioneertrail.PioneerTrail;
@@ -17,25 +16,15 @@ import pioneertrail.PioneerTrail;
 public class Game implements Serializable{
     
     private long totalTime;
-//    private int noPeople;
     private Player player;
     private ArrayList<Actor> actors;
     public Map map;
     public Scene[] scenes;
     private InventoryItem[] items;
-//    private Location[][] locations;
     private Question[] question;
     
     public Game() {
     }
-
-//    public Location[][] getLocations() {
-//        return locations;
-//    }
-//
-//    public void setLocations(Location[][] locations) {
-//        this.locations = locations;
-//    }
 
     public Question[] getQuestion() {
         return question;
@@ -123,8 +112,4 @@ public class Game implements Serializable{
         return current;
     }
     
-//    public Location getLocation(int row, int column) {
-//        return locations[row][column];
-//    }
-//    
 }

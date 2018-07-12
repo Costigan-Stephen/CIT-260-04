@@ -23,7 +23,7 @@ public class Actor implements Serializable{
     
     public int index;
     private String name;
-    private double health;
+    public double health;
     private String description;
 //    private Point coordinates;
     private String purpose;
