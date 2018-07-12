@@ -70,40 +70,6 @@ public class SceneControl extends MapControl {
         return locations; // RETURN locations 
     }
 
-//CREATE QUESTIONS MARILEE
-    private static Question[] createQuestions() {
-
-        Question[] questions = new Question[6];//questions = Create an array Question objects
-
-        questions[QuestionType.buying.ordinal()] = new Question(); //question1 = Create a new Question object
-        questions[QuestionType.buying.ordinal()].setQuestionText("Would you "
-                + "like to buy some food? \nVisit the Nauvoo Store Location.");
-
-        questions[QuestionType.findFood.ordinal()] = new Question(); //question2 = Create a new Question object
-        questions[QuestionType.findFood.ordinal()].setQuestionText("Are you "
-                + "hungry? Would you like to go hunt for animals? "
-                + "\nCheck your inventory for bullets to choose how many to use.");
-
-        questions[QuestionType.injury.ordinal()] = new Question();
-        questions[QuestionType.injury.ordinal()].setQuestionText("You are injured! "
-                + "Would you like to rest in this location? \nTrade with local natives for help.");
-
-        questions[QuestionType.weather.ordinal()] = new Question();
-        questions[QuestionType.weather.ordinal()].setQuestionText("Storm clouds "
-                + "approach. Do you want to stop and rest? \nFind shelter soon.");
-
-        questions[QuestionType.actor.ordinal()] = new Question();
-        questions[QuestionType.actor.ordinal()].setQuestionText("The dog is barking. "
-                + "Do you want to find out why? \nThere may be trouble.");
-
-        questions[QuestionType.geography.ordinal()] = new Question();
-        questions[QuestionType.geography.ordinal()].setQuestionText("Rough Terrain"
-                + "lies ahead. Do you want to purchase supplies? \nVisit the store"
-                + "or trade with natives to perpare");
-
-        return questions;
-    }
-
 //QUESTIONS TO SCENES JOSEPH
     private static void assignQuestionsToScenes(Question[] questions, Scene[] scenes) {
         System.out.println("assignQuestionsToScenes called");
