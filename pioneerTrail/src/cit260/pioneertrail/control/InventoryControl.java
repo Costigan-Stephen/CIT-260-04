@@ -23,7 +23,7 @@ public class InventoryControl {
         if (item.itemWeight * item.quantityOfItems > weightRemaining){
             double addQuantity = Math.round((weightRemaining/item.itemWeight)*100)/100;
             if(addQuantity == 0){
-                throw new GameControlException("No items could be added to Inventory");
+                
             }
             item.quantityOfItems = (int) addQuantity;
             return weightRemaining - (item.itemWeight * addQuantity);
