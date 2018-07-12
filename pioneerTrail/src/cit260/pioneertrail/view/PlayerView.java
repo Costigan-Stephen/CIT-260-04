@@ -5,18 +5,16 @@
  */
 package cit260.pioneertrail.view;
 
-;
-
 /**
  *
  * @author Stephen
  */
-class GameMenuView extends View {
+public class PlayerView extends View {
 
-    public GameMenuView() {
+    public PlayerView() {
         super(
                 "==================================================== "
-                + "\n\t\t   GAME MENU "
+                + "\n\t\t   PLAYER MENU "
                 + "\n==================================================== "
                 + "\n\t    S - Save your Game "
                 + "\n\t    L - Load a Saved Game "
@@ -37,22 +35,22 @@ class GameMenuView extends View {
         switch (inputs) {
 
             case "S":
-                saveGame();
+
                 break;
             case "L":
-                loadGame();
+
                 break;
             case "I":
-                displayInventoryView();
+
                 break;
             case "P":
-                displayPlayerView();
+
                 break;
             case "M":
-                displayMapView();
+
                 break;
             case "G":
-                displayGatherView();
+
                 break;
 //       case "R":
 //           displayRepairWagon();
@@ -62,41 +60,4 @@ class GameMenuView extends View {
 
         return false;
     }
-
-    private void displayMapView() { //public void displayMap(){
-         MapView mapView = new MapView();
-         mapView.displayMap();
-         mapView.display();
-    }
-
-    private void loadGame() {
-        StartExistingGameView loadGame = new StartExistingGameView();
-        loadGame.display();
-    }
-
-    private void saveGame() {
-        SaveGameView saveGameView = new SaveGameView();
-        saveGameView.display();
-    }
-
-    private void displayInventoryView() {
-        InventoryView inventory = new InventoryView();
-        inventory.display();
-    }
-
-    private void displayGatherView() {
-        GatherView gatherView = new GatherView();
-        gatherView.display();
-    }
-
-    private void displayRepairView() {
-        RepairWagon repairView = new RepairWagon();
-        repairView.display();
-    }
-
-    private void displayPlayerView() {
-        PlayerView playerview = new PlayerView();
-        playerview.display();
-    }
-
 }
