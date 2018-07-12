@@ -768,21 +768,26 @@ public class MapControl { // MARILEE
 
     public static Location moveActor(Actor actor, int newRow, int newColumn) throws MapControlException {
 
-        if (actor == null) {
-            throw new MapControlException("Error, actor is empty");
-        }
-
         Game game = PioneerTrail.getCurrentGame();
         Map map = game.getMap();
         Location location = map.getCurrentLocation();
 
+        if (actor == null) {
+//            throw new MapControlException("Error, actor is empty");
+            System.out.println("Error, actor is empty");
+            return location;
+        }
+        
         if (newRow < 1 || newRow > map.getRowCount() || newColumn < 1 || newColumn > map.getColumnCount()) {
-            throw new MapControlException("Request is outside the borders of the map");
+//            throw new MapControlException("Request is outside the borders of the map");
+            System.out.println("Request is outside the borders of the map");
+            return location;
         }
 
         boolean blocked = isLocationBlocked(newRow, newColumn, game);
         if (blocked == true) {
-            throw new MapControlException("Error, location is blocked!");
+            System.out.println("The path is blocked, please select another direction.");
+            return location;
         }
         //This doesn't seem like it will do anything since the current setup isn't made that way.
 //        int currentRow = game.getPlayer().getCurrentRow();
@@ -796,7 +801,7 @@ public class MapControl { // MARILEE
         return newLocation;
     }
 
-    private static boolean isLocationBlocked(int row, int column, Game game) throws MapControlException {
+    private static boolean isLocationBlocked(int row, int column, Game game) {
         if (game.getMap().getLocations()[row][column].getScene().getBlocked() == true) {
             return true;
         } else {
@@ -808,16 +813,12 @@ public class MapControl { // MARILEE
     private static void checkValidLocation(String input) throws MapControlException{
         Game game = PioneerTrail.getCurrentGame();
         Map map = game.getMap();
-        Location location = map.getCurrentLocation();
+//        Location location = map.getCurrentLocation();
         
         int row = map.getCurrentRow();
         int col = map.getCurrentColumn();
         
         int newRow = 0, newCol = 0;
-        
-//        int rowCap = map.getRowCount();
-//        int colCap = map.getColumnCount();
-//        input = input.toUpperCase();
         
         switch (input) {
             case "N":
@@ -864,8 +865,7 @@ public class MapControl { // MARILEE
         if (blocked == true) {
             throw new MapControlException("Error, location is blocked!");
         }
-        
-        
+
         map.getCurrentLocation().setVisited(true);
         map.setCurrentColumn(newCol);
         map.setCurrentRow(newRow);

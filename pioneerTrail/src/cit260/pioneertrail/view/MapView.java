@@ -103,24 +103,9 @@ public class MapView extends View {
             MapControl.movePlayer(mapOption, map, map.getCurrentRow(), map.getCurrentColumn());
             return true;
         } catch (MapControlException ex) {
-            Logger.getLogger(MapView.class.getName()).log(Level.SEVERE, null, ex);
+            ErrorView.display(this.getClass().getName(), "\n*** Invalid selection *** Try Again later");
+            return false;
         }
-//        for (int row = 0; row < locations.length; row++) {
-//            for (int column = 0; column < locations[row].length; column++) {
-//                if (locations[row][column].getScene() != null) {
-//                    if (mapOption.equals(locations[row][column].getScene().getSymbol())) {
-//                        try {
-//                            MapControl.movePlayer(mapOption, map, row, column);
-//                        } catch (MapControlException ex) {
-//                            Logger.getLogger(MapView.class.getName()).log(Level.SEVERE, null, ex);
-//                        }
-//                        return true;
-//                    }
-//                }
-//            }
-//        }
-        ErrorView.display(this.getClass().getName(), "\n*** Invalid selection *** Try Again later");
-        return false;
     }
 
     void displayInventoryView() {

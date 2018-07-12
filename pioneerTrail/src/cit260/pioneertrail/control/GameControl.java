@@ -15,21 +15,12 @@ import cit260.pioneertrail.model.Location;
 import cit260.pioneertrail.model.Map;
 import cit260.pioneertrail.model.Player;
 import cit260.pioneertrail.exceptions.MapControlException;
-import java.io.BufferedReader;
-import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.io.PrintWriter;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import pioneertrail.PioneerTrail;
 
 /**
@@ -280,6 +271,7 @@ public class GameControl {
 //        }
 //        return maxValue;
 //    }
+    
     public static void saveGame(Game game, String filepath) throws GameControlException, IOException {
 //        System.out.println("Game was saved, filename is: " + filepath);
 
