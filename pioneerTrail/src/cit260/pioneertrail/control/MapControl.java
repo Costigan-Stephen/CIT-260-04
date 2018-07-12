@@ -37,8 +37,9 @@ public class MapControl { // MARILEE
         
         if (!input.isEmpty()){
             checkValidLocation(input); 
-        } else {
-           map.getCurrentLocation().setVisited(true);
+        } 
+        else {
+//           map.getCurrentLocation().setVisited(true);
            map.setCurrentRow(row);
            map.setCurrentColumn(column); 
         }
@@ -46,6 +47,7 @@ public class MapControl { // MARILEE
         
     }
 
+    //I don't think we use this method - Steve
     public static Location moveActor(Actor actor, int newRow, int newColumn) throws MapControlException {
 
         Game game = PioneerTrail.getCurrentGame();
@@ -77,18 +79,15 @@ public class MapControl { // MARILEE
     }
 
     private static boolean isLocationBlocked(int row, int column, Game game) {
-        if (game.getMap().getLocations()[row][column].getScene().getBlocked() == true) {
-            return true;
-        } else {
-            return false;
-        }
+        return game.getMap().getLocations()[row][column].getScene().getBlocked() == true;
 
     }
     
     private static void checkValidLocation(String input) throws MapControlException{
+//      This method is used to move the player if the direction is not blocked/outside of map;
+
         Game game = PioneerTrail.getCurrentGame();
         Map map = game.getMap();
-//        Location location = map.getCurrentLocation();
         
         int row = map.getCurrentRow();
         int col = map.getCurrentColumn();

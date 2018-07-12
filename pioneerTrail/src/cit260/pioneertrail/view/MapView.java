@@ -32,13 +32,14 @@ public class MapView extends View {
         Game game = PioneerTrail.getCurrentGame(); // retreive the game
         Map map = game.getMap(); // retreive the map from game
         Location[][] locations = map.getLocations(); // retreive the locations from map
+        String lineSeparator = "\n      --|----|----|----|----|----|----|----|----|----|";
 
         // Build the heading of the map     
         this.console.print("\n======================================================================================\n        |");
         for (int column = 0; column < locations[0].length; column++) {
             this.console.print("  " + column + " |");
             if(column == (locations[0].length - 1)){
-                this.console.print("    [ ] - Blocked Location ");
+                this.console.print("    [ ] - Blocked Location " + lineSeparator);
             }
             
         }
@@ -52,16 +53,16 @@ public class MapView extends View {
                 leftIndicator = " ";
                 if (locations[row][column] == map.getCurrentLocation()) {
                     // Set star indicators to show this is the current location.
-                    leftIndicator = "*";
-                    rightIndicator = "*";
+                    leftIndicator = ">";
+                    rightIndicator = "<";
                 } else if (locations[row][column].isVisited()) {
                     // Set < > indicators to show this location has been visited.
                     leftIndicator = "+"; // can be stars or whatever these are indicators showing visited
                     rightIndicator = "+"; // same as above
                 } else if ("ZN".equals(locations[row][column].getScene().getSymbol())) {
                     // Set < > indicators to show this location has been visited.
-                    leftIndicator = ">"; // can be stars or whatever these are indicators showing visited
-                    rightIndicator = "<"; // same as above
+                    leftIndicator = "*"; // can be stars or whatever these are indicators showing visited
+                    rightIndicator = "*"; // same as above
                 } else if (locations[row][column].getScene().getBlocked() == true) {
                     // Set < > indicators to show this location has been visited.
                     leftIndicator = "["; // can be stars or whatever these are indicators showing visited
@@ -78,13 +79,13 @@ public class MapView extends View {
             }
             switch (row) {
                 case 0:
-                    this.console.println("|    * * - Current Location ");
+                    this.console.println("|    > < - Current Location " + lineSeparator);
                     break;
                 case 1:
-                    this.console.println("|    + + - Visited ");
+                    this.console.println("|    + + - Visited " + lineSeparator);
                     break;
                 case 2:
-                    this.console.println("|    > < - End Location ");
+                    this.console.println("|    * * - End Location ");
                     break;
                 default:
                     break;
@@ -112,14 +113,6 @@ public class MapView extends View {
         InventoryView inventoryview = new InventoryView();
         inventoryview.display();
     }
-
-//    public void setMap() {
-//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-//    }
-//
-//    public void createMap() {
-//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-//    }
 
     private String showMapLegend(Location locations, int row, int column) {
 
