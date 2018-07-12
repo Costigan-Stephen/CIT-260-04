@@ -42,14 +42,15 @@ public class MapControl { // MARILEE
     // MOVE PLAYER
     public static void movePlayer(String input, Map map, int row, int column) throws MapControlException {
         
-        if (input != ""){
-            checkLocation(input); 
+        if (!input.isEmpty()){
+            checkValidLocation(input); 
+        } else {
+           map.getCurrentLocation().setVisited(true);
+           map.setCurrentRow(row);
+           map.setCurrentColumn(column); 
         }
 
-        map.setCurrentLocation(map.getLocations()[row][column]);
-        map.getCurrentLocation().setVisited(true);
-        map.setCurrentRow(row);
-        map.setCurrentColumn(column);
+        
     }
     
     //IMPLEMENT CODE STEPHEN
@@ -804,7 +805,7 @@ public class MapControl { // MARILEE
 
     }
     
-    private static void checkLocation(String input) throws MapControlException{
+    private static void checkValidLocation(String input) throws MapControlException{
         Game game = PioneerTrail.getCurrentGame();
         Map map = game.getMap();
         Location location = map.getCurrentLocation();
@@ -814,8 +815,9 @@ public class MapControl { // MARILEE
         
         int newRow = 0, newCol = 0;
         
-        int rowCap = map.getRowCount();
-        int colCap = map.getColumnCount();
+//        int rowCap = map.getRowCount();
+//        int colCap = map.getColumnCount();
+//        input = input.toUpperCase();
         
         switch (input) {
             case "N":
@@ -854,7 +856,7 @@ public class MapControl { // MARILEE
                 throw new MapControlException("Request could not be read, please enter a direction.");
         }
         
-        if ( newRow < 1 || newRow > map.getRowCount() || newCol < 1 || newCol > map.getColumnCount()) {
+        if ( newRow < 0 || newRow >= map.getRowCount() || newCol < 0 || newCol >= map.getColumnCount()) {
             throw new MapControlException("Request is outside the borders of the map");
         }
         
@@ -862,14 +864,11 @@ public class MapControl { // MARILEE
         if (blocked == true) {
             throw new MapControlException("Error, location is blocked!");
         }
-        //This doesn't seem like it will do anything since the current setup isn't made that way.
-//        int currentRow = game.getPlayer().getCurrentRow();
-//        int currentColumn = game.getPlayer().getCurrentColumn();
-//        Location oldLocation = game.getLocation(currentRow, currentColumn);
-        Location newLocation = game.getMap().getLocations()[newRow][newCol];
-
-        game.getPlayer().setCurrentColumn(newCol);
-        game.getPlayer().setCurrentRow(newRow);
+        
+        
+        map.getCurrentLocation().setVisited(true);
+        map.setCurrentColumn(newCol);
+        map.setCurrentRow(newRow);
 
     }
 }

@@ -6,13 +6,14 @@
 package cit260.pioneertrail.model;
 
 import java.awt.Point;
+import java.io.Serializable;
 import java.sql.Array;
 
 /**
  *
  * @author Stephen
  */
-public class Actor {
+public class Actor implements Serializable{
     
 //    Mother("Samantha","The Mother", new Point(1,1),"Lead the Family"),
 //    Father("Samuel","The Father", new Point(1,1),"Lead the Family"),

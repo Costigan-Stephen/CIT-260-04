@@ -99,20 +99,26 @@ public class MapView extends View {
         Game game = PioneerTrail.getCurrentGame(); // retreive the game
         Map map = game.getMap(); // retreive the map from game
         Location[][] locations = map.getLocations(); // retreive the locations from map
-        for (int row = 0; row < locations.length; row++) {
-            for (int column = 0; column < locations[row].length; column++) {
-                if (locations[row][column].getScene() != null) {
-                    if (mapOption.equals(locations[row][column].getScene().getSymbol())) {
-                        try {
-                            MapControl.movePlayer(mapOption, map, row, column);
-                        } catch (MapControlException ex) {
-                            Logger.getLogger(MapView.class.getName()).log(Level.SEVERE, null, ex);
-                        }
-                        return true;
-                    }
-                }
-            }
+        try {
+            MapControl.movePlayer(mapOption, map, map.getCurrentRow(), map.getCurrentColumn());
+            return true;
+        } catch (MapControlException ex) {
+            Logger.getLogger(MapView.class.getName()).log(Level.SEVERE, null, ex);
         }
+//        for (int row = 0; row < locations.length; row++) {
+//            for (int column = 0; column < locations[row].length; column++) {
+//                if (locations[row][column].getScene() != null) {
+//                    if (mapOption.equals(locations[row][column].getScene().getSymbol())) {
+//                        try {
+//                            MapControl.movePlayer(mapOption, map, row, column);
+//                        } catch (MapControlException ex) {
+//                            Logger.getLogger(MapView.class.getName()).log(Level.SEVERE, null, ex);
+//                        }
+//                        return true;
+//                    }
+//                }
+//            }
+//        }
         ErrorView.display(this.getClass().getName(), "\n*** Invalid selection *** Try Again later");
         return false;
     }

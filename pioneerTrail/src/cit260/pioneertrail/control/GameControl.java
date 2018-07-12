@@ -17,12 +17,14 @@ import cit260.pioneertrail.model.Player;
 import cit260.pioneertrail.exceptions.MapControlException;
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -58,7 +60,7 @@ public class GameControl {
         game.setPlayer(player);
         game.setActors(createActors());
         game.setItems(createItems());
-        game.setMap(createMap(3, 9));
+        game.setMap(createMap(3,9));
         compileSceneComponents(game);
 
         // Actor actor = Actor();
@@ -208,11 +210,6 @@ public class GameControl {
         map.setRowCount(noOfRows);
         map.setColumnCount(noOfColumns);
         return map;
-//        MapView map = new MapView();
-//        map.setMap();
-//        map.createMap();
-//        System.out.println("\nmap called");
-//        return null;
     }
 
     public static ArrayList<Actor> createActors() {
@@ -291,28 +288,29 @@ public class GameControl {
         }
 
         try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(filepath))) {
-            out.writeObject(game.getPlayer());
+            out.writeObject(game);
         } catch (IOException ex) {
             throw new GameControlException("Game could not be saved.  Error code: " + ex.getMessage());
         }
     }
 
-    public static void loadGame(String filepath) throws GameControlException, IOException {
-
-        File saveGame = new File(filepath);
+    public static void loadGame(String filepath) throws GameControlException {
+        Game game = null;
+        try( FileInputStream fis = new FileInputStream(filepath) ){
+            ObjectInputStream savedGame = new ObjectInputStream(fis);
+            
+        game = (Game) savedGame.readObject();
+            
+            
+        } catch (Exception ex) {
+            throw new GameControlException("Game could not be loaded.  Error code: " + ex.getMessage());
+        }
 //        System.out.println("Game was saved, filename is: " + filepath);
         if (filepath == null) {
             throw new GameControlException("Game could not be Loaded, filename is empty. ");
         }
 
-        try (BufferedReader in = new BufferedReader(new FileReader(saveGame))) {
-//        Game game = new Game();
-            //game.loadPlayer(in);
-            System.out.println(in.readLine());
-        } catch (IOException ex) {
-            throw new GameControlException("Game could not be loaded.  Error code: " + ex.getMessage());
-        }
-//    System.out.println("LOADED GAME SUCCESSFULLY");
+        PioneerTrail.setCurrentGame(game);
 
     }
 }

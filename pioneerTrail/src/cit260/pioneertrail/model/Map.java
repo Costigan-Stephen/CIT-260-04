@@ -29,12 +29,13 @@ public class Map implements Serializable {
     }
 
     public Location getCurrentLocation() {
-        return currentLocation;
+//        return currentLocation;
+           return locations[this.currentRow][this.currentColumn];
     }
 
-    public void setCurrentLocation(Location currentLocation) {
-        this.currentLocation = currentLocation;
-    }
+//    public void setCurrentLocation(Location currentLocation) {
+//        this.currentLocation = currentLocation;
+//    }
 
     public Boolean getVisited() {
         return visited;

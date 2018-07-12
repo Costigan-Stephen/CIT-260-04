@@ -20,7 +20,7 @@ public class Game implements Serializable{
 //    private int noPeople;
     private Player player;
     private ArrayList<Actor> actors;
-    public static Map map;
+    public Map map;
     public Scene[] scenes;
     private InventoryItem[] items;
 //    private Location[][] locations;
@@ -61,12 +61,12 @@ public class Game implements Serializable{
         this.items = items;
     }
     
-    public static Map getMap() {
+    public Map getMap() {
         return map;
     }
 
-    public static void setMap(Map map) {
-        Game.map = map;
+    public void setMap(Map map) {
+        this.map = map;
     }
 
     public ArrayList<Actor> getActors() {
