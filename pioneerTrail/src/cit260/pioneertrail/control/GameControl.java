@@ -6,7 +6,6 @@
 package cit260.pioneertrail.control;
 
 import static cit260.pioneertrail.control.MapControl.compileSceneComponents;
-import static cit260.pioneertrail.control.MapControl.movePlayer;
 import cit260.pioneertrail.model.Actor;
 import cit260.pioneertrail.model.Game;
 import cit260.pioneertrail.model.InventoryItem;
@@ -14,7 +13,6 @@ import cit260.pioneertrail.model.ItemReference;
 import cit260.pioneertrail.model.Location;
 import cit260.pioneertrail.model.Map;
 import cit260.pioneertrail.model.Player;
-import cit260.pioneertrail.view.MapView;
 import cit260.pioneertrail.exceptions.MapControlException;
 import java.util.ArrayList;
 import pioneertrail.PioneerTrail;
@@ -67,10 +65,10 @@ public class GameControl {
         return 0;
     }
 
-    public static void movePlayerToStartingLocation(Map map) {
-        // If starting location is not supposed to be 0,0 then use the correct values here.
-        movePlayer(map, 0, 0); // or instead of 0,0 you can select a different starting location
-    }
+//    public static void movePlayerToStartingLocation(Map map) {
+//        // If starting location is not supposed to be 0,0 then use the correct values here.
+//        movePlayer(map, 0, 8); // or instead of 0,0 you can select a different starting location
+//    }
 
     public static InventoryItem[] createItems() {
 

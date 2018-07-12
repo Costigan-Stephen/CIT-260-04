@@ -6,9 +6,12 @@
 package cit260.pioneertrail.view;
 
 import cit260.pioneertrail.control.MapControl;
+import cit260.pioneertrail.exceptions.MapControlException;
 import cit260.pioneertrail.model.Game;
 import cit260.pioneertrail.model.Location;
 import cit260.pioneertrail.model.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import pioneertrail.PioneerTrail;
 
 /**
@@ -55,7 +58,7 @@ public class MapView extends View {
                     // Set < > indicators to show this location has been visited.
                     leftIndicator = "+"; // can be stars or whatever these are indicators showing visited
                     rightIndicator = "+"; // same as above
-                } else if (locations[row][column].getScene().getSymbol() == "ZN") {
+                } else if ("ZN".equals(locations[row][column].getScene().getSymbol())) {
                     // Set < > indicators to show this location has been visited.
                     leftIndicator = ">"; // can be stars or whatever these are indicators showing visited
                     rightIndicator = "<"; // same as above
@@ -74,12 +77,18 @@ public class MapView extends View {
                 }
             }
 //            System.out.println("|");
-            if ( row == 0 ){
-                System.out.println("|    * * - Current Location ");
-            } else if( row == 1 ){
-                System.out.println("|    + + - Visited ");
-            } else if( row == 2 ){
-                System.out.println("|    > < - End Location ");
+            switch (row) {
+                case 0:
+                    System.out.println("|    * * - Current Location ");
+                    break;
+                case 1:
+                    System.out.println("|    + + - Visited ");
+                    break;
+                case 2:
+                    System.out.println("|    > < - End Location ");
+                    break;
+                default:
+                    break;
             }
         }
         System.out.println(showMapLegend(locations[map.getCurrentRow()][map.getCurrentColumn()], map.getCurrentRow(), map.getCurrentColumn()));
@@ -95,7 +104,11 @@ public class MapView extends View {
             for (int column = 0; column < locations[row].length; column++) {
                 if (locations[row][column].getScene() != null) {
                     if (mapOption.equals(locations[row][column].getScene().getSymbol())) {
-                        MapControl.movePlayer(map, row, column);
+                        try {
+                            MapControl.movePlayer(mapOption, map, row, column);
+                        } catch (MapControlException ex) {
+                            Logger.getLogger(MapView.class.getName()).log(Level.SEVERE, null, ex);
+                        }
                         return true;
                     }
                 }
@@ -137,5 +150,7 @@ public class MapView extends View {
         return out;
 
     }
-
+    
+    
+    
 }

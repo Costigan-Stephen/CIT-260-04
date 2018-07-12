@@ -40,7 +40,12 @@ public class MapControl { // MARILEE
     }
 
     // MOVE PLAYER
-    public static void movePlayer(Map map, int row, int column) {
+    public static void movePlayer(String input, Map map, int row, int column) throws MapControlException {
+        
+        if (input != ""){
+            checkLocation(input); 
+        }
+
         map.setCurrentLocation(map.getLocations()[row][column]);
         map.getCurrentLocation().setVisited(true);
         map.setCurrentRow(row);
@@ -55,7 +60,7 @@ public class MapControl { // MARILEE
         game.getMap().setLocations(createLocations());
         assignScenesToLocations(scenes, game.getMap());
         assignItemsToScenes(scenes);
-        movePlayer(game.getMap(),0,8); //Starting location
+        movePlayer("",game.getMap(),0,8); //Starting location
 
         return game;
     }
@@ -798,5 +803,74 @@ public class MapControl { // MARILEE
         }
 
     }
+    
+    private static void checkLocation(String input) throws MapControlException{
+        Game game = PioneerTrail.getCurrentGame();
+        Map map = game.getMap();
+        Location location = map.getCurrentLocation();
+        
+        int row = map.getCurrentRow();
+        int col = map.getCurrentColumn();
+        
+        int newRow = 0, newCol = 0;
+        
+        int rowCap = map.getRowCount();
+        int colCap = map.getColumnCount();
+        
+        switch (input) {
+            case "N":
+                newCol = col;
+                newRow = row - 1;
+                break;
+            case "S":
+                newCol = col;
+                newRow = row + 1 ;
+                break;
+            case "E":
+                newCol = col + 1;
+                newRow = row;
+                break;
+            case "W":
+                newCol = col - 1;
+                newRow = row;
+                break;
+            case "NW":
+                newCol = col - 1;
+                newRow = row - 1;
+                break;
+            case "NE":
+                newCol = col + 1;
+                newRow = row - 1;
+                break;
+            case "SE":
+                newCol = col + 1;
+                newRow = row + 1;
+                break;
+            case "SW":
+                newCol = col - 1;
+                newRow = row + 1;
+                break;
+            default:
+                System.out.println("Request could not be read, please enter a direction.");
+                break;
+        }
+        
+        if ( newRow < 1 || newRow > map.getRowCount() || newCol < 1 || newCol > map.getColumnCount()) {
+            throw new MapControlException("Request is outside the borders of the map");
+        }
+        
+        boolean blocked = isLocationBlocked(newRow, newCol, game);
+        if (blocked == true) {
+            throw new MapControlException("Error, location is blocked!");
+        }
+        //This doesn't seem like it will do anything since the current setup isn't made that way.
+//        int currentRow = game.getPlayer().getCurrentRow();
+//        int currentColumn = game.getPlayer().getCurrentColumn();
+//        Location oldLocation = game.getLocation(currentRow, currentColumn);
+        Location newLocation = game.getMap().getLocations()[newRow][newCol];
 
+        game.getPlayer().setCurrentColumn(newCol);
+        game.getPlayer().setCurrentRow(newRow);
+
+    }
 }
