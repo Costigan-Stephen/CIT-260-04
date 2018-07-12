@@ -82,7 +82,7 @@ public class MapView extends View {
                 System.out.println("|    > < - End Location ");
             }
         }
-        System.out.println(showMapLegend());
+        System.out.println(showMapLegend(locations[map.getCurrentRow()][map.getCurrentColumn()], map.getCurrentRow(), map.getCurrentColumn()));
     }
 
     @Override
@@ -118,17 +118,22 @@ public class MapView extends View {
 //        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
 //    }
 
-    private String showMapLegend() {
-        String out = 
-                "====================================================================================== "
-                + "\n NW  N  NE   AR - Arid         EN - Encampment   MN - Mountain   SW - Swamp"
-                + "\n     |       BL - Bushland     FL - Flooded      MP - MuddyPath  TN - Town"
-                + "\n W - O - E   CN - Canyon       FO - Forest       PL - Plains     TU - Tundra"
-                + "\n     |       CA - Caves        HL - Hills        RF - RedForest  VL - Village"
-                + "\n SW  S  SE   CE - CrackedEarth IC - IndianCamp   RV - River      WF - Waterfall"
-                + "\n             DE - Desert       JG - Jungle       SP - Sparse     ZN - Zion"
-                + "\n Q - Quit    DR - DryRiver     LK - Lake         ST - Stream"
-                + "\n======================================================================================";
+    private String showMapLegend(Location locations, int row, int column) {
+
+        String scene;
+        scene = locations.getScene().getDescription();
+        
+        String out = "======================================================================================"
+                +  "\n\t\tCurrent Scene: " + scene + ",     Coordinates: [" + row + "," + column + "]"
+                +  "\n======================================================================================"
+                +  "\n NW  N  NE   AR - Arid         EN - Encampment   MN - Mountain   SW - Swamp"
+                +  "\n     |       BL - Bushland     FL - Flooded      MP - MuddyPath  TN - Town"
+                +  "\n W - O - E   CN - Canyon       FO - Forest       PL - Plains     TU - Tundra"
+                +  "\n     |       CA - Caves        HL - Hills        RF - RedForest  VL - Village"
+                +  "\n SW  S  SE   CE - CrackedEarth IC - IndianCamp   RV - River      WF - Waterfall"
+                +  "\n             DE - Desert       JG - Jungle       SP - Sparse     ZN - Zion"
+                +  "\n Q - Quit    DR - DryRiver     LK - Lake         ST - Stream"
+                +  "\n======================================================================================";
         return out;
 
     }

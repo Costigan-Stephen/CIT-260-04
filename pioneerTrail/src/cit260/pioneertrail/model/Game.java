@@ -7,9 +7,7 @@ package cit260.pioneertrail.model;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Objects;
 import pioneertrail.PioneerTrail;
-import static pioneertrail.PioneerTrail.getCurrentGame;
 
 /**
  *
