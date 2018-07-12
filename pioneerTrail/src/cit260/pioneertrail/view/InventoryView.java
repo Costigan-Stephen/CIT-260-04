@@ -28,8 +28,9 @@ public class InventoryView extends View {
     }
 
     @Override
-    public boolean doAction(String input) {
-        switch (input) {
+    public boolean doAction(String inputs) {
+        inputs = inputs.toUpperCase();
+        switch (inputs) {
 
             case "M":
                 showMoney();

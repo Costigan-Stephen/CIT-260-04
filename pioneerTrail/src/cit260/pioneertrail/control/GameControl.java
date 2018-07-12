@@ -6,6 +6,7 @@
 package cit260.pioneertrail.control;
 
 import static cit260.pioneertrail.control.MapControl.compileSceneComponents;
+import cit260.pioneertrail.exceptions.GameControlException;
 import cit260.pioneertrail.model.Actor;
 import cit260.pioneertrail.model.Game;
 import cit260.pioneertrail.model.InventoryItem;
@@ -14,7 +15,19 @@ import cit260.pioneertrail.model.Location;
 import cit260.pioneertrail.model.Map;
 import cit260.pioneertrail.model.Player;
 import cit260.pioneertrail.exceptions.MapControlException;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.ObjectOutputStream;
+import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import pioneertrail.PioneerTrail;
 
 /**
@@ -45,7 +58,7 @@ public class GameControl {
         game.setPlayer(player);
         game.setActors(createActors());
         game.setItems(createItems());
-        game.setMap(createMap(3, 9)); 
+        game.setMap(createMap(3, 9));
         compileSceneComponents(game);
 
         // Actor actor = Actor();
@@ -69,7 +82,6 @@ public class GameControl {
 //        // If starting location is not supposed to be 0,0 then use the correct values here.
 //        movePlayer(map, 0, 8); // or instead of 0,0 you can select a different starting location
 //    }
-
     public static InventoryItem[] createItems() {
 
         InventoryItem[] items = new InventoryItem[200];
@@ -271,8 +283,36 @@ public class GameControl {
 //        }
 //        return maxValue;
 //    }
-    public static Game saveGame(String createNewGame) {
-        System.out.println("SAVE STUBB");
-        return null;
+    public static void saveGame(Game game, String filepath) throws GameControlException, IOException {
+//        System.out.println("Game was saved, filename is: " + filepath);
+
+        if (filepath == null) {
+            throw new GameControlException("Game could not be saved");
+        }
+
+        try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(filepath))) {
+            out.writeObject(game.getPlayer());
+        } catch (IOException ex) {
+            throw new GameControlException("Game could not be saved.  Error code: " + ex.getMessage());
+        }
+    }
+
+    public static void loadGame(String filepath) throws GameControlException, IOException {
+
+        File saveGame = new File(filepath);
+//        System.out.println("Game was saved, filename is: " + filepath);
+        if (filepath == null) {
+            throw new GameControlException("Game could not be Loaded, filename is empty. ");
+        }
+
+        try (BufferedReader in = new BufferedReader(new FileReader(saveGame))) {
+//        Game game = new Game();
+            //game.loadPlayer(in);
+            System.out.println(in.readLine());
+        } catch (IOException ex) {
+            throw new GameControlException("Game could not be loaded.  Error code: " + ex.getMessage());
+        }
+//    System.out.println("LOADED GAME SUCCESSFULLY");
+
     }
 }

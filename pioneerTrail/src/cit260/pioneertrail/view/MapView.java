@@ -34,18 +34,18 @@ public class MapView extends View {
         Location[][] locations = map.getLocations(); // retreive the locations from map
 
         // Build the heading of the map     
-        System.out.print("\n======================================================================================\n        |");
+        this.console.print("\n======================================================================================\n        |");
         for (int column = 0; column < locations[0].length; column++) {
-            System.out.print("  " + column + " |");
+            this.console.print("  " + column + " |");
             if(column == (locations[0].length - 1)){
-                System.out.print("    [ ] - Blocked Location ");
+                this.console.print("    [ ] - Blocked Location ");
             }
             
         }
         // Now build the map.  For each row, show the column information
-        System.out.println();
+        this.console.println();
         for (int row = 0; row < locations.length; row++) {
-            System.out.print("      " + row + " "); // print row numbers to side of map
+            this.console.print("      " + row + " "); // print row numbers to side of map
             for (int column = 0; column < locations[row].length; column++) {
                 // set default indicators as blanks
                 rightIndicator = " ";
@@ -67,31 +67,30 @@ public class MapView extends View {
                     leftIndicator = "["; // can be stars or whatever these are indicators showing visited
                     rightIndicator = "]"; // same as above
                 }
-                System.out.print("|"); // start map with a |
+                this.console.print("|"); // start map with a |
                 if (locations[row][column].getScene() == null) {
-                    System.out.print(leftIndicator + "??" + rightIndicator);
+                    this.console.print(leftIndicator + "??" + rightIndicator);
                 } else {
-                    System.out.print(leftIndicator
+                    this.console.print(leftIndicator
                             + locations[row][column].getScene().getSymbol()
                             + rightIndicator);
                 }
             }
-//            System.out.println("|");
             switch (row) {
                 case 0:
-                    System.out.println("|    * * - Current Location ");
+                    this.console.println("|    * * - Current Location ");
                     break;
                 case 1:
-                    System.out.println("|    + + - Visited ");
+                    this.console.println("|    + + - Visited ");
                     break;
                 case 2:
-                    System.out.println("|    > < - End Location ");
+                    this.console.println("|    > < - End Location ");
                     break;
                 default:
                     break;
             }
         }
-        System.out.println(showMapLegend(locations[map.getCurrentRow()][map.getCurrentColumn()], map.getCurrentRow(), map.getCurrentColumn()));
+        this.console.println(showMapLegend(locations[map.getCurrentRow()][map.getCurrentColumn()], map.getCurrentRow(), map.getCurrentColumn()));
     }
 
     @Override
@@ -114,7 +113,7 @@ public class MapView extends View {
                 }
             }
         }
-        System.out.println("\n*** Invalid selection *** Try Again later");
+        ErrorView.display(this.getClass().getName(), "\n*** Invalid selection *** Try Again later");
         return false;
     }
 

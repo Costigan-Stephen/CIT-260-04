@@ -5,6 +5,7 @@
  */
 package cit260.pioneertrail.model;
 
+import java.io.BufferedReader;
 import java.io.Serializable;
 import java.util.ArrayList;
 import pioneertrail.PioneerTrail;

@@ -25,41 +25,41 @@ public class MainMenuView extends View {
                 + "\n\t\t   MAIN MENU "
                 + "\n===================================================="
                 + "\n\t N - Start new game "
-                + "\n\t R - Restart an existing game "
+                + "\n\t R - Resume an existing game "
                 + "\n\t H - Get help on how to play the game "
-                + "\n\t I - Week 10 Individual Assignments "
+//                + "\n\t I - Week 10 Individual Assignments "
                 + "\n\t Q - Quit game "
                 + "\n====================================================\n ");// Display the instructions
     }
 
     @Override
-    public boolean doAction(String input) {
+    public boolean doAction(String inputs) {
 
-        String menuItem = input.toUpperCase();
+        inputs = inputs.toUpperCase();
         // menuItem = first element in inputs array
         // convert menuItem to upper case
 
-        switch (menuItem) {// SWITCH menuItem
+        switch (inputs) {// SWITCH menuItem
             case "N":
-        {
-            try {
-                startNewGame(); // “N”: startNewGame()
-            } catch (MapControlException ex) {
-                System.out.println(ex.getMessage());
-            }
-        }
+                {
+                    try {
+                        startNewGame(); // “N”: startNewGame()
+                    } catch (MapControlException ex) {
+                        ErrorView.display(this.getClass().getName(), "Error reading input: " + ex.getMessage());
+                    }
+                }
                 break;
             case "R":
-                restartGame();// “R”: restartGame()
+                resumeGame();// “R”: resumeGame()
                 break;
             case "H":
                 getHelp();// “H”: getHelp()
                 break;
-            case "I":
-                individual();// “H”: getHelp()
-                break;
+//            case "I":
+//                individual();// “H”: getHelp()
+//                break;
             default:
-                System.out.println("Invalid Menu item.");// DEFAULT: DISPLAY “Invalid menu item.”
+                ErrorView.display(this.getClass().getName(), "Invalid Menu item.");
         }// ENDSWITCH    
         return false;// RETURN false
     }
@@ -71,7 +71,7 @@ public class MainMenuView extends View {
         gameMenuView.display();// gameMenuView.displayGameMenuView();     
     }
 
-    private void restartGame() {// restartNewGame(): void {
+    private void resumeGame() {
         StartExistingGameView startExistingGameView = new StartExistingGameView();
         startExistingGameView.display();
         // startExistingGameView = Create a new StartExistingGameView

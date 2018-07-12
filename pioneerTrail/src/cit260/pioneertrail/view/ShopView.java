@@ -30,19 +30,19 @@ public class ShopView extends View {
         String menuItem = input.toUpperCase(); // menuItem = first element in inputs array & convert menuItem to upper case   
 
         if (menuItem.equals("A")) {
-            System.out.println("valid value entered");
+            this.console.println("valid value entered");
             return true;
         } else if (menuItem.equals("B")) {
-            System.out.println("valid value entered");
+            this.console.println("valid value entered");
             return true;
         } else if (menuItem.equals("M")) {
-            System.out.println("valid value entered");
+            this.console.println("valid value entered");
             return true;
         } else if (menuItem.equals("I")) {
-            System.out.println("valid value entered");
+            this.console.println("valid value entered");
             return true;
         } else {
-            System.out.println("Invalid value. Please try again.");
+            this.console.println("Invalid value. Please try again.");
             return true;
         }
 //        return false;// RETURN false

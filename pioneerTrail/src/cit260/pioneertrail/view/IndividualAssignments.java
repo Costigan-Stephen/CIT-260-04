@@ -29,14 +29,14 @@ public class IndividualAssignments extends View {
 
     @Override
     public boolean doAction(String inputs) {
-
+        inputs = inputs.toUpperCase();
         switch (inputs) {
             case "S":
                 {
                     try {
                         calcHealthRemaining();
                     } catch (HealthControlException ex) {
-                        System.out.println(ex.getMessage());
+                        ErrorView.display(this.getClass().getName(), "Error reading input: " + ex.getMessage());
                     }
                 }
                 break;
@@ -57,7 +57,7 @@ public class IndividualAssignments extends View {
     }
 
     private void calcHealthRemaining() throws HealthControlException {
-        System.out.println("\nDisplaying Health remaining for Actor: Spot (the dog): ...");
+        this.console.println("\nDisplaying Health remaining for Actor: Spot (the dog): ...");
         int actorNumber = 4;
         HealthControl.calcHealthRemaining(actorNumber); 
     }

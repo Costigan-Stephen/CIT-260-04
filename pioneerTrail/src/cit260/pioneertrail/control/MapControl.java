@@ -851,8 +851,7 @@ public class MapControl { // MARILEE
                 newRow = row + 1;
                 break;
             default:
-                System.out.println("Request could not be read, please enter a direction.");
-                break;
+                throw new MapControlException("Request could not be read, please enter a direction.");
         }
         
         if ( newRow < 1 || newRow > map.getRowCount() || newCol < 1 || newCol > map.getColumnCount()) {

@@ -27,8 +27,10 @@ class TradeView extends View {
     }
 
     @Override
-    public boolean doAction(String input) {
-        switch (input) {
+    public boolean doAction(String inputs) {
+        inputs = inputs.toUpperCase();
+        
+        switch (inputs) {
 
             case "T":
                 getTrade();
@@ -55,6 +57,6 @@ class TradeView extends View {
     }
 
     private void getTrade() {
-        System.out.println("This calls a fictional TradeControl");
+        this.console.println("This calls a fictional TradeControl");
     }
 }
