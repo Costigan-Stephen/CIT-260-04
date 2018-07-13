@@ -42,8 +42,7 @@ public class GatherView extends View {
                 getAnimals();
                 break;
             case "T":
-                this.console.println("**** Possible Scene/Control for Trading ***");
-                break;
+                displayTradeView();
             case "I":
                 displayInventoryView();
                 break;
@@ -76,6 +75,11 @@ public class GatherView extends View {
     void displayInventoryView() {
         InventoryView inventoryView = new InventoryView();
         inventoryView.display();
+    }
+
+    private void displayTradeView() {
+        TradeView tradeView = new TradeView();
+        tradeView.display();
     }
 
 }
