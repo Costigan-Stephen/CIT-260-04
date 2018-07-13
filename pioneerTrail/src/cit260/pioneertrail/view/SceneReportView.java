@@ -39,7 +39,7 @@ public class SceneReportView {
 //            out.printf("%n%-10s%40s", "------", "------------------------");
 //
 //            for (SceneType resourceScene : scenes) {
-//                if (resourceScene == resourceScene.IndianCamp) {
+//                if (resourceScene == resourceScene.IndianCamp) { //Other scenes too???
 //                    out.printf("%n-10s%40s", resourceScene.values(),
 //                            resourceScene.description());
 //                }

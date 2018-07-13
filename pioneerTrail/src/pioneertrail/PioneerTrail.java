@@ -43,7 +43,7 @@ public class PioneerTrail {
             System.out.println("Exception: " + e.getMessage() +
                                 "\nCause: " + e.getCause() +
                                 "\nMessage: " + e.getMessage());
-            e.printStackTrace();;
+            e.printStackTrace();
         }
         
         finally {
