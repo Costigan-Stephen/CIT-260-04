@@ -133,9 +133,12 @@ public class InventoryView extends View {
         String formatting = "%n%-20s%-20s%-10s%-30s";
         String output = String.format(formatting,"","   List of Items in Game","","");
         output += String.format(formatting, "--------------------", "--------------------", "----------", "------------------------------" );
-        output += String.format(formatting, "Items",  "Weight", "Type", "Number" );
+        output += String.format(formatting, "Item",  "Weight", "Type", "Number" );
         output += String.format(formatting, "--------------------", "--------------------", "----------", "------------------------------" );
-//     
+        output +=String.format(formatting, "Ox", "200", "Inventory", "four");
+        output +=String.format(formatting, "Wheel", "20", "Inventory", "five");
+        output +=String.format(formatting, "Ax", "2", "Inventory", "two");
+       
         Game game = PioneerTrail.getCurrentGame();
 //        ArrayList<Actor> actor = game.getActors();
 //        
