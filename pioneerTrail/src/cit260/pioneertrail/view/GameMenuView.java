@@ -21,12 +21,12 @@ class GameMenuView extends View {
                 + "\n\t    S - Save your Game "
                 + "\n\t    L - Load a Saved Game "
                 + "\n\t    I - View Inventory "
-                + "\n\t    P - Show Party Status "
+                + "\n\t    P - Print Party Status "
                 + "\n\t    M - Show the Map "
                 + "\n\t    G - Gather Resources "
                 + "\n\t    R - Repair Wagon "
                 + "\n\t    Q - Quit To Main Menu "
-                + "\n====================================================\n\n "
+                + "\n====================================================\n "
         );
 
     }
@@ -54,9 +54,6 @@ class GameMenuView extends View {
             case "G":
                 displayGatherView();
                 break;
-//       case "R":
-//           displayRepairWagon();
-//           break;
 
         }
 

@@ -61,8 +61,8 @@ public class MapView extends View {
                     rightIndicator = "+"; // same as above
                 } else if ("ZN".equals(locations[row][column].getScene().getSymbol())) {
                     // Set < > indicators to show this location has been visited.
-                    leftIndicator = "*"; // can be stars or whatever these are indicators showing visited
-                    rightIndicator = "*"; // same as above
+                    leftIndicator = "#"; // can be stars or whatever these are indicators showing visited
+                    rightIndicator = "#"; // same as above
                 } else if (locations[row][column].getScene().getBlocked() == true) {
                     // Set < > indicators to show this location has been visited.
                     leftIndicator = "["; // can be stars or whatever these are indicators showing visited
@@ -85,7 +85,7 @@ public class MapView extends View {
                     this.console.println("|    + + - Visited " + lineSeparator);
                     break;
                 case 2:
-                    this.console.println("|    * * - End Location ");
+                    this.console.println("|    # # - End Location ");
                     break;
                 default:
                     break;

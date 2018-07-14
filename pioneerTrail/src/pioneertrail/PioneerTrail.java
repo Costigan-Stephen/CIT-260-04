@@ -57,8 +57,8 @@ public class PioneerTrail {
                 if(logFile != null){
                     logFile.close();
                 }
-            } catch (IOException ex) {
-                System.out.println("Error closing files");
+            } catch (Exception ex) {
+//                System.out.println("Error closing files");
                 System.console().printf("%s%s", "Error closing the input/output files");
                 return;
             }

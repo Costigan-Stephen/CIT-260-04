@@ -97,21 +97,28 @@ public class GameControl {
         return locations;
     }
     
-    public static void saveGame(Game game, String filepath) throws GameControlException, IOException {
+    public static void saveGame(Game game, String filepath) throws GameControlException{
 //        System.out.println("Game was saved, filename is: " + filepath);
-
+        if (!filepath.contains(".")){
+            filepath += ".txt";
+        }
+        
         if (filepath == null) {
             throw new GameControlException("Game could not be saved");
         }
 
         try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(filepath))) {
             out.writeObject(game);
-        } catch (IOException ex) {
+        } catch (Exception ex) {
             throw new GameControlException("Game could not be saved.  Error code: " + ex.getMessage());
         }
     }
 
     public static void loadGame(String filepath) throws GameControlException {
+        if (!filepath.contains(".")){
+            filepath += ".txt";
+        }
+        
         Game game = null;
         try( FileInputStream fis = new FileInputStream(filepath) ){
             ObjectInputStream savedGame = new ObjectInputStream(fis);
@@ -130,4 +137,21 @@ public class GameControl {
         PioneerTrail.setCurrentGame(game);
 
     }
-}
+
+    // This will work for any output file string.
+    // Stephen
+    public static void saveFile(String output, String filepath) throws GameControlException {
+        if (filepath == null) {
+            throw new GameControlException("Error: Filepath is empty");
+        }
+        
+        if (!filepath.contains(".")){
+            filepath += ".txt";
+        }
+
+        try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(filepath))) {
+            out.writeObject(output);
+        } catch (Exception ex) {
+            throw new GameControlException("File could not be saved.  Error code: " + ex.getMessage());
+        }
+    }}
