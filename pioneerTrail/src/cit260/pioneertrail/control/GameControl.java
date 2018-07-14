@@ -69,7 +69,8 @@ public class GameControl {
         map.setColumnCount(noOfColumns);
         return map;
     }
-
+    
+   
     public static ArrayList<Actor> createActors() {
 
         ArrayList<Actor> actors = new ArrayList<>();
