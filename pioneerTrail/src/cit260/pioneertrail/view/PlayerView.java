@@ -50,7 +50,7 @@ public class PlayerView extends View {
             ErrorView.display(this.getClass().getName(), "Error reading input: " + e.getMessage());
             return false;
         }
-        this.console.println("\nGame saved successfully at " + filePath);
+        this.console.println("File saved successfully at " + filePath);
         return true;// RETURN false
     }
 }
