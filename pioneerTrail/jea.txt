@@ -1,0 +1,15 @@
+
+                       List of Actors in Game                                        
+--------------------------------------------------------------------------------
+Name                Description         Health    Purpose                       
+--------------------------------------------------------------------------------
+Samantha            Mother              100.0     Lead the Family               
+Samuel              Father              100.0     Lead the Family               
+Ralph               Son                 80.0      Cause a Ruckus                
+Sarah               Daughter            80.0      Be Daddy's Angel              
+Spot                The Dog             50.0      Get Belly Rubs                
+Hoskininni          Indian Chief        100.0     Leader of the Navajo indian tribe
+Jacob J. Brown      Major               100.0     Major general of NY Militia   
+Brigham Young       Prophet             100.0     Leader of the Church          
+George Brown        Shop Keeper         100.0     Owner of the general store    
+Henry Lewis         Local Trader        100.0     Acquirer of goods and services

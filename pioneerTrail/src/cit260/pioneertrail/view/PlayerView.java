@@ -28,11 +28,11 @@ public class PlayerView extends View {
     
     @Override
     public boolean doAction(String filePath) {
-        String formatting = "%n%-20s%-20s%-6s%-30s";
-        String output = ("\t  List of Actors in Game\n" +
-                        "----------------------------------------------------------------------------");
+        String formatting = "%n%-20s%-20s%-10s%-30s";
+        String output = String.format(formatting,"","   List of Actors in Game","","");
+        output += String.format(formatting, "--------------------", "--------------------", "----------", "------------------------------" );
         output += String.format(formatting, "Name", "Description", "Health", "Purpose" );
-        output += String.format(formatting, "--------------------", "--------------------", "------", "------------------------------" );
+        output += String.format(formatting, "--------------------", "--------------------", "----------", "------------------------------" );
 //        actors.add(new Actor(0, "Samantha", "Mother", 100.0, "Lead the Family"));
         Game game = PioneerTrail.getCurrentGame();
         ArrayList<Actor> actor = game.getActors();

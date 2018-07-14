@@ -15,12 +15,17 @@ import cit260.pioneertrail.model.Location;
 import cit260.pioneertrail.model.Map;
 import cit260.pioneertrail.model.Player;
 import cit260.pioneertrail.exceptions.MapControlException;
+import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.PrintStream;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import pioneertrail.PioneerTrail;
 
 /**
@@ -51,14 +56,12 @@ public class GameControl {
         game.setPlayer(player);
         game.setActors(createActors());
         game.setItems(InventoryControl.createItems());
-        game.setMap(createMap(3,9));
+        game.setMap(createMap(3, 9));
         compileSceneComponents(game);
 
         System.out.println("START NEW GAME");
         return 0;
     }
-    
-
 
     public static Map createMap(int noOfRows, int noOfColumns) {
         Map map = new Map();
@@ -96,13 +99,13 @@ public class GameControl {
         }
         return locations;
     }
-    
-    public static void saveGame(Game game, String filepath) throws GameControlException{
+
+    public static void saveGame(Game game, String filepath) throws GameControlException {
 //        System.out.println("Game was saved, filename is: " + filepath);
-        if (!filepath.contains(".")){
+        if (!filepath.contains(".")) {
             filepath += ".txt";
         }
-        
+
         if (filepath == null) {
             throw new GameControlException("Game could not be saved");
         }
@@ -115,17 +118,16 @@ public class GameControl {
     }
 
     public static void loadGame(String filepath) throws GameControlException {
-        if (!filepath.contains(".")){
+        if (!filepath.contains(".")) {
             filepath += ".txt";
         }
-        
+
         Game game = null;
-        try( FileInputStream fis = new FileInputStream(filepath) ){
+        try (FileInputStream fis = new FileInputStream(filepath)) {
             ObjectInputStream savedGame = new ObjectInputStream(fis);
-            
-        game = (Game) savedGame.readObject();
-            
-            
+
+            game = (Game) savedGame.readObject();
+
         } catch (Exception ex) {
             throw new GameControlException("Game could not be loaded.  Error code: " + ex.getMessage());
         }
@@ -141,17 +143,23 @@ public class GameControl {
     // This will work for any output file string.
     // Stephen
     public static void saveFile(String output, String filepath) throws GameControlException {
+        PrintStream myOut = null;
         if (filepath == null) {
             throw new GameControlException("Error: Filepath is empty");
         }
-        
-        if (!filepath.contains(".")){
+        if (!filepath.contains(".")) {
             filepath += ".txt";
         }
 
-        try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(filepath))) {
-            out.writeObject(output);
-        } catch (Exception ex) {
+        try {
+            myOut = new PrintStream(new File(filepath));
+            System.setOut(myOut);
+            myOut.print(output);
+
+        } catch (FileNotFoundException ex) {
             throw new GameControlException("File could not be saved.  Error code: " + ex.getMessage());
+        } finally {
+            myOut.close();
         }
-    }}
+    }
+}
