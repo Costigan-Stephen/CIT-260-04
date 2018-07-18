@@ -659,7 +659,7 @@ public class SceneControl extends MapControl {
         o = SceneType.Caves.ordinal();
         scenes[o] = new Scene();
         scenes[o].setDescription("Caves");
-        scenes[o].setBlocked(true);
+        scenes[o].setBlocked(false);
         scenes[o].setSymbol("CA");
         scenes[o].setActor(getActor(o));
 
