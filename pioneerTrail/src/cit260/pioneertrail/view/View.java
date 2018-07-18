@@ -36,6 +36,13 @@ public abstract class View implements ViewInterfaces {
             if (input.toUpperCase().equals("Q")) {
                 return;
             }
+            
+            //Test for game over
+            if (PioneerTrail.getCurrentGame().isGameOver() == true){
+                displayGameOver();
+                return;
+            }
+
             endOfView = doAction(input);
 
         } while (endOfView != true);
@@ -67,5 +74,10 @@ public abstract class View implements ViewInterfaces {
             ErrorView.display(this.getClass().getName(), "Error reading input: " + e.getMessage());
         }
         return input;
+    }
+
+    public void displayGameOver() {
+        EndGameView gameOver = new EndGameView();
+        gameOver.display();
     }
 }

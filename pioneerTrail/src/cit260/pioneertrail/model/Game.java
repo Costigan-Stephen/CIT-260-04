@@ -22,10 +22,20 @@ public class Game implements Serializable{
     public Scene[] scenes;
     private InventoryItem[] items;
     private Question[] question;
+    private boolean gameOver;
+    
     
     public Game() {
     }
+    
+    public boolean isGameOver() {
+        return gameOver;
+    }
 
+    public void setGameOver(boolean gameOver) {
+        this.gameOver = gameOver;
+    }
+    
     public Question[] getQuestion() {
         return question;
     }
