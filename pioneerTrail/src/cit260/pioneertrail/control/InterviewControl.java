@@ -8,6 +8,7 @@ package cit260.pioneertrail.control;
 import cit260.pioneertrail.model.Answers;
 import cit260.pioneertrail.model.Question;
 import cit260.pioneertrail.model.QuestionType;
+import cit260.pioneertrail.model.Scene;
 
 /**
  *
@@ -78,4 +79,203 @@ public class InterviewControl {
         question[QuestionType.weather.ordinal()].setResultOfAnswer("Her it is");
         return question;
     }
+    
+    
+    public static Scene[] createSceneQuestions(Scene[] scenes){
+        
+        String question, ans, result; //Answer, one of potentially more.  Multiple answers can be asked per scene.
+        int i = 0;
+        int o = 1;
+        
+                //    Questions about each scene
+        //    01 BushLand,
+        question = "";
+        ans = "";
+        result = "";
+        scenes[o].getQuestion(o).setQuestionText(question);
+        setAnswers(scenes, o, i, ans, result);
+        
+        //    02 Plains,
+        o += 1;
+        question = "";
+        ans = "";
+        result = "";
+        scenes[o].getQuestion(o).setQuestionText(question);
+        setAnswers(scenes, o, i, ans, result);
+        i += 1;
+        //    03 Forest, - Steve
+        o += 1;
+        question = "";
+        ans = "";
+        result = "";
+        scenes[o].getQuestion(o).setQuestionText(question);
+        setAnswers(scenes, o, i, ans, result);
+        i += 1;
+        //    04 Jungle,
+        o += 1;
+        question = "";
+        ans = "";
+        result = "";
+        scenes[o].getQuestion(o).setQuestionText(question);
+        setAnswers(scenes, o, i, ans, result);
+        i += 1;
+        //    05 Canyon, [BLOCKED]
+        o += 1;
+        //    06 RedForest,
+        o += 1;
+        question = "";
+        ans = "";
+        result = "";
+        scenes[o].getQuestion(o).setQuestionText(question);
+        setAnswers(scenes, o, i, ans, result);
+        i += 1;
+        //    07 River,
+        o += 1;
+        question = "";
+        ans = "";
+        result = "";
+        scenes[o].getQuestion(o).setQuestionText(question);
+        setAnswers(scenes, o, i, ans, result);
+        i += 1;
+        //    08 Lake, [BLOCKED]
+        o += 1;
+        //    09 Waterfall, [BLOCKED]
+        o += 1;
+        //    10 Tundra,
+        o += 1;
+        question = "";
+        ans = "";
+        result = "";
+        scenes[o].getQuestion(o).setQuestionText(question);
+        setAnswers(scenes, o, i, ans, result);
+        i += 1;
+        //    11 Sparse,
+        o += 1;
+        question = "";
+        ans = "";
+        result = "";
+        scenes[o].getQuestion(o).setQuestionText(question);
+        setAnswers(scenes, o, i, ans, result);
+        i += 1;
+        //    12 CrackedEarth,
+        o += 1;
+        question = "";
+        ans = "";
+        result = "";
+        scenes[o].getQuestion(o).setQuestionText(question);
+        setAnswers(scenes, o, i, ans, result);
+        i += 1;
+        //    13 Arid,
+        o += 1;
+        question = "";
+        ans = "";
+        result = "";
+        scenes[o].getQuestion(o).setQuestionText(question);
+        setAnswers(scenes, o, i, ans, result);
+        i += 1;
+        //    14 Desert,
+        o += 1;
+        question = "";
+        ans = "";
+        result = "";
+        scenes[o].getQuestion(o).setQuestionText(question);
+        setAnswers(scenes, o, i, ans, result);
+        i += 1;
+        //    15 Hills,
+        o += 1;
+        question = "";
+        ans = "";
+        result = "";
+        scenes[o].getQuestion(o).setQuestionText(question);
+        setAnswers(scenes, o, i, ans, result);
+        i += 1;
+        //    16 Mountain, [BLOCKED]
+        o += 1;
+        //    17 Stream,
+        o += 1;
+        question = "";
+        ans = "";
+        result = "";
+        scenes[o].getQuestion(o).setQuestionText(question);
+        setAnswers(scenes, o, i, ans, result);
+        i += 1;
+        //    18 Town, [START] -- SHOP
+        o += 1;
+        question = "";
+        ans = "";
+        result = "";
+        scenes[o].getQuestion(o).setQuestionText(question);
+        setAnswers(scenes, o, i, ans, result);
+        i += 1;
+        //    19 Village, -- SHOP 
+        o += 1;
+        question = "";
+        ans = "";
+        result = "";
+        scenes[o].getQuestion(o).setQuestionText(question);
+        setAnswers(scenes, o, i, ans, result);
+        i += 1;
+        //    20 Encampment,  -- SHOP 
+        o += 1;
+        question = "";
+        ans = "";
+        result = "";
+        scenes[o].getQuestion(o).setQuestionText(question);
+        setAnswers(scenes, o, i, ans, result);
+        i += 1;
+        //    21 IndianCamp, -- SHOP 
+        o += 1;
+        question = "";
+        ans = "";
+        result = "";
+        scenes[o].getQuestion(o).setQuestionText(question);
+        setAnswers(scenes, o, i, ans, result);
+        i += 1;
+        //    22 Caves, 
+        question = "";
+        ans = "";
+        result = "";
+        scenes[o].getQuestion(o).setQuestionText(question);
+        setAnswers(scenes, o, i, ans, result);
+        i += 1;
+        //    23 Swamp, [BLOCKED]
+        
+        //    24 DryRiver,
+        o += 1;
+        question = "";
+        ans = "";
+        result = "";
+        scenes[o].getQuestion(o).setQuestionText(question);
+        setAnswers(scenes, o, i, ans, result);
+        i += 1;
+        //    25 Flooded, [BLOCKED]
+        
+        //    26 MuddyPath,
+        o += 1;
+        question = "";
+        ans = "";
+        result = "";
+        scenes[o].getQuestion(o).setQuestionText(question);
+        setAnswers(scenes, o, i, ans, result);
+        i += 1;
+        //    27 Zion; [END]
+        o += 1;
+        question = "";
+        ans = "";
+        result = "";
+        scenes[o].getQuestion(o).setQuestionText(question);
+        setAnswers(scenes, o, i, ans, result);
+        i += 1;
+        
+        return scenes;
+    }
+
+    private static Scene[] setAnswers(Scene[] scenes, int o, int i, String answer, String result) {
+        String question = scenes[o].setQuestion(o).getQuestionText();
+        scenes[o].getAnswers(o).setQuestion(question); //transfer question to the appropriate Answer
+        scenes[o].getAnswers(o).setAnswer(answer);
+        scenes[o].getAnswers(o).setResultOfAnswer(result);
+        return scenes;
+    }
+    
 }
