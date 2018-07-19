@@ -23,11 +23,20 @@ public class Scene implements Serializable {
     private QuestionType questionType;
     private Location[][] locations;
     private Question[] question;
+    private Answers[] answers;
 
     public Scene() {
 
     }
 
+    public Answers getAnswers(int i) {
+        return answers[i];
+    }
+
+    public void setAnswers(Answers[] answers) {
+        this.answers = answers;
+    }
+    
     public int getIndex() {
         return index;
     }
@@ -138,12 +147,6 @@ public class Scene implements Serializable {
 
     public Question setQuestion(int o) {
         return question[o];
-    }
-
-    public Answers getAnswers(int index) {
-        Answers answers = new Answers();
-        
-        return answers;
     }
 
 }

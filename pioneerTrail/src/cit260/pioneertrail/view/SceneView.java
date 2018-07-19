@@ -46,8 +46,9 @@ public class SceneView extends View{
     private String displayQuestion() {
         String out = "\n====================================================\n"
                     + getQuestion() 
-                    + "\n====================================================\n"
-                    + getAnswers(); 
+                    + "\n----------------------------------------------------\n"
+                    + getAnswers()
+                    + "\n====================================================\n"; 
         return out;
     }
     
