@@ -325,7 +325,7 @@ public class SceneControl extends MapControl {
         /*
         START       18
         END         27
-        BLOCKED:    05, 08, 09, 16, 22, 23, 25, 27
+        BLOCKED:    05, 16, 08, 09, 23, 25,
         
                         SCENES BY LOCATION
              | 00 | 01 | 02 | 03 | 04 | 05 | 06 | 07 | 08 | 
