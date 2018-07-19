@@ -27,7 +27,6 @@ public class MainMenuView extends View {
                 + "\n\t N - Start new game "
                 + "\n\t R - Resume an existing game "
                 + "\n\t H - Get help on how to play the game "
-//                + "\n\t I - Week 10 Individual Assignments "
                 + "\n\t Q - Quit game "
                 + "\n====================================================\n ");// Display the instructions
     }
