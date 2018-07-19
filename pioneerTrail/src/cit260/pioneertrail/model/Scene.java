@@ -43,8 +43,8 @@ public class Scene implements Serializable {
         this.locations = locations;
     }
 
-    public Question[] getQuestion() {
-        return question;
+    public Question getQuestion(int i) {
+        return question[i];
     }
 
     public void setQuestion(Question[] question) {
@@ -125,6 +125,10 @@ public class Scene implements Serializable {
     @Override
     public String toString() {
         return super.toString();
+    }
+
+    public void setQuestion(int o) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }
