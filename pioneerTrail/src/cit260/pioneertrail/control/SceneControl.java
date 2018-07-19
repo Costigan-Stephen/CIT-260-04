@@ -490,6 +490,7 @@ public class SceneControl extends MapControl {
         //Scene [01/27]
         int o = SceneType.BushLand.ordinal();
         scenes[o] = new Scene();
+        scenes[o].setIndex(o);
         scenes[o].setDescription("BushLand");
         scenes[o].setBlocked(false);
         scenes[o].setSymbol("BL");
@@ -499,6 +500,7 @@ public class SceneControl extends MapControl {
         //Scene [02/27]
         o = SceneType.Plains.ordinal();
         scenes[o] = new Scene();
+        scenes[o].setIndex(o);
         scenes[o].setDescription("Plains");
         scenes[o].setBlocked(false);
         scenes[o].setSymbol("PL");
@@ -508,6 +510,7 @@ public class SceneControl extends MapControl {
         //Scene [03/27]
         o = SceneType.Forest.ordinal();
         scenes[o] = new Scene();
+        scenes[o].setIndex(o);
         scenes[o].setDescription("Forest");
         scenes[o].setBlocked(false);
         scenes[o].setSymbol("FO");
@@ -517,6 +520,7 @@ public class SceneControl extends MapControl {
         //Scene [04/27]
         o = SceneType.Jungle.ordinal();
         scenes[o] = new Scene();
+        scenes[o].setIndex(o);
         scenes[o].setDescription("Jungle");
         scenes[o].setBlocked(false);
         scenes[o].setSymbol("JG");
@@ -526,6 +530,7 @@ public class SceneControl extends MapControl {
         //Scene [05/27]
         o = SceneType.Canyon.ordinal();
         scenes[o] = new Scene();
+        scenes[o].setIndex(o);
         scenes[o].setDescription("Canyon");
         scenes[o].setBlocked(true);
         scenes[o].setSymbol("CN");
@@ -535,6 +540,7 @@ public class SceneControl extends MapControl {
         //Scene [06/27]
         o = SceneType.RedForest.ordinal();
         scenes[o] = new Scene();
+        scenes[o].setIndex(o);
         scenes[o].setDescription("RedForest");
         scenes[o].setBlocked(false);
         scenes[o].setSymbol("RF");
@@ -544,6 +550,7 @@ public class SceneControl extends MapControl {
         //Scene [07/27]
         o = SceneType.River.ordinal();
         scenes[o] = new Scene();
+        scenes[o].setIndex(o);
         scenes[o].setDescription("River");
         scenes[o].setBlocked(false);
         scenes[o].setSymbol("RV");
@@ -553,6 +560,7 @@ public class SceneControl extends MapControl {
         //Scene [08/27]
         o = SceneType.Lake.ordinal();
         scenes[o] = new Scene();
+        scenes[o].setIndex(o);
         scenes[o].setDescription("Lake");
         scenes[o].setBlocked(true);
         scenes[o].setSymbol("LK");
@@ -562,6 +570,7 @@ public class SceneControl extends MapControl {
         //Scene [09/27]
         o = SceneType.Waterfall.ordinal();
         scenes[o] = new Scene();
+        scenes[o].setIndex(o);
         scenes[o].setDescription("Waterfall");
         scenes[o].setBlocked(true);
         scenes[o].setSymbol("WF");
@@ -571,6 +580,7 @@ public class SceneControl extends MapControl {
         //Scene [10/27]
         o = SceneType.Tundra.ordinal();
         scenes[o] = new Scene();
+        scenes[o].setIndex(o);
         scenes[o].setDescription("Tundra");
         scenes[o].setBlocked(false);
         scenes[o].setSymbol("TU");
@@ -580,6 +590,7 @@ public class SceneControl extends MapControl {
         //Scene [11/27]
         o = SceneType.Sparse.ordinal();
         scenes[o] = new Scene();
+        scenes[o].setIndex(o);
         scenes[o].setDescription("Sparse");
         scenes[o].setBlocked(false);
         scenes[o].setSymbol("SP");
@@ -589,6 +600,7 @@ public class SceneControl extends MapControl {
         //Scene [12/27]
         o = SceneType.CrackedEarth.ordinal();
         scenes[o] = new Scene();
+        scenes[o].setIndex(o);
         scenes[o].setDescription("CrackedEarth");
         scenes[o].setBlocked(false);
         scenes[o].setSymbol("CE");
@@ -598,6 +610,7 @@ public class SceneControl extends MapControl {
         //Scene [13/27]
         o = SceneType.Arid.ordinal();
         scenes[o] = new Scene();
+        scenes[o].setIndex(o);
         scenes[o].setDescription("Arid");
         scenes[o].setBlocked(false);
         scenes[o].setSymbol("AR");
@@ -607,6 +620,7 @@ public class SceneControl extends MapControl {
         //Scene [14/27]
         o = SceneType.Desert.ordinal();
         scenes[o] = new Scene();
+        scenes[o].setIndex(o);
         scenes[o].setDescription("Desert");
         scenes[o].setBlocked(false);
         scenes[o].setSymbol("DE");
@@ -616,6 +630,7 @@ public class SceneControl extends MapControl {
         //Scene [15/27]
         o = SceneType.Hills.ordinal();
         scenes[o] = new Scene();
+        scenes[o].setIndex(o);
         scenes[o].setDescription("Hills");
         scenes[o].setBlocked(false);
         scenes[o].setSymbol("HL");
@@ -625,6 +640,7 @@ public class SceneControl extends MapControl {
         //Scene [16/27]
         o = SceneType.Mountain.ordinal();
         scenes[o] = new Scene();
+        scenes[o].setIndex(o);
         scenes[o].setDescription("Mountain");
         scenes[o].setBlocked(true);
         scenes[o].setSymbol("MN");
@@ -634,6 +650,7 @@ public class SceneControl extends MapControl {
         //Scene [17/27]
         o = SceneType.Stream.ordinal();
         scenes[o] = new Scene();
+        scenes[o].setIndex(o);
         scenes[o].setDescription("Stream");
         scenes[o].setBlocked(false);
         scenes[o].setSymbol("ST");
@@ -643,6 +660,7 @@ public class SceneControl extends MapControl {
         //Scene [18/27]
         o = SceneType.Town.ordinal();
         scenes[o] = new Scene();
+        scenes[o].setIndex(o);
         scenes[o].setDescription("Town");
         scenes[o].setBlocked(false);
         scenes[o].setSymbol("TN");
@@ -652,6 +670,7 @@ public class SceneControl extends MapControl {
         //Scene [19/27]
         o = SceneType.Village.ordinal();
         scenes[o] = new Scene();
+        scenes[o].setIndex(o);
         scenes[o].setDescription("Village");
         scenes[o].setBlocked(false);
         scenes[o].setSymbol("VL");
@@ -661,6 +680,7 @@ public class SceneControl extends MapControl {
         //Scene [20/27]
         o = SceneType.Encampment.ordinal();
         scenes[o] = new Scene();
+        scenes[o].setIndex(o);
         scenes[o].setDescription("Encampment");
         scenes[o].setBlocked(false);
         scenes[o].setSymbol("EN");
@@ -670,6 +690,7 @@ public class SceneControl extends MapControl {
         //Scene [21/27]
         o = SceneType.IndianCamp.ordinal();
         scenes[o] = new Scene();
+        scenes[o].setIndex(o);
         scenes[o].setDescription("IndianCamp");
         scenes[o].setBlocked(false);
         scenes[o].setSymbol("IC");
@@ -679,6 +700,7 @@ public class SceneControl extends MapControl {
         //Scene [22/27]
         o = SceneType.Caves.ordinal();
         scenes[o] = new Scene();
+        scenes[o].setIndex(o);
         scenes[o].setDescription("Caves");
         scenes[o].setBlocked(false);
         scenes[o].setSymbol("CA");
@@ -688,6 +710,7 @@ public class SceneControl extends MapControl {
         //Scene [23/27]
         o = SceneType.Swamp.ordinal();
         scenes[o] = new Scene();
+        scenes[o].setIndex(o);
         scenes[o].setDescription("Swamp");
         scenes[o].setBlocked(true);
         scenes[o].setSymbol("SW");
@@ -697,6 +720,7 @@ public class SceneControl extends MapControl {
         //Scene [24/27]
         o = SceneType.DryRiver.ordinal();
         scenes[o] = new Scene();
+        scenes[o].setIndex(o);
         scenes[o].setDescription("DryRiver");
         scenes[o].setBlocked(false);
         scenes[o].setSymbol("DR");
@@ -706,6 +730,7 @@ public class SceneControl extends MapControl {
         //Scene [25/27]
         o = SceneType.Flooded.ordinal();
         scenes[o] = new Scene();
+        scenes[o].setIndex(o);
         scenes[o].setDescription("Flooded");
         scenes[o].setBlocked(true);
         scenes[o].setSymbol("FL");
@@ -715,6 +740,7 @@ public class SceneControl extends MapControl {
         //Scene [26/27]
         o = SceneType.MuddyPath.ordinal();
         scenes[o] = new Scene();
+        scenes[o].setIndex(o);
         scenes[o].setDescription("MuddyPath");
         scenes[o].setBlocked(false);
         scenes[o].setSymbol("MP");
@@ -724,6 +750,7 @@ public class SceneControl extends MapControl {
         //Scene [27/27]
         o = SceneType.Zion.ordinal();
         scenes[o] = new Scene();
+        scenes[o].setIndex(o);
         scenes[o].setDescription("Zion");
         scenes[o].setBlocked(false);
         scenes[o].setSymbol("ZN");

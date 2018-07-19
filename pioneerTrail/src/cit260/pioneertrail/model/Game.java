@@ -21,7 +21,7 @@ public class Game implements Serializable{
     public Map map;
     public Scene[] scenes;
     private InventoryItem[] items;
-    private Question[] question;
+    private Question[] question; //I don't think we ever use this.
     private boolean gameOver;
     
     

@@ -13,6 +13,7 @@ import java.util.Objects;
 public class Scene implements Serializable {
     
     private SceneType scene;
+    private int index;
     private String description;
     private long travelTime;
     private boolean blocked;
@@ -25,6 +26,14 @@ public class Scene implements Serializable {
 
     public Scene() {
 
+    }
+
+    public int getIndex() {
+        return index;
+    }
+
+    public void setIndex(int index) {
+        this.index = index;
     }
 
     public QuestionType getQuestionType() {

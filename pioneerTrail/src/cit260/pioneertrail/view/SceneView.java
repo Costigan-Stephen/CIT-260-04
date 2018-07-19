@@ -7,6 +7,10 @@ package cit260.pioneertrail.view;
 
 import cit260.pioneertrail.control.GameControl;
 import cit260.pioneertrail.model.Game;
+import cit260.pioneertrail.model.Location;
+import cit260.pioneertrail.model.Question;
+import cit260.pioneertrail.model.Scene;
+import cit260.pioneertrail.model.SceneType;
 import pioneertrail.PioneerTrail;
 
 /**
@@ -36,6 +40,13 @@ public class SceneView extends View{
         }
         this.console.println("\nGame saved successfully at " + filePath);
         return true;// RETURN false
+    }
+    
+    public Question getQuestion(){
+        Location location = PioneerTrail.getCurrentGame().getMap().getCurrentLocation();
+        int index = location.getScene().getIndex();
+        Question question = location.getScene().getQuestion(index);
+        return question;
     }
     
     
