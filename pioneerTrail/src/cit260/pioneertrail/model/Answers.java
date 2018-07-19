@@ -33,6 +33,11 @@ public class Answers implements Serializable{
         return answer;
     }
 
+    public String getQuestionAnswer(String question) {
+        return answer;
+    }
+
+    
     public void setAnswer(String answer) {
         this.answer = answer;
     }

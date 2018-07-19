@@ -136,8 +136,14 @@ public class Scene implements Serializable {
         return super.toString();
     }
 
-    public void setQuestion(int o) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Question setQuestion(int o) {
+        return question[o];
+    }
+
+    public Answers getAnswers(int index) {
+        Answers answers = new Answers();
+        
+        return answers;
     }
 
 }
