@@ -18,8 +18,17 @@ public class Answers implements Serializable{
     private String answer;
     private String resultOfAnswer;
     private InventoryItem item;
+    private Status status;
 
     public Answers() {
+    }
+
+    public Status getStatus() {
+        return status;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
     }
 
     public InventoryItem getItem() {
