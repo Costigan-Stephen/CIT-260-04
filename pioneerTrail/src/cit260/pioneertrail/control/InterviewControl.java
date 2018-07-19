@@ -103,20 +103,27 @@ public class InterviewControl {
         scenes[o].getQuestion(o).setQuestionText(question);
         setAnswers(scenes, o, i, ans, result);
         i += 1;
-        //    03 Forest, - Steve
+        //    03 Forest, - STEVE
         o += 1;
-        question = "";
-        ans = "";
-        result = "";
+        question = "You find youself in a dense forest.  There are two paths before you," 
+                + "\n one to your right, the other to your left.  The left trail has a fresh"
+                + "\n set of footprints, the other appears to be overgrown.  You...";
         scenes[o].getQuestion(o).setQuestionText(question);
+        ans = "Take the left path";
+        result = "you are ambushed by a pair of highwaymen, who run off with a portion of your food";
+        setAnswers(scenes, o, i, ans, result);
+        i += 1;
+        ans = "Take the right path";
+        result = "The path is windy at first, but you soon make it to the remains of an old campsite."
+                + "\n Searching briefly, you find a spare wheel.";
         setAnswers(scenes, o, i, ans, result);
         i += 1;
         //    04 Jungle,
         o += 1;
         question = "";
+        scenes[o].getQuestion(o).setQuestionText(question);
         ans = "";
         result = "";
-        scenes[o].getQuestion(o).setQuestionText(question);
         setAnswers(scenes, o, i, ans, result);
         i += 1;
         //    05 Canyon, [BLOCKED]
@@ -124,17 +131,17 @@ public class InterviewControl {
         //    06 RedForest,
         o += 1;
         question = "";
+        scenes[o].getQuestion(o).setQuestionText(question);
         ans = "";
         result = "";
-        scenes[o].getQuestion(o).setQuestionText(question);
         setAnswers(scenes, o, i, ans, result);
         i += 1;
         //    07 River,
         o += 1;
         question = "";
+        scenes[o].getQuestion(o).setQuestionText(question);
         ans = "";
         result = "";
-        scenes[o].getQuestion(o).setQuestionText(question);
         setAnswers(scenes, o, i, ans, result);
         i += 1;
         //    08 Lake, [BLOCKED]
@@ -144,49 +151,49 @@ public class InterviewControl {
         //    10 Tundra,
         o += 1;
         question = "";
+        scenes[o].getQuestion(o).setQuestionText(question);
         ans = "";
         result = "";
-        scenes[o].getQuestion(o).setQuestionText(question);
         setAnswers(scenes, o, i, ans, result);
         i += 1;
         //    11 Sparse,
         o += 1;
         question = "";
+        scenes[o].getQuestion(o).setQuestionText(question);
         ans = "";
         result = "";
-        scenes[o].getQuestion(o).setQuestionText(question);
         setAnswers(scenes, o, i, ans, result);
         i += 1;
         //    12 CrackedEarth,
         o += 1;
         question = "";
+        scenes[o].getQuestion(o).setQuestionText(question);
         ans = "";
         result = "";
-        scenes[o].getQuestion(o).setQuestionText(question);
         setAnswers(scenes, o, i, ans, result);
         i += 1;
         //    13 Arid,
         o += 1;
         question = "";
+        scenes[o].getQuestion(o).setQuestionText(question);
         ans = "";
         result = "";
-        scenes[o].getQuestion(o).setQuestionText(question);
         setAnswers(scenes, o, i, ans, result);
         i += 1;
         //    14 Desert,
         o += 1;
         question = "";
+        scenes[o].getQuestion(o).setQuestionText(question);
         ans = "";
         result = "";
-        scenes[o].getQuestion(o).setQuestionText(question);
         setAnswers(scenes, o, i, ans, result);
         i += 1;
         //    15 Hills,
         o += 1;
         question = "";
+        scenes[o].getQuestion(o).setQuestionText(question);
         ans = "";
         result = "";
-        scenes[o].getQuestion(o).setQuestionText(question);
         setAnswers(scenes, o, i, ans, result);
         i += 1;
         //    16 Mountain, [BLOCKED]
@@ -194,76 +201,77 @@ public class InterviewControl {
         //    17 Stream,
         o += 1;
         question = "";
+        scenes[o].getQuestion(o).setQuestionText(question);
         ans = "";
         result = "";
-        scenes[o].getQuestion(o).setQuestionText(question);
         setAnswers(scenes, o, i, ans, result);
         i += 1;
         //    18 Town, [START] -- SHOP
         o += 1;
         question = "";
+        scenes[o].getQuestion(o).setQuestionText(question);
         ans = "";
         result = "";
-        scenes[o].getQuestion(o).setQuestionText(question);
         setAnswers(scenes, o, i, ans, result);
         i += 1;
         //    19 Village, -- SHOP 
         o += 1;
         question = "";
+        scenes[o].getQuestion(o).setQuestionText(question);
         ans = "";
         result = "";
-        scenes[o].getQuestion(o).setQuestionText(question);
         setAnswers(scenes, o, i, ans, result);
         i += 1;
         //    20 Encampment,  -- SHOP 
         o += 1;
         question = "";
+        scenes[o].getQuestion(o).setQuestionText(question);
         ans = "";
         result = "";
-        scenes[o].getQuestion(o).setQuestionText(question);
         setAnswers(scenes, o, i, ans, result);
         i += 1;
         //    21 IndianCamp, -- SHOP 
         o += 1;
         question = "";
+        scenes[o].getQuestion(o).setQuestionText(question);
         ans = "";
         result = "";
-        scenes[o].getQuestion(o).setQuestionText(question);
         setAnswers(scenes, o, i, ans, result);
         i += 1;
         //    22 Caves, 
+        o += 1;
         question = "";
+        scenes[o].getQuestion(o).setQuestionText(question);
         ans = "";
         result = "";
-        scenes[o].getQuestion(o).setQuestionText(question);
         setAnswers(scenes, o, i, ans, result);
         i += 1;
         //    23 Swamp, [BLOCKED]
-        
+        o += 1;
         //    24 DryRiver,
         o += 1;
         question = "";
+        scenes[o].getQuestion(o).setQuestionText(question);
         ans = "";
         result = "";
-        scenes[o].getQuestion(o).setQuestionText(question);
         setAnswers(scenes, o, i, ans, result);
         i += 1;
         //    25 Flooded, [BLOCKED]
-        
+        o += 1;
         //    26 MuddyPath,
         o += 1;
         question = "";
+        scenes[o].getQuestion(o).setQuestionText(question);
         ans = "";
         result = "";
-        scenes[o].getQuestion(o).setQuestionText(question);
         setAnswers(scenes, o, i, ans, result);
         i += 1;
         //    27 Zion; [END]
         o += 1;
         question = "";
+        scenes[o].getQuestion(o).setQuestionText(question);
         ans = "";
         result = "";
-        scenes[o].getQuestion(o).setQuestionText(question);
         setAnswers(scenes, o, i, ans, result);
         i += 1;
         
