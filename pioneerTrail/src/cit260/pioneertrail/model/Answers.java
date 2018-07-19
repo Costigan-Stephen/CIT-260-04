@@ -17,10 +17,19 @@ public class Answers implements Serializable{
     private String question;
     private String answer;
     private String resultOfAnswer;
+    private InventoryItem item;
 
     public Answers() {
     }
 
+    public InventoryItem getItem() {
+        return item;
+    }
+
+    public void setItem(InventoryItem item) {
+        this.item = item;
+    }
+    
     public String getQuestion() {
         return question;
     }

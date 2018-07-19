@@ -6,6 +6,7 @@
 package cit260.pioneertrail.control;
 
 import cit260.pioneertrail.model.Answers;
+import cit260.pioneertrail.model.InventoryItem;
 import cit260.pioneertrail.model.Question;
 import cit260.pioneertrail.model.QuestionType;
 import cit260.pioneertrail.model.Scene;
@@ -284,6 +285,13 @@ public class InterviewControl {
         scenes[o].getAnswers(o).setAnswer(answer);
         scenes[o].getAnswers(o).setResultOfAnswer(result);
         return scenes;
+    }
+    
+    private static InventoryItem reward(InventoryItem item){
+        
+        
+        return null;
+        
     }
     
 }
