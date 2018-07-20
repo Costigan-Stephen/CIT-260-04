@@ -8,15 +8,17 @@ package cit260.pioneertrail.control;
 import cit260.pioneertrail.model.Answers;
 import cit260.pioneertrail.model.InventoryItem;
 import cit260.pioneertrail.model.Question;
+import cit260.pioneertrail.model.QuestionScene;
 import cit260.pioneertrail.model.QuestionType;
 import cit260.pioneertrail.model.Scene;
+import cit260.pioneertrail.model.SceneType;
 import cit260.pioneertrail.model.Status;
 
 /**
  *
  * @author Stephen
  */
-public class InterviewControl {
+public class InterviewControl extends SceneControl{
         
     
     
@@ -25,6 +27,8 @@ public class InterviewControl {
         String question, ans, result; //Answer, one of potentially more.  Multiple answers can be asked per scene.
         int i = 0;
         int o = 1;
+        
+        Question[] questions = new Question[27];
         
                 //    Questions about each scene
         // ----------------------------------------------------------------------------------------------------------
@@ -40,8 +44,15 @@ public class InterviewControl {
         //    02 Plains,
         // ----------------------------------------------------------------------------------------------------------
         o += 1;
-        question = "";
-        ans = "";
+        question = "You look out over a wide open field.  The sun is shining and a pleasant aroma" 
+                + "\nfills the air.  There is a trampled path to the right and a path to the left"
+                + "\nWhat do you do?";
+        ans = "Take the left path";
+        result = "";
+        scenes[o].getQuestion(o).setQuestionText(question);
+        setAnswers(scenes, o, i, ans, result);
+        i += 1;
+        ans = "Take the right path";
         result = "";
         scenes[o].getQuestion(o).setQuestionText(question);
         setAnswers(scenes, o, i, ans, result);
@@ -379,5 +390,173 @@ public class InterviewControl {
         question[QuestionType.weather.ordinal()].setResultOfAnswer("Her it is");
         return question;
     }
-//    
+    
+    //QUESTIONS TO SCENES JOSEPH
+    private static void assignQuestionsToScenes(Question[] questions, Scene[] scenes) {
+        System.out.println("assignQuestionsToScenes called");
+
+        QuestionScene questionScene1 = (QuestionScene) scenes[SceneType.Arid.ordinal()];
+        Question[] fun = new Question[30];
+        fun[0] = questions[QuestionType.actor.ordinal()];
+        fun[1] = questions[QuestionType.findFood.ordinal()];
+        questionScene1.setQuestion(fun);
+
+        QuestionScene questionScene2 = (QuestionScene) scenes[SceneType.BushLand.ordinal()];
+        fun = new Question[30];
+        fun[0] = questions[QuestionType.actor.ordinal()];
+        fun[1] = questions[QuestionType.findFood.ordinal()];
+        questionScene2.setQuestion(fun);
+
+        QuestionScene questionScene3 = (QuestionScene) scenes[SceneType.Canyon.ordinal()];
+        fun = new Question[30];
+        fun[0] = questions[QuestionType.actor.ordinal()];
+        fun[1] = questions[QuestionType.findFood.ordinal()];
+        questionScene3.setQuestion(fun);
+
+        QuestionScene questionScene4 = (QuestionScene) scenes[SceneType.Caves.ordinal()];
+        fun = new Question[30];
+        fun[0] = questions[QuestionType.actor.ordinal()];
+        fun[1] = questions[QuestionType.findFood.ordinal()];
+        questionScene4.setQuestion(fun);
+
+        QuestionScene questionScene5 = (QuestionScene) scenes[SceneType.CrackedEarth.ordinal()];
+        fun = new Question[30];
+        fun[0] = questions[QuestionType.actor.ordinal()];
+        fun[1] = questions[QuestionType.findFood.ordinal()];
+        questionScene5.setQuestion(fun);
+
+        QuestionScene questionScene6 = (QuestionScene) scenes[SceneType.Desert.ordinal()];
+        fun = new Question[30];
+        fun[0] = questions[QuestionType.actor.ordinal()];
+        fun[1] = questions[QuestionType.findFood.ordinal()];
+        questionScene6.setQuestion(fun);
+
+        QuestionScene questionScene7 = (QuestionScene) scenes[SceneType.DryRiver.ordinal()];
+        fun = new Question[30];
+        fun[0] = questions[QuestionType.actor.ordinal()];
+        fun[1] = questions[QuestionType.findFood.ordinal()];
+        questionScene7.setQuestion(fun);
+
+        QuestionScene questionScene8 = (QuestionScene) scenes[SceneType.Encampment.ordinal()];
+        fun = new Question[30];
+        fun[0] = questions[QuestionType.actor.ordinal()];
+        fun[1] = questions[QuestionType.findFood.ordinal()];
+        questionScene8.setQuestion(fun);
+
+        QuestionScene questionScene9 = (QuestionScene) scenes[SceneType.Flooded.ordinal()];
+        fun = new Question[30];
+        fun[0] = questions[QuestionType.actor.ordinal()];
+        fun[1] = questions[QuestionType.findFood.ordinal()];
+        questionScene9.setQuestion(fun);
+
+        QuestionScene questionScene10 = (QuestionScene) scenes[SceneType.Forest.ordinal()];
+        fun = new Question[30];
+        fun[0] = questions[QuestionType.actor.ordinal()];
+        fun[1] = questions[QuestionType.findFood.ordinal()];
+        questionScene10.setQuestion(fun);
+
+        QuestionScene questionScene11 = (QuestionScene) scenes[SceneType.Hills.ordinal()];
+        fun = new Question[30];
+        fun[0] = questions[QuestionType.actor.ordinal()];
+        fun[1] = questions[QuestionType.findFood.ordinal()];
+        questionScene11.setQuestion(fun);
+
+        QuestionScene questionScene12 = (QuestionScene) scenes[SceneType.IndianCamp.ordinal()];
+        fun = new Question[30];
+        fun[0] = questions[QuestionType.actor.ordinal()];
+        fun[1] = questions[QuestionType.findFood.ordinal()];
+        questionScene12.setQuestion(fun);
+
+        QuestionScene questionScene13 = (QuestionScene) scenes[SceneType.Jungle.ordinal()];
+        fun = new Question[30];
+        fun[0] = questions[QuestionType.actor.ordinal()];
+        fun[1] = questions[QuestionType.findFood.ordinal()];
+        questionScene13.setQuestion(fun);
+
+        QuestionScene questionScene14 = (QuestionScene) scenes[SceneType.Lake.ordinal()];
+        fun = new Question[30];
+        fun[0] = questions[QuestionType.actor.ordinal()];
+        fun[1] = questions[QuestionType.findFood.ordinal()];
+        questionScene14.setQuestion(fun);
+
+        QuestionScene questionScene15 = (QuestionScene) scenes[SceneType.Mountain.ordinal()];
+        fun = new Question[30];
+        fun[0] = questions[QuestionType.actor.ordinal()];
+        fun[1] = questions[QuestionType.findFood.ordinal()];
+        questionScene15.setQuestion(fun);
+
+        QuestionScene questionScene16 = (QuestionScene) scenes[SceneType.MuddyPath.ordinal()];
+        fun = new Question[30];
+        fun[0] = questions[QuestionType.actor.ordinal()];
+        fun[1] = questions[QuestionType.findFood.ordinal()];
+        questionScene16.setQuestion(fun);
+
+        QuestionScene questionScene17 = (QuestionScene) scenes[SceneType.Plains.ordinal()];
+        fun = new Question[30];
+        fun[0] = questions[QuestionType.actor.ordinal()];
+        fun[1] = questions[QuestionType.findFood.ordinal()];
+        questionScene17.setQuestion(fun);
+
+        QuestionScene questionScene18 = (QuestionScene) scenes[SceneType.RedForest.ordinal()];
+        fun = new Question[30];
+        fun[0] = questions[QuestionType.actor.ordinal()];
+        fun[1] = questions[QuestionType.findFood.ordinal()];
+        questionScene18.setQuestion(fun);
+
+        QuestionScene questionScene19 = (QuestionScene) scenes[SceneType.River.ordinal()];
+        fun = new Question[30];
+        fun[0] = questions[QuestionType.actor.ordinal()];
+        fun[1] = questions[QuestionType.findFood.ordinal()];
+        questionScene19.setQuestion(fun);
+
+        QuestionScene questionScene20 = (QuestionScene) scenes[SceneType.Sparse.ordinal()];
+        fun = new Question[30];
+        fun[0] = questions[QuestionType.actor.ordinal()];
+        fun[1] = questions[QuestionType.findFood.ordinal()];
+        questionScene20.setQuestion(fun);
+
+        QuestionScene questionScene21 = (QuestionScene) scenes[SceneType.Stream.ordinal()];
+        fun = new Question[30];
+        fun[0] = questions[QuestionType.actor.ordinal()];
+        fun[1] = questions[QuestionType.findFood.ordinal()];
+        questionScene21.setQuestion(fun);
+
+        QuestionScene questionScene22 = (QuestionScene) scenes[SceneType.Swamp.ordinal()];
+        fun = new Question[30];
+        fun[0] = questions[QuestionType.actor.ordinal()];
+        fun[1] = questions[QuestionType.findFood.ordinal()];
+        questionScene22.setQuestion(fun);
+
+        QuestionScene questionScene23 = (QuestionScene) scenes[SceneType.Town.ordinal()];
+        fun = new Question[30];
+        fun[0] = questions[QuestionType.actor.ordinal()];
+        fun[1] = questions[QuestionType.findFood.ordinal()];
+        questionScene23.setQuestion(fun);
+
+        QuestionScene questionScene24 = (QuestionScene) scenes[SceneType.Tundra.ordinal()];
+        fun = new Question[30];
+        fun[0] = questions[QuestionType.actor.ordinal()];
+        fun[1] = questions[QuestionType.findFood.ordinal()];
+        questionScene24.setQuestion(fun);
+
+        QuestionScene questionScene25 = (QuestionScene) scenes[SceneType.Village.ordinal()];
+        fun = new Question[30];
+        fun[0] = questions[QuestionType.actor.ordinal()];
+        fun[1] = questions[QuestionType.findFood.ordinal()];
+        questionScene25.setQuestion(fun);
+
+        QuestionScene questionScene26 = (QuestionScene) scenes[SceneType.Waterfall.ordinal()];
+        fun = new Question[30];
+        fun[0] = questions[QuestionType.actor.ordinal()];
+        fun[1] = questions[QuestionType.findFood.ordinal()];
+        questionScene26.setQuestion(fun);
+
+        QuestionScene questionScene27 = (QuestionScene) scenes[SceneType.Zion.ordinal()];
+        fun = new Question[30];
+        fun[0] = questions[QuestionType.actor.ordinal()];
+        fun[1] = questions[QuestionType.findFood.ordinal()];
+        questionScene27.setQuestion(fun);
+
+    }
+    
 }
