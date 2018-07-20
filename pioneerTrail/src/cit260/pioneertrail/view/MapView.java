@@ -102,6 +102,7 @@ public class MapView extends View {
         Location[][] locations = map.getLocations(); // retreive the locations from map
         try {
             MapControl.movePlayer(mapOption, map, map.getCurrentRow(), map.getCurrentColumn());
+            displayScene();
             return true;
         } catch (MapControlException ex) {
             ErrorView.display(this.getClass().getName(), "\n*** Invalid selection *** Try Again later");
@@ -132,6 +133,11 @@ public class MapView extends View {
                 +  "\n======================================================================================";
         return out;
 
+    }
+
+    private void displayScene() {
+        SceneView scene = new SceneView();
+        scene.display();
     }
     
     

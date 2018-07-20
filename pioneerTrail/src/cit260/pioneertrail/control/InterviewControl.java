@@ -177,9 +177,14 @@ public class InterviewControl {
         //    17 Stream,
         // ----------------------------------------------------------------------------------------------------------
         o += 1;
-        question = "";
+        question = "You come to a running stream.  The water looks cool and inviting, you are exhausted"
+                + "\n and could really use a dip to cool off.  You... ";
         scenes[o].getQuestion(o).setQuestionText(question);
-        ans = "";
+        ans = "Take a dip";
+        result = "";
+        setAnswers(scenes, o, i, ans, result);
+        i += 1;
+        ans = "Don't take a dip";
         result = "";
         setAnswers(scenes, o, i, ans, result);
         i += 1;
