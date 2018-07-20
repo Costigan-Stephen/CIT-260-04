@@ -26,6 +26,7 @@ public class Game implements Serializable{
     
     
     public Game() {
+        gameOver = false;
     }
     
     public boolean isGameOver() {
