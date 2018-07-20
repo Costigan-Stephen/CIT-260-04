@@ -26,7 +26,7 @@ public class Scene implements Serializable {
     private Answers[] answers;
 
     public Scene() {
-
+        question = new Question[27];
     }
 
     public Answers getAnswers(int i) {
@@ -147,6 +147,10 @@ public class Scene implements Serializable {
 
     public Question setQuestion(int o) {
         return question[o];
+    }
+
+    public Object getQuestion() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

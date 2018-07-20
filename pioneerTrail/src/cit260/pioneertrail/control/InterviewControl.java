@@ -37,6 +37,7 @@ public class InterviewControl extends SceneControl{
         question = "";
         ans = "";
         result = "";
+        scenes[o].setQuestion(questions);
         scenes[o].getQuestion(o).setQuestionText(question);
         setAnswers(scenes, o, i, ans, result);
         

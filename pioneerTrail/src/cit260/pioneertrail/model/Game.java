@@ -22,11 +22,11 @@ public class Game implements Serializable{
     public Scene[] scenes;
     private InventoryItem[] items;
     private Question[] question; //I don't think we ever use this.
-    private boolean gameOver;
+    private boolean gameOver = false;
     
     
     public Game() {
-        gameOver = false;
+        
     }
     
     public boolean isGameOver() {

@@ -38,7 +38,7 @@ public abstract class View implements ViewInterfaces {
             }
             
             //Test for game over
-//            if (PioneerTrail.getCurrentGame().isGameOver() == true){
+//            if (PioneerTrail.getCurrentGame().isGameOver()){
 //                displayGameOver();
 //                return;
 //            }
