@@ -38,6 +38,7 @@ public class SceneView extends View{
     @Override
     public boolean doAction(String input) {
         Location location = PioneerTrail.getCurrentGame().getMap().getCurrentLocation();
+        Game game = PioneerTrail.getCurrentGame();
         Scene scene = location.getScene();
         Question question = scene.getQuestion();
         int choice = -1;
@@ -54,6 +55,10 @@ public class SceneView extends View{
             player.setHealth(player.getHealth() + question.getAnswers()[choice].getPlayerHealthEffect());
             this.console.println(question.getAnswers()[choice].getResultOfAnswer());
             this.console.println("Player health is now: " + player.getHealth());
+            if(player.getHealth() <= 0){
+                this.console.println("You Died.  Game over!");
+                game.setGameOver(true);
+            }
             return true;
         }
 

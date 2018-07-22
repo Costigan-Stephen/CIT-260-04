@@ -5,6 +5,7 @@
  */
 package cit260.pioneertrail.view;
 
+import cit260.pioneertrail.model.Game;
 import java.io.BufferedReader;
 import java.io.PrintWriter;
 import java.util.Scanner;
@@ -41,10 +42,11 @@ public abstract class View implements ViewInterfaces {
             }
             
             //Test for game over
-//            if (PioneerTrail.getCurrentGame().isGameOver()){
-//                displayGameOver();
-//                return;
-//            }
+            Game game = PioneerTrail.getCurrentGame();
+            if (game != null && game.isGameOver()){
+                displayGameOver();
+                return;
+            }
 
             endOfView = doAction(input);
 

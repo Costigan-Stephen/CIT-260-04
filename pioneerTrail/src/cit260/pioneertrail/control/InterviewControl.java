@@ -6,13 +6,17 @@
 package cit260.pioneertrail.control;
 
 import cit260.pioneertrail.model.Answer;
+import cit260.pioneertrail.model.Game;
 import cit260.pioneertrail.model.InventoryItem;
+import cit260.pioneertrail.model.Location;
 import cit260.pioneertrail.model.Question;
 import cit260.pioneertrail.model.QuestionScene;
 import cit260.pioneertrail.model.QuestionType;
 import cit260.pioneertrail.model.Scene;
 import cit260.pioneertrail.model.SceneType;
 import cit260.pioneertrail.model.Status;
+import java.sql.Array;
+import pioneertrail.PioneerTrail;
 
 /**
  *
@@ -27,255 +31,577 @@ public class InterviewControl extends SceneControl{
         
 //        String question, ans, result; //Answer, one of potentially more.  Multiple answers can be asked per scene.
         int sceneNum = 0;
+        int answerCount = 0;
+        int counter = 0;
+        String questionText = "";
+        String[] AnswerArray = new String[0];
+        String[] ResultArray = new String[0];
+        Double[] healthLoss = new Double[0];
         
                 //    Questions about each scene
         // ----------------------------------------------------------------------------------------------------------
         //    01 BushLand,
         // ----------------------------------------------------------------------------------------------------------
-//        question = "";
-//        ans = "";
-//        result = "";
-//        scenes[sceneNum].setQuestion(questions); 
-
-        Question question = new Question();
-        question.setQuestionText("There's a fork in the road, which way do you take?");
-        Answer[] answers = new Answer[2];
-        answers[0] = new Answer();
-        answers[1] = new Answer();
-        question.setAnswers(answers);
-        answers[0].setAnswer("1. Take the left path");
-        answers[1].setAnswer("2. Take the right path");
-        answers[0].setResultOfAnswer("");
-        answers[0].setPlayerHealthEffect(-10);
-        answers[1].setPlayerHealthEffect(10);
-        question.setCorrectAnswer(1);
-        scenes[sceneNum].setQuestion(question);
+        
+        answerCount = 2;  ///CHANGE THIS ONE
+        AnswerArray = new String[answerCount];
+        ResultArray = new String[answerCount];
+        healthLoss = new Double[answerCount];
+        
+        //Question
+        counter++;
+        questionText = "There's a fork in the road, which way do you take?";
+        
+        //Answer 1
+        AnswerArray[counter] = "";
+        ResultArray[counter] = "";
+        healthLoss[counter] = 0.0;
+        counter++;
+        
+        //Answer 2
+        AnswerArray[counter] = "";
+        ResultArray[counter] = "";
+        healthLoss[counter] = 0.0;
+        counter++;
+        
+        setQuestion(scenes, questionText, sceneNum) ;
+        setAnswer(AnswerArray, ResultArray, healthLoss);
         
         // ----------------------------------------------------------------------------------------------------------
-        //    02 Plains,
+        //    02 Plains, --Steve
         // ----------------------------------------------------------------------------------------------------------
         
         sceneNum++;
           
-        question = new Question();
-        question.setQuestionText("There's a fork in the road, which way do you take?");
-        answers = new Answer[2];
-        answers[0] = new Answer();
-        answers[1] = new Answer();
-        question.setAnswers(answers);
-        answers[0].setAnswer("1. Take the left path");
-        answers[1].setAnswer("2. Take the right path");
-        answers[0].setResultOfAnswer("");
-        answers[0].setPlayerHealthEffect(-10);
-        answers[1].setPlayerHealthEffect(10);
-        question.setCorrectAnswer(1);
-        scenes[sceneNum].setQuestion(question);
+        answerCount = 2;  ///CHANGE THIS ONE
+        AnswerArray = new String[answerCount];
+        ResultArray = new String[answerCount];
+        healthLoss = new Double[answerCount];
+        
+        //Question
+        counter++;
+        questionText = "You look out over a wide open field.  The sun is shining and a pleasant aroma" 
+                + "\nfills the air.  There is a trampled path to the right and a path to the left"
+                + "\nWhat do you do?";
+        
+        //Answer 1
+        AnswerArray[counter] = "Take the right path";
+        ResultArray[counter] = "";
+        healthLoss[counter] = 0.0;
+        counter++;
+        
+        //Answer 2
+        AnswerArray[counter] = "Take the left path";
+        ResultArray[counter] = "";
+        healthLoss[counter] = 0.0;
+        counter++;
+        
+        setQuestion(scenes, questionText, sceneNum) ;
+        setAnswer(AnswerArray, ResultArray, healthLoss);
 
-//        question = "You look out over a wide open field.  The sun is shining and a pleasant aroma" 
-//                + "\nfills the air.  There is a trampled path to the right and a path to the left"
-//                + "\nWhat do you do?";
-//        ans = "Take the left path";
-//        result = "";
-//        scenes[sceneNum].getQuestion(sceneNum).setQuestionText(question);
-//        setAnswers(scenes, sceneNum, i, ans, result);
-//        i += 1;
-//        ans = "Take the right path";
-//        result = "";
-//        scenes[sceneNum].getQuestion(sceneNum).setQuestionText(question);
-//        setAnswers(scenes, sceneNum, i, ans, result);
-//        i += 1;
         // ----------------------------------------------------------------------------------------------------------
         //    03 Forest, 1 Question, 2 answers        - STEVE 
         // ----------------------------------------------------------------------------------------------------------
-//        sceneNum += 1;
-//        question = "You find youself in a dense forest.  There are two paths before you," 
-//                + "\n one to your right, the other to your left.  The left trail has a fresh"
-//                + "\n set of footprints, the other appears to be overgrown.  You...";
-//        scenes[sceneNum].getQuestion(sceneNum).setQuestionText(question);
-//        ans = "Take the left path";
-//        result = "you are ambushed by a pair of highwaymen, who run off with a portion of your food";
-//        //ADD ITEM, they took 20% of food (-20%)
-//        //reward(item, false, -20%); 
-//        setAnswers(scenes, sceneNum, i, ans, result);
-//        i += 1;
-//        ans = "Take the right path";
-//        result = "The path is windy at first, but you soon make it to the remains of an old campsite."
-//                + "\n Searching briefly, you find a spare wheel.";
-//        //ADD ITEMS
-//        //reward(item, true, 1);
-//        setAnswers(scenes, sceneNum, i, ans, result);
-//        i += 1;
+        
+                sceneNum++;
+          
+        answerCount = 2;  ///CHANGE THIS ONE
+        AnswerArray = new String[answerCount];
+        ResultArray = new String[answerCount];
+        healthLoss = new Double[answerCount];
+        
+        //Question
+        counter++;
+        questionText = "You find youself in a dense forest.  There are two paths before you," 
+                + "\n one to your right, the other to your left.  The left trail has a fresh"
+                + "\n set of footprints, the other appears to be overgrown.  You...";
+        
+        //Answer 1
+        AnswerArray[counter] = "Take the right path";
+        ResultArray[counter] = "The path is windy at first, but you soon make it to the remains of an old campsite."
+                + "\n Searching briefly, you find a spare wheel.";
+        healthLoss[counter] = 0.0;
+        counter++;
+        
+        //Answer 2
+        AnswerArray[counter] = "Take the left path";
+        ResultArray[counter] = "you are ambushed by a pair of highwaymen, who run off with a portion of your food";
+        healthLoss[counter] = 0.0;
+        counter++;
+        
+        setQuestion(scenes, questionText, sceneNum) ;
+        setAnswer(AnswerArray, ResultArray, healthLoss);
+
 //        // ----------------------------------------------------------------------------------------------------------
 //        //    04 Jungle,
 //        // ----------------------------------------------------------------------------------------------------------
-//        sceneNum += 1;
-//        question = "";
-//        scenes[sceneNum].getQuestion(sceneNum).setQuestionText(question);
-//        ans = "";
-//        result = "";
-//        setAnswers(scenes, sceneNum, i, ans, result);
-//        i += 1;
+
+        sceneNum++;
+        
+        answerCount = 2;  ///CHANGE THIS ONE
+        AnswerArray = new String[answerCount];
+        ResultArray = new String[answerCount];
+        healthLoss = new Double[answerCount];
+        
+        //Question
+        counter++;
+        questionText = "There's a fork in the road, which way do you take?";
+        
+        //Answer 1
+        AnswerArray[counter] = "";
+        ResultArray[counter] = "";
+        healthLoss[counter] = 0.0;
+        counter++;
+        
+        //Answer 2
+        AnswerArray[counter] = "";
+        ResultArray[counter] = "";
+        healthLoss[counter] = 0.0;
+        counter++;
+        
+        setQuestion(scenes, questionText, sceneNum) ;
+        setAnswer(AnswerArray, ResultArray, healthLoss);
+        
 //        // ----------------------------------------------------------------------------------------------------------
 //        //    05 Canyon, [BLOCKED]
 //        // ----------------------------------------------------------------------------------------------------------
-//        sceneNum += 1;
+        sceneNum += 1;
 //        // ----------------------------------------------------------------------------------------------------------
 //        //    06 RedForest,
 //        // ----------------------------------------------------------------------------------------------------------
-//        sceneNum += 1;
-//        question = "";
-//        scenes[sceneNum].getQuestion(sceneNum).setQuestionText(question);
-//        ans = "";
-//        result = "";
-//        setAnswers(scenes, sceneNum, i, ans, result);
-//        i += 1;
+
+        sceneNum++;
+        
+        answerCount = 2;  ///CHANGE THIS ONE
+        AnswerArray = new String[answerCount];
+        ResultArray = new String[answerCount];
+        healthLoss = new Double[answerCount];
+        
+        //Question
+        counter++;
+        questionText = "There's a fork in the road, which way do you take?";
+        
+        //Answer 1
+        AnswerArray[counter] = "";
+        ResultArray[counter] = "";
+        healthLoss[counter] = 0.0;
+        counter++;
+        
+        //Answer 2
+        AnswerArray[counter] = "";
+        ResultArray[counter] = "";
+        healthLoss[counter] = 0.0;
+        counter++;
+        
+        setQuestion(scenes, questionText, sceneNum) ;
+        setAnswer(AnswerArray, ResultArray, healthLoss);
+        
 //        // ----------------------------------------------------------------------------------------------------------
 //        //    07 River,
 //        // ----------------------------------------------------------------------------------------------------------
-//        sceneNum += 1;
-//        question = "";
-//        scenes[sceneNum].getQuestion(sceneNum).setQuestionText(question);
-//        ans = "";
-//        result = "";
-//        setAnswers(scenes, sceneNum, i, ans, result);
-//        i += 1;
+
+        sceneNum++;
+        
+        answerCount = 2;  ///CHANGE THIS ONE
+        AnswerArray = new String[answerCount];
+        ResultArray = new String[answerCount];
+        healthLoss = new Double[answerCount];
+        
+        //Question
+        counter++;
+        questionText = "There's a fork in the road, which way do you take?";
+        
+        //Answer 1
+        AnswerArray[counter] = "";
+        ResultArray[counter] = "";
+        healthLoss[counter] = 0.0;
+        counter++;
+        
+        //Answer 2
+        AnswerArray[counter] = "";
+        ResultArray[counter] = "";
+        healthLoss[counter] = 0.0;
+        counter++;
+        
+        setQuestion(scenes, questionText, sceneNum) ;
+        setAnswer(AnswerArray, ResultArray, healthLoss);
+        
 //        // ----------------------------------------------------------------------------------------------------------
 //        //    08 Lake, [BLOCKED]
 //        // ----------------------------------------------------------------------------------------------------------
-//        sceneNum += 1;
+
+        sceneNum += 1;
+        
 //        // ----------------------------------------------------------------------------------------------------------
 //        //    09 Waterfall, [BLOCKED]
 //        // ----------------------------------------------------------------------------------------------------------
-//        sceneNum += 1;
+
+        sceneNum += 1;
+        
 //        // ----------------------------------------------------------------------------------------------------------
 //        //    10 Tundra,
 //        // ----------------------------------------------------------------------------------------------------------
-//        sceneNum += 1;
-//        question = "";
-//        scenes[sceneNum].getQuestion(sceneNum).setQuestionText(question);
-//        ans = "";
-//        result = "";
-//        setAnswers(scenes, sceneNum, i, ans, result);
-//        i += 1;
+
+        sceneNum++;
+        
+        answerCount = 2;  ///CHANGE THIS ONE
+        AnswerArray = new String[answerCount];
+        ResultArray = new String[answerCount];
+        healthLoss = new Double[answerCount];
+        
+        //Question
+        counter++;
+        questionText = "There's a fork in the road, which way do you take?";
+        
+        //Answer 1
+        AnswerArray[counter] = "";
+        ResultArray[counter] = "";
+        healthLoss[counter] = 0.0;
+        counter++;
+        
+        //Answer 2
+        AnswerArray[counter] = "";
+        ResultArray[counter] = "";
+        healthLoss[counter] = 0.0;
+        counter++;
+        
+        setQuestion(scenes, questionText, sceneNum) ;
+        setAnswer(AnswerArray, ResultArray, healthLoss);
+        
 //        // ----------------------------------------------------------------------------------------------------------
 //        //    11 Sparse,
 //        // ----------------------------------------------------------------------------------------------------------
-//        sceneNum += 1;
-//        question = "";
-//        scenes[sceneNum].getQuestion(sceneNum).setQuestionText(question);
-//        ans = "";
-//        result = "";
-//        setAnswers(scenes, sceneNum, i, ans, result);
-//        i += 1;
+
+        sceneNum++;
+        
+        answerCount = 2;  ///CHANGE THIS ONE
+        AnswerArray = new String[answerCount];
+        ResultArray = new String[answerCount];
+        healthLoss = new Double[answerCount];
+        
+        //Question
+        counter++;
+        questionText = "There's a fork in the road, which way do you take?";
+        
+        //Answer 1
+        AnswerArray[counter] = "";
+        ResultArray[counter] = "";
+        healthLoss[counter] = 0.0;
+        counter++;
+        
+        //Answer 2
+        AnswerArray[counter] = "";
+        ResultArray[counter] = "";
+        healthLoss[counter] = 0.0;
+        counter++;
+        
+        setQuestion(scenes, questionText, sceneNum) ;
+        setAnswer(AnswerArray, ResultArray, healthLoss);
+        
 //        // ----------------------------------------------------------------------------------------------------------
 //        //    12 CrackedEarth,
 //        // ----------------------------------------------------------------------------------------------------------
-//        sceneNum += 1;
-//        question = "";
-//        scenes[sceneNum].getQuestion(sceneNum).setQuestionText(question);
-//        ans = "";
-//        result = "";
-//        setAnswers(scenes, sceneNum, i, ans, result);
-//        i += 1;
+
+        sceneNum++;
+        
+        answerCount = 2;  ///CHANGE THIS ONE
+        AnswerArray = new String[answerCount];
+        ResultArray = new String[answerCount];
+        healthLoss = new Double[answerCount];
+        
+        //Question
+        counter++;
+        questionText = "There's a fork in the road, which way do you take?";
+        
+        //Answer 1
+        AnswerArray[counter] = "";
+        ResultArray[counter] = "";
+        healthLoss[counter] = 0.0;
+        counter++;
+        
+        //Answer 2
+        AnswerArray[counter] = "";
+        ResultArray[counter] = "";
+        healthLoss[counter] = 0.0;
+        counter++;
+        
+        setQuestion(scenes, questionText, sceneNum) ;
+        setAnswer(AnswerArray, ResultArray, healthLoss);
+
 //        // ----------------------------------------------------------------------------------------------------------
 //        //    13 Arid,
 //        // ----------------------------------------------------------------------------------------------------------
-//        sceneNum += 1;
-//        question = "";
-//        scenes[sceneNum].getQuestion(sceneNum).setQuestionText(question);
-//        ans = "";
-//        result = "";
-//        setAnswers(scenes, sceneNum, i, ans, result);
-//        i += 1;
+
+        sceneNum++;
+        
+        answerCount = 2;  ///CHANGE THIS ONE
+        AnswerArray = new String[answerCount];
+        ResultArray = new String[answerCount];
+        healthLoss = new Double[answerCount];
+        
+        //Question
+        counter++;
+        questionText = "There's a fork in the road, which way do you take?";
+        
+        //Answer 1
+        AnswerArray[counter] = "";
+        ResultArray[counter] = "";
+        healthLoss[counter] = 0.0;
+        counter++;
+        
+        //Answer 2
+        AnswerArray[counter] = "";
+        ResultArray[counter] = "";
+        healthLoss[counter] = 0.0;
+        counter++;
+        
+        setQuestion(scenes, questionText, sceneNum) ;
+        setAnswer(AnswerArray, ResultArray, healthLoss);
+
 //        // ----------------------------------------------------------------------------------------------------------
 //        //    14 Desert,
 //        // ----------------------------------------------------------------------------------------------------------
-//        sceneNum += 1;
-//        question = "";
-//        scenes[sceneNum].getQuestion(sceneNum).setQuestionText(question);
-//        ans = "";
-//        result = "";
-//        setAnswers(scenes, sceneNum, i, ans, result);
-//        i += 1;
+
+        sceneNum++;
+        
+        answerCount = 2;  ///CHANGE THIS ONE
+        AnswerArray = new String[answerCount];
+        ResultArray = new String[answerCount];
+        healthLoss = new Double[answerCount];
+        
+        //Question
+        counter++;
+        questionText = "There's a fork in the road, which way do you take?";
+        
+        //Answer 1
+        AnswerArray[counter] = "";
+        ResultArray[counter] = "";
+        healthLoss[counter] = 0.0;
+        counter++;
+        
+        //Answer 2
+        AnswerArray[counter] = "";
+        ResultArray[counter] = "";
+        healthLoss[counter] = 0.0;
+        counter++;
+        
+        setQuestion(scenes, questionText, sceneNum) ;
+        setAnswer(AnswerArray, ResultArray, healthLoss);
+
 //        // ----------------------------------------------------------------------------------------------------------
 //        //    15 Hills,
 //        // ----------------------------------------------------------------------------------------------------------
-//        sceneNum += 1;
-//        question = "";
-//        scenes[sceneNum].getQuestion(sceneNum).setQuestionText(question);
-//        ans = "";
-//        result = "";
-//        setAnswers(scenes, sceneNum, i, ans, result);
-//        i += 1;
+
+        sceneNum++;
+        
+        answerCount = 2;  ///CHANGE THIS ONE
+        AnswerArray = new String[answerCount];
+        ResultArray = new String[answerCount];
+        healthLoss = new Double[answerCount];
+        
+        //Question
+        counter++;
+        questionText = "There's a fork in the road, which way do you take?";
+        
+        //Answer 1
+        AnswerArray[counter] = "";
+        ResultArray[counter] = "";
+        healthLoss[counter] = 0.0;
+        counter++;
+        
+        //Answer 2
+        AnswerArray[counter] = "";
+        ResultArray[counter] = "";
+        healthLoss[counter] = 0.0;
+        counter++;
+        
+        setQuestion(scenes, questionText, sceneNum) ;
+        setAnswer(AnswerArray, ResultArray, healthLoss);
+
 //        // ----------------------------------------------------------------------------------------------------------
 //        //    16 Mountain, [BLOCKED]
 //        // ----------------------------------------------------------------------------------------------------------
-//        sceneNum += 1;
+        sceneNum += 1;
 //        // ----------------------------------------------------------------------------------------------------------
 //        //    17 Stream,
 //        // ----------------------------------------------------------------------------------------------------------
-//        sceneNum += 1;
-//        question = "You come to a running stream.  The water looks cool and inviting, you are exhausted"
-//                + "\n and could really use a dip to cool off.  You... ";
-//        scenes[sceneNum].getQuestion(sceneNum).setQuestionText(question);
-//        ans = "Take a dip";
-//        result = "";
-//        setAnswers(scenes, sceneNum, i, ans, result);
-//        i += 1;
-//        ans = "Don't take a dip";
-//        result = "";
-//        setAnswers(scenes, sceneNum, i, ans, result);
-//        i += 1;
+
+        sceneNum++;
+        
+        answerCount = 2;  ///CHANGE THIS ONE
+        AnswerArray = new String[answerCount];
+        ResultArray = new String[answerCount];
+        healthLoss = new Double[answerCount];
+        
+        //Question
+        counter++;
+        questionText = "There's a fork in the road, which way do you take?";
+        
+        //Answer 1
+        AnswerArray[counter] = "";
+        ResultArray[counter] = "";
+        healthLoss[counter] = 0.0;
+        counter++;
+        
+        //Answer 2
+        AnswerArray[counter] = "";
+        ResultArray[counter] = "";
+        healthLoss[counter] = 0.0;
+        counter++;
+        
+        setQuestion(scenes, questionText, sceneNum) ;
+        setAnswer(AnswerArray, ResultArray, healthLoss);
+
 //        // ----------------------------------------------------------------------------------------------------------
 //        //    18 Town, [START] -- SHOP
 //        // ----------------------------------------------------------------------------------------------------------
-//        sceneNum += 1;
-//        question = "";
-//        scenes[sceneNum].getQuestion(sceneNum).setQuestionText(question);
-//        ans = "";
-//        result = "";
-//        setAnswers(scenes, sceneNum, i, ans, result);
-//        i += 1;
+
+        sceneNum++;
+        
+        answerCount = 2;  ///CHANGE THIS ONE
+        AnswerArray = new String[answerCount];
+        ResultArray = new String[answerCount];
+        healthLoss = new Double[answerCount];
+        
+        //Question
+        counter++;
+        questionText = "There's a fork in the road, which way do you take?";
+        
+        //Answer 1
+        AnswerArray[counter] = "";
+        ResultArray[counter] = "";
+        healthLoss[counter] = 0.0;
+        counter++;
+        
+        //Answer 2
+        AnswerArray[counter] = "";
+        ResultArray[counter] = "";
+        healthLoss[counter] = 0.0;
+        counter++;
+        
+        setQuestion(scenes, questionText, sceneNum) ;
+        setAnswer(AnswerArray, ResultArray, healthLoss);
+
 //        // ----------------------------------------------------------------------------------------------------------
 //        //    19 Village, -- SHOP 
 //        // ----------------------------------------------------------------------------------------------------------
-//        sceneNum += 1;
-//        question = "";
-//        scenes[sceneNum].getQuestion(sceneNum).setQuestionText(question);
-//        ans = "";
-//        result = "";
-//        setAnswers(scenes, sceneNum, i, ans, result);
-//        i += 1;
+
+        sceneNum++;
+        
+        answerCount = 2;  ///CHANGE THIS ONE
+        AnswerArray = new String[answerCount];
+        ResultArray = new String[answerCount];
+        healthLoss = new Double[answerCount];
+        
+        //Question
+        counter++;
+        questionText = "There's a fork in the road, which way do you take?";
+        
+        //Answer 1
+        AnswerArray[counter] = "";
+        ResultArray[counter] = "";
+        healthLoss[counter] = 0.0;
+        counter++;
+        
+        //Answer 2
+        AnswerArray[counter] = "";
+        ResultArray[counter] = "";
+        healthLoss[counter] = 0.0;
+        counter++;
+        
+        setQuestion(scenes, questionText, sceneNum) ;
+        setAnswer(AnswerArray, ResultArray, healthLoss);
+
 //        // ----------------------------------------------------------------------------------------------------------
 //        //    20 Encampment,  -- SHOP 
 //        // ----------------------------------------------------------------------------------------------------------
-//        sceneNum += 1;
-//        question = "";
-//        scenes[sceneNum].getQuestion(sceneNum).setQuestionText(question);
-//        ans = "";
-//        result = "";
-//        setAnswers(scenes, sceneNum, i, ans, result);
-//        i += 1;
+
+        sceneNum++;
+        
+        answerCount = 2;  ///CHANGE THIS ONE
+        AnswerArray = new String[answerCount];
+        ResultArray = new String[answerCount];
+        healthLoss = new Double[answerCount];
+        
+        //Question
+        counter++;
+        questionText = "There's a fork in the road, which way do you take?";
+        
+        //Answer 1
+        AnswerArray[counter] = "";
+        ResultArray[counter] = "";
+        healthLoss[counter] = 0.0;
+        counter++;
+        
+        //Answer 2
+        AnswerArray[counter] = "";
+        ResultArray[counter] = "";
+        healthLoss[counter] = 0.0;
+        counter++;
+        
+        setQuestion(scenes, questionText, sceneNum) ;
+        setAnswer(AnswerArray, ResultArray, healthLoss);
+
 //        // ----------------------------------------------------------------------------------------------------------
 //        //    21 IndianCamp, -- SHOP 
 //        // ----------------------------------------------------------------------------------------------------------
-//        sceneNum += 1;
-//        question = "";
-//        scenes[sceneNum].getQuestion(sceneNum).setQuestionText(question);
-//        ans = "";
-//        result = "";
-//        setAnswers(scenes, sceneNum, i, ans, result);
-//        i += 1;
+
+        sceneNum++;
+        
+        answerCount = 2;  ///CHANGE THIS ONE
+        AnswerArray = new String[answerCount];
+        ResultArray = new String[answerCount];
+        healthLoss = new Double[answerCount];
+        
+        //Question
+        counter++;
+        questionText = "There's a fork in the road, which way do you take?";
+        
+        //Answer 1
+        AnswerArray[counter] = "";
+        ResultArray[counter] = "";
+        healthLoss[counter] = 0.0;
+        counter++;
+        
+        //Answer 2
+        AnswerArray[counter] = "";
+        ResultArray[counter] = "";
+        healthLoss[counter] = 0.0;
+        counter++;
+        
+        setQuestion(scenes, questionText, sceneNum) ;
+        setAnswer(AnswerArray, ResultArray, healthLoss);
+
 //        // ----------------------------------------------------------------------------------------------------------
 //        //    22 Caves, 
 //        // ----------------------------------------------------------------------------------------------------------
-//        sceneNum += 1;
-//        question = "";
-//        scenes[sceneNum].getQuestion(sceneNum).setQuestionText(question);
-//        ans = "";
-//        result = "";
-//        setAnswers(scenes, sceneNum, i, ans, result);
-//        i += 1;
+
+        sceneNum++;
+        
+        answerCount = 2;  ///CHANGE THIS ONE
+        AnswerArray = new String[answerCount];
+        ResultArray = new String[answerCount];
+        healthLoss = new Double[answerCount];
+        
+        //Question
+        counter++;
+        questionText = "There's a fork in the road, which way do you take?";
+        
+        //Answer 1
+        AnswerArray[counter] = "";
+        ResultArray[counter] = "";
+        healthLoss[counter] = 0.0;
+        counter++;
+        
+        //Answer 2
+        AnswerArray[counter] = "";
+        ResultArray[counter] = "";
+        healthLoss[counter] = 0.0;
+        counter++;
+        
+        setQuestion(scenes, questionText, sceneNum) ;
+        setAnswer(AnswerArray, ResultArray, healthLoss);
+
 //        // ----------------------------------------------------------------------------------------------------------
 //        //    23 Swamp, [BLOCKED]
 //        // ----------------------------------------------------------------------------------------------------------
@@ -283,13 +609,33 @@ public class InterviewControl extends SceneControl{
 //        // ----------------------------------------------------------------------------------------------------------
 //        //    24 DryRiver,
 //        // ----------------------------------------------------------------------------------------------------------
-//        sceneNum += 1;
-//        question = "";
-//        scenes[sceneNum].getQuestion(sceneNum).setQuestionText(question);
-//        ans = "";
-//        result = "";
-//        setAnswers(scenes, sceneNum, i, ans, result);
-//        i += 1;
+
+        sceneNum++;
+        
+        answerCount = 2;  ///CHANGE THIS ONE
+        AnswerArray = new String[answerCount];
+        ResultArray = new String[answerCount];
+        healthLoss = new Double[answerCount];
+        
+        //Question
+        counter++;
+        questionText = "There's a fork in the road, which way do you take?";
+        
+        //Answer 1
+        AnswerArray[counter] = "";
+        ResultArray[counter] = "";
+        healthLoss[counter] = 0.0;
+        counter++;
+        
+        //Answer 2
+        AnswerArray[counter] = "";
+        ResultArray[counter] = "";
+        healthLoss[counter] = 0.0;
+        counter++;
+        
+        setQuestion(scenes, questionText, sceneNum) ;
+        setAnswer(AnswerArray, ResultArray, healthLoss);
+
 //        // ----------------------------------------------------------------------------------------------------------
 //        //    25 Flooded, [BLOCKED]
 //        // ----------------------------------------------------------------------------------------------------------
@@ -297,62 +643,104 @@ public class InterviewControl extends SceneControl{
 //        // ----------------------------------------------------------------------------------------------------------
 //        //    26 MuddyPath,
 //        // ----------------------------------------------------------------------------------------------------------
-//        sceneNum += 1;
-//        question = "";
-//        scenes[sceneNum].getQuestion(sceneNum).setQuestionText(question);
-//        ans = "";
-//        result = "";
-//        setAnswers(scenes, sceneNum, i, ans, result);
-//        i += 1;
+
+        sceneNum++;
+        
+        answerCount = 2;  ///CHANGE THIS ONE
+        AnswerArray = new String[answerCount];
+        ResultArray = new String[answerCount];
+        healthLoss = new Double[answerCount];
+        
+        //Question
+        counter++;
+        questionText = "There's a fork in the road, which way do you take?";
+        
+        //Answer 1
+        AnswerArray[counter] = "";
+        ResultArray[counter] = "";
+        healthLoss[counter] = 0.0;
+        counter++;
+        
+        //Answer 2
+        AnswerArray[counter] = "";
+        ResultArray[counter] = "";
+        healthLoss[counter] = 0.0;
+        counter++;
+        
+        setQuestion(scenes, questionText, sceneNum) ;
+        setAnswer(AnswerArray, ResultArray, healthLoss);
+
 //        // ----------------------------------------------------------------------------------------------------------
 //        //    27 Zion; [END]
 //        // ----------------------------------------------------------------------------------------------------------
-//        sceneNum += 1;
-//        question = "";
-//        scenes[sceneNum].getQuestion(sceneNum).setQuestionText(question);
-//        ans = "";
-//        result = "";
-//        setAnswers(scenes, sceneNum, i, ans, result);
-//        i += 1;
+
+        sceneNum++;
+        
+        answerCount = 2;  ///CHANGE THIS ONE
+        AnswerArray = new String[answerCount];
+        ResultArray = new String[answerCount];
+        healthLoss = new Double[answerCount];
+        
+        //Question
+        counter++;
+        questionText = "There's a fork in the road, which way do you take?";
+        
+        //Answer 1
+        AnswerArray[counter] = "";
+        ResultArray[counter] = "";
+        healthLoss[counter] = 0.0;
+        counter++;
+        
+        //Answer 2
+        AnswerArray[counter] = "";
+        ResultArray[counter] = "";
+        healthLoss[counter] = 0.0;
+        counter++;
+        
+        setQuestion(scenes, questionText, sceneNum) ;
+        setAnswer(AnswerArray, ResultArray, healthLoss);
+
 //        // ----------------------------------------------------------------------------------------------------------
 //        
 
     }
 //
-//    private static Scene[] setAnswers(Scene[] scenes, int sceneNum, int i, String answer, String result) {
-//        String question = scenes[sceneNum].setQuestion(sceneNum).getQuestionText();
-//        scenes[sceneNum].getAnswers(sceneNum).setQuestion(question); //transfer question to the appropriate Answer
-//        scenes[sceneNum].getAnswers(sceneNum).setAnswer(answer);
-//        scenes[sceneNum].getAnswers(sceneNum).setResultOfAnswer(result);
-//        return scenes;
-//    }
-    
-    private static InventoryItem reward(InventoryItem item, Boolean rewardTrue, int quantity){ //Boolean to track if item is added or removed
-        
-        //WE NEED ITEM LIST TO BE BUILT FOR THIS TO WORK
-        if (rewardTrue == true){ //ADD ITEM
-            
-        } else { //REMOVE ITEM
-            
-        }
-        
-        return item;
-        
+    private static void setQuestion(Scene[] scenes, String questionText, int sceneNum) {
+        Question question = new Question();
+        question.setQuestionText(questionText);
+        question.setCorrectAnswer(1);
+        scenes[sceneNum].setQuestion(question);
     }
     
-    private static Status statusEffect(Status status, Boolean rewardTrue, int damage){ //Boolean to track if status effect is added or removed
+     private static void setAnswer(String[] AnswerArray, String[] ResultArray, Double[] healthLoss) {
+        Location location = PioneerTrail.getCurrentGame().getMap().getCurrentLocation();
+        Game game = PioneerTrail.getCurrentGame();
+        Scene scene = location.getScene();
+        Question question = scene.getQuestion();
         
-        if (rewardTrue == true){ //ADD STATUS
-            status.getType(); 
-            status.getDuration(); 
-            status.getDescription(); 
-        } else { //REMOVE STATUS
+        String answerText = "";
+        String resultText = "";
+        Double health = 0.0;
+        Answer[] answers = new Answer[AnswerArray.length];
+        
+        
+        for(int i = 0; i < AnswerArray.length ; i++){
+            answerText = AnswerArray[i];
+            resultText = ResultArray[i];
+            health = healthLoss[i];
             
+            answers[i] = new Answer();
+            answers[i].setAnswer(answerText);
+            answers[i].setResultOfAnswer(resultText);
+            answers[i].setPlayerHealthEffect(health);
+            i++;
         }
         
-        return status;
+        question.setAnswers(answers);
         
+
     }
+    
     
     //CREATE QUESTIONS MARILEE
     private static Question[] createQuestions() {
