@@ -22,20 +22,19 @@ public class Scene implements Serializable {
     private InventoryItem resource;
     private QuestionType questionType;
     private Location[][] locations;
-    private Question[] question;
-    private Answers[] answers;
+    private Question question;
+//    private Answers[] answers;
 
     public Scene() {
-        question = new Question[27];
     }
 
-    public Answers getAnswers(int i) {
-        return answers[i];
-    }
-
-    public void setAnswers(Answers[] answers) {
-        this.answers = answers;
-    }
+//    public Answers getAnswers(int i) {
+//        return answers[i];
+//    }
+//
+//    public void setAnswers(Answers[] answers) {
+//        this.answers = answers;
+//    }
     
     public int getIndex() {
         return index;
@@ -61,11 +60,11 @@ public class Scene implements Serializable {
         this.locations = locations;
     }
 
-    public Question getQuestion(int i) {
-        return question[i];
+    public Question getQuestion() {
+        return question;
     }
 
-    public void setQuestion(Question[] question) {
+    public void setQuestion(Question question) {
         this.question = question;
     }
     
@@ -145,12 +144,12 @@ public class Scene implements Serializable {
         return super.toString();
     }
 
-    public Question setQuestion(int o) {
-        return question[o];
-    }
-
-    public Object getQuestion() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+//    public Question setQuestion(int o) {
+//        return question[o];
+//    }
+//
+//    public Object getQuestion() {
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//    }
 
 }

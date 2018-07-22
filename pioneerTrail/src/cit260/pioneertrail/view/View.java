@@ -20,12 +20,15 @@ public abstract class View implements ViewInterfaces {
 
     protected final BufferedReader keyboard = PioneerTrail.getInFile();
     protected final PrintWriter console = PioneerTrail.getOutFile();
+    protected boolean canExit;
 
     public View() {
+        canExit = true;
     }
 
     public View(String menuPrompt) {
         promptMessage = menuPrompt;
+        canExit = true;
     }
 
     @Override
@@ -33,7 +36,7 @@ public abstract class View implements ViewInterfaces {
         boolean endOfView = false;
         do {
             String input = this.getInputs();
-            if (input.toUpperCase().equals("Q")) {
+            if (input.toUpperCase().equals("Q") && canExit) {
                 return;
             }
             

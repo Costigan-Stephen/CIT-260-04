@@ -10,7 +10,7 @@ package cit260.pioneertrail.model;
  * @author hughe
  */
 public class QuestionScene extends Scene {
-    private Answers[] question;
+    private Answer[] question;
     public QuestionScene(){
         
         
@@ -22,7 +22,7 @@ public class QuestionScene extends Scene {
         return null;
     }
     
-    public void setAnswer(Answers[] question){
+    public void setAnswer(Answer[] question){
         this.question = question;
     }
 }

@@ -5,7 +5,7 @@
  */
 package cit260.pioneertrail.control;
 
-import cit260.pioneertrail.model.Answers;
+import cit260.pioneertrail.model.Answer;
 import cit260.pioneertrail.model.InventoryItem;
 import cit260.pioneertrail.model.Question;
 import cit260.pioneertrail.model.QuestionScene;
@@ -22,286 +22,310 @@ public class InterviewControl extends SceneControl{
         
     
     
-    public static Scene[] createSceneQuestions(Scene[] scenes){
+    public static void createSceneQuestions(Scene[] scenes){
         
         
-        String question, ans, result; //Answer, one of potentially more.  Multiple answers can be asked per scene.
-        int i = 0;
-        int o = 1;
-        
-//        Question[] questions = new Question[27];
-//        Question[] questions = (scenes) new Question[27];
+//        String question, ans, result; //Answer, one of potentially more.  Multiple answers can be asked per scene.
+        int sceneNum = 0;
         
                 //    Questions about each scene
         // ----------------------------------------------------------------------------------------------------------
         //    01 BushLand,
         // ----------------------------------------------------------------------------------------------------------
-        question = "";
-        ans = "";
-        result = "";
-//        scenes[o].setQuestion(questions); 
-        scenes[o].getQuestion(o).setQuestionText(question);
-        setAnswers(scenes, o, i, ans, result);
+//        question = "";
+//        ans = "";
+//        result = "";
+//        scenes[sceneNum].setQuestion(questions); 
+
+        Question question = new Question();
+        question.setQuestionText("There's a fork in the road, which way do you take?");
+        Answer[] answers = new Answer[2];
+        answers[0] = new Answer();
+        answers[1] = new Answer();
+        question.setAnswers(answers);
+        answers[0].setAnswer("1. Take the left path");
+        answers[1].setAnswer("2. Take the right path");
+        answers[0].setResultOfAnswer("");
+        answers[0].setPlayerHealthEffect(-10);
+        answers[1].setPlayerHealthEffect(10);
+        question.setCorrectAnswer(1);
+        scenes[sceneNum].setQuestion(question);
         
         // ----------------------------------------------------------------------------------------------------------
         //    02 Plains,
         // ----------------------------------------------------------------------------------------------------------
-        o += 1;
-        question = "You look out over a wide open field.  The sun is shining and a pleasant aroma" 
-                + "\nfills the air.  There is a trampled path to the right and a path to the left"
-                + "\nWhat do you do?";
-        ans = "Take the left path";
-        result = "";
-        scenes[o].getQuestion(o).setQuestionText(question);
-        setAnswers(scenes, o, i, ans, result);
-        i += 1;
-        ans = "Take the right path";
-        result = "";
-        scenes[o].getQuestion(o).setQuestionText(question);
-        setAnswers(scenes, o, i, ans, result);
-        i += 1;
+        
+        sceneNum++;
+          
+        question = new Question();
+        question.setQuestionText("There's a fork in the road, which way do you take?");
+        answers = new Answer[2];
+        answers[0] = new Answer();
+        answers[1] = new Answer();
+        question.setAnswers(answers);
+        answers[0].setAnswer("1. Take the left path");
+        answers[1].setAnswer("2. Take the right path");
+        answers[0].setResultOfAnswer("");
+        answers[0].setPlayerHealthEffect(-10);
+        answers[1].setPlayerHealthEffect(10);
+        question.setCorrectAnswer(1);
+        scenes[sceneNum].setQuestion(question);
+
+//        question = "You look out over a wide open field.  The sun is shining and a pleasant aroma" 
+//                + "\nfills the air.  There is a trampled path to the right and a path to the left"
+//                + "\nWhat do you do?";
+//        ans = "Take the left path";
+//        result = "";
+//        scenes[sceneNum].getQuestion(sceneNum).setQuestionText(question);
+//        setAnswers(scenes, sceneNum, i, ans, result);
+//        i += 1;
+//        ans = "Take the right path";
+//        result = "";
+//        scenes[sceneNum].getQuestion(sceneNum).setQuestionText(question);
+//        setAnswers(scenes, sceneNum, i, ans, result);
+//        i += 1;
         // ----------------------------------------------------------------------------------------------------------
         //    03 Forest, 1 Question, 2 answers        - STEVE 
         // ----------------------------------------------------------------------------------------------------------
-        o += 1;
-        question = "You find youself in a dense forest.  There are two paths before you," 
-                + "\n one to your right, the other to your left.  The left trail has a fresh"
-                + "\n set of footprints, the other appears to be overgrown.  You...";
-        scenes[o].getQuestion(o).setQuestionText(question);
-        ans = "Take the left path";
-        result = "you are ambushed by a pair of highwaymen, who run off with a portion of your food";
-        //ADD ITEM, they took 20% of food (-20%)
-        //reward(item, false, -20%); 
-        setAnswers(scenes, o, i, ans, result);
-        i += 1;
-        ans = "Take the right path";
-        result = "The path is windy at first, but you soon make it to the remains of an old campsite."
-                + "\n Searching briefly, you find a spare wheel.";
-        //ADD ITEMS
-        //reward(item, true, 1);
-        setAnswers(scenes, o, i, ans, result);
-        i += 1;
-        // ----------------------------------------------------------------------------------------------------------
-        //    04 Jungle,
-        // ----------------------------------------------------------------------------------------------------------
-        o += 1;
-        question = "";
-        scenes[o].getQuestion(o).setQuestionText(question);
-        ans = "";
-        result = "";
-        setAnswers(scenes, o, i, ans, result);
-        i += 1;
-        // ----------------------------------------------------------------------------------------------------------
-        //    05 Canyon, [BLOCKED]
-        // ----------------------------------------------------------------------------------------------------------
-        o += 1;
-        // ----------------------------------------------------------------------------------------------------------
-        //    06 RedForest,
-        // ----------------------------------------------------------------------------------------------------------
-        o += 1;
-        question = "";
-        scenes[o].getQuestion(o).setQuestionText(question);
-        ans = "";
-        result = "";
-        setAnswers(scenes, o, i, ans, result);
-        i += 1;
-        // ----------------------------------------------------------------------------------------------------------
-        //    07 River,
-        // ----------------------------------------------------------------------------------------------------------
-        o += 1;
-        question = "";
-        scenes[o].getQuestion(o).setQuestionText(question);
-        ans = "";
-        result = "";
-        setAnswers(scenes, o, i, ans, result);
-        i += 1;
-        // ----------------------------------------------------------------------------------------------------------
-        //    08 Lake, [BLOCKED]
-        // ----------------------------------------------------------------------------------------------------------
-        o += 1;
-        // ----------------------------------------------------------------------------------------------------------
-        //    09 Waterfall, [BLOCKED]
-        // ----------------------------------------------------------------------------------------------------------
-        o += 1;
-        // ----------------------------------------------------------------------------------------------------------
-        //    10 Tundra,
-        // ----------------------------------------------------------------------------------------------------------
-        o += 1;
-        question = "";
-        scenes[o].getQuestion(o).setQuestionText(question);
-        ans = "";
-        result = "";
-        setAnswers(scenes, o, i, ans, result);
-        i += 1;
-        // ----------------------------------------------------------------------------------------------------------
-        //    11 Sparse,
-        // ----------------------------------------------------------------------------------------------------------
-        o += 1;
-        question = "";
-        scenes[o].getQuestion(o).setQuestionText(question);
-        ans = "";
-        result = "";
-        setAnswers(scenes, o, i, ans, result);
-        i += 1;
-        // ----------------------------------------------------------------------------------------------------------
-        //    12 CrackedEarth,
-        // ----------------------------------------------------------------------------------------------------------
-        o += 1;
-        question = "";
-        scenes[o].getQuestion(o).setQuestionText(question);
-        ans = "";
-        result = "";
-        setAnswers(scenes, o, i, ans, result);
-        i += 1;
-        // ----------------------------------------------------------------------------------------------------------
-        //    13 Arid,
-        // ----------------------------------------------------------------------------------------------------------
-        o += 1;
-        question = "";
-        scenes[o].getQuestion(o).setQuestionText(question);
-        ans = "";
-        result = "";
-        setAnswers(scenes, o, i, ans, result);
-        i += 1;
-        // ----------------------------------------------------------------------------------------------------------
-        //    14 Desert,
-        // ----------------------------------------------------------------------------------------------------------
-        o += 1;
-        question = "";
-        scenes[o].getQuestion(o).setQuestionText(question);
-        ans = "";
-        result = "";
-        setAnswers(scenes, o, i, ans, result);
-        i += 1;
-        // ----------------------------------------------------------------------------------------------------------
-        //    15 Hills,
-        // ----------------------------------------------------------------------------------------------------------
-        o += 1;
-        question = "";
-        scenes[o].getQuestion(o).setQuestionText(question);
-        ans = "";
-        result = "";
-        setAnswers(scenes, o, i, ans, result);
-        i += 1;
-        // ----------------------------------------------------------------------------------------------------------
-        //    16 Mountain, [BLOCKED]
-        // ----------------------------------------------------------------------------------------------------------
-        o += 1;
-        // ----------------------------------------------------------------------------------------------------------
-        //    17 Stream,
-        // ----------------------------------------------------------------------------------------------------------
-        o += 1;
-        question = "You come to a running stream.  The water looks cool and inviting, you are exhausted"
-                + "\n and could really use a dip to cool off.  You... ";
-        scenes[o].getQuestion(o).setQuestionText(question);
-        ans = "Take a dip";
-        result = "";
-        setAnswers(scenes, o, i, ans, result);
-        i += 1;
-        ans = "Don't take a dip";
-        result = "";
-        setAnswers(scenes, o, i, ans, result);
-        i += 1;
-        // ----------------------------------------------------------------------------------------------------------
-        //    18 Town, [START] -- SHOP
-        // ----------------------------------------------------------------------------------------------------------
-        o += 1;
-        question = "";
-        scenes[o].getQuestion(o).setQuestionText(question);
-        ans = "";
-        result = "";
-        setAnswers(scenes, o, i, ans, result);
-        i += 1;
-        // ----------------------------------------------------------------------------------------------------------
-        //    19 Village, -- SHOP 
-        // ----------------------------------------------------------------------------------------------------------
-        o += 1;
-        question = "";
-        scenes[o].getQuestion(o).setQuestionText(question);
-        ans = "";
-        result = "";
-        setAnswers(scenes, o, i, ans, result);
-        i += 1;
-        // ----------------------------------------------------------------------------------------------------------
-        //    20 Encampment,  -- SHOP 
-        // ----------------------------------------------------------------------------------------------------------
-        o += 1;
-        question = "";
-        scenes[o].getQuestion(o).setQuestionText(question);
-        ans = "";
-        result = "";
-        setAnswers(scenes, o, i, ans, result);
-        i += 1;
-        // ----------------------------------------------------------------------------------------------------------
-        //    21 IndianCamp, -- SHOP 
-        // ----------------------------------------------------------------------------------------------------------
-        o += 1;
-        question = "";
-        scenes[o].getQuestion(o).setQuestionText(question);
-        ans = "";
-        result = "";
-        setAnswers(scenes, o, i, ans, result);
-        i += 1;
-        // ----------------------------------------------------------------------------------------------------------
-        //    22 Caves, 
-        // ----------------------------------------------------------------------------------------------------------
-        o += 1;
-        question = "";
-        scenes[o].getQuestion(o).setQuestionText(question);
-        ans = "";
-        result = "";
-        setAnswers(scenes, o, i, ans, result);
-        i += 1;
-        // ----------------------------------------------------------------------------------------------------------
-        //    23 Swamp, [BLOCKED]
-        // ----------------------------------------------------------------------------------------------------------
-        o += 1;
-        // ----------------------------------------------------------------------------------------------------------
-        //    24 DryRiver,
-        // ----------------------------------------------------------------------------------------------------------
-        o += 1;
-        question = "";
-        scenes[o].getQuestion(o).setQuestionText(question);
-        ans = "";
-        result = "";
-        setAnswers(scenes, o, i, ans, result);
-        i += 1;
-        // ----------------------------------------------------------------------------------------------------------
-        //    25 Flooded, [BLOCKED]
-        // ----------------------------------------------------------------------------------------------------------
-        o += 1;
-        // ----------------------------------------------------------------------------------------------------------
-        //    26 MuddyPath,
-        // ----------------------------------------------------------------------------------------------------------
-        o += 1;
-        question = "";
-        scenes[o].getQuestion(o).setQuestionText(question);
-        ans = "";
-        result = "";
-        setAnswers(scenes, o, i, ans, result);
-        i += 1;
-        // ----------------------------------------------------------------------------------------------------------
-        //    27 Zion; [END]
-        // ----------------------------------------------------------------------------------------------------------
-        o += 1;
-        question = "";
-        scenes[o].getQuestion(o).setQuestionText(question);
-        ans = "";
-        result = "";
-        setAnswers(scenes, o, i, ans, result);
-        i += 1;
-        // ----------------------------------------------------------------------------------------------------------
-        
-        return scenes;
-    }
+//        sceneNum += 1;
+//        question = "You find youself in a dense forest.  There are two paths before you," 
+//                + "\n one to your right, the other to your left.  The left trail has a fresh"
+//                + "\n set of footprints, the other appears to be overgrown.  You...";
+//        scenes[sceneNum].getQuestion(sceneNum).setQuestionText(question);
+//        ans = "Take the left path";
+//        result = "you are ambushed by a pair of highwaymen, who run off with a portion of your food";
+//        //ADD ITEM, they took 20% of food (-20%)
+//        //reward(item, false, -20%); 
+//        setAnswers(scenes, sceneNum, i, ans, result);
+//        i += 1;
+//        ans = "Take the right path";
+//        result = "The path is windy at first, but you soon make it to the remains of an old campsite."
+//                + "\n Searching briefly, you find a spare wheel.";
+//        //ADD ITEMS
+//        //reward(item, true, 1);
+//        setAnswers(scenes, sceneNum, i, ans, result);
+//        i += 1;
+//        // ----------------------------------------------------------------------------------------------------------
+//        //    04 Jungle,
+//        // ----------------------------------------------------------------------------------------------------------
+//        sceneNum += 1;
+//        question = "";
+//        scenes[sceneNum].getQuestion(sceneNum).setQuestionText(question);
+//        ans = "";
+//        result = "";
+//        setAnswers(scenes, sceneNum, i, ans, result);
+//        i += 1;
+//        // ----------------------------------------------------------------------------------------------------------
+//        //    05 Canyon, [BLOCKED]
+//        // ----------------------------------------------------------------------------------------------------------
+//        sceneNum += 1;
+//        // ----------------------------------------------------------------------------------------------------------
+//        //    06 RedForest,
+//        // ----------------------------------------------------------------------------------------------------------
+//        sceneNum += 1;
+//        question = "";
+//        scenes[sceneNum].getQuestion(sceneNum).setQuestionText(question);
+//        ans = "";
+//        result = "";
+//        setAnswers(scenes, sceneNum, i, ans, result);
+//        i += 1;
+//        // ----------------------------------------------------------------------------------------------------------
+//        //    07 River,
+//        // ----------------------------------------------------------------------------------------------------------
+//        sceneNum += 1;
+//        question = "";
+//        scenes[sceneNum].getQuestion(sceneNum).setQuestionText(question);
+//        ans = "";
+//        result = "";
+//        setAnswers(scenes, sceneNum, i, ans, result);
+//        i += 1;
+//        // ----------------------------------------------------------------------------------------------------------
+//        //    08 Lake, [BLOCKED]
+//        // ----------------------------------------------------------------------------------------------------------
+//        sceneNum += 1;
+//        // ----------------------------------------------------------------------------------------------------------
+//        //    09 Waterfall, [BLOCKED]
+//        // ----------------------------------------------------------------------------------------------------------
+//        sceneNum += 1;
+//        // ----------------------------------------------------------------------------------------------------------
+//        //    10 Tundra,
+//        // ----------------------------------------------------------------------------------------------------------
+//        sceneNum += 1;
+//        question = "";
+//        scenes[sceneNum].getQuestion(sceneNum).setQuestionText(question);
+//        ans = "";
+//        result = "";
+//        setAnswers(scenes, sceneNum, i, ans, result);
+//        i += 1;
+//        // ----------------------------------------------------------------------------------------------------------
+//        //    11 Sparse,
+//        // ----------------------------------------------------------------------------------------------------------
+//        sceneNum += 1;
+//        question = "";
+//        scenes[sceneNum].getQuestion(sceneNum).setQuestionText(question);
+//        ans = "";
+//        result = "";
+//        setAnswers(scenes, sceneNum, i, ans, result);
+//        i += 1;
+//        // ----------------------------------------------------------------------------------------------------------
+//        //    12 CrackedEarth,
+//        // ----------------------------------------------------------------------------------------------------------
+//        sceneNum += 1;
+//        question = "";
+//        scenes[sceneNum].getQuestion(sceneNum).setQuestionText(question);
+//        ans = "";
+//        result = "";
+//        setAnswers(scenes, sceneNum, i, ans, result);
+//        i += 1;
+//        // ----------------------------------------------------------------------------------------------------------
+//        //    13 Arid,
+//        // ----------------------------------------------------------------------------------------------------------
+//        sceneNum += 1;
+//        question = "";
+//        scenes[sceneNum].getQuestion(sceneNum).setQuestionText(question);
+//        ans = "";
+//        result = "";
+//        setAnswers(scenes, sceneNum, i, ans, result);
+//        i += 1;
+//        // ----------------------------------------------------------------------------------------------------------
+//        //    14 Desert,
+//        // ----------------------------------------------------------------------------------------------------------
+//        sceneNum += 1;
+//        question = "";
+//        scenes[sceneNum].getQuestion(sceneNum).setQuestionText(question);
+//        ans = "";
+//        result = "";
+//        setAnswers(scenes, sceneNum, i, ans, result);
+//        i += 1;
+//        // ----------------------------------------------------------------------------------------------------------
+//        //    15 Hills,
+//        // ----------------------------------------------------------------------------------------------------------
+//        sceneNum += 1;
+//        question = "";
+//        scenes[sceneNum].getQuestion(sceneNum).setQuestionText(question);
+//        ans = "";
+//        result = "";
+//        setAnswers(scenes, sceneNum, i, ans, result);
+//        i += 1;
+//        // ----------------------------------------------------------------------------------------------------------
+//        //    16 Mountain, [BLOCKED]
+//        // ----------------------------------------------------------------------------------------------------------
+//        sceneNum += 1;
+//        // ----------------------------------------------------------------------------------------------------------
+//        //    17 Stream,
+//        // ----------------------------------------------------------------------------------------------------------
+//        sceneNum += 1;
+//        question = "You come to a running stream.  The water looks cool and inviting, you are exhausted"
+//                + "\n and could really use a dip to cool off.  You... ";
+//        scenes[sceneNum].getQuestion(sceneNum).setQuestionText(question);
+//        ans = "Take a dip";
+//        result = "";
+//        setAnswers(scenes, sceneNum, i, ans, result);
+//        i += 1;
+//        ans = "Don't take a dip";
+//        result = "";
+//        setAnswers(scenes, sceneNum, i, ans, result);
+//        i += 1;
+//        // ----------------------------------------------------------------------------------------------------------
+//        //    18 Town, [START] -- SHOP
+//        // ----------------------------------------------------------------------------------------------------------
+//        sceneNum += 1;
+//        question = "";
+//        scenes[sceneNum].getQuestion(sceneNum).setQuestionText(question);
+//        ans = "";
+//        result = "";
+//        setAnswers(scenes, sceneNum, i, ans, result);
+//        i += 1;
+//        // ----------------------------------------------------------------------------------------------------------
+//        //    19 Village, -- SHOP 
+//        // ----------------------------------------------------------------------------------------------------------
+//        sceneNum += 1;
+//        question = "";
+//        scenes[sceneNum].getQuestion(sceneNum).setQuestionText(question);
+//        ans = "";
+//        result = "";
+//        setAnswers(scenes, sceneNum, i, ans, result);
+//        i += 1;
+//        // ----------------------------------------------------------------------------------------------------------
+//        //    20 Encampment,  -- SHOP 
+//        // ----------------------------------------------------------------------------------------------------------
+//        sceneNum += 1;
+//        question = "";
+//        scenes[sceneNum].getQuestion(sceneNum).setQuestionText(question);
+//        ans = "";
+//        result = "";
+//        setAnswers(scenes, sceneNum, i, ans, result);
+//        i += 1;
+//        // ----------------------------------------------------------------------------------------------------------
+//        //    21 IndianCamp, -- SHOP 
+//        // ----------------------------------------------------------------------------------------------------------
+//        sceneNum += 1;
+//        question = "";
+//        scenes[sceneNum].getQuestion(sceneNum).setQuestionText(question);
+//        ans = "";
+//        result = "";
+//        setAnswers(scenes, sceneNum, i, ans, result);
+//        i += 1;
+//        // ----------------------------------------------------------------------------------------------------------
+//        //    22 Caves, 
+//        // ----------------------------------------------------------------------------------------------------------
+//        sceneNum += 1;
+//        question = "";
+//        scenes[sceneNum].getQuestion(sceneNum).setQuestionText(question);
+//        ans = "";
+//        result = "";
+//        setAnswers(scenes, sceneNum, i, ans, result);
+//        i += 1;
+//        // ----------------------------------------------------------------------------------------------------------
+//        //    23 Swamp, [BLOCKED]
+//        // ----------------------------------------------------------------------------------------------------------
+//        sceneNum += 1;
+//        // ----------------------------------------------------------------------------------------------------------
+//        //    24 DryRiver,
+//        // ----------------------------------------------------------------------------------------------------------
+//        sceneNum += 1;
+//        question = "";
+//        scenes[sceneNum].getQuestion(sceneNum).setQuestionText(question);
+//        ans = "";
+//        result = "";
+//        setAnswers(scenes, sceneNum, i, ans, result);
+//        i += 1;
+//        // ----------------------------------------------------------------------------------------------------------
+//        //    25 Flooded, [BLOCKED]
+//        // ----------------------------------------------------------------------------------------------------------
+//        sceneNum += 1;
+//        // ----------------------------------------------------------------------------------------------------------
+//        //    26 MuddyPath,
+//        // ----------------------------------------------------------------------------------------------------------
+//        sceneNum += 1;
+//        question = "";
+//        scenes[sceneNum].getQuestion(sceneNum).setQuestionText(question);
+//        ans = "";
+//        result = "";
+//        setAnswers(scenes, sceneNum, i, ans, result);
+//        i += 1;
+//        // ----------------------------------------------------------------------------------------------------------
+//        //    27 Zion; [END]
+//        // ----------------------------------------------------------------------------------------------------------
+//        sceneNum += 1;
+//        question = "";
+//        scenes[sceneNum].getQuestion(sceneNum).setQuestionText(question);
+//        ans = "";
+//        result = "";
+//        setAnswers(scenes, sceneNum, i, ans, result);
+//        i += 1;
+//        // ----------------------------------------------------------------------------------------------------------
+//        
 
-    private static Scene[] setAnswers(Scene[] scenes, int o, int i, String answer, String result) {
-        String question = scenes[o].setQuestion(o).getQuestionText();
-        scenes[o].getAnswers(o).setQuestion(question); //transfer question to the appropriate Answer
-        scenes[o].getAnswers(o).setAnswer(answer);
-        scenes[o].getAnswers(o).setResultOfAnswer(result);
-        return scenes;
     }
+//
+//    private static Scene[] setAnswers(Scene[] scenes, int sceneNum, int i, String answer, String result) {
+//        String question = scenes[sceneNum].setQuestion(sceneNum).getQuestionText();
+//        scenes[sceneNum].getAnswers(sceneNum).setQuestion(question); //transfer question to the appropriate Answer
+//        scenes[sceneNum].getAnswers(sceneNum).setAnswer(answer);
+//        scenes[sceneNum].getAnswers(sceneNum).setResultOfAnswer(result);
+//        return scenes;
+//    }
     
     private static InventoryItem reward(InventoryItem item, Boolean rewardTrue, int quantity){ //Boolean to track if item is added or removed
         
@@ -364,202 +388,202 @@ public class InterviewControl extends SceneControl{
         return questions;
     }
 //    
-//    //CREATE QUESTIONS JOSEPH
-    public static Answers[] createQuestion() {
-        Answers[] question = new Answers[200];
-        question[QuestionType.buying.ordinal()] = new Answers();
-        question[QuestionType.buying.ordinal()].setAnswer("Here you go");
-        question[QuestionType.buying.ordinal()].setQuestion("What do you want?");
-        question[QuestionType.buying.ordinal()].setResultOfAnswer("You bought item");
-        
-        question[QuestionType.injury.ordinal()].setAnswer("You broke your leg");
-        question[QuestionType.injury.ordinal()].setResultOfAnswer("You should rest");
-        question[QuestionType.injury.ordinal()].setQuestion("What is your injury?");
-
-        question[QuestionType.geography.ordinal()].setQuestion("Where are we?");
-        question[QuestionType.geography.ordinal()].setAnswer("Yes");
-        question[QuestionType.geography.ordinal()].setResultOfAnswer("This is where you are!");
-
-        question[QuestionType.findFood.ordinal()].setQuestion("Do you want to look for food?");
-        question[QuestionType.findFood.ordinal()].setAnswer("Yes");
-        question[QuestionType.findFood.ordinal()].setResultOfAnswer("You found food!");
-
-        question[QuestionType.actor.ordinal()].setQuestion("What is this character?");
-        question[QuestionType.actor.ordinal()].setResultOfAnswer("Thank you for this info");
-        question[QuestionType.actor.ordinal()].setAnswer("This is what I am");
-
-        question[QuestionType.weather.ordinal()].setQuestion("What is the weather");
-        question[QuestionType.weather.ordinal()].setAnswer("The sky is clear");
-        question[QuestionType.weather.ordinal()].setResultOfAnswer("Her it is");
-        return question;
-    }
-    
-    //QUESTIONS TO SCENES JOSEPH
-    private static void assignQuestionsToScenes(Question[] questions, Scene[] scenes) {
-        System.out.println("assignQuestionsToScenes called");
-
-        QuestionScene questionScene1 = (QuestionScene) scenes[SceneType.Arid.ordinal()];
-        Question[] fun = new Question[30];
-        fun[0] = questions[QuestionType.actor.ordinal()];
-        fun[1] = questions[QuestionType.findFood.ordinal()];
-        questionScene1.setQuestion(fun);
-
-        QuestionScene questionScene2 = (QuestionScene) scenes[SceneType.BushLand.ordinal()];
-        fun = new Question[30];
-        fun[0] = questions[QuestionType.actor.ordinal()];
-        fun[1] = questions[QuestionType.findFood.ordinal()];
-        questionScene2.setQuestion(fun);
-
-        QuestionScene questionScene3 = (QuestionScene) scenes[SceneType.Canyon.ordinal()];
-        fun = new Question[30];
-        fun[0] = questions[QuestionType.actor.ordinal()];
-        fun[1] = questions[QuestionType.findFood.ordinal()];
-        questionScene3.setQuestion(fun);
-
-        QuestionScene questionScene4 = (QuestionScene) scenes[SceneType.Caves.ordinal()];
-        fun = new Question[30];
-        fun[0] = questions[QuestionType.actor.ordinal()];
-        fun[1] = questions[QuestionType.findFood.ordinal()];
-        questionScene4.setQuestion(fun);
-
-        QuestionScene questionScene5 = (QuestionScene) scenes[SceneType.CrackedEarth.ordinal()];
-        fun = new Question[30];
-        fun[0] = questions[QuestionType.actor.ordinal()];
-        fun[1] = questions[QuestionType.findFood.ordinal()];
-        questionScene5.setQuestion(fun);
-
-        QuestionScene questionScene6 = (QuestionScene) scenes[SceneType.Desert.ordinal()];
-        fun = new Question[30];
-        fun[0] = questions[QuestionType.actor.ordinal()];
-        fun[1] = questions[QuestionType.findFood.ordinal()];
-        questionScene6.setQuestion(fun);
-
-        QuestionScene questionScene7 = (QuestionScene) scenes[SceneType.DryRiver.ordinal()];
-        fun = new Question[30];
-        fun[0] = questions[QuestionType.actor.ordinal()];
-        fun[1] = questions[QuestionType.findFood.ordinal()];
-        questionScene7.setQuestion(fun);
-
-        QuestionScene questionScene8 = (QuestionScene) scenes[SceneType.Encampment.ordinal()];
-        fun = new Question[30];
-        fun[0] = questions[QuestionType.actor.ordinal()];
-        fun[1] = questions[QuestionType.findFood.ordinal()];
-        questionScene8.setQuestion(fun);
-
-        QuestionScene questionScene9 = (QuestionScene) scenes[SceneType.Flooded.ordinal()];
-        fun = new Question[30];
-        fun[0] = questions[QuestionType.actor.ordinal()];
-        fun[1] = questions[QuestionType.findFood.ordinal()];
-        questionScene9.setQuestion(fun);
-
-        QuestionScene questionScene10 = (QuestionScene) scenes[SceneType.Forest.ordinal()];
-        fun = new Question[30];
-        fun[0] = questions[QuestionType.actor.ordinal()];
-        fun[1] = questions[QuestionType.findFood.ordinal()];
-        questionScene10.setQuestion(fun);
-
-        QuestionScene questionScene11 = (QuestionScene) scenes[SceneType.Hills.ordinal()];
-        fun = new Question[30];
-        fun[0] = questions[QuestionType.actor.ordinal()];
-        fun[1] = questions[QuestionType.findFood.ordinal()];
-        questionScene11.setQuestion(fun);
-
-        QuestionScene questionScene12 = (QuestionScene) scenes[SceneType.IndianCamp.ordinal()];
-        fun = new Question[30];
-        fun[0] = questions[QuestionType.actor.ordinal()];
-        fun[1] = questions[QuestionType.findFood.ordinal()];
-        questionScene12.setQuestion(fun);
-
-        QuestionScene questionScene13 = (QuestionScene) scenes[SceneType.Jungle.ordinal()];
-        fun = new Question[30];
-        fun[0] = questions[QuestionType.actor.ordinal()];
-        fun[1] = questions[QuestionType.findFood.ordinal()];
-        questionScene13.setQuestion(fun);
-
-        QuestionScene questionScene14 = (QuestionScene) scenes[SceneType.Lake.ordinal()];
-        fun = new Question[30];
-        fun[0] = questions[QuestionType.actor.ordinal()];
-        fun[1] = questions[QuestionType.findFood.ordinal()];
-        questionScene14.setQuestion(fun);
-
-        QuestionScene questionScene15 = (QuestionScene) scenes[SceneType.Mountain.ordinal()];
-        fun = new Question[30];
-        fun[0] = questions[QuestionType.actor.ordinal()];
-        fun[1] = questions[QuestionType.findFood.ordinal()];
-        questionScene15.setQuestion(fun);
-
-        QuestionScene questionScene16 = (QuestionScene) scenes[SceneType.MuddyPath.ordinal()];
-        fun = new Question[30];
-        fun[0] = questions[QuestionType.actor.ordinal()];
-        fun[1] = questions[QuestionType.findFood.ordinal()];
-        questionScene16.setQuestion(fun);
-
-        QuestionScene questionScene17 = (QuestionScene) scenes[SceneType.Plains.ordinal()];
-        fun = new Question[30];
-        fun[0] = questions[QuestionType.actor.ordinal()];
-        fun[1] = questions[QuestionType.findFood.ordinal()];
-        questionScene17.setQuestion(fun);
-
-        QuestionScene questionScene18 = (QuestionScene) scenes[SceneType.RedForest.ordinal()];
-        fun = new Question[30];
-        fun[0] = questions[QuestionType.actor.ordinal()];
-        fun[1] = questions[QuestionType.findFood.ordinal()];
-        questionScene18.setQuestion(fun);
-
-        QuestionScene questionScene19 = (QuestionScene) scenes[SceneType.River.ordinal()];
-        fun = new Question[30];
-        fun[0] = questions[QuestionType.actor.ordinal()];
-        fun[1] = questions[QuestionType.findFood.ordinal()];
-        questionScene19.setQuestion(fun);
-
-        QuestionScene questionScene20 = (QuestionScene) scenes[SceneType.Sparse.ordinal()];
-        fun = new Question[30];
-        fun[0] = questions[QuestionType.actor.ordinal()];
-        fun[1] = questions[QuestionType.findFood.ordinal()];
-        questionScene20.setQuestion(fun);
-
-        QuestionScene questionScene21 = (QuestionScene) scenes[SceneType.Stream.ordinal()];
-        fun = new Question[30];
-        fun[0] = questions[QuestionType.actor.ordinal()];
-        fun[1] = questions[QuestionType.findFood.ordinal()];
-        questionScene21.setQuestion(fun);
-
-        QuestionScene questionScene22 = (QuestionScene) scenes[SceneType.Swamp.ordinal()];
-        fun = new Question[30];
-        fun[0] = questions[QuestionType.actor.ordinal()];
-        fun[1] = questions[QuestionType.findFood.ordinal()];
-        questionScene22.setQuestion(fun);
-
-        QuestionScene questionScene23 = (QuestionScene) scenes[SceneType.Town.ordinal()];
-        fun = new Question[30];
-        fun[0] = questions[QuestionType.actor.ordinal()];
-        fun[1] = questions[QuestionType.findFood.ordinal()];
-        questionScene23.setQuestion(fun);
-
-        QuestionScene questionScene24 = (QuestionScene) scenes[SceneType.Tundra.ordinal()];
-        fun = new Question[30];
-        fun[0] = questions[QuestionType.actor.ordinal()];
-        fun[1] = questions[QuestionType.findFood.ordinal()];
-        questionScene24.setQuestion(fun);
-
-        QuestionScene questionScene25 = (QuestionScene) scenes[SceneType.Village.ordinal()];
-        fun = new Question[30];
-        fun[0] = questions[QuestionType.actor.ordinal()];
-        fun[1] = questions[QuestionType.findFood.ordinal()];
-        questionScene25.setQuestion(fun);
-
-        QuestionScene questionScene26 = (QuestionScene) scenes[SceneType.Waterfall.ordinal()];
-        fun = new Question[30];
-        fun[0] = questions[QuestionType.actor.ordinal()];
-        fun[1] = questions[QuestionType.findFood.ordinal()];
-        questionScene26.setQuestion(fun);
-
-        QuestionScene questionScene27 = (QuestionScene) scenes[SceneType.Zion.ordinal()];
-        fun = new Question[30];
-        fun[0] = questions[QuestionType.actor.ordinal()];
-        fun[1] = questions[QuestionType.findFood.ordinal()];
-        questionScene27.setQuestion(fun);
-
-    }
-    
+////    //CREATE QUESTIONS JOSEPH
+//    public static Answer[] createQuestion() {
+//        Answer[] question = new Answer[200];
+//        question[QuestionType.buying.ordinal()] = new Answer();
+//        question[QuestionType.buying.ordinal()].setAnswer("Here you go");
+//        question[QuestionType.buying.ordinal()].setQuestion("What do you want?");
+//        question[QuestionType.buying.ordinal()].setResultOfAnswer("You bought item");
+//        
+//        question[QuestionType.injury.ordinal()].setAnswer("You broke your leg");
+//        question[QuestionType.injury.ordinal()].setResultOfAnswer("You should rest");
+//        question[QuestionType.injury.ordinal()].setQuestion("What is your injury?");
+//
+//        question[QuestionType.geography.ordinal()].setQuestion("Where are we?");
+//        question[QuestionType.geography.ordinal()].setAnswer("Yes");
+//        question[QuestionType.geography.ordinal()].setResultOfAnswer("This is where you are!");
+//
+//        question[QuestionType.findFood.ordinal()].setQuestion("Do you want to look for food?");
+//        question[QuestionType.findFood.ordinal()].setAnswer("Yes");
+//        question[QuestionType.findFood.ordinal()].setResultOfAnswer("You found food!");
+//
+//        question[QuestionType.actor.ordinal()].setQuestion("What is this character?");
+//        question[QuestionType.actor.ordinal()].setResultOfAnswer("Thank you for this info");
+//        question[QuestionType.actor.ordinal()].setAnswer("This is what I am");
+//
+//        question[QuestionType.weather.ordinal()].setQuestion("What is the weather");
+//        question[QuestionType.weather.ordinal()].setAnswer("The sky is clear");
+//        question[QuestionType.weather.ordinal()].setResultOfAnswer("Her it is");
+//        return question;
+//    }
+//    
+//    //QUESTIONS TO SCENES JOSEPH
+//    private static void assignQuestionsToScenes(Question[] questions, Scene[] scenes) {
+//        System.out.println("assignQuestionsToScenes called");
+//
+//        QuestionScene questionScene1 = (QuestionScene) scenes[SceneType.Arid.ordinal()];
+//        Question[] fun = new Question[30];
+//        fun[0] = questions[QuestionType.actor.ordinal()];
+//        fun[1] = questions[QuestionType.findFood.ordinal()];
+//        questionScene1.setQuestion(fun);
+//
+//        QuestionScene questionScene2 = (QuestionScene) scenes[SceneType.BushLand.ordinal()];
+//        fun = new Question[30];
+//        fun[0] = questions[QuestionType.actor.ordinal()];
+//        fun[1] = questions[QuestionType.findFood.ordinal()];
+//        questionScene2.setQuestion(fun);
+//
+//        QuestionScene questionScene3 = (QuestionScene) scenes[SceneType.Canyon.ordinal()];
+//        fun = new Question[30];
+//        fun[0] = questions[QuestionType.actor.ordinal()];
+//        fun[1] = questions[QuestionType.findFood.ordinal()];
+//        questionScene3.setQuestion(fun);
+//
+//        QuestionScene questionScene4 = (QuestionScene) scenes[SceneType.Caves.ordinal()];
+//        fun = new Question[30];
+//        fun[0] = questions[QuestionType.actor.ordinal()];
+//        fun[1] = questions[QuestionType.findFood.ordinal()];
+//        questionScene4.setQuestion(fun);
+//
+//        QuestionScene questionScene5 = (QuestionScene) scenes[SceneType.CrackedEarth.ordinal()];
+//        fun = new Question[30];
+//        fun[0] = questions[QuestionType.actor.ordinal()];
+//        fun[1] = questions[QuestionType.findFood.ordinal()];
+//        questionScene5.setQuestion(fun);
+//
+//        QuestionScene questionScene6 = (QuestionScene) scenes[SceneType.Desert.ordinal()];
+//        fun = new Question[30];
+//        fun[0] = questions[QuestionType.actor.ordinal()];
+//        fun[1] = questions[QuestionType.findFood.ordinal()];
+//        questionScene6.setQuestion(fun);
+//
+//        QuestionScene questionScene7 = (QuestionScene) scenes[SceneType.DryRiver.ordinal()];
+//        fun = new Question[30];
+//        fun[0] = questions[QuestionType.actor.ordinal()];
+//        fun[1] = questions[QuestionType.findFood.ordinal()];
+//        questionScene7.setQuestion(fun);
+//
+//        QuestionScene questionScene8 = (QuestionScene) scenes[SceneType.Encampment.ordinal()];
+//        fun = new Question[30];
+//        fun[0] = questions[QuestionType.actor.ordinal()];
+//        fun[1] = questions[QuestionType.findFood.ordinal()];
+//        questionScene8.setQuestion(fun);
+//
+//        QuestionScene questionScene9 = (QuestionScene) scenes[SceneType.Flooded.ordinal()];
+//        fun = new Question[30];
+//        fun[0] = questions[QuestionType.actor.ordinal()];
+//        fun[1] = questions[QuestionType.findFood.ordinal()];
+//        questionScene9.setQuestion(fun);
+//
+//        QuestionScene questionScene10 = (QuestionScene) scenes[SceneType.Forest.ordinal()];
+//        fun = new Question[30];
+//        fun[0] = questions[QuestionType.actor.ordinal()];
+//        fun[1] = questions[QuestionType.findFood.ordinal()];
+//        questionScene10.setQuestion(fun);
+//
+//        QuestionScene questionScene11 = (QuestionScene) scenes[SceneType.Hills.ordinal()];
+//        fun = new Question[30];
+//        fun[0] = questions[QuestionType.actor.ordinal()];
+//        fun[1] = questions[QuestionType.findFood.ordinal()];
+//        questionScene11.setQuestion(fun);
+//
+//        QuestionScene questionScene12 = (QuestionScene) scenes[SceneType.IndianCamp.ordinal()];
+//        fun = new Question[30];
+//        fun[0] = questions[QuestionType.actor.ordinal()];
+//        fun[1] = questions[QuestionType.findFood.ordinal()];
+//        questionScene12.setQuestion(fun);
+//
+//        QuestionScene questionScene13 = (QuestionScene) scenes[SceneType.Jungle.ordinal()];
+//        fun = new Question[30];
+//        fun[0] = questions[QuestionType.actor.ordinal()];
+//        fun[1] = questions[QuestionType.findFood.ordinal()];
+//        questionScene13.setQuestion(fun);
+//
+//        QuestionScene questionScene14 = (QuestionScene) scenes[SceneType.Lake.ordinal()];
+//        fun = new Question[30];
+//        fun[0] = questions[QuestionType.actor.ordinal()];
+//        fun[1] = questions[QuestionType.findFood.ordinal()];
+//        questionScene14.setQuestion(fun);
+//
+//        QuestionScene questionScene15 = (QuestionScene) scenes[SceneType.Mountain.ordinal()];
+//        fun = new Question[30];
+//        fun[0] = questions[QuestionType.actor.ordinal()];
+//        fun[1] = questions[QuestionType.findFood.ordinal()];
+//        questionScene15.setQuestion(fun);
+//
+//        QuestionScene questionScene16 = (QuestionScene) scenes[SceneType.MuddyPath.ordinal()];
+//        fun = new Question[30];
+//        fun[0] = questions[QuestionType.actor.ordinal()];
+//        fun[1] = questions[QuestionType.findFood.ordinal()];
+//        questionScene16.setQuestion(fun);
+//
+//        QuestionScene questionScene17 = (QuestionScene) scenes[SceneType.Plains.ordinal()];
+//        fun = new Question[30];
+//        fun[0] = questions[QuestionType.actor.ordinal()];
+//        fun[1] = questions[QuestionType.findFood.ordinal()];
+//        questionScene17.setQuestion(fun);
+//
+//        QuestionScene questionScene18 = (QuestionScene) scenes[SceneType.RedForest.ordinal()];
+//        fun = new Question[30];
+//        fun[0] = questions[QuestionType.actor.ordinal()];
+//        fun[1] = questions[QuestionType.findFood.ordinal()];
+//        questionScene18.setQuestion(fun);
+//
+//        QuestionScene questionScene19 = (QuestionScene) scenes[SceneType.River.ordinal()];
+//        fun = new Question[30];
+//        fun[0] = questions[QuestionType.actor.ordinal()];
+//        fun[1] = questions[QuestionType.findFood.ordinal()];
+//        questionScene19.setQuestion(fun);
+//
+//        QuestionScene questionScene20 = (QuestionScene) scenes[SceneType.Sparse.ordinal()];
+//        fun = new Question[30];
+//        fun[0] = questions[QuestionType.actor.ordinal()];
+//        fun[1] = questions[QuestionType.findFood.ordinal()];
+//        questionScene20.setQuestion(fun);
+//
+//        QuestionScene questionScene21 = (QuestionScene) scenes[SceneType.Stream.ordinal()];
+//        fun = new Question[30];
+//        fun[0] = questions[QuestionType.actor.ordinal()];
+//        fun[1] = questions[QuestionType.findFood.ordinal()];
+//        questionScene21.setQuestion(fun);
+//
+//        QuestionScene questionScene22 = (QuestionScene) scenes[SceneType.Swamp.ordinal()];
+//        fun = new Question[30];
+//        fun[0] = questions[QuestionType.actor.ordinal()];
+//        fun[1] = questions[QuestionType.findFood.ordinal()];
+//        questionScene22.setQuestion(fun);
+//
+//        QuestionScene questionScene23 = (QuestionScene) scenes[SceneType.Town.ordinal()];
+//        fun = new Question[30];
+//        fun[0] = questions[QuestionType.actor.ordinal()];
+//        fun[1] = questions[QuestionType.findFood.ordinal()];
+//        questionScene23.setQuestion(fun);
+//
+//        QuestionScene questionScene24 = (QuestionScene) scenes[SceneType.Tundra.ordinal()];
+//        fun = new Question[30];
+//        fun[0] = questions[QuestionType.actor.ordinal()];
+//        fun[1] = questions[QuestionType.findFood.ordinal()];
+//        questionScene24.setQuestion(fun);
+//
+//        QuestionScene questionScene25 = (QuestionScene) scenes[SceneType.Village.ordinal()];
+//        fun = new Question[30];
+//        fun[0] = questions[QuestionType.actor.ordinal()];
+//        fun[1] = questions[QuestionType.findFood.ordinal()];
+//        questionScene25.setQuestion(fun);
+//
+//        QuestionScene questionScene26 = (QuestionScene) scenes[SceneType.Waterfall.ordinal()];
+//        fun = new Question[30];
+//        fun[0] = questions[QuestionType.actor.ordinal()];
+//        fun[1] = questions[QuestionType.findFood.ordinal()];
+//        questionScene26.setQuestion(fun);
+//
+//        QuestionScene questionScene27 = (QuestionScene) scenes[SceneType.Zion.ordinal()];
+//        fun = new Question[30];
+//        fun[0] = questions[QuestionType.actor.ordinal()];
+//        fun[1] = questions[QuestionType.findFood.ordinal()];
+//        questionScene27.setQuestion(fun);
+//
+//    }
+//    
 }

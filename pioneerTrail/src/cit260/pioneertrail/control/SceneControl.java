@@ -36,7 +36,7 @@ public class SceneControl extends MapControl {
         game.getMap().setLocations(createLocations());
         assignScenesToLocations(scenes, game.getMap());
         assignItemsToScenes(scenes);
-//        createSceneQuestions(scenes);
+        createSceneQuestions(scenes);
         movePlayer("", game.getMap(), 0, 8); //Starting location
 
         return game;
