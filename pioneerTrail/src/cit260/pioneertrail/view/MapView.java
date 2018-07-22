@@ -137,7 +137,7 @@ public class MapView extends View {
 
     private void displayScene() {
         SceneView scene = new SceneView();
-        scene.displayQuestion();
+        scene.display();
     }
     
     

@@ -28,7 +28,6 @@ public class SceneView extends View{
     @Override
     public boolean doAction(String filePath) {
 
-        Game game = PioneerTrail.getCurrentGame();
         displayQuestion();
         
         return true;// RETURN false
