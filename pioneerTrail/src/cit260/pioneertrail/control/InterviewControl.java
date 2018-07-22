@@ -24,11 +24,13 @@ public class InterviewControl extends SceneControl{
     
     public static Scene[] createSceneQuestions(Scene[] scenes){
         
+        
         String question, ans, result; //Answer, one of potentially more.  Multiple answers can be asked per scene.
         int i = 0;
         int o = 1;
         
-        Question[] questions = new Question[27];
+//        Question[] questions = new Question[27];
+//        Question[] questions = (scenes) new Question[27];
         
                 //    Questions about each scene
         // ----------------------------------------------------------------------------------------------------------
