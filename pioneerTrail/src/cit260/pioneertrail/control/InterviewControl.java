@@ -683,6 +683,7 @@ public class InterviewControl extends SceneControl{
 //
     
      private static void setAnswer(String[] AnswerArray, String[] ResultArray, Double[] healthLoss, Scene[] scenes, String questionText, int sceneNum, int counter) {
+        counter++;
         Question question = new Question();
         question.setQuestionText(questionText);
         question.setCorrectAnswer(1);
@@ -694,7 +695,7 @@ public class InterviewControl extends SceneControl{
         Answer[] answers = new Answer[counter];
         
         
-        for(int i = 0; i < AnswerArray.length ; i++){
+        for(int i = 0; i < counter ; i++){
             answerText = AnswerArray[i];
             resultText = ResultArray[i];
             health = healthLoss[i];
@@ -703,7 +704,6 @@ public class InterviewControl extends SceneControl{
             answers[i].setAnswer(answerText);
             answers[i].setResultOfAnswer(resultText);
             answers[i].setPlayerHealthEffect(health);
-            i++;
         }
         
         question.setAnswers(answers);
