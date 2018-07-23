@@ -17,16 +17,16 @@ import java.util.ArrayList;
 public class SceneReportView {
 
     
-    // I commented this out because it's not working and it interferes with the
-    // running of the whole program. - Marilee
-    
-    
+//     I commented this out because it's not working and it interferes with the
+//     running of the whole program. - Marilee
+//    
+//    
 //    SceneReportView() {
 ////        super(
 ////                "\nPlease enter a file location to save Scene Report.");
 //
 //    }
-
+//
 //    @Override
 //    public boolean doAction(String filePath) {
 //
