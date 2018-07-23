@@ -6,12 +6,9 @@
 package cit260.pioneertrail.control;
 
 import cit260.pioneertrail.model.Answer;
-import cit260.pioneertrail.model.Game;
-import cit260.pioneertrail.model.Location;
 import cit260.pioneertrail.model.Question;
 import cit260.pioneertrail.model.QuestionType;
 import cit260.pioneertrail.model.Scene;
-import pioneertrail.PioneerTrail;
 
 /**
  *
