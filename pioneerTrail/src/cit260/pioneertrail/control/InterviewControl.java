@@ -44,7 +44,6 @@ public class InterviewControl extends SceneControl{
         healthLoss = new Double[answerCount];
         
         //Question
-        counter++;
         questionText = "You star your journey in a bushland. The area is rough "
                 + "\nand cruel. It will be a long journey. Do you head off on your "
                 + "\nadventure to Zion or give up?";
@@ -59,10 +58,9 @@ public class InterviewControl extends SceneControl{
         AnswerArray[counter] = "Give up.";
         ResultArray[counter] = "You don't seem to get the point of the game, do you?";
         healthLoss[counter] = 0.0;
-        counter++;
+        counter = 0;
         
-        setQuestion(scenes, questionText, sceneNum) ;
-        setAnswer(AnswerArray, ResultArray, healthLoss);
+        setAnswer(AnswerArray, ResultArray, healthLoss, scenes, questionText,sceneNum);
         
         // ----------------------------------------------------------------------------------------------------------
         //    02 Plains, --Steve
@@ -76,7 +74,6 @@ public class InterviewControl extends SceneControl{
         healthLoss = new Double[answerCount];
         
         //Question
-        counter++;
         questionText = "You look out over a wide open field.  The sun is shining and a pleasant aroma" 
                 + "\nfills the air.  There is a trampled path to the right and a path to the left"
                 + "\nWhat do you do?";
@@ -92,10 +89,9 @@ public class InterviewControl extends SceneControl{
         ResultArray[counter] = "It's going to be a great day to travel. The end of the field"
                 + "\nreveals a hidden stream where you can water your animals and refresh your water suuply.";
         healthLoss[counter] = 0.0;
-        counter++;
-        
-        setQuestion(scenes, questionText, sceneNum) ;
-        setAnswer(AnswerArray, ResultArray, healthLoss);
+        counter = 0;
+
+        setAnswer(AnswerArray, ResultArray, healthLoss, scenes, questionText,sceneNum);
 
         // ----------------------------------------------------------------------------------------------------------
         //    03 Forest, 1 Question, 2 answers        - STEVE 
@@ -109,7 +105,6 @@ public class InterviewControl extends SceneControl{
         healthLoss = new Double[answerCount];
         
         //Question
-        counter++;
         questionText = "You find youself in a dense forest.  There are two paths before you," 
                 + "\n one to your right, the other to your left.  The left trail has a fresh"
                 + "\n set of footprints, the other appears to be overgrown.  You...";
@@ -125,10 +120,9 @@ public class InterviewControl extends SceneControl{
         AnswerArray[counter] = "Take the left path";
         ResultArray[counter] = "you are ambushed by a pair of highwaymen, who run off with a portion of your food";
         healthLoss[counter] = 0.0;
-        counter++;
+        counter = 0;
         
-        setQuestion(scenes, questionText, sceneNum) ;
-        setAnswer(AnswerArray, ResultArray, healthLoss);
+        setAnswer(AnswerArray, ResultArray, healthLoss, scenes, questionText,sceneNum);
 
 //        // ----------------------------------------------------------------------------------------------------------
 //        //    04 Jungle,
@@ -142,7 +136,6 @@ public class InterviewControl extends SceneControl{
         healthLoss = new Double[answerCount];
         
         //Question
-        counter++;
         questionText = "The air is filled with bugs and the air is humid."
                 +"\n Do you look for food or move forward?";
         
@@ -156,10 +149,9 @@ public class InterviewControl extends SceneControl{
         AnswerArray[counter] = "Move forward.";
         ResultArray[counter] = "You find three melons.";
         healthLoss[counter] = 0.0;
-        counter++;
+        counter = 0;
         
-        setQuestion(scenes, questionText, sceneNum) ;
-        setAnswer(AnswerArray, ResultArray, healthLoss);
+        setAnswer(AnswerArray, ResultArray, healthLoss, scenes, questionText,sceneNum);
         
 //        // ----------------------------------------------------------------------------------------------------------
 //        //    05 Canyon, [BLOCKED]
@@ -177,7 +169,6 @@ public class InterviewControl extends SceneControl{
         healthLoss = new Double[answerCount];
         
         //Question
-        counter++;
         questionText = "You come to a large forest. The trees are taller than anything "
                 + "\nyou could imagine. Do you chop some down for wood or gather"
                 + "\nsticks on the ground.";
@@ -192,10 +183,9 @@ public class InterviewControl extends SceneControl{
         AnswerArray[counter] = "Gather dead wood.";
         ResultArray[counter] = "You gather wood on the forest floor and keep your ax sharp.";
         healthLoss[counter] = 0.0;
-        counter++;
+        counter = 0;
         
-        setQuestion(scenes, questionText, sceneNum) ;
-        setAnswer(AnswerArray, ResultArray, healthLoss);
+        setAnswer(AnswerArray, ResultArray, healthLoss, scenes, questionText,sceneNum);
         
 //        // ----------------------------------------------------------------------------------------------------------
 //        //    07 River,
@@ -209,7 +199,6 @@ public class InterviewControl extends SceneControl{
         healthLoss = new Double[answerCount];
         
         //Question
-        counter++;
         questionText = "You come to a large river. do you ford here or try to find a shallower place?";
         
         //Answer 1
@@ -222,10 +211,9 @@ public class InterviewControl extends SceneControl{
         AnswerArray[counter] = "Ford downstream.";
         ResultArray[counter] = "It takes a bit more time, but you make it across safely.";
         healthLoss[counter] = 0.0;
-        counter++;
+        counter = 0;
         
-        setQuestion(scenes, questionText, sceneNum) ;
-        setAnswer(AnswerArray, ResultArray, healthLoss);
+        setAnswer(AnswerArray, ResultArray, healthLoss, scenes, questionText,sceneNum);
         
 //        // ----------------------------------------------------------------------------------------------------------
 //        //    08 Lake, [BLOCKED]
@@ -251,7 +239,6 @@ public class InterviewControl extends SceneControl{
         healthLoss = new Double[answerCount];
         
         //Question
-        counter++;
         questionText = "You come to the Tundra and see this will not be easy to get"
                 + "\nthrough. Do you stop and make camp or move forward?";
         
@@ -265,10 +252,9 @@ public class InterviewControl extends SceneControl{
         AnswerArray[counter] = "Move forward.";
         ResultArray[counter] = "You journey through the night, but you got out of the Tundra.";
         healthLoss[counter] = 0.0;
-        counter++;
+        counter = 0;
         
-        setQuestion(scenes, questionText, sceneNum) ;
-        setAnswer(AnswerArray, ResultArray, healthLoss);
+        setAnswer(AnswerArray, ResultArray, healthLoss, scenes, questionText,sceneNum);
         
 //        // ----------------------------------------------------------------------------------------------------------
 //        //    11 Sparse,
@@ -282,7 +268,6 @@ public class InterviewControl extends SceneControl{
         healthLoss = new Double[answerCount];
         
         //Question
-        counter++;
         questionText = "There is nothing as far as the eye can see. Do you camp "
                 + "\nhere for the night or move on?";
         
@@ -297,10 +282,9 @@ public class InterviewControl extends SceneControl{
         ResultArray[counter] = "You journey through the night, but you got out "
                 + "\nof this ugly area.";
         healthLoss[counter] = 0.0;
-        counter++;
+        counter = 0;
         
-        setQuestion(scenes, questionText, sceneNum) ;
-        setAnswer(AnswerArray, ResultArray, healthLoss);
+        setAnswer(AnswerArray, ResultArray, healthLoss, scenes, questionText,sceneNum);
         
 //        // ----------------------------------------------------------------------------------------------------------
 //        //    12 CrackedEarth,
@@ -314,7 +298,6 @@ public class InterviewControl extends SceneControl{
         healthLoss = new Double[answerCount];
         
         //Question
-        counter++;
         questionText = "The earth is cracked an steam shoots forth out of it. Your "
                 + "\noxen nervously paw the ground. Look into the steam or move away? ";
         
@@ -328,10 +311,9 @@ public class InterviewControl extends SceneControl{
         AnswerArray[counter] = "Turn away from the steam.";
         ResultArray[counter] = "You look away from the steam and try to leave as quickly as possible.";
         healthLoss[counter] = 0.0;
-        counter++;
+        counter = 0;
         
-        setQuestion(scenes, questionText, sceneNum) ;
-        setAnswer(AnswerArray, ResultArray, healthLoss);
+        setAnswer(AnswerArray, ResultArray, healthLoss, scenes, questionText,sceneNum);
 
 //        // ----------------------------------------------------------------------------------------------------------
 //        //    13 Arid,
@@ -345,7 +327,6 @@ public class InterviewControl extends SceneControl{
         healthLoss = new Double[answerCount];
         
         //Question
-        counter++;
         questionText = "The land is arid and it seems that you will never reach"
                 + "\nZion. You see a caravan in the distance. Do you approach"
                 + "\nor turn away?";
@@ -361,10 +342,9 @@ public class InterviewControl extends SceneControl{
         AnswerArray[counter] = "Turn away.";
         ResultArray[counter] = "You move away and take the safe route.";
         healthLoss[counter] = 0.0;
-        counter++;
+        counter = 0;
         
-        setQuestion(scenes, questionText, sceneNum) ;
-        setAnswer(AnswerArray, ResultArray, healthLoss);
+        setAnswer(AnswerArray, ResultArray, healthLoss, scenes, questionText,sceneNum);
 
 //        // ----------------------------------------------------------------------------------------------------------
 //        //    14 Desert,
@@ -378,7 +358,6 @@ public class InterviewControl extends SceneControl{
         healthLoss = new Double[answerCount];
         
         //Question
-        counter++;
         questionText = "There is sand everywhere now that you are in the desert."
                 + "\nIt seems to stretch forever. Look for water or move forward?";
         
@@ -394,10 +373,9 @@ public class InterviewControl extends SceneControl{
         ResultArray[counter] = "You move forward knowing there is little chance"
                 + "\nof finding water in this harsh landscape.";
         healthLoss[counter] = 0.0;
-        counter++;
+        counter = 0;
         
-        setQuestion(scenes, questionText, sceneNum) ;
-        setAnswer(AnswerArray, ResultArray, healthLoss);
+        setAnswer(AnswerArray, ResultArray, healthLoss, scenes, questionText,sceneNum);
 
 //        // ----------------------------------------------------------------------------------------------------------
 //        //    15 Hills,
@@ -411,7 +389,6 @@ public class InterviewControl extends SceneControl{
         healthLoss = new Double[answerCount];
         
         //Question
-        counter++;
         questionText = "You come to the hills and they look large. Go around or over?";
         
         //Answer 1
@@ -426,10 +403,9 @@ public class InterviewControl extends SceneControl{
         ResultArray[counter] = "You go over because you want a challenge. You enjoy"
                 + "\nthe sweat on your brow.";
         healthLoss[counter] = 0.0;
-        counter++;
+        counter = 0;
         
-        setQuestion(scenes, questionText, sceneNum) ;
-        setAnswer(AnswerArray, ResultArray, healthLoss);
+        setAnswer(AnswerArray, ResultArray, healthLoss, scenes, questionText,sceneNum);
 
 //        // ----------------------------------------------------------------------------------------------------------
 //        //    16 Mountain, [BLOCKED]
@@ -447,7 +423,6 @@ public class InterviewControl extends SceneControl{
         healthLoss = new Double[answerCount];
         
         //Question
-        counter++;
         questionText = "You come to a stream. Do you ford here or try a shallower place?";
         
         //Answer 1
@@ -460,10 +435,9 @@ public class InterviewControl extends SceneControl{
         AnswerArray[counter] = "Ford downstream.";
         ResultArray[counter] = "It takes a bit more time, but you make it across safely.";
         healthLoss[counter] = 0.0;
-        counter++;
+        counter = 0;
         
-        setQuestion(scenes, questionText, sceneNum) ;
-        setAnswer(AnswerArray, ResultArray, healthLoss);
+        setAnswer(AnswerArray, ResultArray, healthLoss, scenes, questionText,sceneNum);
 
 //        // ----------------------------------------------------------------------------------------------------------
 //        //    18 Town, [START] -- SHOP
@@ -477,7 +451,6 @@ public class InterviewControl extends SceneControl{
         healthLoss = new Double[answerCount];
         
         //Question
-        counter++;
         questionText = "You come to a town. Would you like to stop and buy goods?";
         
         //Answer 1
@@ -490,10 +463,9 @@ public class InterviewControl extends SceneControl{
         AnswerArray[counter] = "No.";
         ResultArray[counter] = "The shop owner shakes his head, but your purse stays the same.";
         healthLoss[counter] = 0.0;
-        counter++;
+        counter = 0;
         
-        setQuestion(scenes, questionText, sceneNum) ;
-        setAnswer(AnswerArray, ResultArray, healthLoss);
+        setAnswer(AnswerArray, ResultArray, healthLoss, scenes, questionText,sceneNum);
 
 //        // ----------------------------------------------------------------------------------------------------------
 //        //    19 Village, -- SHOP 
@@ -507,7 +479,6 @@ public class InterviewControl extends SceneControl{
         healthLoss = new Double[answerCount];
         
         //Question
-        counter++;
         questionText = "You come to a village. Would you like to stop and buy goods?";
         
         //Answer 1
@@ -520,10 +491,9 @@ public class InterviewControl extends SceneControl{
         AnswerArray[counter] = "No.";
         ResultArray[counter] = "The shop owner shakes his head, but your purse stays the same.";
         healthLoss[counter] = 0.0;
-        counter++;
+        counter = 0;
         
-        setQuestion(scenes, questionText, sceneNum) ;
-        setAnswer(AnswerArray, ResultArray, healthLoss);
+        setAnswer(AnswerArray, ResultArray, healthLoss, scenes, questionText,sceneNum);
 
 //        // ----------------------------------------------------------------------------------------------------------
 //        //    20 Encampment,  -- SHOP 
@@ -537,7 +507,6 @@ public class InterviewControl extends SceneControl{
         healthLoss = new Double[answerCount];
         
         //Question
-        counter++;
         questionText = "You come to a encampment. Would you like to stop and buy goods?";
         
         //Answer 1
@@ -550,10 +519,9 @@ public class InterviewControl extends SceneControl{
         AnswerArray[counter] = "No.";
         ResultArray[counter] = "The shop owner shakes his head, but your purse stays the same.";
         healthLoss[counter] = 0.0;
-        counter++;
+        counter = 0;
         
-        setQuestion(scenes, questionText, sceneNum) ;
-        setAnswer(AnswerArray, ResultArray, healthLoss);
+        setAnswer(AnswerArray, ResultArray, healthLoss, scenes, questionText,sceneNum);
 
 //        // ----------------------------------------------------------------------------------------------------------
 //        //    21 IndianCamp, -- SHOP 
@@ -567,7 +535,6 @@ public class InterviewControl extends SceneControl{
         healthLoss = new Double[answerCount];
         
         //Question
-        counter++;
         questionText = "You come to a indian village. Would you like to stop and buy goods?";
         
         //Answer 1
@@ -580,10 +547,9 @@ public class InterviewControl extends SceneControl{
         AnswerArray[counter] = "No.";
         ResultArray[counter] = "The shop owner shakes his head, but your purse stays the same.";
         healthLoss[counter] = 0.0;
-        counter++;
+        counter = 0;
         
-        setQuestion(scenes, questionText, sceneNum) ;
-        setAnswer(AnswerArray, ResultArray, healthLoss);
+        setAnswer(AnswerArray, ResultArray, healthLoss, scenes, questionText,sceneNum);
 
 //        // ----------------------------------------------------------------------------------------------------------
 //        //    22 Caves, 
@@ -597,7 +563,6 @@ public class InterviewControl extends SceneControl{
         healthLoss = new Double[answerCount];
         
         //Question
-        counter++;
         questionText = "You walk along and find a dark cave. Do you explore or rest in it?";
         
         //Answer 1
@@ -611,10 +576,9 @@ public class InterviewControl extends SceneControl{
         AnswerArray[counter] = "Stay here.";
         ResultArray[counter] = "You feel well rested and ready for another tough day.";
         healthLoss[counter] = 0.0;
-        counter++;
+        counter = 0;
         
-        setQuestion(scenes, questionText, sceneNum) ;
-        setAnswer(AnswerArray, ResultArray, healthLoss);
+        setAnswer(AnswerArray, ResultArray, healthLoss, scenes, questionText,sceneNum);
 
 //        // ----------------------------------------------------------------------------------------------------------
 //        //    23 Swamp, [BLOCKED]
@@ -632,7 +596,6 @@ public class InterviewControl extends SceneControl{
         healthLoss = new Double[answerCount];
         
         //Question
-        counter++;
         questionText = "Your oxen sniff the air sadly as they come a dry river."
                 + "\n will you give them some of your own water or move on?";
         
@@ -648,10 +611,10 @@ public class InterviewControl extends SceneControl{
         ResultArray[counter] = "The oxen move slowly and you begin to see yellow "
                 + "\nput coming out of their eyes.";
         healthLoss[counter] = 0.0;
-        counter++;
+        counter = 0;
         
-        setQuestion(scenes, questionText, sceneNum) ;
-        setAnswer(AnswerArray, ResultArray, healthLoss);
+        
+        setAnswer(AnswerArray, ResultArray, healthLoss, scenes, questionText,sceneNum);
 
 //        // ----------------------------------------------------------------------------------------------------------
 //        //    25 Flooded, [BLOCKED]
@@ -669,7 +632,6 @@ public class InterviewControl extends SceneControl{
         healthLoss = new Double[answerCount];
         
         //Question
-        counter++;
         questionText = "You come to a muddy path. The mud cakes your wagon wheels.";
         
         //Answer 1
@@ -682,10 +644,10 @@ public class InterviewControl extends SceneControl{
         AnswerArray[counter] = "Move forward.";
         ResultArray[counter] = "The mud causes a wheel to break wasting valuable time.";
         healthLoss[counter] = 0.0;
-        counter++;
+        counter = 0;
         
-        setQuestion(scenes, questionText, sceneNum) ;
-        setAnswer(AnswerArray, ResultArray, healthLoss);
+        
+        setAnswer(AnswerArray, ResultArray, healthLoss, scenes, questionText,sceneNum);
 
 //        // ----------------------------------------------------------------------------------------------------------
 //        //    27 Zion; [END]
@@ -699,7 +661,6 @@ public class InterviewControl extends SceneControl{
         healthLoss = new Double[answerCount];
         
         //Question
-        counter++;
         questionText = "Congratulations! You have won the game!";
         
         //Answer 1
@@ -714,27 +675,21 @@ public class InterviewControl extends SceneControl{
         healthLoss[counter] = 0.0;
         counter++;
         
-        setQuestion(scenes, questionText, sceneNum) ;
-        setAnswer(AnswerArray, ResultArray, healthLoss);
+        
+        setAnswer(AnswerArray, ResultArray, healthLoss, scenes, questionText,sceneNum);
 
 //        // ----------------------------------------------------------------------------------------------------------
 //        
 
     }
 //
-    private static void setQuestion(Scene[] scenes, String questionText, int sceneNum) {
+    
+     private static void setAnswer(String[] AnswerArray, String[] ResultArray, Double[] healthLoss, Scene[] scenes, String questionText, int sceneNum) {
         Question question = new Question();
         question.setQuestionText(questionText);
         question.setCorrectAnswer(1);
         scenes[sceneNum].setQuestion(question);
-    }
-    
-     private static void setAnswer(String[] AnswerArray, String[] ResultArray, Double[] healthLoss) {
-        Location location = PioneerTrail.getCurrentGame().getMap().getCurrentLocation();
-        Game game = PioneerTrail.getCurrentGame();
-        Scene scene = location.getScene();
-        Question question = scene.getQuestion();
-        
+
         String answerText = "";
         String resultText = "";
         Double health = 0.0;
