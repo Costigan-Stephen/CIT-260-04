@@ -92,12 +92,6 @@ public class SceneView extends View{
         return questionText;
     }
 
-//    private String getSceneName() {
-//        Location location = PioneerTrail.getCurrentGame().getMap().getCurrentLocation();
-//        String scene = location.getScene().getDescription();
-//        return scene;
-//    }
-
     public String getAnswers(){
         String questionText = "";
         Location location = PioneerTrail.getCurrentGame().getMap().getCurrentLocation();
