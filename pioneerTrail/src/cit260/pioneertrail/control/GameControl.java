@@ -9,8 +9,6 @@ import static cit260.pioneertrail.control.SceneControl.compileSceneComponents;
 import cit260.pioneertrail.exceptions.GameControlException;
 import cit260.pioneertrail.model.Actor;
 import cit260.pioneertrail.model.Game;
-import cit260.pioneertrail.model.InventoryItem;
-import cit260.pioneertrail.model.ItemReference;
 import cit260.pioneertrail.model.Location;
 import cit260.pioneertrail.model.Map;
 import cit260.pioneertrail.model.Player;
@@ -19,13 +17,10 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.PrintStream;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import pioneertrail.PioneerTrail;
 
 /**

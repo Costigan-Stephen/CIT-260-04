@@ -7,15 +7,10 @@ package cit260.pioneertrail.control;
 
 import cit260.pioneertrail.model.Answer;
 import cit260.pioneertrail.model.Game;
-import cit260.pioneertrail.model.InventoryItem;
 import cit260.pioneertrail.model.Location;
 import cit260.pioneertrail.model.Question;
-import cit260.pioneertrail.model.QuestionScene;
 import cit260.pioneertrail.model.QuestionType;
 import cit260.pioneertrail.model.Scene;
-import cit260.pioneertrail.model.SceneType;
-import cit260.pioneertrail.model.Status;
-import java.sql.Array;
 import pioneertrail.PioneerTrail;
 
 /**
@@ -50,17 +45,19 @@ public class InterviewControl extends SceneControl{
         
         //Question
         counter++;
-        questionText = "There's a fork in the road, which way do you take?";
+        questionText = "You star your journey in a bushland. The area is rough "
+                + "\nand cruel. It will be a long journey. Do you head off on your "
+                + "\nadventure to Zion or give up?";
         
         //Answer 1
-        AnswerArray[counter] = "";
-        ResultArray[counter] = "";
+        AnswerArray[counter] = "Go foward.";
+        ResultArray[counter] = "Congratulations. You are headed to Zion.";
         healthLoss[counter] = 0.0;
         counter++;
         
         //Answer 2
-        AnswerArray[counter] = "";
-        ResultArray[counter] = "";
+        AnswerArray[counter] = "Give up.";
+        ResultArray[counter] = "You don't seem to get the point of the game, do you?";
         healthLoss[counter] = 0.0;
         counter++;
         
@@ -86,13 +83,14 @@ public class InterviewControl extends SceneControl{
         
         //Answer 1
         AnswerArray[counter] = "Take the right path";
-        ResultArray[counter] = "";
+        ResultArray[counter] = "The field is full of grasshoppers and other insects. Run as quickly as you can!";
         healthLoss[counter] = 0.0;
         counter++;
         
         //Answer 2
         AnswerArray[counter] = "Take the left path";
-        ResultArray[counter] = "";
+        ResultArray[counter] = "It's going to be a great day to travel. The end of the field"
+                + "\nreveals a hidden stream where you can water your animals and refresh your water suuply.";
         healthLoss[counter] = 0.0;
         counter++;
         
@@ -145,17 +143,18 @@ public class InterviewControl extends SceneControl{
         
         //Question
         counter++;
-        questionText = "There's a fork in the road, which way do you take?";
+        questionText = "The air is filled with bugs and the air is humid."
+                +"\n Do you look for food or move forward?";
         
         //Answer 1
-        AnswerArray[counter] = "";
-        ResultArray[counter] = "";
+        AnswerArray[counter] = "Look forward";
+        ResultArray[counter] = "Theh mosquitos bite you and you scratch an itch";
         healthLoss[counter] = 0.0;
         counter++;
         
         //Answer 2
-        AnswerArray[counter] = "";
-        ResultArray[counter] = "";
+        AnswerArray[counter] = "Move forward.";
+        ResultArray[counter] = "You find three melons.";
         healthLoss[counter] = 0.0;
         counter++;
         
@@ -179,17 +178,19 @@ public class InterviewControl extends SceneControl{
         
         //Question
         counter++;
-        questionText = "There's a fork in the road, which way do you take?";
+        questionText = "You come to a large forest. The trees are taller than anything "
+                + "\nyou could imagine. Do you chop some down for wood or gather"
+                + "\nsticks on the ground.";
         
         //Answer 1
-        AnswerArray[counter] = "";
-        ResultArray[counter] = "";
+        AnswerArray[counter] = "Chop tree.";
+        ResultArray[counter] = "The forest goes silent as you ax bites into the tree.";
         healthLoss[counter] = 0.0;
         counter++;
         
         //Answer 2
-        AnswerArray[counter] = "";
-        ResultArray[counter] = "";
+        AnswerArray[counter] = "Gather dead wood.";
+        ResultArray[counter] = "You gather wood on the forest floor and keep your ax sharp.";
         healthLoss[counter] = 0.0;
         counter++;
         
@@ -209,17 +210,17 @@ public class InterviewControl extends SceneControl{
         
         //Question
         counter++;
-        questionText = "There's a fork in the road, which way do you take?";
+        questionText = "You come to a large river. do you ford here or try to find a shallower place?";
         
         //Answer 1
-        AnswerArray[counter] = "";
-        ResultArray[counter] = "";
+        AnswerArray[counter] = "Ford here.";
+        ResultArray[counter] = "It's harrowing, but you make it across safely.";
         healthLoss[counter] = 0.0;
         counter++;
         
         //Answer 2
-        AnswerArray[counter] = "";
-        ResultArray[counter] = "";
+        AnswerArray[counter] = "Ford downstream.";
+        ResultArray[counter] = "It takes a bit more time, but you make it across safely.";
         healthLoss[counter] = 0.0;
         counter++;
         
@@ -251,17 +252,18 @@ public class InterviewControl extends SceneControl{
         
         //Question
         counter++;
-        questionText = "There's a fork in the road, which way do you take?";
+        questionText = "You come to the Tundra and see this will not be easy to get"
+                + "\nthrough. Do you stop and make camp or move forward?";
         
         //Answer 1
-        AnswerArray[counter] = "";
-        ResultArray[counter] = "";
+        AnswerArray[counter] = "Make camp.";
+        ResultArray[counter] = "You feel well rested and ready for another tough day.";
         healthLoss[counter] = 0.0;
         counter++;
         
         //Answer 2
-        AnswerArray[counter] = "";
-        ResultArray[counter] = "";
+        AnswerArray[counter] = "Move forward.";
+        ResultArray[counter] = "You journey through the night, but you got out of the Tundra.";
         healthLoss[counter] = 0.0;
         counter++;
         
@@ -281,17 +283,19 @@ public class InterviewControl extends SceneControl{
         
         //Question
         counter++;
-        questionText = "There's a fork in the road, which way do you take?";
+        questionText = "There is nothing as far as the eye can see. Do you camp "
+                + "\nhere for the night or move on?";
         
         //Answer 1
-        AnswerArray[counter] = "";
-        ResultArray[counter] = "";
+        AnswerArray[counter] = "Stay here.";
+        ResultArray[counter] = "You feel well rested and ready for another tough day.";
         healthLoss[counter] = 0.0;
         counter++;
         
         //Answer 2
-        AnswerArray[counter] = "";
-        ResultArray[counter] = "";
+        AnswerArray[counter] = "Move forward.";
+        ResultArray[counter] = "You journey through the night, but you got out "
+                + "\nof this ugly area.";
         healthLoss[counter] = 0.0;
         counter++;
         
@@ -311,17 +315,18 @@ public class InterviewControl extends SceneControl{
         
         //Question
         counter++;
-        questionText = "There's a fork in the road, which way do you take?";
+        questionText = "The earth is cracked an steam shoots forth out of it. Your "
+                + "\noxen nervously paw the ground. Look into the steam or move away? ";
         
         //Answer 1
-        AnswerArray[counter] = "";
-        ResultArray[counter] = "";
+        AnswerArray[counter] = "Look into the steam.";
+        ResultArray[counter] = "You look into the steam, burn your face and recoil screaming.";
         healthLoss[counter] = 0.0;
         counter++;
         
         //Answer 2
-        AnswerArray[counter] = "";
-        ResultArray[counter] = "";
+        AnswerArray[counter] = "Turn away from the steam.";
+        ResultArray[counter] = "You look away from the steam and try to leave as quickly as possible.";
         healthLoss[counter] = 0.0;
         counter++;
         
@@ -341,17 +346,20 @@ public class InterviewControl extends SceneControl{
         
         //Question
         counter++;
-        questionText = "There's a fork in the road, which way do you take?";
+        questionText = "The land is arid and it seems that you will never reach"
+                + "\nZion. You see a caravan in the distance. Do you approach"
+                + "\nor turn away?";
         
         //Answer 1
-        AnswerArray[counter] = "";
-        ResultArray[counter] = "";
+        AnswerArray[counter] = "Approach.";
+        ResultArray[counter] = "You see a lot of strange faces, but they are friendly. "
+                + "\nThey sing and dance with you all.";
         healthLoss[counter] = 0.0;
         counter++;
         
         //Answer 2
-        AnswerArray[counter] = "";
-        ResultArray[counter] = "";
+        AnswerArray[counter] = "Turn away.";
+        ResultArray[counter] = "You move away and take the safe route.";
         healthLoss[counter] = 0.0;
         counter++;
         
@@ -371,17 +379,20 @@ public class InterviewControl extends SceneControl{
         
         //Question
         counter++;
-        questionText = "There's a fork in the road, which way do you take?";
+        questionText = "There is sand everywhere now that you are in the desert."
+                + "\nIt seems to stretch forever. Look for water or move forward?";
         
         //Answer 1
-        AnswerArray[counter] = "";
-        ResultArray[counter] = "";
+        AnswerArray[counter] = "Look for water.";
+        ResultArray[counter] = "You look long and hard, but you don't find any"
+                + "\nwater in this harsh landscape.";
         healthLoss[counter] = 0.0;
         counter++;
         
         //Answer 2
-        AnswerArray[counter] = "";
-        ResultArray[counter] = "";
+        AnswerArray[counter] = "Continue onward.";
+        ResultArray[counter] = "You move forward knowing there is little chance"
+                + "\nof finding water in this harsh landscape.";
         healthLoss[counter] = 0.0;
         counter++;
         
@@ -401,17 +412,19 @@ public class InterviewControl extends SceneControl{
         
         //Question
         counter++;
-        questionText = "There's a fork in the road, which way do you take?";
+        questionText = "You come to the hills and they look large. Go around or over?";
         
         //Answer 1
-        AnswerArray[counter] = "";
-        ResultArray[counter] = "";
+        AnswerArray[counter] = "Go Around.";
+        ResultArray[counter] = "Sure, it takes a while going around, but it "
+                + "\nactually saves time.";
         healthLoss[counter] = 0.0;
         counter++;
         
         //Answer 2
-        AnswerArray[counter] = "";
-        ResultArray[counter] = "";
+        AnswerArray[counter] = "You go over.";
+        ResultArray[counter] = "You go over because you want a challenge. You enjoy"
+                + "\nthe sweat on your brow.";
         healthLoss[counter] = 0.0;
         counter++;
         
@@ -435,17 +448,17 @@ public class InterviewControl extends SceneControl{
         
         //Question
         counter++;
-        questionText = "There's a fork in the road, which way do you take?";
+        questionText = "You come to a stream. Do you ford here or try a shallower place?";
         
         //Answer 1
-        AnswerArray[counter] = "";
-        ResultArray[counter] = "";
+        AnswerArray[counter] = "Ford here.";
+        ResultArray[counter] = "It's harrowing, but you make it across safely.";
         healthLoss[counter] = 0.0;
         counter++;
         
         //Answer 2
-        AnswerArray[counter] = "";
-        ResultArray[counter] = "";
+        AnswerArray[counter] = "Ford downstream.";
+        ResultArray[counter] = "It takes a bit more time, but you make it across safely.";
         healthLoss[counter] = 0.0;
         counter++;
         
@@ -465,17 +478,17 @@ public class InterviewControl extends SceneControl{
         
         //Question
         counter++;
-        questionText = "There's a fork in the road, which way do you take?";
+        questionText = "You come to a town. Would you like to stop and buy goods?";
         
         //Answer 1
-        AnswerArray[counter] = "";
-        ResultArray[counter] = "";
+        AnswerArray[counter] = "Yes.";
+        ResultArray[counter] = "They show you their wares and you purchase goods.";
         healthLoss[counter] = 0.0;
         counter++;
         
         //Answer 2
-        AnswerArray[counter] = "";
-        ResultArray[counter] = "";
+        AnswerArray[counter] = "No.";
+        ResultArray[counter] = "The shop owner shakes his head, but your purse stays the same.";
         healthLoss[counter] = 0.0;
         counter++;
         
@@ -495,17 +508,17 @@ public class InterviewControl extends SceneControl{
         
         //Question
         counter++;
-        questionText = "There's a fork in the road, which way do you take?";
+        questionText = "You come to a village. Would you like to stop and buy goods?";
         
         //Answer 1
-        AnswerArray[counter] = "";
-        ResultArray[counter] = "";
+        AnswerArray[counter] = "Yes.";
+        ResultArray[counter] = "They show you their wares and you purchase goods.";
         healthLoss[counter] = 0.0;
         counter++;
         
         //Answer 2
-        AnswerArray[counter] = "";
-        ResultArray[counter] = "";
+        AnswerArray[counter] = "No.";
+        ResultArray[counter] = "The shop owner shakes his head, but your purse stays the same.";
         healthLoss[counter] = 0.0;
         counter++;
         
@@ -525,17 +538,17 @@ public class InterviewControl extends SceneControl{
         
         //Question
         counter++;
-        questionText = "There's a fork in the road, which way do you take?";
+        questionText = "You come to a encampment. Would you like to stop and buy goods?";
         
         //Answer 1
-        AnswerArray[counter] = "";
-        ResultArray[counter] = "";
+        AnswerArray[counter] = "Yes.";
+        ResultArray[counter] = "They show you their wares and you purchase goods.";
         healthLoss[counter] = 0.0;
         counter++;
         
         //Answer 2
-        AnswerArray[counter] = "";
-        ResultArray[counter] = "";
+        AnswerArray[counter] = "No.";
+        ResultArray[counter] = "The shop owner shakes his head, but your purse stays the same.";
         healthLoss[counter] = 0.0;
         counter++;
         
@@ -555,17 +568,17 @@ public class InterviewControl extends SceneControl{
         
         //Question
         counter++;
-        questionText = "There's a fork in the road, which way do you take?";
+        questionText = "You come to a indian village. Would you like to stop and buy goods?";
         
         //Answer 1
-        AnswerArray[counter] = "";
-        ResultArray[counter] = "";
+        AnswerArray[counter] = "Yes.";
+        ResultArray[counter] = "They show you their wares and you purchase goods.";
         healthLoss[counter] = 0.0;
         counter++;
         
         //Answer 2
-        AnswerArray[counter] = "";
-        ResultArray[counter] = "";
+        AnswerArray[counter] = "No.";
+        ResultArray[counter] = "The shop owner shakes his head, but your purse stays the same.";
         healthLoss[counter] = 0.0;
         counter++;
         
@@ -585,17 +598,18 @@ public class InterviewControl extends SceneControl{
         
         //Question
         counter++;
-        questionText = "There's a fork in the road, which way do you take?";
+        questionText = "You walk along and find a dark cave. Do you explore or rest in it?";
         
         //Answer 1
-        AnswerArray[counter] = "";
-        ResultArray[counter] = "";
+        AnswerArray[counter] = "Explore.";
+        ResultArray[counter] = "You go forward and bats swirl about. You find some"
+                + "\nmushrooms that taste funny";
         healthLoss[counter] = 0.0;
         counter++;
         
         //Answer 2
-        AnswerArray[counter] = "";
-        ResultArray[counter] = "";
+        AnswerArray[counter] = "Stay here.";
+        ResultArray[counter] = "You feel well rested and ready for another tough day.";
         healthLoss[counter] = 0.0;
         counter++;
         
@@ -619,17 +633,20 @@ public class InterviewControl extends SceneControl{
         
         //Question
         counter++;
-        questionText = "There's a fork in the road, which way do you take?";
+        questionText = "Your oxen sniff the air sadly as they come a dry river."
+                + "\n will you give them some of your own water or move on?";
         
         //Answer 1
-        AnswerArray[counter] = "";
-        ResultArray[counter] = "";
+        AnswerArray[counter] = "Stop and give your oxen some of your own water.";
+        ResultArray[counter] = "They drink greedily draining your water supplies "
+                + "\nbut it keeps them strong.";
         healthLoss[counter] = 0.0;
         counter++;
         
         //Answer 2
-        AnswerArray[counter] = "";
-        ResultArray[counter] = "";
+        AnswerArray[counter] = "Keep going forward and don't give them water.";
+        ResultArray[counter] = "The oxen move slowly and you begin to see yellow "
+                + "\nput coming out of their eyes.";
         healthLoss[counter] = 0.0;
         counter++;
         
@@ -653,17 +670,17 @@ public class InterviewControl extends SceneControl{
         
         //Question
         counter++;
-        questionText = "There's a fork in the road, which way do you take?";
+        questionText = "You come to a muddy path. The mud cakes your wagon wheels.";
         
         //Answer 1
-        AnswerArray[counter] = "";
-        ResultArray[counter] = "";
+        AnswerArray[counter] = "Knock off the mud.";
+        ResultArray[counter] = "The mud falls off and you push forward.";
         healthLoss[counter] = 0.0;
         counter++;
         
         //Answer 2
-        AnswerArray[counter] = "";
-        ResultArray[counter] = "";
+        AnswerArray[counter] = "Move forward.";
+        ResultArray[counter] = "The mud causes a wheel to break wasting valuable time.";
         healthLoss[counter] = 0.0;
         counter++;
         
@@ -683,17 +700,17 @@ public class InterviewControl extends SceneControl{
         
         //Question
         counter++;
-        questionText = "There's a fork in the road, which way do you take?";
+        questionText = "Congratulations! You have won the game!";
         
         //Answer 1
-        AnswerArray[counter] = "";
-        ResultArray[counter] = "";
+        AnswerArray[counter] = "Dance.";
+        ResultArray[counter] = "Your family dances for joy.";
         healthLoss[counter] = 0.0;
         counter++;
         
         //Answer 2
-        AnswerArray[counter] = "";
-        ResultArray[counter] = "";
+        AnswerArray[counter] = "Sing.";
+        ResultArray[counter] = "Your family sings for joy.";
         healthLoss[counter] = 0.0;
         counter++;
         

@@ -5,9 +5,7 @@
  */
 package cit260.pioneertrail.control;
 import cit260.pioneertrail.model.InventoryItem;
-import cit260.pioneertrail.model.Player;
 import cit260.pioneertrail.exceptions.ResourceControlException;
-import java.util.Random;
 
 /**
  * * @author Marilee
