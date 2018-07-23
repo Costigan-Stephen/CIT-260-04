@@ -99,7 +99,6 @@ public class MapView extends View {
         mapOption = mapOption.toUpperCase();
         Game game = PioneerTrail.getCurrentGame(); // retreive the game
         Map map = game.getMap(); // retreive the map from game
-        Location[][] locations = map.getLocations(); // retreive the locations from map
         try {
             MapControl.movePlayer(mapOption, map, map.getCurrentRow(), map.getCurrentColumn());
             displayScene();
