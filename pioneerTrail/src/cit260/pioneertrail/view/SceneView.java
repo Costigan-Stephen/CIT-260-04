@@ -52,7 +52,9 @@ public class SceneView extends View{
             choice--;
             Player player = PioneerTrail.getPlayer();
             
-            player.setHealth(player.getHealth() + question.getAnswers()[choice].getPlayerHealthEffect());
+            if(question.getAnswers()[choice].getPlayerHealthEffect() != 0){
+                player.setHealth(player.getHealth() + question.getAnswers()[choice].getPlayerHealthEffect());
+            }
             this.console.println(question.getAnswers()[choice].getResultOfAnswer());
             this.console.println("Player health is now: " + player.getHealth());
             if(player.getHealth() <= 0){
