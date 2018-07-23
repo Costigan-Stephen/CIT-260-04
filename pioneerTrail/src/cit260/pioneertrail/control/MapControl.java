@@ -46,8 +46,6 @@ public class MapControl { // MARILEE
 
         
     }
-
-    //I don't think we use this method - Steve
     public static Location moveActor(Actor actor, int newRow, int newColumn) throws MapControlException {
 
         Game game = PioneerTrail.getCurrentGame();

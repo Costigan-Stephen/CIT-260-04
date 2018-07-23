@@ -5,6 +5,7 @@
  */
 package cit260.pioneertrail.control;
 
+import cit260.pioneertrail.exceptions.TradeControlException;
 import cit260.pioneertrail.model.ItemReference;
 import cit260.pioneertrail.model.SceneType;
 
@@ -16,7 +17,7 @@ public class TradeControl {
 
 //    public static double calcTrade(ItemReference coin, SceneType[] resourceScene) throws TradeControlException {
 //
-//        if (SceneType[] resourceScene != SceneType.Village.ordinal();) {
+//        if (SceneType[] resourceScene != [SceneType.Village.ordinal();) {
 //            throw new TradeControlException("You cannot trade in this scene.");
 //        }
 //        if (coin < 1) {

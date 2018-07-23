@@ -42,15 +42,15 @@ public class IndividualAssignments extends View {
                     }
                 }
                 break;
-            case "M":
-                {
-////                    try {
-////                        calcHuntingResource();
-////                    } catch (ResourceControlException ex) {
-////                        ErrorView.display(this.getClass().getName(), "Error reading input: " + ex.getMessage());
+//            case "M":
+//                {
+//                    try {
+//                        calcHuntingResource();
+//                    } catch (ResourceControlException ex) {
+//                        ErrorView.display(this.getClass().getName(), "Error reading input: " + ex.getMessage());
 //                    }
-                }
-                break;
+//                }
+//                break;
             case "J":
 //                MainMenuView chuck = new MainMenuView();
 //                chuck.display();

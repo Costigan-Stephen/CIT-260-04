@@ -30,6 +30,7 @@ public class PioneerTrail {
     private static PrintWriter outFile = null;
     private static BufferedReader inFile = null;
     private static PrintWriter logFile = null;
+    private static PrintWriter sceneFile = null;
     
     public static void main(String[] args) {
         
@@ -37,6 +38,7 @@ public class PioneerTrail {
             inFile = new BufferedReader(new InputStreamReader(System.in));
             outFile = new PrintWriter(System.out, true);
             logFile = new PrintWriter("logfile.txt");
+            sceneFile = new PrintWriter("scenefile.txt");
             
             StartProgramView startProgramView = new StartProgramView();
             startProgramView.display();
@@ -58,6 +60,9 @@ public class PioneerTrail {
                 if(logFile != null){
                     logFile.close();
                 }
+                if(sceneFile != null) {
+                    sceneFile.close();
+                }
             } catch (Exception ex) {
 //                System.out.println("Error closing files");
                 System.console().printf("%s%s", "Error closing the input/output files");
@@ -66,6 +71,14 @@ public class PioneerTrail {
             
         }
     }
+    
+    public static PrintWriter getSceneFile() {
+        return sceneFile;
+    }
+
+    public static void setSceneFile(PrintWriter logFile) {
+        PioneerTrail.sceneFile = logFile;
+    }  
     
     public static PrintWriter getLogFile() {
         return logFile;

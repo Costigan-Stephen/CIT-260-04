@@ -14,27 +14,7 @@ public class ResourceControl {
     
     
     public static double calcHuntingResource(int hunger, InventoryItem item, int randomNumber) throws ResourceControlException {
-    
-        //If (itemQuantity<1)
-        //	return -1
-        //if (itemQuantity>100)
-        //	return -2
-        //if (hunger < 0) 
-        //	return -3
-        //if  (hunger > 5) 
-        //	return -4
-        //if (randomNumber < 1)
-        //	return -5
-        //if (randomNumber > 20)
-        //	return -6
-        //Double result  = ((itemQuantity + hunger) / randomNumber)
-        //	return result.intValue();
-        
-        // FUNCTION FOR GENERATING RANDOM NUMBER
-        // import java.util.Random;
-        // int randomNumber = randomrand = newRandom();
-	// int n = rand.nestInt(20) + 1;
-        
+     
         if (item.quantityOfItems < 1) {
             throw new ResourceControlException("Item quantity cannot be less than 1");
         }
