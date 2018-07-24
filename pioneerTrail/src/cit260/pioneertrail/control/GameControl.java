@@ -98,12 +98,13 @@ public class GameControl {
 
     public static void saveGame(Game game, String filepath) throws GameControlException {
 //        System.out.println("Game was saved, filename is: " + filepath);
-        if (!filepath.contains(".")) {
-            filepath += ".txt";
-        }
 
         if (filepath == null) {
             throw new GameControlException("Game could not be saved");
+        }
+        
+        if (!filepath.contains(".")) {
+            filepath += ".txt";
         }
 
         try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(filepath))) {
@@ -114,6 +115,10 @@ public class GameControl {
     }
 
     public static void loadGame(String filepath) throws GameControlException {
+        if (filepath == null) {
+            throw new GameControlException("Game could not be saved");
+        }
+        
         if (!filepath.contains(".")) {
             filepath += ".txt";
         }

@@ -32,6 +32,9 @@ public class SceneView extends View{
             promptMessage += "\n==================================================== ";
             promptMessage += "\nPress Q to return to the game menu";
         }
+        if (scene.getDescription() == "Zion"){
+            PioneerTrail.getCurrentGame().setGameOver(true);
+        }
     }
     
     
