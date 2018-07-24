@@ -6,6 +6,8 @@
 package cit260.pioneertrail.view;
 
 import cit260.pioneertrail.model.Game;
+import cit260.pioneertrail.model.Location;
+import cit260.pioneertrail.model.Scene;
 import java.io.BufferedReader;
 import java.io.PrintWriter;
 import java.util.Scanner;
@@ -25,11 +27,14 @@ public abstract class View implements ViewInterfaces {
 
     public View() {
         canExit = true;
+
     }
 
     public View(String menuPrompt) {
         promptMessage = menuPrompt;
         canExit = true;
+        
+        
     }
 
     @Override
@@ -37,15 +42,22 @@ public abstract class View implements ViewInterfaces {
         boolean endOfView = false;
         do {
             String input = this.getInputs();
+            
             if (input.toUpperCase().equals("Q") && canExit) {
                 return;
             }
             
             //Test for game over
             Game game = PioneerTrail.getCurrentGame();
-            if (game != null && game.isGameOver()){
-                displayGameOver();
-                return;
+            
+            if (game != null){
+                Location location = game.getMap().getCurrentLocation();
+                Scene scene = location.getScene();
+                
+                if(game.isGameOver()){
+                    displayGameOver();
+                    return;
+                }
             }
 
             endOfView = doAction(input);

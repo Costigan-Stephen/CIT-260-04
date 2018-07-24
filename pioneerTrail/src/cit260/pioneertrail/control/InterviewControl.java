@@ -138,14 +138,14 @@ public class InterviewControl extends SceneControl{
                 +"\n Do you look for food or move forward?";
         
         //Answer 1
-        AnswerArray[counter] = "1. Look forward";
-        ResultArray[counter] = "Theh mosquitos bite you and you scratch an itch";
+        AnswerArray[counter] = "1. Look for food";
+        ResultArray[counter] = "You find three melons.";
         healthLoss[counter] = 0.0;
         counter++;
         
         //Answer 2
         AnswerArray[counter] = "2. Move forward.";
-        ResultArray[counter] = "You find three melons.";
+        ResultArray[counter] = "The mosquitos bite you and you scratch an itch";
         healthLoss[counter] = 0.0;
         
         setAnswer(AnswerArray, ResultArray, healthLoss, scenes, questionText, sceneNum, counter);

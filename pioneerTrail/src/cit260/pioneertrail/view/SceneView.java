@@ -32,9 +32,6 @@ public class SceneView extends View{
             promptMessage += "\n==================================================== ";
             promptMessage += "\nPress Q to return to the game menu";
         }
-        if (scene.getDescription() == "Zion"){
-            PioneerTrail.getCurrentGame().setGameOver(true);
-        }
     }
     
     
@@ -67,6 +64,11 @@ public class SceneView extends View{
                 this.console.println("You Died.  Game over!");
                 game.setGameOver(true);
             }
+            
+            if ("Zion".equals(scene.getDescription())){
+                PioneerTrail.getCurrentGame().setGameOver(true);
+            }
+            
             return true;
         }
 

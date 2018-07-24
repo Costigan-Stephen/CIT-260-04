@@ -38,9 +38,7 @@ public class EndGameView extends View {
                 chuck.display();
                 break;
             case "Q":
-                MainMenuView fun = new MainMenuView();
-                fun.display();
-                break;
+                return true;
         }
         return true;
     }
