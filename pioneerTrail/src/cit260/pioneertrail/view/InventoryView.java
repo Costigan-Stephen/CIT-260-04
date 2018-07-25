@@ -140,13 +140,7 @@ public class InventoryView extends View {
         output += String.format(formatting, "Ax", "2", "Inventory", "two");
        
         Game game = PioneerTrail.getCurrentGame();
-//        ArrayList<Actor> actor = game.getActors();
-//        
-//        for (int i=0; i<actor.size(); i++) {
-//            double health = actor.get(i).getHealth();
-//            output += String.format(formatting, actor.get(i).getName(), actor.get(i).getDescription(), Double.toString(health), actor.get(i).getPurpose());
-//        }
-        
+//       
         this.console.println(output);
         
         try {
