@@ -23,6 +23,9 @@ public class Player implements Serializable{
     private int currentRow;
     private int currentColumn;
 
+    public Player() {
+        health = 100.0;
+    }
     /**
      * Get the value of hunger
      *
@@ -39,9 +42,6 @@ public class Player implements Serializable{
      */
     public void setHunger(int hunger) {
         this.hunger = hunger;
-    }
-
-    public Player() {
     }
 
     public int getCurrentRow() {

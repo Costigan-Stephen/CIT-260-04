@@ -91,4 +91,14 @@ public class HealthControl {
         return null;
     }
     
+    //    public static ArrayList<Double> maxHealth(ArrayList<Actor> actor){
+//
+//        ArrayList<Double> maxValue = new ArrayList<>();
+//        for(Actor person: actor){
+//            if (actor.getHealth() > maxValue){
+//                maxValue = actor.getHealth();
+//            } 
+//        }
+//        return maxValue;
+//    }
 }

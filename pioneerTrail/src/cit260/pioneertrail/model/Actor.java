@@ -6,13 +6,14 @@
 package cit260.pioneertrail.model;
 
 import java.awt.Point;
+import java.io.Serializable;
 import java.sql.Array;
 
 /**
  *
  * @author Stephen
  */
-public class Actor {
+public class Actor implements Serializable{
     
 //    Mother("Samantha","The Mother", new Point(1,1),"Lead the Family"),
 //    Father("Samuel","The Father", new Point(1,1),"Lead the Family"),
@@ -22,7 +23,7 @@ public class Actor {
     
     public int index;
     private String name;
-    private double health;
+    public double health;
     private String description;
 //    private Point coordinates;
     private String purpose;
@@ -70,14 +71,6 @@ public class Actor {
     public void setDescription(String description) {
         this.description = description;
     }
-
-//    public Point getCoordinates() {
-//        return coordinates;
-//    }
-//
-//    public void setCoordinates(Point coordinates) {
-//        this.coordinates = coordinates;
-//    }
 
     public String getPurpose() {
         return purpose;

@@ -23,6 +23,9 @@ public class EndGameView extends View {
 
     @Override
     public boolean doAction(String inputs) {
+        
+        inputs = inputs.toUpperCase();
+
         // This will may need modiication as I don't know exactly where you will see game over. As of right now you access it through the inventory menu
         // but that will obviously need to be changed in the final version.
         switch (inputs) {
@@ -35,9 +38,7 @@ public class EndGameView extends View {
                 chuck.display();
                 break;
             case "Q":
-                MainMenuView fun = new MainMenuView();
-                fun.display();
-                break;
+                return true;
         }
         return true;
     }

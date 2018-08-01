@@ -8,6 +8,10 @@ package pioneertrail;
 import cit260.pioneertrail.model.Game;
 import cit260.pioneertrail.model.Player;
 import cit260.pioneertrail.view.StartProgramView;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
 
 /**
  *
@@ -22,16 +26,82 @@ public class PioneerTrail {
     private static Game currentGame = null;
     private static Player player = null;
     
+    
+    private static PrintWriter outFile = null;
+    private static BufferedReader inFile = null;
+    private static PrintWriter logFile = null;
+    private static PrintWriter sceneFile = null;
+    
     public static void main(String[] args) {
         
         try {
+            inFile = new BufferedReader(new InputStreamReader(System.in));
+            outFile = new PrintWriter(System.out, true);
+            logFile = new PrintWriter("logfile.txt");
+            sceneFile = new PrintWriter("scenefile.txt");
+            
             StartProgramView startProgramView = new StartProgramView();
             startProgramView.display();
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            System.out.println("Exception: " + e.getMessage() +
+                                "\nCause: " + e.getCause() +
+                                "\nMessage: " + e.getMessage());
             e.printStackTrace();
         }
         
+        finally {
+            try {
+                if (inFile != null){
+                    inFile.close();
+                }
+                if(outFile != null){
+                    outFile.close();
+                }
+                if(logFile != null){
+                    logFile.close();
+                }
+                if(sceneFile != null) {
+                    sceneFile.close();
+                }
+            } catch (Exception ex) {
+//                System.out.println("Error closing files");
+                System.console().printf("%s%s", "Error closing the input/output files");
+                return;
+            }
+            
+        }
+    }
+    
+    public static PrintWriter getSceneFile() {
+        return sceneFile;
+    }
+
+    public static void setSceneFile(PrintWriter logFile) {
+        PioneerTrail.sceneFile = logFile;
+    }  
+    
+    public static PrintWriter getLogFile() {
+        return logFile;
+    }
+
+    public static void setLogFile(PrintWriter logFile) {
+        PioneerTrail.logFile = logFile;
+    }  
+    
+    public static PrintWriter getOutFile() {
+        return outFile;
+    }
+
+    public static void setOutFile(PrintWriter outFile) {
+        PioneerTrail.outFile = outFile;
+    }
+
+    public static BufferedReader getInFile() {
+        return inFile;
+    }
+
+    public static void setInFile(BufferedReader inFile) {
+        PioneerTrail.inFile = inFile;
     }
 
     public static Game getCurrentGame() {

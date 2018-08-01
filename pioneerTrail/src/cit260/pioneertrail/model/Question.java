@@ -14,7 +14,29 @@ import java.util.Objects;
  */
 public class Question implements Serializable {
     private String questionText;
+    private Answer[] answers;
+    private int correctAnswer;
+    
+    
+    public Question() {
+    }
+    
+    public Answer[] getAnswers() {
+        return answers;
+    }
 
+    public int getCorrectAnswer() {
+        return correctAnswer;
+    }
+
+    public void setCorrectAnswer(int correctAnswer) {
+        this.correctAnswer = correctAnswer;
+    }
+    
+    public void setAnswers(Answer[] answers) {
+        this.answers = answers;
+    }
+    
     public String getQuestionText() {
         return questionText;
     }

@@ -5,7 +5,10 @@
  */
 package cit260.pioneertrail.view;
 
+import java.io.IOException;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -29,9 +32,11 @@ class HelpMenuView extends View {
     }
 
     @Override
-    public boolean doAction(String input) {
-
-        switch (input) {
+    public boolean doAction(String inputs) {
+        
+        inputs = inputs.toUpperCase();
+        
+        switch (inputs) {
 
             case "G":
                 displayGoal();
@@ -55,15 +60,20 @@ class HelpMenuView extends View {
     }
 
     void displayGoal() {
-        System.out.println("This is the goal of the game!"
+        this.console.println("This is the goal of the game!"
                 + "\n\nPress Enter to return to menu...");
 
-        Scanner scanner = new Scanner(System.in);
+        Scanner scanner = null;
+        try {
+            scanner = new Scanner(this.keyboard.readLine());
+        } catch (IOException ex) {
+            ErrorView.display(this.getClass().getName(), "Error reading input: " + ex.getMessage());
+        }
         scanner.nextLine();
     }
 
     void displayMove() {
-        System.out.println(
+        this.console.println(
                 "\nThe program displays a message prompting the player "
                 + "\nto enter the direction and distance to move. If either"
                 + "\nof the player’s input is are invalid, the program will"
@@ -77,14 +87,19 @@ class HelpMenuView extends View {
                 + "\nis calculated and added to the total time taken. The map "
                 + "\nand game menu are then redisplayed.\n\nPress Enter to return to menu...");
 
-        Scanner scanner = new Scanner(System.in);
+        Scanner scanner = null;
+        try {
+            scanner = new Scanner(this.keyboard.readLine());
+        } catch (IOException ex) {
+            ErrorView.display(this.getClass().getName(), "Error reading input: " + ex.getMessage());
+        }
         scanner.nextLine();
 
 //        displayMenu();
     }
 
     void displayEstimate() {
-        System.out.println(
+        this.console.println(
                 "The player selects a resource by entering the "
                 + "\nrepresentative letter and hitting Enter.  Upon "
                 + "\nreceiving an input, the computer then displays"
@@ -99,13 +114,18 @@ class HelpMenuView extends View {
                 + "\nlimit, the computer will display an error message"
                 + "\nprompting the user to enter an amount. \n\nPress Enter to return to menu...");
 
-        Scanner scanner = new Scanner(System.in);
+        Scanner scanner = null;
+        try {
+            scanner = new Scanner(this.keyboard.readLine());
+        } catch (IOException ex) {
+            ErrorView.display(this.getClass().getName(), "Error reading input: " + ex.getMessage());
+        }
         scanner.nextLine();
 
     }
 
     void displayHarvest() {
-        System.out.println(
+        this.console.println(
                 "If the current location has no resources, a message "
                 + "\nis displayed indicating that there are no resources "
                 + "\nto be collected. Then display the game menu.\n"
@@ -126,16 +146,26 @@ class HelpMenuView extends View {
                 + "\na message will be displayed to the user stating that"
                 + "\nthe item stock is full.\n\nPress Enter to return to menu...");
 
-        Scanner scanner = new Scanner(System.in);
+        Scanner scanner = null;
+        try {
+            scanner = new Scanner(this.keyboard.readLine());
+        } catch (IOException ex) {
+            ErrorView.display(this.getClass().getName(), "Error reading input: " + ex.getMessage());
+        }
         scanner.nextLine();
 
     }
 
     void displayWarehouse() {
-        System.out.println("Warehouse is full!"
+        this.console.println("Warehouse is full!"
                 + "\n\nPress Enter to return to menu...");
 
-        Scanner scanner = new Scanner(System.in);
+        Scanner scanner = null;
+        try {
+            scanner = new Scanner(this.keyboard.readLine());
+        } catch (IOException ex) {
+            ErrorView.display(this.getClass().getName(), "Error reading input: " + ex.getMessage());
+        }
         scanner.nextLine();
 
     }

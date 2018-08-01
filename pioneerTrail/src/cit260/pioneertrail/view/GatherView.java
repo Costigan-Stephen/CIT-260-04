@@ -31,19 +31,18 @@ public class GatherView extends View {
     }
 
     @Override
-    public boolean doAction(String input) {
+    public boolean doAction(String inputs) {
 
-        String menuItem = input.toUpperCase();
+        inputs = inputs.toUpperCase();
         // menuItem = first element in inputs array
         // convert menuItem to upper case
 
-        switch (menuItem) {// SWITCH menuItem
+        switch (inputs) {// SWITCH menuItem
             case "A":
                 getAnimals();
                 break;
             case "T":
-                System.out.println("**** Possible Scene/Control for Trading ***");
-                break;
+                displayTradeView();
             case "I":
                 displayInventoryView();
                 break;
@@ -51,7 +50,7 @@ public class GatherView extends View {
                 getHelp();
                 break;
             default:
-                System.out.println("Invalid Menu item.");// DEFAULT: DISPLAY “Invalid menu item.”
+                ErrorView.display(this.getClass().getName(), "Invalid Menu Item");
 
         }// ENDSWITCH  
 
@@ -76,6 +75,11 @@ public class GatherView extends View {
     void displayInventoryView() {
         InventoryView inventoryView = new InventoryView();
         inventoryView.display();
+    }
+
+    private void displayTradeView() {
+        TradeView tradeView = new TradeView();
+        tradeView.display();
     }
 
 }

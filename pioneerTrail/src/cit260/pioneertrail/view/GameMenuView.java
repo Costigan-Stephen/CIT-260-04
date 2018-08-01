@@ -21,18 +21,20 @@ class GameMenuView extends View {
                 + "\n\t    S - Save your Game "
                 + "\n\t    L - Load a Saved Game "
                 + "\n\t    I - View Inventory "
+                + "\n\t    P - Print Party Status "
                 + "\n\t    M - Show the Map "
                 + "\n\t    G - Gather Resources "
                 + "\n\t    R - Repair Wagon "
                 + "\n\t    Q - Quit To Main Menu "
-                + "\n====================================================\n\n "
+                + "\n====================================================\n "
         );
 
     }
 
     @Override
-    public boolean doAction(String input) {
-        switch (input) {
+    public boolean doAction(String inputs) {
+        inputs = inputs.toUpperCase();
+        switch (inputs) {
 
             case "S":
                 saveGame();
@@ -43,15 +45,15 @@ class GameMenuView extends View {
             case "I":
                 displayInventoryView();
                 break;
+            case "P":
+                displayPlayerView();
+                break;
             case "M":
                 displayMapView();
                 break;
             case "G":
                 displayGatherView();
                 break;
-//       case "R":
-//           displayRepairWagon();
-//           break;
 
         }
 
@@ -65,12 +67,13 @@ class GameMenuView extends View {
     }
 
     private void loadGame() {
-        System.out.println("Loading Game...");
+        StartExistingGameView loadGame = new StartExistingGameView();
+        loadGame.display();
     }
 
     private void saveGame() {
-        System.out.println("Game Saved...");
-
+        SaveGameView saveGameView = new SaveGameView();
+        saveGameView.display();
     }
 
     private void displayInventoryView() {
@@ -86,6 +89,11 @@ class GameMenuView extends View {
     private void displayRepairView() {
         RepairWagon repairView = new RepairWagon();
         repairView.display();
+    }
+
+    private void displayPlayerView() {
+        PlayerView playerview = new PlayerView();
+        playerview.display();
     }
 
 }

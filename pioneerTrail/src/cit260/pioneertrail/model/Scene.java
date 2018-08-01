@@ -13,6 +13,7 @@ import java.util.Objects;
 public class Scene implements Serializable {
     
     private SceneType scene;
+    private int index;
     private String description;
     private long travelTime;
     private boolean blocked;
@@ -21,10 +22,26 @@ public class Scene implements Serializable {
     private InventoryItem resource;
     private QuestionType questionType;
     private Location[][] locations;
-    private Question[] question;
+    private Question question;
+//    private Answers[] answers;
 
     public Scene() {
+    }
 
+//    public Answers getAnswers(int i) {
+//        return answers[i];
+//    }
+//
+//    public void setAnswers(Answers[] answers) {
+//        this.answers = answers;
+//    }
+    
+    public int getIndex() {
+        return index;
+    }
+
+    public void setIndex(int index) {
+        this.index = index;
     }
 
     public QuestionType getQuestionType() {
@@ -43,11 +60,11 @@ public class Scene implements Serializable {
         this.locations = locations;
     }
 
-    public Question[] getQuestion() {
+    public Question getQuestion() {
         return question;
     }
 
-    public void setQuestion(Question[] question) {
+    public void setQuestion(Question question) {
         this.question = question;
     }
     
@@ -126,5 +143,13 @@ public class Scene implements Serializable {
     public String toString() {
         return super.toString();
     }
+
+//    public Question setQuestion(int o) {
+//        return question[o];
+//    }
+//
+//    public Object getQuestion() {
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//    }
 
 }

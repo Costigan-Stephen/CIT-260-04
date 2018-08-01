@@ -5,17 +5,21 @@
  */
 package cit260.pioneertrail.control;
 
-import static cit260.pioneertrail.control.MapControl.compileSceneComponents;
-import static cit260.pioneertrail.control.MapControl.movePlayer;
+import static cit260.pioneertrail.control.SceneControl.compileSceneComponents;
+import cit260.pioneertrail.exceptions.GameControlException;
 import cit260.pioneertrail.model.Actor;
 import cit260.pioneertrail.model.Game;
-import cit260.pioneertrail.model.InventoryItem;
-import cit260.pioneertrail.model.ItemReference;
 import cit260.pioneertrail.model.Location;
 import cit260.pioneertrail.model.Map;
 import cit260.pioneertrail.model.Player;
-import cit260.pioneertrail.view.MapView;
 import cit260.pioneertrail.exceptions.MapControlException;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.PrintStream;
 import java.util.ArrayList;
 import pioneertrail.PioneerTrail;
 
@@ -46,151 +50,12 @@ public class GameControl {
         PioneerTrail.setCurrentGame(game);
         game.setPlayer(player);
         game.setActors(createActors());
-        game.setItems(createItems());
-        game.setMap(createMap(3, 9)); 
+        game.setItems(InventoryControl.createItems());
+        game.setMap(createMap(3, 9));
         compileSceneComponents(game);
 
-        // Actor actor = Actor();
-        // actor.set
-//actors = createActors()
-//Save the list of actors in the Game object
-//Assign an actor to the player
-//items = createItems()
-//Save the list of items in the game
-//map = createMap(noOfRows, noOfColumns, items)
-//IF map == null THEN
-// RETURN -1
-//ENDIF
-//Assign the map to the game
-//RETURN 1 // indicates success
         System.out.println("START NEW GAME");
         return 0;
-    }
-
-    public static void movePlayerToStartingLocation(Map map) {
-        // If starting location is not supposed to be 0,0 then use the correct values here.
-        movePlayer(map, 0, 0); // or instead of 0,0 you can select a different starting location
-    }
-
-    public static InventoryItem[] createItems() {
-
-        InventoryItem[] items = new InventoryItem[200];
-        int i = 0;
-
-        i = ItemReference.axe.ordinal();
-        items[i] = new InventoryItem();
-        items[i].setDamageValue(2);
-        items[i].setInventoryType("inventory");
-        items[i].setItemWeight(4);
-        items[i].setItemName("axe");
-
-        i = ItemReference.wheels.ordinal();
-        items[i] = new InventoryItem();
-        items[i].setDamageValue(0);
-        items[i].setInventoryType("Inventory");
-        items[i].setItemWeight(10);
-        items[i].setItemName("Wheel");
-
-        i = ItemReference.oxen.ordinal();
-        items[i] = new InventoryItem();
-        items[i].setDamageValue(0);
-        items[i].setInventoryType("Inventory");
-        items[i].setItemWeight(20);
-        items[i].setItemName("Oxen");
-
-        i = ItemReference.coin.ordinal();
-        items[i] = new InventoryItem();
-        items[i].setDamageValue(0);
-        items[i].setInventoryType("Inventory");
-        items[i].setItemWeight(0);
-        items[i].setItemName("coin");
-
-        i = ItemReference.bullets.ordinal();
-        items[i] = new InventoryItem();
-        items[i].setDamageValue(0);
-        items[i].setInventoryType("Inventory");
-        items[i].setItemWeight(10);
-        items[i].setItemName("bullets");
-
-        i = ItemReference.fish.ordinal();
-        items[i] = new InventoryItem();
-        items[i].setDamageValue(0);
-        items[i].setInventoryType("Inventory");
-        items[i].setItemWeight(5);
-        items[i].setItemName("fish");
-
-        i = ItemReference.freshWater.ordinal();
-        items[i] = new InventoryItem();
-        items[i].setDamageValue(0);
-        items[i].setInventoryType("Inventory");
-        items[i].setItemWeight(0);
-        items[i].setItemName("freshWater");
-
-        i = ItemReference.flour.ordinal();
-        items[i] = new InventoryItem();
-        items[i].setDamageValue(0);
-        items[i].setInventoryType("Inventory");
-        items[i].setItemWeight(30);
-        items[i].setItemName("flour");
-
-        i = ItemReference.squirrel.ordinal();
-        items[i] = new InventoryItem();
-        items[i].setDamageValue(0);
-        items[i].setInventoryType("Inventory");
-        items[i].setItemWeight(2);
-        items[i].setItemName("squirrel");
-
-        i = ItemReference.rabbit.ordinal();
-        items[i] = new InventoryItem();
-        items[i].setDamageValue(0);
-        items[i].setInventoryType("Inventory");
-        items[i].setItemWeight(5);
-        items[i].setItemName("rabbit");
-
-        i = ItemReference.deer.ordinal();
-        items[i] = new InventoryItem();
-        items[i].setDamageValue(0);
-        items[i].setInventoryType("Inventory");
-        items[i].setItemWeight(100);
-        items[i].setItemName("deer");
-
-        i = ItemReference.cougar.ordinal();
-        items[i] = new InventoryItem();
-        items[i].setDamageValue(0);
-        items[i].setInventoryType("Inventory");
-        items[i].setItemWeight(150);
-        items[i].setItemName("cougar");
-
-        i = ItemReference.bear.ordinal();
-        items[i] = new InventoryItem();
-        items[i].setDamageValue(0);
-        items[i].setInventoryType("Inventory");
-        items[i].setItemWeight(200);
-        items[i].setItemName("bear");
-
-        i = ItemReference.bison.ordinal();
-        items[i] = new InventoryItem();
-        items[i].setDamageValue(0);
-        items[i].setInventoryType("Inventory");
-        items[i].setItemWeight(300);
-        items[i].setItemName("bison");
-
-        i = ItemReference.driedMeat.ordinal();
-        items[i] = new InventoryItem();
-        items[i].setDamageValue(0);
-        items[i].setInventoryType("Inventory");
-        items[i].setItemWeight(5);
-        items[i].setItemName("driedMeat");
-
-        i = ItemReference.clothing.ordinal();
-        items[i] = new InventoryItem();
-        items[i].setDamageValue(0);
-        items[i].setInventoryType("Inventory");
-        items[i].setItemWeight(5);
-        items[i].setItemName("clothing");
-
-        return items;
-
     }
 
     public static Map createMap(int noOfRows, int noOfColumns) {
@@ -198,13 +63,9 @@ public class GameControl {
         map.setRowCount(noOfRows);
         map.setColumnCount(noOfColumns);
         return map;
-//        MapView map = new MapView();
-//        map.setMap();
-//        map.createMap();
-//        System.out.println("\nmap called");
-//        return null;
     }
-
+    
+   
     public static ArrayList<Actor> createActors() {
 
         ArrayList<Actor> actors = new ArrayList<>();
@@ -223,34 +84,6 @@ public class GameControl {
         return actors;
     }
 
-//    public static Answers[] createQuestion() {
-//        Answers[] question = new Answers[200];
-//        question[QuestionType.buying.ordinal()] = new Answers();
-//        question[QuestionType.buying.ordinal()].setAnswer("Here you go");
-//        question[QuestionType.buying.ordinal()].setQuestion("What do you want?");
-//        question[QuestionType.buying.ordinal()].setResultOfAnswer("You bought item");
-//        
-//        question[QuestionType.injury.ordinal()].setAnswer("You broke your leg");
-//        question[QuestionType.injury.ordinal()].setResultOfAnswer("You should rest");
-//        question[QuestionType.injury.ordinal()].setQuestion("What is your injury?");
-//
-//        question[QuestionType.geography.ordinal()].setQuestion("Where are we?");
-//        question[QuestionType.geography.ordinal()].setAnswer("Yes");
-//        question[QuestionType.geography.ordinal()].setResultOfAnswer("This is where you are!");
-//
-//        question[QuestionType.findFood.ordinal()].setQuestion("Do you want to look for food?");
-//        question[QuestionType.findFood.ordinal()].setAnswer("Yes");
-//        question[QuestionType.findFood.ordinal()].setResultOfAnswer("You found food!");
-//
-//        question[QuestionType.actor.ordinal()].setQuestion("What is this character?");
-//        question[QuestionType.actor.ordinal()].setResultOfAnswer("Thank you for this info");
-//        question[QuestionType.actor.ordinal()].setAnswer("This is what I am");
-//
-//        question[QuestionType.weather.ordinal()].setQuestion("What is the weather");
-//        question[QuestionType.weather.ordinal()].setAnswer("The sky is clear");
-//        question[QuestionType.weather.ordinal()].setResultOfAnswer("Her it is");
-//        return question;
-//    }
     public static Location[][] createLocation(int rows, int columns) {
 
         Location[][] locations = new Location[rows][columns];
@@ -263,18 +96,71 @@ public class GameControl {
         return locations;
     }
 
-//    public static ArrayList<Double> maxHealth(ArrayList<Actor> actor){
-//
-//        ArrayList<Double> maxValue = new ArrayList<>();
-//        for(Actor person: actor){
-//            if (actor.getHealth() > maxValue){
-//                maxValue = actor.getHealth();
-//            } 
-//        }
-//        return maxValue;
-//    }
-    public static Game saveGame(String createNewGame) {
-        System.out.println("SAVE STUBB");
-        return null;
+    public static void saveGame(Game game, String filepath) throws GameControlException {
+//        System.out.println("Game was saved, filename is: " + filepath);
+
+        if (filepath == null) {
+            throw new GameControlException("Game could not be saved");
+        }
+        
+        if (!filepath.contains(".")) {
+            filepath += ".txt";
+        }
+
+        try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(filepath))) {
+            out.writeObject(game);
+        } catch (Exception ex) {
+            throw new GameControlException("Game could not be saved.  Error code: " + ex.getMessage());
+        }
+    }
+
+    public static void loadGame(String filepath) throws GameControlException {
+        if (filepath == null) {
+            throw new GameControlException("Game could not be saved");
+        }
+        
+        if (!filepath.contains(".")) {
+            filepath += ".txt";
+        }
+
+        Game game = null;
+        try (FileInputStream fis = new FileInputStream(filepath)) {
+            ObjectInputStream savedGame = new ObjectInputStream(fis);
+
+            game = (Game) savedGame.readObject();
+
+        } catch (Exception ex) {
+            throw new GameControlException("Game could not be loaded.  Error code: " + ex.getMessage());
+        }
+//        System.out.println("Game was saved, filename is: " + filepath);
+        if (filepath == null) {
+            throw new GameControlException("Game could not be Loaded, filename is empty. ");
+        }
+
+        PioneerTrail.setCurrentGame(game);
+
+    }
+
+    // This will work for any output file string.
+    // Stephen
+    public static void saveFile(String output, String filepath) throws GameControlException {
+        PrintStream myOut = null;
+        if (filepath == null) {
+            throw new GameControlException("Error: Filepath is empty");
+        }
+        if (!filepath.contains(".")) {
+            filepath += ".txt";
+        }
+
+        try {
+            myOut = new PrintStream(new File(filepath));
+            System.setOut(myOut);
+            myOut.print(output);
+
+        } catch (FileNotFoundException ex) {
+            throw new GameControlException("File could not be saved.  Error code: " + ex.getMessage());
+        } finally {
+            myOut.close();
+        }
     }
 }

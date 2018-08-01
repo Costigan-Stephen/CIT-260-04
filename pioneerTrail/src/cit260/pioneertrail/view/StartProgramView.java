@@ -49,8 +49,7 @@ public class StartProgramView extends View {
 //            playerName = playerName.substring(0, playerName.length() - 1).replace("null", "").replace(",", "").replace("[", "").replace("]", "").replace(" ", "").replace("_", " ");
         Player player = GameControl.savePlayer(playerName);
 
-        System.out.print("\033[H\033[2J"); //Clears Screen
-        System.out.println(
+        this.console.println(
                 "\n==================================================== "
                 + "\n\t      Welcome aboard " + playerName + "!"
         );

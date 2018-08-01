@@ -66,7 +66,7 @@ public class RepairWagon extends View {
 //    public String[] showSelection(String input, String type, int x){
     @Override
     public boolean doAction(String type) {
-
+        type = type.toUpperCase();
         switch (type) {
 
             case "A":

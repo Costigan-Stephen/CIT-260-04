@@ -14,21 +14,24 @@ class TradeView extends View {
     public TradeView() {
         super("WELCOME TO THE TRADE!:\n"
                 + "\nIn this location you can trade with natives to get needed"
-                + "supplies for your journey. If you have items that are "
-                + "useful to bargin with, you will be able to trade.\n"
+                + "\nsupplies for your journey. If you have items that are "
+                + "\nuseful to bargin with, you will be able to trade.\n"
                 + "==================================================== "
                 + "\n\t\t   TRADING MENU "
                 + "\n===================================================="
                 + "\n\t T - Trade an Item "
                 + "\n\t I - See inventory "
-                + "\n\t H - Get help on how to play the game "
+                + "\n\t H - Get help on how to play the game"
+                + "\n\t L - Print Locations with Resources "
                 + "\n\t Q - Quit Hunt "
                 + "\n====================================================\n ");
     }
 
     @Override
-    public boolean doAction(String input) {
-        switch (input) {
+    public boolean doAction(String inputs) {
+        inputs = inputs.toUpperCase();
+        
+        switch (inputs) {
 
             case "T":
                 getTrade();
@@ -36,6 +39,8 @@ class TradeView extends View {
             case "I":
                 displayInventoryView();
                 break;
+            case "L":
+                displaySceneReportView();
             case "H":
                 displayMapView();
                 break;
@@ -55,6 +60,13 @@ class TradeView extends View {
     }
 
     private void getTrade() {
-        System.out.println("This calls a fictional TradeControl");
+        this.console.println("This calls a fictional TradeControl");
     }
+
+    private void displaySceneReportView() {
+//        SceneReportView sceneReportView = new SceneReportView();
+//        sceneReportView.display();
+    }
+
+
 }

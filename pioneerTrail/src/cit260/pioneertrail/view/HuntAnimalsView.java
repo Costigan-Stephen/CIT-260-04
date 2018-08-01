@@ -37,17 +37,18 @@ public class HuntAnimalsView extends View {
     }
 
     @Override
-    public boolean doAction(String input)  { //doAction(inputs): boolean {
-        String menuItem = input.toUpperCase(); // menuItem = first element in inputs array & convert menuItem to upper case   
+    public boolean doAction(String inputs)  { //doAction(inputs): boolean {
+        inputs = inputs.toUpperCase();
 
-        if (menuItem.equals("B")) {
+        if (inputs.equals("B")) {
             startNewHunt(); //Call a Control Layer method to perform the action 
-        } else if (menuItem.equals("I")) {
+        } else if (inputs.equals("I")) {
             displayInventoryView();
-        } else if (menuItem.equals("H")) {
+        } else if (inputs.equals("H")) {
             displayHelpMenuView();
         } else {
-            System.out.println("Invalid value. Please try again.");
+            ErrorView.display(this.getClass().getName(), "Invalid value. Please try again.");
+
             return true;
         }
         return false;// RETURN false
@@ -63,9 +64,9 @@ public class HuntAnimalsView extends View {
         try {
             result = ResourceControl.calcHuntingResource(PioneerTrail.getPlayer().getHunger(), inventoryItem); //calls the control layer and should output the result to the screen
         } catch (ResourceControlException ex) {
-            System.out.println(ex.getMessage());;
+            ErrorView.display(this.getClass().getName(), "Error reading input: " + ex.getMessage());;
         }
-        System.out.println(result);
+        this.console.println(result);
     }
 
     private void displayInventoryView() {

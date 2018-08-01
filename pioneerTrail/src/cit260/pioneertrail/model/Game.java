@@ -7,9 +7,7 @@ package cit260.pioneertrail.model;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Objects;
 import pioneertrail.PioneerTrail;
-import static pioneertrail.PioneerTrail.getCurrentGame;
 
 /**
  *
@@ -18,26 +16,27 @@ import static pioneertrail.PioneerTrail.getCurrentGame;
 public class Game implements Serializable{
     
     private long totalTime;
-//    private int noPeople;
     private Player player;
     private ArrayList<Actor> actors;
-    public static Map map;
+    public Map map;
     public Scene[] scenes;
     private InventoryItem[] items;
-//    private Location[][] locations;
-    private Question[] question;
+    private Question[] question; //I don't think we ever use this.
+    private boolean gameOver = false;
+    
     
     public Game() {
+        
+    }
+    
+    public boolean isGameOver() {
+        return gameOver;
     }
 
-//    public Location[][] getLocations() {
-//        return locations;
-//    }
-//
-//    public void setLocations(Location[][] locations) {
-//        this.locations = locations;
-//    }
-
+    public void setGameOver(boolean gameOver) {
+        this.gameOver = gameOver;
+    }
+    
     public Question[] getQuestion() {
         return question;
     }
@@ -62,12 +61,12 @@ public class Game implements Serializable{
         this.items = items;
     }
     
-    public static Map getMap() {
+    public Map getMap() {
         return map;
     }
 
-    public static void setMap(Map map) {
-        Game.map = map;
+    public void setMap(Map map) {
+        this.map = map;
     }
 
     public ArrayList<Actor> getActors() {
@@ -124,8 +123,4 @@ public class Game implements Serializable{
         return current;
     }
     
-//    public Location getLocation(int row, int column) {
-//        return locations[row][column];
-//    }
-//    
 }
